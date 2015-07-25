@@ -1,0 +1,5 @@
+# use shell glob syntax
+syntax: glob
+
+_build/*
+

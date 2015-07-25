@@ -1,0 +1,310 @@
+" SETTINGS
+
+" Path settings {{{
+
+set dictionary+=~/.vim/dictionary/words
+set runtimepath+=/usr/share/vim/addons/
+
+" }}}
+
+" General settings {{{
+
+syntax on							" activate syntax highlighting
+filetype on							" activate filetype support
+filetype indent on					" activate filetype based indentation
+filetype plugin on					" activate filetype based plugins
+
+set digraph							" enable special characters, e.g. german umlaute.
+set encoding=utf-8					" set encoding to utf-8.
+set fileencoding=utf-8				" set file encoding to utf-8.
+set nocompatible					" vim should not exactly behave like vi (e.g. use cursor-keys).
+set history=500						" number of commandline commands stored.
+set mouse=a							" allow mouse usage in every mode.
+
+" }}}
+
+" Buffer and backup settings {{{
+
+set autochdir						" current working path = path of current file
+set autoread						" reload file if it's changed by another programm
+set autowriteall					" automatically save files on critical events
+set backup 							" create a backup of each opened file
+set backupdir=$HOME/.vim/backupdir	" store backup files there
+set hidden							" permit changing buffers without saving
+set modeline						" regard the last lines of a file as possible vim commands
+set modelines=5						" regard this number of lines at the end of a file as modelines
+set modifiable						" mark quick-fix window as writeable
+set swapfile						" store information about which files are currently in use
+set directory=~/tmp,/var/tmp,/tmp	" look up for swapfiles there
+set swapsync=fsync					
+
+set suffixes=.aux,.bak,.dvi,.ps,.swp,.tar,.pdf		" ignore such files when calling :edit
+
+" }}} 
+
+" Text, fold and input settings {{{
+
+set backspace=2						" ignore linebreaks when using backspace
+set foldmarker ={{{,}}}				" use these character combinationes to delimit fold areas
+set foldmethod=marker				" use foldmarkers as standard fold method
+set noexpandtab						" don't convert tabs to spaces
+set nojoinspaces					" insert only one space when joining lines
+set nopaste							" interprete user input (not 'raw' mode)
+set pastetoggle=<F10>				" toggle between paste (raw input mode) and nopaste
+
+" }}}
+
+" Search and commandline settings {{{
+
+set complete+=k						" scan files given with the dictionary option
+set complete+=w						" scan buffers of other windows
+set complete+=u						" scan unloaded buffers in buffer list
+set complete+=t						" tag completion 
+set completeopt=menuone,longest		" set completion options
+set hlsearch						" highlight search results
+set ignorecase						" ignore uppercase/lowercase by default
+set incsearch						" start search on typing
+set smartcase						" regard case if search expression contains uppercase letters
+set wildmenu						" activate tab completion on command line
+set wildmode=list:longest,full		" set command line completion options 
+set wrapscan						" restart search from the beginning if file end is reached
+
+" }}}
+
+" Layout settings {{{
+
+set ballooneval						" allow popup windows (e.g. for completion)
+set balloondelay=200				" set delay time (ms) for opening popup windows 
+set balloonexpr="textstring"		 
+set cmdheight=1						" set height value of the commandline 
+set guicursor=a:blinkon0			" deactivate cursor blink in gvim
+set guioptions-=T					" don't show toolbar in gvim
+set guioptions-=r					" don't show ?? in gvim 
+set guioptions-=m					" don't show menubar in gvim
+set laststatus=2					" permanently show infos on status line
+set lazyredraw						" don't redraw the screen while macros are running
+set linebreak						" automatically break lines longer then textwidth value
+set number							" show line numbers (type :set nonumber to deactivate this)
+set ruler							" show cursor position in status line
+set shiftwidth=4					" if softttabstop is set, convert tabs into white spaces 
+set showmatch						" show matching braces
+set showcmd							" show current user input in status line
+set showmode						" show currend mode in status line
+set smartindent						" set indentation method 
+set smarttab						" smart handling of tabstops 
+set softtabstop=4					" convert tabs into white spaces
+set tabstop=4						" set tabspace width
+set textwidth=80					" set usual maximal line width (in use with linebreak)
+set wrap							" wrap long lines
+
+" }}}
+
+" Color settings {{{
+
+if $COLORTERM == 'gnome-terminal'
+	set term=gnome-256color
+	" colorscheme kwdcolors
+	colorscheme inkpot
+else
+	colorscheme blackboard
+	" colorscheme kwdcolors
+	" colorscheme inkpot
+endif 
+if has("gui_running")
+	colorscheme inkpot
+endif
+
+highlight SpellErrors ctermfg=Red guifg=Red cterm=underline gui=underline term=reverse
+
+" }}}
+
+" Filetype based settings {{{
+
+" some settings used when editing python files
+if has("autocmd")
+	au BufEnter,BufNewFile *.py		set foldmethod=indent
+	au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4	textwidth=79
+endif 
+
+" }}}
+
+" MAPPINGS AND ABBREVATIONS
+
+" General mappings {{{
+
+map	Y y$
+
+map <C-j> 5j
+map <C-k> 5k
+
+map Q gq
+
+" Clear current search highlighting
+map <silent> K :silent nohlsearch <Return>
+
+" Jump to next <++> placeholder 
+map <C-l> <PLUG>IMAP_JumpForward
+imap <C-l> <PLUG>IMAP_JumpForward
+
+" Calculate the actual line using the bc calculator 
+map gbc yypkA =<Esc>jOscale=2<Esc>:.,+1!bc<Return>kJ
+
+" Use Shell with ``ctrl z``
+map <C-Z> :shell<Return>
+
+" Use ``g return`` as ``return`` in Insert Mode
+noremap g<Return> <INS><Return><ESC>h
+
+" Toggle folding 
+map <space> za
+
+" Show matching PDF file of current LaTeX document
+map \xv :!xpdf %<.pdf & <Return>
+map \ev :!evince %<.pdf & <Return>
+
+
+" Activate (german) spellchecking
+map <F8> :setlocal spell spelllang=de <return>
+
+" }}}
+
+" Insert Mode mappings {{{
+
+inoremap jj <Esc>
+inoremap JJ <Esc>
+inoremap Jj <Esc>
+inoremap jJ <Esc>
+inoremap jk <Esc>
+inoremap JK <Esc> 
+
+" Better Undo (in Insert Mode)
+inoremap <BS> <C-G>u<BS>
+inoremap <Del> <C-G>u<Del>
+
+" Paste from clipboard (in Insert Mode)
+imap "*p <c-o>"*p
+imap "*P <c-o>"*P
+
+
+" }}}
+
+" Visual-Mode mappings {{{
+
+" Visual shifting (does not exit Visual Mode)
+vnoremap < <gv
+vnoremap > >gv 
+
+" }}}
+
+" Abbrevations {{{
+
+cabbrev QQ qa
+cabbrev Q! qa!
+cabbrev qw wq
+cabbrev Wq wq
+cabbrev WW wqa
+cabbrev W! wqa!
+cabbrev wbd w<Return>:bd<Return>
+cabbrev wbn w<Return>:bn<Return>
+cabbrev sw SudoWrite %
+cabbrev w!! w !sudo tee % >/dev/null
+
+" Insert date (like: Tue Dec 16 12:07:00 CET 1997)
+iabbrev DD <C-R>=strftime("%Y-%m-%d")<Return>
+iabbrev DT <C-R>=strftime("%Y-%m-%d %H:%M")<Return>
+
+" }}}
+
+
+" FUNCTIONS
+
+" Toggle Quickfix Window {{{
+" http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
+
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+	if exists("g:qfix_win") && a:forced == 0
+		cclose
+		unlet g:qfix_win
+	else
+		copen 10
+		set modifiable
+		let g:qfix_win = bufnr("$")
+	endif
+endfunction
+
+nmap <silent> <F6> :QFix<Return>
+
+" }}}
+
+" PLUGINS
+
+" Buffer Explorer {{{
+
+map <C-b> :BufExplorer <Return>
+	
+" }}}
+
+" NerdTree {{{
+
+map <C-t> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+map <leader>t :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+	
+" }}}
+
+" Project {{{
+
+map gP <Plug>ToggleProject
+
+" }}}
+    
+" ShowMarks {{{
+
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+" Enable showmarks by default (else: use :ShowMarksOn to enable)
+let g:showmarks_enable = 1
+" For marks a-z
+highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
+" For marks A-Z
+highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
+" For all other marks
+highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
+" For multiple marks on the same line.
+highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
+	 
+" }}}
+
+" SnipMate {{{
+
+" Shortcut for reloading snippets, useful when developing
+fun! ReloadSnippets(ft)
+call ResetSnippets()
+call GetSnippets(a:snippets_dir, a:ft)
+endfun
+
+map \sr :call ReloadSnippets(&ft)
+
+" }}}
+
+" Voom {{{
+
+if has("autocmd")
+	au BufEnter,BufNewFile *.rst	noremap <F2> :Voom rest <Return>
+	au BufEnter,BufNewFile *.py		noremap <F2> :Voom python <Return>
+endif 
+
+" }}}
+"
+
+" Yankring {{{
+
+let g:yankring_paste_using_g = 0
+
+" }}}
