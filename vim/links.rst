@@ -16,6 +16,11 @@ Vim-Lehrbuch:
 
 * `Learn Vim-Scripting (The Hard Way) <http://learnvimscriptthehardway.stevelosh.com/>`_
 
+Vim-Kurzübersichten:
+
+* `Vim Cheat Sheet 1 <http://www.fprintf.net/vimCheatSheet.html>`_
+* `Vim Cheat Sheet 2 (PDF) <http://www.atmos.albany.edu/daes/atmclasses/atm350/vi_cheat_sheet.pdf>`_
+
 ..  http://vim.wikia.com/wiki/Vim_Tips_Wiki
 
 ..  http://www.softpanorama.org/Editors/Vimorama/vim_regular_expressions.shtml

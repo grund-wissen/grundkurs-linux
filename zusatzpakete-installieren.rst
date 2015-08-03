@@ -23,15 +23,15 @@ Anpassungen vorgenommen. Im Wesentlichen gibt es dafür zwei Gründe:
 
 .. rubric:: Paketverwaltung
 
-Die Systeme Linux Mint, Ubuntu und Debian nutzen `apt
-<http://wiki.ubuntuusers.de/Paketverwaltung>`_  ("Advanced Packaging Tool") zur
-Verwaltung und Aktualisierung der installierten Programme und Code-Bibliotheken.
+Die Systeme Linux Mint, Ubuntu und Debian nutzen `apt ("Advanced Packaging
+Tool") <http://wiki.ubuntuusers.de/Paketverwaltung>`_  zur Verwaltung und
+Aktualisierung der installierten Programme und Code-Bibliotheken.
 
 Je nach Desktop-Umgebung gibt es darauf aufbauende graphische
 Verwaltungsprogramme (beispielsweise `Synaptic
 <http://wiki.ubuntuusers.de/Synaptic>`_), die intuitiv mit der Maus bedienbar
-sind. Von einer Shell aus kann ``apt`` auch direkt auf einfache Weise genutzt
-werden (siehe :ref:`Administrator-Programme`).  Man kann
+sind. Von einer Shell aus kann :ref:`apt <apt>` auch direkt auf einfache Weise
+genutzt werden.  Man kann
 
 * mit ``apt-get update`` die Liste an verfügbaren Paketen aktualisieren, 
 * mit ``apt-cache search suchbegriff`` ein in Frage kommenden Paket suchen,
@@ -50,7 +50,7 @@ den entsprechenden ``aptitude``-Befehl ersetzen:
   
 Folgende Programm-Pakete, die als Superuser mittels ``apt`` hinzugefügt werden
 können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützlich:
-[#Ding1]_ [#Red]_ [#VLC1]_ [#XPDF]_
+[#Ding1]_ [#Red]_ [#VLC1]_ [#XPDF1]_
 
 .. list-table:: Programme mit graphischer Bedienoberfläche (GUI)
     :name: tab-zusatzprogramme-graphisch
@@ -93,7 +93,7 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
         IRC)
     * - `transmission <http://wiki.ubuntuusers.de/Transmission>`_
       - ein einfach bedienbares BitTorrent-Programm 
-    * - `xpdf`
+    * - `xpdf <http://www.foolabs.com/xpdf/>`_
       - ein schlanker, schneller PDF-Betrachter
     * - `vlc <http://wiki.ubuntuusers.de/VLC>`_
       - ein Audio- und Videoplayer, der alle gängigen Formate unterstützt (MPG,
@@ -167,10 +167,10 @@ Linux-Programm existiert.
     unter neueren Versionen von Linux Mint und Ubuntu bereits alle dafür nötigen
     Codecs vorinstalliert sind, müssen auf Debian-Systemen folgende Pakete
     manuell nachinstalliert werden:
-
+    
     ``sudo aptitude install libc6 w32codecs libdvdcss2``
 
-.. [#XPDF] Damit ``xpdf`` beim Öffnen einer PDF-Datei keine Fehlermeldung der
+.. [#XPDF1] Damit ``xpdf`` beim Öffnen einer PDF-Datei keine Fehlermeldung der
     Art ``Warning: Cannot convert string
     "-*-courier-medium-r-normal--12-*-*-*-*-*-iso8859-1" to type FontStruct``
     anzeigt, muss zusätzlich das Paket ``gsfonts-x11`` mittels :ref:`apt <apt>`

@@ -1,13 +1,12 @@
 .. index:: Sphinx
-.. _Sphinx-Tool:
+.. _Sphinx:
 
-Sphinx
-======
+Das Dokumentations-System Sphinx
+================================
 
-`Sphinx <http://sphinx-doc.org/>`_ ist ein in Python geschriebenes
-Shell-Programm, das aus einer bzw. mehreren Textdateien mit
-RestructuredText-Syntax auf dem lokalen Rechner wahlweise eine PDF-Datei oder
-eine bzw. mehrere HTML-Dateien erzeugen kann. [#]_
+Sphinx ist ein in Python geschriebenes Shell-Programm, das aus einer bzw.
+mehreren Textdateien mit RestructuredText-Syntax auf dem lokalen Rechner
+wahlweise eine PDF-Datei oder eine bzw. mehrere HTML-Dateien erzeugen kann. [#]_
 
 Da die Syntax von RestructuredText leicht erlernbar ist, erspart man sich dank
 Sphinx (mindestens) die Hälfte an Arbeit, die gewöhnlich nötig ist, wenn man
@@ -29,6 +28,8 @@ oder einem regulären Ausdruck in allen ``rst``-Dateien eines Projekts (inklusiv
 aller Unterverzeichnisse) gesucht werden. Dabei können selbstverständlich auch
 die üblichen Optionen von :ref:`grep <grep>` genutzt werden.
 
+
+.. _Installation von Sphinx:
 
 .. rubric:: Installation von Sphinx
 
@@ -71,6 +72,4 @@ LaTeX-System <gwil:LaTeX>` installiert werden.
     Webadresse (URL) zu, so ist die Seite bereits fertig!
 
 ..  `Filezilla <http://wiki.ubuntuusers.de/FileZilla>`_ oder Midnight Commander
-
-
 

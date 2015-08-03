@@ -30,11 +30,12 @@ project = 'Linux und Open Source'
 html_short_title = 'Linux und Open Source'
 htmlhelp_basename = 'Linux und Open Source'
 copyright = '2011-2015, Bernhard Grotz'
-version = '0.2.0b'
-release = '0.2.0b'
+version = '0.2.1'
+release = '0.2.1'
 language = 'de'
 spelling_lang = 'de_DE'
-exclude_patterns = ["notes.rst", "*/notes.rst", "**/notes.rst","todos.rst"]
+exclude_patterns = ["notes.rst", "*/notes.rst",
+                    "**/notes.rst","todos.rst","README.rst"]
 pygments_style = 'sphinx'
 html_theme = 'sphinxdoc'
 html_logo = "logo.png"

@@ -110,10 +110,10 @@ Windows oder MacOS nutzen mag, muss ``FAT32`` als Dateisystem verwendet werden.
 und bietet keine Unterscheidung von Groß- und Kleinschreibung.  
 
 
-.. _Passwortgeschützte Bereiche schaffen:
+.. _Passwortgeschützte Partitionen nutzen:
 
-Optional: Passwortgeschützte Bereiche schaffen
-----------------------------------------------
+Passwortgeschützte Partitionen nutzen
+-------------------------------------
 
 Linux ist als Betriebsystem verhältnismäßig sicher. Lässt man jedoch
 beispielsweise ein Notebook unbeaufsichtigt liegen, so helfen die besten

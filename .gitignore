@@ -6,3 +6,5 @@ _build/
 
 # Ignore this specific file
 grundkurs-linux.pdf
+.hgignore
+*.log

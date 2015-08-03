@@ -4,25 +4,35 @@
 Einleitung
 ==========
 
-Linux ist ein freies Betriebsystem und entspricht dem Open-Source-Grundgedanken:
+.. only:: latex
 
-* Das System und alle verfügbaren Programme sind zum einen ohne Einschränkung
-  kostenlos nutzbar. 
-* Auch der Quellcode des Systems bzw. der Programme kann frei heruntergeladen
-  und nach Belieben abgeändert werden.
+    Linux ist ein freies Betriebsystem und entspricht dem Open-Source-Grundgedanken:
 
-Dank der Sicherheit, Stabilität und Transparenz ist Linux das wohl beliebteste
-und am meisten verbreitete Betriebsystem für Großrechner, Router und Webserver.
-In jüngerer Zeit wird es -- nicht zuletzt aufgrund seiner Verwandtschaft zu dem
-ebenfalls auf dem Linux-Kernel basierende `Android
-<https://de.wikipedia.org/wiki/Android_(Betriebssystem)>`_-System -- auch als
-Betriebsystem für Desktop-PCs und Notebooks unter privaten Anwendern immer
-beliebter. 
+    * Das System und alle verfügbaren Programme sind zum einen ohne Einschränkung
+      kostenlos nutzbar. 
+    * Auch der Quellcode des Systems bzw. der Programme kann frei heruntergeladen
+      und nach Belieben abgeändert werden.
 
-An dieser Stelle möchte ich festhalten, welche Prinzipien und technischen
-Eigenschaften mich von Linux und dem Open-Source-Gedanken überzeugt haben und
-welche Anwendungen und Skripte mir seitdem in vielen Situationen weiter geholfen
-haben.
+    Dank der Sicherheit, Stabilität und Transparenz ist Linux das wohl
+    beliebteste und am meisten verbreitete Betriebsystem für Großrechner, Router
+    und Webserver. Mit vorkonfigurierten Varianten wie `Linux Mint
+    <http://www.linuxmint.org>`_ sind auch "normale" Aufgaben wie das Benutzen
+    von Office-Programmen, das Verwalten von Emails, das Abspielen von Musik-
+    und Videodateien, usw. auch unter Linux komfortabel und ohne
+    Programmierkenntnisse leicht umsetzbar. 
+    
+    Linux bietet allerdings -- im Gegensatz zu kommerziellen Systemen -- stets
+    die Möglichkeit, die Funktionsweise des Betriebsystems und seiner Programme
+    auch genauer zu verstehen. Auch können mittels einfacher Shell-Skripte
+    Aufgaben häufig auch automatisiert gelöst werden.
+
+.. only:: html
+
+    Ohne gute Werkzeuge und ein hilfsbereites Team macht jede Arbeit nur halb so
+    viel Spaß. An dieser Stelle möchte ich daher kurz festhalten, welche Prinzipien
+    und technischen Eigenschaften mich von Linux und dem Open-Source-Gedanken
+    überzeugt haben und welche Anwendungen und Skripte mir seitdem in vielen
+    Situationen weiter geholfen haben.
 
 
 .. _Grundgedanken von Open Source:

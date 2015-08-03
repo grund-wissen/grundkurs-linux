@@ -4,8 +4,8 @@
 
 .. _RestructuredText:
 
-RestructuredText
-================
+ReStructuredText-Elemente
+=========================
 
 `RestructuredText (RST) <http://de.wikipedia.org/wiki/ReStructuredText>`_ ist
 eine vereinfachte Auszeichnungssprache ("markup language"), mit deren Hilfe

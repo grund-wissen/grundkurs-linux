@@ -9,7 +9,7 @@ Bearbeitung von deren Inhalt. Jede Taste besitzt hier ihre eigene Funktion. (Ein
 Lernphase hilfreich sein!)
 
 Eigene Zuweisungen von beliebigen Funktionen auf Tasten(kombinationen) lassen
-sich mittels :ref:`Mappings` definieren. 
+sich mittels :ref:`Mappings <Mappings>` definieren. 
 
 
 .. _Bewegungsbefehle:
@@ -228,7 +228,7 @@ rückwärts nach Textstellen durchsuchen:
 
 Ist die Option ``hlsearch`` in der :ref:`Konfigurationsdatei` gesetzt, so werden
 die Treffer farblich hervorgehoben. Mittels ``:nohl`` ("no-highlight") oder
-einem entsprechenden `Mapping <Mappings>`_ kann die Hervorhebung wieder
+einem entsprechenden :ref:`Mapping <Mappings>` kann die Hervorhebung wieder
 aufgehoben werden.
 
 Zu dem jeweils nächsten Treffer gelangt man mit ``n``:

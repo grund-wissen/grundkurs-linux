@@ -279,7 +279,7 @@ Verzeichnis und seiner Unterverzeichnisse belegt wird.
 
 Mit ``echo variable`` kann der Inhalt einer Variablen angezeigt werden.
 Beispielsweise liefert ``echo $PATH`` die Namen aller Verzeichnisse, in denen
-nach ausführbaren Shellprogrammen gesucht wird.
+nach ausführbaren Shell-Programmen gesucht wird.
 
 Möchte man ``echo`` verwenden, um einen Text mittels einer :ref:`Pipe
 <Pipelines>` an ein anderes Programm zu übergeben, so muss beachtet werden, dass
@@ -358,6 +358,26 @@ Dateien an das darauf folgende Programm übergeben, wobei die einzelnen Dateien
 an der Stelle eingefügt werden, wo die geschweiften Klammern ``{}`` stehen. Die
 ``exec``-Anweisung muss am Ende mit ``\;`` abgeschlossen werden.
 
+Noch einfacher ist die Verwendung von :ref:`xargs <xargs>`, um die von ``find``
+gefundenen Dateinamen an ``grep`` zu übergeben. Sollen beispielsweise alle
+Dateien mit der Endung ``.rst`` nach einem angegebenen Text durchsucht
+werden, kann folgendes eingegeben werden:
+
+.. code-block:: bash
+
+    find ./ -name "*.rst" | xargs grep "Suchbegriff"
+
+Nutzt man diese Kombination häufiger, so kann dafür in der Konfigurationsdatei
+``~/.bashrc`` ein :ref:`alias <alias>` definiert werden:
+
+.. code-block:: bash
+
+    alias rstgrep='find ./ -name "*.rst" | xargs grep'
+
+Damit kann künftig ``rstgrep`` ebenso wie ``grep`` mit allen dort zur Verfügung
+stehenden Optionen aufgerufen werden.
+
+
 ..  find / -user benutzername -print 2>/dev/null
 
 ..  Findet alle Dateien eines Benutzers, gibt keine Fehlermeldungen aus, da
@@ -401,8 +421,6 @@ Suchmuster *nicht* zutrifft.
 Möchte man alle Ergebnisse anzeigen, die auf (mindestens) eines von mehreren
 angegebenen Suchmustern zutreffen, so können die einzelnen Suchmuster jeweils
 mit der Option ``-e`` angegeben werden.
-
-Grep wird 
 
 Als :ref:`Exit-Status <Rückgabewerte und Verkettung von Programmen>` liefert
 ``grep`` den Wert ``0``, wenn die Suche erfolgreich war, ``1``, wenn das
@@ -670,7 +688,7 @@ entsprechenden Dateien auch wirklich löschen möchte.
 Mit regulären Suchmustern wie ``*`` ist beim Löschen stets besondere Vorsicht
 geboten: Während ``rm -r *~`` ausgehend vom aktuellen Verzeichnis alle (von
 manchen Editoren angelegten) temporären Dateien löscht, würde ``rm -r ~*``
-sämtliche Inhalte des Homeverzeichnisses unwiderruflich löschen!
+sämtliche Inhalte des Home-Verzeichnisses unwiderruflich löschen!
 
 
 .. index:: rmdir
@@ -853,7 +871,7 @@ redselig).
 
     tar -czvf archiv.tar.gz datei1 datei2 ...
 
-Der Inhalt eines ``tar``-Archivs kan mittels ``tar tf archiv.tar`` angezeigt
+Der Inhalt eines ``tar``-Archivs kann mittels ``tar tf archiv.tar`` angezeigt
 werden. Mittels der Option ``x`` (extract) kann der Inhalt des Archivs wieder
 entpackt werden:
 
@@ -971,6 +989,29 @@ Mit ``which programm`` wird angezeigt, unter welchem Systempfad die
 auszuführende Datei des angegebenen Programms zu finden ist. 
 
 
+.. index:: xargs
+.. _xargs:
+
+``xargs``
+---------
+
+Mit ``xargs`` können die Ergebnisse eines Shell-Programms als Argumente eines
+anderen Shell-Programms verwendet werden. Dies ist beispielsweise bei der
+Kombination von :ref:`find <find>` und :ref:`grep <grep>` nützlich, um die von
+``find`` gefundenen Dateinamen nicht unmittelbar als (Eingabe-)Text, sondern als
+Zieldateien nach bestimmten Mustern zu durchsuchen.
+
+Sollen beispielsweise alle ``.tex``-Dateien nach einem bestimmten Begriff
+durchsucht werden, kann man folgendes eingeben:
+
+.. code-block:: bash
+
+    find ./ -name "*.tex" | xargs grep
+
+Ohne die Verwendung von ``xargs`` würden hier nur die Namen der Dateien, jedoch
+nicht deren Inhalt durchsucht.
+
+
 .. index:: zip, unzip
 .. _zip und unzip:
 
@@ -979,7 +1020,7 @@ auszuführende Datei des angegebenen Programms zu finden ist.
 
 Mit ``zip`` können mehrere Dateien zu einem Datei-Archiv gebündelt, mit
 ``unzip`` wieder entpackt werden. Die grundlegenden Befehle sehen etwa so aus
-(weitere Infos gibt's unter ``man zip`` bzw. ``man unzip``):
+(weitere Informationen erhält man mittels ``man zip`` bzw. ``man unzip``):
 
 * Mit ``zip archivname.zip datei1 datei2 ...`` werden mehrere Dateien zu einem
   (komprimierten) ``zip``-Archiv gebündelt. Mit ``zip -r`` können Dateien

@@ -9,10 +9,10 @@ Anpassungen. Diese habe ich als Super-User direkt am zentralen Installationspfad
 vorgenommen, so dass sie global für alle Dokumentations-Projekte gleichermaßen
 gelten.
 
-Mit der Basis-Installation und den folgenden Anpassungen kann die
-Grund-Wissen-Homepage aus dem `Quelltext-Archiv <../../grund-wissen.zip>`_ und
-dem `Graphik-Archiv <../../grund-wissen-bilder.zip>`_ durch den Aufruf ``make
-html`` bzw. ``make latexpdf`` nachgebaut werden. [#]_
+.. Mit der Basis-Installation und den folgenden Anpassungen kann die
+.. Grund-Wissen-Homepage aus dem `Quelltext-Archiv <../../grund-wissen.zip>`_ und
+.. dem `Graphik-Archiv <../grund-wissen-bilder.zip>`_ durch den Aufruf ``make
+.. html`` bzw. ``make latexpdf`` nachgebaut werden. [#]_
 
 
 .. _Suchfeld-Kommentar löschen:
@@ -432,9 +432,9 @@ Bezeichnung "Release" durch "Version" ersetzt.
 
     .. rubric:: Anmerkungen:
     
-.. [#]  Der Graphik-Pfad muss gegebenenfalls noch so angepasst werden, dass das
-        Hauptverzeichnis der Bilder als ``pics``-Ordner im Hauptpfad der
-        Dokumentation abgelegt ist. 
+.. .. [#]  Der Graphik-Pfad muss gegebenenfalls noch so angepasst werden, dass das
+        .. .. Hauptverzeichnis der Bilder als ``pics``-Ordner im Hauptpfad der
+        .. .. Dokumentation abgelegt ist. 
 
 .. [#Muc] Hierbei muss das LaTeX-Paket ``multicol`` installiert sein. Sollte dies
         nicht der Fall sein, kann es von der `CTAN-Projektseite

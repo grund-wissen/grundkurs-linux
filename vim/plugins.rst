@@ -63,6 +63,7 @@ folgendes eingegeben:
     " Install and use the following Plugins:
     Plugin 'vim-scripts/sudo.vim'
     Plugin 'scrooloose/nerdcommenter'
+    Plugin 'SirVer/ultisnips'
 
     " ...
 
@@ -277,7 +278,7 @@ Ausdrücke zu verwenden.
 
 Eine gute Übersicht über reguläre Ausdrücke in Perl-Syntax findet sich
 beispielsweise `hier
-<http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`_
+<http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`_.
 
 .. index:: Nerd-Commenter (Vim-Plugin)
 .. _Nerd-Commenter:
@@ -689,6 +690,7 @@ platziert haben, so kann man die ``~/.vimrc`` um folgende Zeile ergänzen:
 
 .. index:: Ultisnips (Vim-Plugin)
 .. _Ultisnips:
+.. _Snippets:
 
 Ultisnips
 ^^^^^^^^^
@@ -718,7 +720,21 @@ Snippets-Dateien nicht durch Aktualisierungen überschrieben werden. Nach der
 Installation befinden sich die Filetype-spezifischen Snippets im Verzeichnis
 ``~/.vim/bundle/vim-snippets/UltiSnips/``.
 
-Die Definition von Snippets erfolgt nach folgender Syntax:
+Zur Verwendung des Ultisnips-Plugin habe ich zudem folgende Zeilen in die
+Konfigurationsdatei ``~/.vimrc`` aufgenommen::
+
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsListSnippets="<s-tab>"
+
+    let g:UltiSnipsJumpForwardTrigger="<c-l>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+    let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
+    let g:UltiSnipsEditSplit="horizontal"
+    let g:UltiSnipsEnableSnipMate=0
+
+Die Definition der Snippets  im Verzeichnis
+``~/.vim/bundle/vim-snippets/UltiSnips/`` erfolgt nach folgender Syntax:
 
 .. code-block:: vim
 
@@ -756,6 +772,8 @@ durch Drücken der Jump-Forward-Taste zu so einer Position mit Textvorgabe, so
 kann diese durch ein erneutes Drücken der Jump-Forward-Taste bestätigt werden;
 gibt man hingegen einen beliebigen anderen Text ein, so wird die Textvorgabe
 durch diesen ersetzt.
+
+... to be continued ...
 
 .. Mittels Optionen kann 
 

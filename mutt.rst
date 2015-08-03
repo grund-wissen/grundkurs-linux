@@ -2,8 +2,8 @@
 
 .. _Mutt:
 
-Mutt
-====
+Email-Verwaltung mit Mutt
+=========================
 
 Mutt ist ein textbasierter Email-Client, der sich durch eine hohe
 Funktionalität und Konfigurierbarkeit auzeichnet. Er wird komplett 
@@ -307,8 +307,8 @@ und mit grundlegenden Inhalten gefüllt werden:
           # Alle Emails bekommen zunächst 0 Punkte:
           unscore *
       
-          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "montessori" im Absender-Namen enthalten: 
-          score '~f .*@montessori.*' +10
+          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen" im Empfänger-Namen enthalten: 
+          score '~t .*@grund-wissen.*' +10
       
           # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx" in der Betreff-Zeile enthalten: 
           score '~s .*sphinx.*'      +25
@@ -492,9 +492,9 @@ und mit grundlegenden Inhalten gefüllt werden:
           # Alle Emails bekommen zunächst 0 Punkte:
           unscore *
       
-          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "montessori" 
-          # im Absender-Namen enthalten: 
-          score '~f .*@montessori.*' +10
+          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen" 
+          # im Empfänger-Namen enthalten: 
+          score '~t .*@grund-wissen.*' +10
       
           # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx" 
           # in der Betreff-Zeile enthalten: 

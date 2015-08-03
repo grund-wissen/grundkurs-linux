@@ -21,7 +21,6 @@ des Alltags schnell und einfach zu erledigen.
     shell-scripting.rst
     sed-und-awk.rst
     make.rst
-    git.rst
 
 .. todo:: 
 
