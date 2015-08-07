@@ -1,310 +1,639 @@
-" SETTINGS
+" Allgemeine Einstellungen {{{
 
-" Path settings {{{
+" Syntax-Highlight anschalten:
+syntax on
 
-set dictionary+=~/.vim/dictionary/words
+" Spezielle Zeichen erlauben (beispielsweise deutsche Umlaute):
+set digraph
+
+" Text- und Datei-Encodierung auf UTF-8 setzen:
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Standard-Text-Formatierung festlegen:
+" (Siehe auch :help fo-table)
+set formatoptions=tcq
+
+" Anzahl an gespeicherten Kommandozeilen-Anweisungen:
+set history=500
+
+" Maus-Unterstützung in allen Vim-Modi erlauben:
+set mouse=a
+
+" Erweiterte Vi-Funktionen erlauben:
+set nocompatible
+
+" Diesen Pfad beim Start von Vim nach Script-Dateien durchsuchen:
 set runtimepath+=/usr/share/vim/addons/
 
 " }}}
+" Buffer und Backup-Einstellungen {{{
 
-" General settings {{{
+" Wechlse automatisch in das Verzeichnis der geöffneten Datei:
+set autochdir
 
-syntax on							" activate syntax highlighting
-filetype on							" activate filetype support
-filetype indent on					" activate filetype based indentation
-filetype plugin on					" activate filetype based plugins
+" Lade die aktuelle Datei neu, wenn sie extern verändert wurde:
+set autoread
 
-set digraph							" enable special characters, e.g. german umlaute.
-set encoding=utf-8					" set encoding to utf-8.
-set fileencoding=utf-8				" set file encoding to utf-8.
-set nocompatible					" vim should not exactly behave like vi (e.g. use cursor-keys).
-set history=500						" number of commandline commands stored.
-set mouse=a							" allow mouse usage in every mode.
+" Sichere Dateien automatisch bei kritischen Events:
+set autowriteall
 
-" }}}
+" Erstelle einen Backup von jeder geöffneten Datei im Backup-Verzeichnis:
+set backup
+set backupdir=$HOME/.vim/backupdir
 
-" Buffer and backup settings {{{
+" Erlaube es, Buffer ohne Speichern zu wechseln:
+set hidden
 
-set autochdir						" current working path = path of current file
-set autoread						" reload file if it's changed by another programm
-set autowriteall					" automatically save files on critical events
-set backup 							" create a backup of each opened file
-set backupdir=$HOME/.vim/backupdir	" store backup files there
-set hidden							" permit changing buffers without saving
-set modeline						" regard the last lines of a file as possible vim commands
-set modelines=5						" regard this number of lines at the end of a file as modelines
-set modifiable						" mark quick-fix window as writeable
-set swapfile						" store information about which files are currently in use
-set directory=~/tmp,/var/tmp,/tmp	" look up for swapfiles there
-set swapsync=fsync					
+" Setze das Quickfix-Fenster als "modifiable":
+set modifiable
 
-set suffixes=.aux,.bak,.dvi,.ps,.swp,.tar,.pdf		" ignore such files when calling :edit
+" Speichere, welche Dateien aktuell geöffnet sind:
+" (Verhindert ein mehrfaches Öffnen der selben Datei)
+set swapfile
 
-" }}} 
+" Durchsuche diese Verzeichnisse nach Swapfiles:
+set directory=~/tmp,/var/tmp,/tmp
 
-" Text, fold and input settings {{{
-
-set backspace=2						" ignore linebreaks when using backspace
-set foldmarker ={{{,}}}				" use these character combinationes to delimit fold areas
-set foldmethod=marker				" use foldmarkers as standard fold method
-set noexpandtab						" don't convert tabs to spaces
-set nojoinspaces					" insert only one space when joining lines
-set nopaste							" interprete user input (not 'raw' mode)
-set pastetoggle=<F10>				" toggle between paste (raw input mode) and nopaste
+" Verwende fsync als Swap-Methode:
+set swapsync=fsync
 
 " }}}
+" Text, Faltungs- und Eingabe-Einstellungen {{{
 
-" Search and commandline settings {{{
+" Ignoriere Zeilenumbrüche beim Drücken der Backspace-Taste:
+set backspace=2
 
-set complete+=k						" scan files given with the dictionary option
-set complete+=w						" scan buffers of other windows
-set complete+=u						" scan unloaded buffers in buffer list
-set complete+=t						" tag completion 
-set completeopt=menuone,longest		" set completion options
-set hlsearch						" highlight search results
-set ignorecase						" ignore uppercase/lowercase by default
-set incsearch						" start search on typing
-set smartcase						" regard case if search expression contains uppercase letters
-set wildmenu						" activate tab completion on command line
-set wildmode=list:longest,full		" set command line completion options 
-set wrapscan						" restart search from the beginning if file end is reached
+" Verwende beim Kopieren/Einfügen die systemweite Zwischenablage ("*):
+set clipboard+=unnamed
 
-" }}}
+" Verwende diese Zeichenkombination als Begrenzungen für Faltbereiche:
+set foldmarker ={{{,}}}
 
-" Layout settings {{{
+" Verwende Marker als Standard-Faltungsmethode:
+set foldmethod=marker
 
-set ballooneval						" allow popup windows (e.g. for completion)
-set balloondelay=200				" set delay time (ms) for opening popup windows 
-set balloonexpr="textstring"		 
-set cmdheight=1						" set height value of the commandline 
-set guicursor=a:blinkon0			" deactivate cursor blink in gvim
-set guioptions-=T					" don't show toolbar in gvim
-set guioptions-=r					" don't show ?? in gvim 
-set guioptions-=m					" don't show menubar in gvim
-set laststatus=2					" permanently show infos on status line
-set lazyredraw						" don't redraw the screen while macros are running
-set linebreak						" automatically break lines longer then textwidth value
-set number							" show line numbers (type :set nonumber to deactivate this)
-set ruler							" show cursor position in status line
-set shiftwidth=4					" if softttabstop is set, convert tabs into white spaces 
-set showmatch						" show matching braces
-set showcmd							" show current user input in status line
-set showmode						" show currend mode in status line
-set smartindent						" set indentation method 
-set smarttab						" smart handling of tabstops 
-set softtabstop=4					" convert tabs into white spaces
-set tabstop=4						" set tabspace width
-set textwidth=80					" set usual maximal line width (in use with linebreak)
-set wrap							" wrap long lines
+" Wandle Tab-Zeichen nicht automatisch in Leerzeichen um:
+set noexpandtab
+
+" Füge nur *ein* Leerzeichen ein, wenn Zeilen zusammengefügt werden:
+set nojoinspaces
+
+" Interpretiere die Eingaben des Bentzers (kein "Raw"-Modus):
+set nopaste
+
+" Wechsle zwischen "past" und "nopaste"-Modus:
+set pastetoggle=<F10>
 
 " }}}
+" Such-Einstellungen {{{
 
-" Color settings {{{
+" Verwende folgenden Grep-Befehl:
+set grepprg=grep\ -nH\ $*
 
-if $COLORTERM == 'gnome-terminal'
-	set term=gnome-256color
-	" colorscheme kwdcolors
-	colorscheme inkpot
-else
-	colorscheme blackboard
-	" colorscheme kwdcolors
-	" colorscheme inkpot
-endif 
+" Hebe Suchergebnisse durch Highlighting hervor:
+set hlsearch
+
+" Ignoriere Groß-/Kleinschreibung bei der Suche:
+set ignorecase
+
+" Suche bereits während der Eingabe des Suchstrings:
+set incsearch
+
+" Berücksichtige Groß-/Kleinschreibung, wenn ein Großbuchstabe eingegeben wird:
+set smartcase
+
+" Führe die Suche am Anfang der Datei fort, wenn das Ende erreicht ist:
+set wrapscan
+
+" }}}
+" Layout-Einstellungen {{{
+
+" Erlaube Popup-Fenster für Vervollständigungen:
+set ballooneval
+
+" Starte Completion-Popups mit dieser Verzögerung (in Millisekunden):
+set balloondelay=200
+set balloonexpr="textstring"
+
+" Eine Zeile für die Kommandozeile freihalten:
+set cmdheight=1
+
+" Schalte den blinkenden Cursor in GVim ab:
+set guicursor=a:blinkon0
+
+" Schalte die Toolbar und Menubar in GVim ab:
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+
+" Zeige die Statuszeile permanent an:
+set laststatus=2
+
+" Aktualisiere die Anzeige nur wenn nötig:
+" (nicht während des Ausführens von Makros)
+set lazyredraw
+
+" Breche Zeilen automatisch nach 80 Zeichen um (textwidth):
+set linebreak
+
+" Zeige keine Zeilennummern an:
+set nonumber
+
+" Setze die Breite bei Einrückungen mit automatischem Texteinzug auf 4:
+set shiftwidth=4
+
+" Hebe zugehörige Klammern durch Highlighting hervor:
+set showmatch
+
+" Zeige rechts in der Info-Zeile die markierte(n) Zeichen/Zeilen an:
+set showcmd
+
+" Zeige den aktuellen Modus an:
+set showmode
+
+" Aktiviere automatische Einrückungen:
+set smartindent
+
+" Aktiviere automatischen Texteinzug:
+set smarttab
+
+"Setze die Breite bei Einrückungen mit < und > auf 4:
+set softtabstop=4
+
+" Setze die Breite eines Tab-Zeichens auf 4:
+set tabstop=4
+
+" Lege die maximale Textweite je Zeile fest:
+set textwidth=80
+
+" Führe zu lange Zeilen in der folgenden Zeile fort:
+set wrap
+
+" Darstellung unsichtbarer Zeichen wie Tabulatoren und Leerzeichen am Zeilenende
+set list
+set list listchars=tab:\ \ ,trail:·
+
+" }}}
+" Farb-Einstellungen {{{
+
+" Lege maximale Anzahl an Farben fest:
+set t_Co=256
+
+colorscheme waldgeist
 if has("gui_running")
 	colorscheme inkpot
 endif
 
-highlight SpellErrors ctermfg=Red guifg=Red cterm=underline gui=underline term=reverse
+" }}}
+" Kommandozeile {{{
+
+" TODO Beschreibung
+set dictionary+=~/.vim/dictionary/words
+set complete+=k
+set complete+=u
+
+" TODO Art des Menüs und der Vervollständigung:
+set completeopt=menuone,longest
+
+" Berücksichtige Vim-Anweisungen am Anfang oder Ende von Dateien:
+set modeline
+
+" Berücksichtige die fünf letzten Zeilen als Modelines:
+set modelines=5
+
+" Zeige die Position des Cursors in der Statuszeile an:
+set ruler
+
+" Interpretiere folgende Ascii-Zeichen als mögliche Teile eines Wortes:
+set iskeyword= "@,48-57,_,192-255"
+
+" Lasse beim Scrollen stets zwei Zeilen unter/über dem Cursor eingeblendet:
+set scrolloff=2
+
+" Ignoriere diese Endungen beim Öffnen von Dateien:
+set suffixes=.aux,.bak,.dvi,.ps,.swp,.tar,.pdf
+
+" Erlaube Tab-Vervollständigung in der Kommandozeile
+set wildmenu
+
+" Optionen für die Kommandozeilen-Vervollständigung:
+set wildmode=list:longest,full
+
+" Ignoriere dabei Dateien mit diesen Endungen:
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*.swp,*~
+set wildignore+=*.zip
+
+" }}}
+" Rechtschreibung {{{
+
+" Bei Verwendung der folgenden Funktion werden die entsprechenden Wörterbücher
+" automatisch heruntergeladen, wenn sie noch nicht vorhanden sind.
+
+" Rechtschreibprüfung mit <F8> an- und aussschalten:
+let g:myLang = 1
+let g:myLangList = ['nospell', 'de_20,en_us']
+function! MySpellLang()
+  "loop through languages
+  if g:myLang == 0 | setlocal nospell | endif
+  if g:myLang == 1 | let &l:spelllang = g:myLangList[g:myLang] | setlocal spell | endif
+  echomsg ''
+  let g:myLang = g:myLang + 1
+  if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
+endfunction
+nmap <F8> :call MySpellLang()<CR>
+imap <F8> <C-o>:call MySpellLang()<CR>"
 
 " }}}
 
-" Filetype based settings {{{
+" Plugin-Verwaltung (Vundle)  {{{
 
-" some settings used when editing python files
-if has("autocmd")
-	au BufEnter,BufNewFile *.py		set foldmethod=indent
-	au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4	textwidth=79
-endif 
+set nocompatible
+filetype off
+
+" Diesen Pfad beim Start von Vim berücksichtigen:
+set rtp+=$HOME/.vim/bundle/vundle/
+call vundle#rc()
+
+" Folgende Plugins sollen beim Start geladen werden:
+
+" Vundle: Paketmanager
+Plugin 'gmarik/vundle'
+
+" MW-Utils und tlib: Hilfsbibliotheken
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
+" a.vim: Schnelles Wechseln zwischen .c und .h-Dateien
+Plugin 'vim-scripts/a.vim'
+
+" Abolish: Abkürzungen einfacher definieren
+Plugin 'tpope/vim-abolish'
+
+" AG: Verbessertes Grep-Plugin
+Plugin 'rking/ag.vim'
+
+" Align: Einfaches Ausrichten von Tabellen
+Plugin 'jezcope/vim-align'
+
+" Buffer-Explorer und Minibuf-Explorer: Schnelles Wechseln zwischen Buffern
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'fholgado/minibufexpl.vim'
+
+" Calendar: Termine im Vim verwalten
+Plugin 'itchyny/calendar.vim'
+
+" CtrlP: Schnelles Öffnen von Dateien
+Plugin 'kien/ctrlp.vim'
+
+" Easy-Align: Einfaches Ausrichten von Text
+Plugin 'junegunn/vim-easy-align'
+
+" EasyMotion: Schnelles Springen zu bestimmten Textstellen
+Plugin 'Lokaltog/vim-easymotion'
+
+" Eregex: Perl-Compatible-Regular Expressions in Vim
+Plugin 'othree/eregex.vim'
+
+" Foldsearch: Faltungen bei Suchergebnissen
+Plugin 'embear/vim-foldsearch'
+
+" Fugitive: Git Plugin
+Plugin 'tpope/vim-fugitive'
+
+" Matchit: Besseres Pair-Matching (%-Taste)
+Plugin 'vim-scripts/matchit.zip'
+
+" Nerd-Commenter: Kommentier-Hilfe
+Plugin 'scrooloose/nerdcommenter', {'pinned': 1}
+
+" Nerd-Tree: Dateibrowser
+Plugin 'scrooloose/nerdtree'
+
+" Rainbow Parentheses: Farbige Hervorhebung von Klammer-Paaren
+Plugin 'luochen1990/rainbow'	
+
+" Renamer: Schnelles Umbenennen von Dateien
+Plugin 'qpkorr/vim-renamer'
+
+" Repeat.vim: Verbesserte Repeat-Funktion (.)
+Plugin 'tpope/vim-repeat'
+
+" RST-Tables: RST-Tabellen einfach erzeugen
+Plugin 'nvie/vim-rst-tables'
+
+" Showmarks: Mache Marker (a-z,A-Z) sichtbar
+Plugin 'vim-scripts/ShowMarks7'
+
+" Sudo: Dateien nachträglich mit Sudo-Rechten editieren
+Plugin 'vim-scripts/sudo.vim'
+
+" SuperTab: Tab-Vervllständigung
+Plugin 'ervandew/supertab'
+
+" Tagbar: Tags für C un Python-Code
+Plugin 'majutsushi/tagbar'
+
+" Ultisnips: Snippets
+Plugin 'SirVer/ultisnips'
+
+" Vim-Snippets: Standard-Snippets
+Plugin 'honza/vim-snippets', {'pinned': 1}
+
+" Snipmate: (besser UltiSnips verwenden!)
+" Plugin 'garbas/vim-snipmate'
+
+" Surround: Ändern von Klammern, Anführungszeichen usw. um Textstellen herum
+Plugin 'tpope/vim-surround'
+
+" Vicle: Code-Stücke aus Vim heraus an tmux schicken
+Plugin 'vim-scripts/Vicle'
+
+" Voom: Inhaltsverzeichnis (beispielsweise für RST-Dateien)
+Plugin 'vim-voom/VOoM'
+
+" Yankring: Einfügen von vormals kopiertem Text
+Plugin 'vim-scripts/YankRing.vim'
+
+
+" Dateityp-Erkennung aktivieren:
+filetype on	
+
+" Einrückungen und Plugins nach Dateityp aktivieren:
+filetype indent on
+filetype plugin on
+
+" }}}
+" Plugin-Einstellungen {{{
+
+" Buffer Explorer
+	nmap gB :BufExplorer<CR>
+
+" Calendar
+	let g:calendar_google_calendar = 0
+	let g:calendar_google_task = 0
+	let g:calendar_cache_directory= "~/.vim/bundle/calendar.vim/"
+	nmap gC :Calendar<CR>
+
+" CtrlP
+	" CtrlP mit Ctrl g starten (Ctrl p verursacht Konflikt mit Yankring!)
+	let g:ctrlp_map = '<c-g>'
+	let g:ctrlp_extensions = ['bookmarkdir']
+	" CtrlP -> Verwende Ag als Suche:
+	" (Funktioniert eventuell nicht mit  ctrlp_show_hidden und ctrlp_custom_ignore)
+	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	let g:ctrlp_custom_ignore = ''
+	" Behalte die Cache-Files beim Schließen von Vim
+	let g:ctrlp_clear_cache_on_exit=0
+
+" Easy Motion
+	let g:EasyMotion_smartcase = 1
+	nmap <Leader>s <Plug>(easymotion-s)
+	nmap <c-S> <Plug>(easymotion-s2)
+	nmap <c-s> <Plug>(easymotion-s)
+	nmap <Leader><Leader>s <Plug>(easymotion-s2)
+	nmap <Leader>S <Plug>(easymotion-sn)
+	nmap <Leader>t <Plug>(easymotion-t)
+	nmap <Leader>T <Plug>(easymotion-tn)
+	nmap <Leader>j <Plug>(easymotion-j)
+	nmap <Leader>k <Plug>(easymotion-k)
+	nmap <Leader>f <Plug>(easymotion-lineforward)
+	nmap <Leader>F <Plug>(easymotion-linebackward)
+
+" ERegex
+	let g:eregex_default_enable = 1
+	let g:eregex_forward_delim = '/'
+	let g:eregex_backward_delim = '?'
+	nmap <leader>/ :call eregex#toggle()<CR>
+	"let g:eregex_force_case = 1
+
+" Minibuf-Explorer
+	let g:miniBufExplSplitBelow=1
+	map <F4> :MBEToggle<CR>
+
+" NerdTree
+	map <C-t> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+	map <leader>t :NERDTreeFind<CR>
+	let NERDTreeShowBookmarks=1
+	let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '_themes', '_build', '_ext', '_plot', '_templates', '_static']
+	let NERDTreeChDirMode=0
+	let NERDTreeQuitOnOpen=0
+	let NERDTreeShowHidden=0
+	let NERDTreeKeepTreeInNewTab=0
+	let g:NERDTreeWinPos='right'
+
+" Rainbow Parenthesis
+	let g:rainbow_active = 1
+
+" ShowMarks
+	let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	" ShowMarks standardmäßig aktivieren
+	let g:showmarks_enable = 1
+	" Highlighting für a-z
+	highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
+	" Highlighting für A-Z
+	highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
+	" Highlighting für alle anderen Marken:
+	highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
+	" Highlighting für mehrere Marken in der gleichen Zeile:
+	highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
+
+" SuperTab
+	let g:SuperTabDefaultCompletionType = "context"
+
+" Syntastic
+	let g:syntastic_python_checkers = ['pyflakes']
+
+
+" Tagbar
+	" Tagbar mit gT öffnen/schließen:
+	nmap gT :TagbarToggle<CR>
+	let g:tagbar_left = 1
+	let g:tagbar_width = 30
+
+
+" UltiSnips
+	" Löse Snippets aus:
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsListSnippets="<s-tab>"
+
+	" Springe zum nächsten Marker:
+	let g:UltiSnipsJumpForwardTrigger="<c-l>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+	" Mache nichts, wenn keine weiteren Marker vorhanden:
+	imap <c-l> <c-o>l<c-o>h
+	imap <c-h> <c-o>h<c-o>l
+
+
+	" :UltiSnipsEdit soll die Snippets in gesplittetem Fenster öffnen:
+	let g:UltiSnipsEditSplit="horizontal"
+	let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
+	let g:UltiSnipsEnableSnipMate=0
+
+" Vicle Plugin
+	let g:vicle_use = 'tmux' " Can be 'screen' or 'tmux'
 
 " }}}
 
-" MAPPINGS AND ABBREVATIONS
+" Eigene Tastenkombinationen (Mappings) {{{
 
-" General mappings {{{
+" Mappings für den Normalmodus {{{
 
-map	Y y$
+" Schnelles Bewegen mit Ctrl-h und Ctrl-l
 
-map <C-j> 5j
-map <C-k> 5k
+" Schnelles Auf- und Abbewegen
+nmap <c-h> 5h
+nmap <c-l> 5l
 
-map Q gq
+" Schnelles Scrollen
+noremap <c-e> 5<C-e>
+noremap <c-y> 5<C-y>
 
-" Clear current search highlighting
-map <silent> K :silent nohlsearch <Return>
+" Faltungen mit Leertaste öffnen/schließen:
+nmap <space> za
 
-" Jump to next <++> placeholder 
-map <C-l> <PLUG>IMAP_JumpForward
-imap <C-l> <PLUG>IMAP_JumpForward
+" Schnelles Wechseln zwischen Buffern
+nmap <c-h> <ESC>:bn<CR>
+nmap <c-l> <ESC>:bp<CR>
 
-" Calculate the actual line using the bc calculator 
-map gbc yypkA =<Esc>jOscale=2<Esc>:.,+1!bc<Return>kJ
+" Highlightings von Suchergebnissen mit K entfernen:
+nmap <silent> K :silent nohl<CR>
 
-" Use Shell with ``ctrl z``
-map <C-Z> :shell<Return>
+" Mit <c-z> Vim in den Hintergrund verschieben und zur Shell wechseln:
+" (Zurück mittels exit oder <c-d>)
+nmap <c-z> :shell<CR>
 
-" Use ``g return`` as ``return`` in Insert Mode
-noremap g<Return> <INS><Return><ESC>h
+" g-Enter und g-Leertaste wie Enter und Leertaste im Einfügemodus:
+nmap g<CR> <INS><CR><ESC>h
+nmap g<space> i<space><esc>
 
-" Toggle folding 
-map <space> za
+" Schnelles Laden der ~/.vimrc:
+nmap \rc :source ~/.vimrc<cr>
 
-" Show matching PDF file of current LaTeX document
-map \xv :!xpdf %<.pdf & <Return>
-map \ev :!evince %<.pdf & <Return>
+" Compiliere aktuelle LaTeX-Datei mit pdflatex:
+nmap \la :w<cr>:!pdflatex -shell-escape %<.tex<CR>
+nmap \xv :!xpdf -q %<.pdf &<cr>
+nmap \ev :!evince %<.pdf &<cr>
 
 
-" Activate (german) spellchecking
-map <F8> :setlocal spell spelllang=de <return>
+" Summiere ausgewählte Zeilen:
+vmap gs y'>p:'[,']-1s/$/+/\|'[,']+1j!<CR>'[0"wy$:.s§.*§\=w§<CR>'[yyP:.s/./=/g<CR>_j
+" Werte aktuelle Zeile mit bc aus:
+nmap gbc yypkA =<Esc>jOscale=2<Esc>:.,+1!bc<CR>kJ
+
+" Shortkeys für das Editieren von Graphviz-Dateien
+" nmap <leader>dn :!neato -Tpng % > %<.png<CR>:!feh %<.png<CR>
+" nmap <leader>dd :!dot -Tpng % > %<.png<CR>
+" nmap <leader>df :!feh %<.png<CR>
 
 " }}}
+" Mappings für den Einfüge-Modus {{{
 
-" Insert Mode mappings {{{
+" Schnelles Wechseln in den Normalmodus:
+imap jk <esc>
 
-inoremap jj <Esc>
-inoremap JJ <Esc>
-inoremap Jj <Esc>
-inoremap jJ <Esc>
-inoremap jk <Esc>
-inoremap JK <Esc> 
-
-" Better Undo (in Insert Mode)
-inoremap <BS> <C-G>u<BS>
-inoremap <Del> <C-G>u<Del>
-
-" Paste from clipboard (in Insert Mode)
+" Auch im Insert-Modus aus Zwischenlage einfügen
 imap "*p <c-o>"*p
 imap "*P <c-o>"*P
 
 
 " }}}
+" Mappings für den Kommandozeilen-Modus {{{
 
-" Visual-Mode mappings {{{
+cnoremap <C-A> <Home>
 
-" Visual shifting (does not exit Visual Mode)
-vnoremap < <gv
-vnoremap > >gv 
+" }}}
+" Mappings für den visuellen Modus {{{
+
+" Shiften von Text im visuellen Modus:
+" (ohne den visuellen Modus zu verlassen)
+vmap < <gv
+vmap > >gv
 
 " }}}
 
-" Abbrevations {{{
+" }}}
 
-cabbrev QQ qa
-cabbrev Q! qa!
-cabbrev qw wq
-cabbrev Wq wq
-cabbrev WW wqa
-cabbrev W! wqa!
-cabbrev wbd w<Return>:bd<Return>
-cabbrev wbn w<Return>:bn<Return>
-cabbrev sw SudoWrite %
-cabbrev w!! w !sudo tee % >/dev/null
+" Abkürzungen (Abbreviations) {{{
 
-" Insert date (like: Tue Dec 16 12:07:00 CET 1997)
-iabbrev DD <C-R>=strftime("%Y-%m-%d")<Return>
-iabbrev DT <C-R>=strftime("%Y-%m-%d %H:%M")<Return>
+" Aktuelles Datum (und Zeit) einfügen, wenn DD  oder DT eingegeben wird:
+" Beispiel: Tue Dec 16 12:07:00 CET 1997
+iab DD <C-R>=strftime("%Y-%m-%d")<CR>
+iab DT <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+
+" Schreibe die aktuelle Datei mit Rootrechten:
+" (Nachträgliche Passwort-Eingabe notwendig)
+cab w!! w !sudo tee % >/dev/null
+
+" Weitere Abkürzungen für die Kommandozeile:
+cab qw wq
+cab QQ qa
+cab WW wqa
+cab wbd w<Return>:bd<Return>
+cab wbn w<Return>:bn<Return>
+cab sw SudoWrite %
+cab w!! w !sudo tee % >/dev/null
 
 " }}}
 
+" AutoCommands {{{
 
-" FUNCTIONS
+if has("autocmd")
 
-" Toggle Quickfix Window {{{
+	" Ursprüngliche Format-Optionen beibehalten:
+	au BufEnter,BufNewFile *		set formatoptions-=cro
+
+	" Y soll bis zum Zeilenende kopieren:
+	au BufEnter,BufNewFile *		map Y y$
+
+	" Schnelles Navigieren mit Ctrl-j und Ctrl-k
+	au BufEnter,BufNewFile *		map <c-j> 5j
+	au BufEnter,BufNewFile *		map <c-k> 5k
+
+	" R-Dateien erkennen:
+	au BufEnter,BufNewFile *.R		setf r
+	au BufEnter,BufNewFile *.R		set syntax=r
+
+	" Diese Buchstaben sind in C Teile ganzer "Wörter":
+	au BufEnter,BufNewFile *.c		set iskeyword="a-z,A-Z,48-57,_,.,-,>"
+
+	au BufEnter,BufNewFile *.py		set foldmethod=indent
+	au BufEnter,BufNewFile *.py		noremap <F2> :VoomToggle python<CR>
+	au BufEnter,BufNewFile *.rst	noremap <F2> :VoomToggle rest<CR>
+	au BufEnter,BufNewFile *.rst	noremap <F3> :VoomQuitAll <CR>
+
+	" Auch neue Dateien sollen "tex" als Filetype haben (nicht "plaintex"):
+	au BufEnter,BufNewFile *.tex	setf tex
+
+	au FileType python				let w:vicle_selection_string = "0v}y"
+	au FileType python				setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4	textwidth=80
+
+endif "has("autocmd")
+
+" }}}
+
+" Funktionen {{{
+
+" Quickfix-Leiste mit <F5> ein- und ausblenden
 " http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
 
 command -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
-	if exists("g:qfix_win") && a:forced == 0
-		cclose
-		unlet g:qfix_win
-	else
-		copen 10
-		set modifiable
-		let g:qfix_win = bufnr("$")
-	endif
+  if exists("g:qfix_win") && a:forced == 0
+	cclose
+	unlet g:qfix_win
+  else
+	copen 10
+	set modifiable
+	let g:qfix_win = bufnr("$")
+  endif
 endfunction
-
-nmap <silent> <F6> :QFix<Return>
-
-" }}}
-
-" PLUGINS
-
-" Buffer Explorer {{{
-
-map <C-b> :BufExplorer <Return>
-	
-" }}}
-
-" NerdTree {{{
-
-map <C-t> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>t :NERDTreeFind<CR>
-
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
-	
-" }}}
-
-" Project {{{
-
-map gP <Plug>ToggleProject
-
-" }}}
-    
-" ShowMarks {{{
-
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-" Enable showmarks by default (else: use :ShowMarksOn to enable)
-let g:showmarks_enable = 1
-" For marks a-z
-highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
-" For marks A-Z
-highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
-" For all other marks
-highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
-" For multiple marks on the same line.
-highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
-	 
-" }}}
-
-" SnipMate {{{
-
-" Shortcut for reloading snippets, useful when developing
-fun! ReloadSnippets(ft)
-call ResetSnippets()
-call GetSnippets(a:snippets_dir, a:ft)
-endfun
-
-map \sr :call ReloadSnippets(&ft)
+nmap <silent> <F5> :QFix<CR>
 
 " }}}
 
-" Voom {{{
-
-if has("autocmd")
-	au BufEnter,BufNewFile *.rst	noremap <F2> :Voom rest <Return>
-	au BufEnter,BufNewFile *.py		noremap <F2> :Voom python <Return>
-endif 
-
-" }}}
-"
-
-" Yankring {{{
-
-let g:yankring_paste_using_g = 0
-
-" }}}
+# vim:ft=vim:

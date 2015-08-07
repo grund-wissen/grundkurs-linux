@@ -55,7 +55,7 @@ html_search_language = 'en'
 html_search_options = {'type': 'default'}
 
 trim_footnote_reference_space = True
-todo_include_todos = True
+#todo_include_todos = True
 
 
 

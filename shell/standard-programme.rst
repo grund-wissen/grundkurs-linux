@@ -733,6 +733,8 @@ Verwendung von ``ssh`` -- sogar auf einem anderen Rechner befinden.
 
 .. index:: Unison
 
+.. rubric:: Unison
+
 Möchte man eine Synchronisierung zweier Verzeichnisse nicht nur in eine Richtung
 (ist der Backup "neuer" als die Quelle, so nimmt ``rsync`` keine Veränderungen
 vor), so ist das Tool `Unison <http://wiki.ubuntuusers.de/Unison>`_ bzw. das
@@ -741,7 +743,7 @@ lässt sich über die gleichnamigen Pakete via ``apt`` installieren:
 
 .. code-block:: bash
 
-    sudo apt-get install unison-gtk
+    sudo apt-get install unison unison-gtk
 
 Nach der Installation kann Unison mittels ``unison-gtk`` aufgerufen werden. Es
 verwendet intern ebenfalls ``rsync``. Um es zu benutzen, erstellt man ein

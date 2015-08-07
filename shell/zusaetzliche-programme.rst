@@ -786,7 +786,7 @@ Auswahl genutzt werden kann. Eine Änderung des Namens eines Fensters kann mit
 gewohnt ``exit`` eingeben oder ``Ctrl a`` und ``k`` ("kill") drücken.
 
 
-.. index:: tesseract
+.. index:: tesseract, Texterkennung (OCR)
 .. _tesseract:
 
 ``tesseract``
@@ -916,76 +916,6 @@ Multipage-Tiff-Datei in ein PDF-Dokument bereit.
 Schließlich kann auch das Programm ``unpaper`` zur Aufbesserung von Scans
 genutzt werden. Infos hierzu gibt es unter `unpaper im Ubuntuuser-Wiki
 <http://wiki.ubuntuusers.de/unpaper?highlight=tiffcp>`_.
-
-..  
-    Unison
-
-    http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html
-
-    Text-Version: unison folder-a folder-b
-    Eventuell unison -ui text folder-a folder-b
-    oder alias in .bashrc
-
-    To follow Unison's recommendation, press the ``f`` at the prompt.
-
-    If you want to do something different with this file, press ``<`` or ``>``
-    to force the change to be propagated from right to left or from left to
-    right, or else press ``/`` to skip this file and leave both replicas alone. 
-
-    When Unison stops to wait for input from the user, pressing ``?`` will
-    always give a list of possible responses and their meanings. 
-
-    Ignore patterns can also be specified on the command line, if you like (this
-    is probably not very useful), using an option like -ignore 'Name temp.txt'.
-
-    For example, the following pattern will make Unison ignore any path containing the name CVS or a name ending in .cmo:
-
-        ``ignore = Name {CVS,*.cmo}``
-
-    The next pattern makes Unison ignore the path a/b:
-
-        ``ignore = Path a/b``
-
-    Path patterns do not skip filesnames beginning with . (as Name patterns do). For example,
-
-        ``ignore = Path */tmp``
-
-    will include .foo/tmp in the set of ignore directories, as it is a path, not a name, that is ignored.
-
-    The following pattern makes Unison ignore any path beginning with a/b and ending with a name ending by .ml.
-
-        ``ignore = Regex a/b/.*\.ml``
-
-    Note that regular expression patterns are “anchored”: they must match the whole path, not just a substring of the path.
-
- If a directory is ignored, all its descendents will be too.
-
-
-.. index:: tmux
-.. _tmux:
-
-tmux
-----
-
-``tmux`` steht für "Terminal Multiplexer" und erlaubt es (ebenso wie
-:ref:`screen <screen>`), aus einem einzelnen Shell-Fenster eine ganze
-Shell-Session mit mehreren Fenstern und Unterfenstern zu erstellen.
-
-Mittels :ref:`aptitude <aptitude>` kann ``tmux`` über das gleichnamige Paket
-installiert werden:
-
-.. code-block:: bash
-
-    sudo aptitude install tmux
-
-Anschließend kann ``tmux`` über den gleichnamigen Programmaufruf in einer Shell
-gestartet werden.
-
-... to be continued ...
-
-.. tmux new-session -s one
-
-.. tab-completion: https://superuser.com/questions/579545/how-to-tab-completion-when-typing-command-in-tmux
 
 
 .. index:: whois
