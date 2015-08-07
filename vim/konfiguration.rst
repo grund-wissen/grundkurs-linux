@@ -9,7 +9,7 @@ Backups etc. an- oder ausgeschaltet werden. Gleichzeitig können
 individuelle Tastenkombinationen für beliebige Funktionen oder
 Funktionsketten festgelegt werden.
 
-Meine persönliche Konfigurationsdatei sieht etwa so aus: 
+Meine persönliche Konfigurationsdatei sieht etwa so aus:
 
 :download:`Beispieldatei ~/.vimrc <vimrc.txt>`
 
@@ -28,25 +28,23 @@ Mappings
 --------
 
 Mappings ermöglichen es, für beliebige Befehlskombinationen selbstgewählte
-Tastenkombinationen zu vergeben. 
+Tastenkombinationen zu vergeben.
 
 Je nach Modus, in welchem die Mappings gelten sollen, wird zwischen ``map,
 imap,`` und ``vmap`` unterschieden:
 
-.. list-table:: 
+.. list-table::
     :widths: 30 40
     :header-rows: 0
 
-    * - ``nmap Kürzel Befehl``  
-      - Kürzel für den Normal-Modus   
-    * - ``cmap Kürzel Befehl`` 
-      - Kürzel für den Kommando-Modus 
-    * - ``imap Kürzel Befehl`` 
-      - Kürzel für den Einfüge-Modus  
-    * - ``vmap Kürzel Befehl`` 
-      - Kürzel für den Visuell-Modus  
-    * - ``map Kürzel Befehl``  
-      - Kürzel für alle Modi
+    * - ``nmap Kürzel Befehl``
+      - Kürzel für den Normal-Modus
+    * - ``cmap Kürzel Befehl``
+      - Kürzel für den Kommando-Modus
+    * - ``imap Kürzel Befehl``
+      - Kürzel für den Einfüge-Modus
+    * - ``vmap Kürzel Befehl``
+      - Kürzel für den Visuell-Modus
 
 Mappings können auch über den Kommandozeilen-Modus gesetzt werden,
 bleiben so allerdings nur bis zum Beenden von Vim gespeichert. Für
@@ -54,78 +52,110 @@ häufig genutzte Tastenkombinationen empfielt es sich daher, diese in der
 `Konfigurationsdatei`_ festzuhalten.
 
 **Tipp**: Eine Übersicht darüber, welche Mappings vergeben sind, kann man mit
-``:map`` bekommen. Um die Auswahl einzuschränken, kann dahinter der Beginn
-eines Mappings stehen - z.B. listet ``:map \b`` alle Mappings auf, welche
-mit ``\b`` beginnen. Analoges gilt für ``imap`` usw.
+``:map`` bekommen. Um die Auswahl einzuschränken, kann dahinter der Beginn eines
+Mappings stehen - z.B. listet ``:map \b`` alle Mappings auf, die mit ``\b``
+beginnen. In entsprechender Weise zeit ``:imap \b`` alle Mappings im
+Einfügemodus an, die mit ``\b`` beginnen.
 
-Folgende Sonderzeichen werden dabei häufig verwendet, wobei die Groß- und
+Folgende Sonderzeichen werden in Mappings häufig verwendet, wobei die Groß- und
 Kleinschreibung keine Rolle spielt:
 
-.. list-table:: 
+.. list-table::
     :widths: 35 50
     :header-rows: 0
 
-    * - ``<Leader>`` 
-      - ``\`` (Backslash) 
-    * - ``<Return>`` oder ``<CR>``     
-      - ``Enter``-Taste (Carriage Return)                  
-    * - ``<Esc>``    
-      - ``Escape``-Taste                                   
-    * - ``<Bar>``    
-      - ``|`` (Pipe-Symbol)                               
-    * - ``<Space>``  
-      - Leerzeichen bzw. Leertaste                         
-    * - ``<Tab>``    
-      - Tabulator                                          
-    * - ``<C-A>``    
-      - ``Ctrl A``                               
+    * - ``<Leader>``
+      - ``\`` (Backslash)
+    * - ``<Return>`` oder ``<CR>``
+      - ``Enter``-Taste (Carriage Return)
+    * - ``<Esc>``
+      - ``Escape``-Taste
+    * - ``<Bar>``
+      - ``|`` (Pipe-Symbol)
+    * - ``<Space>``
+      - Leerzeichen bzw. Leertaste
+    * - ``<Tab>``
+      - Tabulator
+    * - ``<C-A>``
+      - ``Ctrl A``
 
 .. _Rechtschreibprüfung:
 
 Rechtschreibprüfung
 -------------------
 
-Herunterladen von Sprachdateien von der `Vim-Sprachenseite
-<http://ftp.vim.org/vim/runtime/spell/>`_:
+Seit der Version 7.0 bietet Vim von sich aus eine integrierte
+Rechtschreibprüfung. Sie wird allgemein durch ein Eingabe folgender Art in der
+Vim-Kommandozeile aktiviert:
 
-.. code-block:: bash
+.. code-block:: vim
 
-    wget -P ~/.vim/spell/ http://ftp.vim.org/vim/runtime/spell/de.utf-8.spl
-    wget -P ~/.vim/spell/ http://ftp.vim.org/vim/runtime/spell/de.utf-8.sug
+	:set spell spelllang=en_us
 
-Folgende Zeile in die Konfigurationsdatei eintragen:: 
+Bei aktiver Rechtsreichprüfung werden Wörter als "falsch" angesehen, wenn es
+dazu keinen Eintrag in der entsprechenden Spell-File gibt. Als Name der
+Sprache wird allgemein die Form ``language_region`` verwendet, da sich
+beispielsweise die in Großbritannien übliche Rechtschreibung ``en_en`` von der
+amerikanischen Rechtschreibung ``en_us`` unterscheidet. Für die deutschsprachige
+Rechtschreibung gibt es neben ``de_de``, ``de_at`` (Österrich) und ``de_ch``
+(Schweiz) auch ``de_19`` und ``de_20`` für die alte beziehungsweise neue
+deutsche Rechtschreibung.
 
-    map <F8>  :setlocal spell spelllang=de <return>
+Wird eine Sprachdatei bei Aktivierung mittels ``:set spell`` nicht gefunden, so
+wird automatisch ein vorinstalliertes Plugin namens ``spellfile.vim`` gestartet,
+das es dem Benutzer anbietet, die entsprechende Sprachdatei automatisch
+herunterzuladen und zu aktivieren. Falsch geschriebene Wörter werden dann (je
+nach Farbschema) durch eine rote Hintergrundfarbe gekennzeichnet.
 
-Ist Aspell (Apt-Paket: ``aspell-de``) installiert, können Texte aus Vim heraus
-mit Aspell überprüft werden. Der Aufruf erfolgt hier ebenfalls wieder per
-Tastenmakro. Das wird folgendermaßen in der .vimrc definiert::
+Mit ``:set nospell`` kann die Rechtschreibprüfung wieder abgeschaltet werden.
+Noch einfacher wird das Aktivieren und Deaktivieren der Rechtschreibung durch
+die Aufnahme der folgenden Funktion in der Konfigurationsdatei ``~/.vimrc``:
 
-    map <F7> :w!<CR>:!aspell check %<CR>:e! %<CR>
+.. code-block:: vim
 
+    " Rechtschreibprüfung mit <F8> an- und aussschalten:
+    let g:myLang = 1
+    let g:myLangList = ['nospell', 'de_20,en_us']
+    function! MySpellLang()
+      if g:myLang == 0 | setlocal nospell | endif
+      if g:myLang == 1 | let &l:spelllang = g:myLangList[g:myLang] | setlocal spell | endif
+      echomsg ''
+      let g:myLang = g:myLang + 1
+      if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
+    endfunction
+    nmap <F8> :call MySpellLang()<CR>
+    imap <F8> <C-o>:call MySpellLang()<CR>"
 
-.. list-table:: 
+Mit dieser Funktion kann durch Drücken von ``<F8>`` die Rechtschreibprüfung
+an- und ausgeschaltet werden. 
+
+Bei aktiver Rechtschreibprüfung können unter anderem die folgenden
+Tastenkombinationen verwendet werden:
+
+.. list-table::
     :widths: 10 50
     :header-rows: 0
 
-    * - ``]s``              
-      - Gehe zum nächsten falschen Wort                                
-    * - ``[s``              
-      - Gehe zum vorherigen falschen Wort                              
-    * - ``zg``              
+    * - ``]s``
+      - Gehe zum nächsten falschen Wort
+    * - ``[s``
+      - Gehe zum vorherigen falschen Wort
+    * - ``zg``
       - Füge das Wort unter dem Cursor dem aktuellen Wörterbuch hinzu (Variable:
-        ``spellfile``)                                 
-    * - ``zG``              
+        ``spellfile``)
+    * - ``zG``
       - Speichere das Wort unter dem Cursor in einer internen Wortliste; diese
-        wird nach dem Schließen von Vim gelöscht                       
-    * - ``zw``              
+        wird nach dem Schließen von Vim gelöscht
+    * - ``zw``
       - Speichere das Wort unter dem Cursor als "falsch" in der aktuellen
         Wörterbuchdatei (Variable: ``spellfile``)
-    * - ``zW``              
-      - Speichere das Wort unter dem Cursor als "falsch" in der internen Wortliste                
-    * - ``zug``, ``zuw``, ``zuG``, ``zuW`` 
-      - Lösche das Wort unter dem Cursor aus der entsprechenden Liste                                                          
+    * - ``zW``
+      - Speichere das Wort unter dem Cursor als "falsch" in der internen Wortliste
+    * - ``zug``, ``zuw``, ``zuG``, ``zuW``
+      - Lösche das Wort unter dem Cursor aus der entsprechenden Liste
 
-..  
+Eine ausführliche Hilfe erhält man mittels ``:h spell.txt``.
+
+..
     Letzte Fehlermeldung(en) anzeigen: :messages
 

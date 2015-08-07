@@ -76,6 +76,9 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
       - ein Programm zur Bild-Bearbeitung (JPG, PNG, TIF, u.a.)
     * - `gnumeric <http://wiki.ubuntuusers.de/Gnumeric>`_
       - ein alternativer Tabellen-Editor
+    * - `gparted <https://wiki.ubuntuusers.de/gparted>`_
+      - ein Partitions-Manager, mit dem Partitionen beispielsweise auf lokalen
+        Festplatten oder USB-Sticks erstellt und verwaltet werden können.
     * - `gtk-redshift <http://wiki.ubuntuusers.de/Redshift>`_
       - ein Programm, das den Bildschirm je nach Tageszeit und geographischer
         Lage rötlich einfärbt (wirkt entspannend auf das menschliche Auge). 
@@ -95,6 +98,8 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
       - ein einfach bedienbares BitTorrent-Programm 
     * - `xpdf <http://www.foolabs.com/xpdf/>`_
       - ein schlanker, schneller PDF-Betrachter
+    * - `unetbootin <https://wiki.ubuntuusers.de/UNetbootin>`_
+      - ein Programm zum erstellen von bootfähigen Live-USB-Sticks
     * - `vlc <http://wiki.ubuntuusers.de/VLC>`_
       - ein Audio- und Videoplayer, der alle gängigen Formate unterstützt (MPG,
         AVI, FLV, MP3, OGG, u.a.) 

@@ -72,13 +72,17 @@ ergänzt werden::
 Möchte man Git für eigene Projekte häufiger verwenden, ist eine "globale"
 Konfiguration sinnvoll, die nicht nur für das aktuelle Projekt, sondern für alle
 Projekte des Benutzers gilt. Derartige Einstellungen werden in der Datei
-``~/.gitconfig`` gespeichert.
+``~/.gitconfig`` gespeichert. Die Konfigurationen können entweder mittels eines
+Texteditors direkt in dieser Datei vorgenommen werden, oder in entsprechender
+Weise mittels ``git config`` gesetzt werden:
 
-git config --global user.name "your full name"
+.. code-block:: bash
 
-.. todo:: 
+    git config --global user.name "Vorname Nachname"
+    git config --global user.email "email@adresse.de"
 
-    Alternative: Globale Konfiguration
+Mit ``git config -l`` können die bestehende Einstellungen angezeigt werden.
+
 
 .. index:: git; add
 
@@ -324,7 +328,7 @@ checkout`` möglich:
     # In den dev-Branch wechseln:
     git checkout dev
 
-.. index:: git; stashcheckout
+.. index:: git; stash
 
 Git erlaubt nur dann einen Checkout eines anderen Branches, wenn der aktuelle
 Branch "clean" ist, also keine Änderungen zum Committen anstehen. Möchte man
@@ -482,7 +486,7 @@ herunterzuladen, gibt man in der Shell folgende Anweisung an:
     # Allgemein: git clone https://github.com/UserName/RepositoryName.git
 
     # Beispiel:
-     git clone https://github.com//grund-wissen/grundwissen-linux.git
+     git clone https://github.com//grund-wissen/grundkurs-linux.git
 
 Die ``clone``-Anweisung bewirkt, dass eine vollständige Kopie des Repositorys
 (mitsamt Versionsgeschichte) heruntergeladen und als neuer Unterordner im
@@ -514,11 +518,18 @@ Das auf diese Weise neu angelegte Repository wird dann folgendermaßen als Quell
     # Allgemein: git add origin https://github.com/UserName/RepositoryName.git
 
     # Beispiel:
-    git remote add origin https://github.com/grund-wissen/grundwissen-linux.git
+    git remote add origin https://github.com/grund-wissen/grundkurs-linux.git
 
 Ist das lokale Repository ein Clon eines externen Repositorys, so ist die
 ``origin``-Variable bereits gesetzt. Mit ``git remote -v`` werden die
 entsprechenden Adressen und Branches angezeigt.
+
+Die zu einem Remote-Namen gehörende Adresse kann bei Bedarf folgendermaßen
+geändert werden:
+
+.. code-block:: bash
+
+    git remote set-url origin https://github.com/new-name
 
 Bevor das lokale Repository hochgeladen wird, sollte noch eine Datei
 ``README.rst`` oder ``README.md`` (wahlweise mit `ReStructuredText
@@ -539,11 +550,9 @@ das externe Repository übernommen werden. Die Option ``-u`` bewirkt eine
 Synchronisierung beider Repositories und sollte immer dann verwendet werden,
 wenn möglicherweise mehrere Entwickler am gleichen Branch arbeiten.
 
-.. Origin anzeigen:
-
-.. You can add, update, and delete remotes using the git remote 
 
 .. index:: git; pull
+.. index:: git; fetch
 .. _Lokale Repositories aktualisieren:
 
 .. rubric:: Lokale Repositories aktualisieren
@@ -561,8 +570,41 @@ verwendet werden:
 Voraussetzung für beide Anweisungen ist wiederum (wie im letzten Abschnitt
 beschrieben), dass ein externes Repository als ``origin`` festgelegt ist. Gibt
 es konkurrierende Änderungen, so müssen diese wiederum, wie im Abschnitt
-:ref:`Merging <Merge>` beschrieben, manuell beispielsweise mit ``git mergetool`` 
+:ref:`Merging <Merge>` beschrieben, manuell beispielsweise mit ``git mergetool``
 in Einklang gebracht werden.
+
+
+.. _Forks und Pull Requests:
+
+.. rubric:: Forks und Pull Requests
+
+GitHub bietet unter der Bezeichnung "Fork" eine komfortable Methode,
+Repositories von einem anderen Entwickler als Clone in den eigenen
+Benutzeraccount zu übernehmen. Dazu genügt ein Klick auf den Fork-Button im
+entsprechenden Repository.
+
+An diesem "Fork" des Original-Projekts kann man nun arbeiten und entwickeln
+werden, ohne Angst haben zu müssen, im Original etwas kaputt machen zu können.
+Hat man einen Teil des Codes ergänzt oder verbessert, so kann man durch einen
+Klick auf den entsprechenden Button im geforkten Repository dem Maintainer des
+Originals einen "Pull Request" senden, durch den dieser eine Benachrichtigung
+über die neue Entwicklung erhält. Der Maintainer kann dann entscheiden, ob er
+diese Änderungen des Codes übernimmt oder nicht.
+
+Bei der Arbeit mit der lokalen Kopie des Repositories gibt es nun allerdings
+*zwei* externe Repositories, mit denen der Clon in Kontakt steht: Das
+Haupt-Repository und den Fork. Praktischerweise richtet man sich dafür eine
+zweite Remote-Adresse ein, die man beispielsweise "upstream" nennt, weil sie die
+Hauptquelle angibt; "origin" sollte dann entsprechend auf den Fork zeigen.
+
+.. code-block:: bash
+
+    git remote add upstream https://github.com/path-to-main-repository
+    git remote set-url origin https://github.com/path-to-fork-repository
+
+Mit diesen Einstellungen können nun neue Commits aus dem ``upstream``-Repository
+geholt und mit den lokalen Änderungen gemerged werden; das Ergebnis kann
+wiederum in das ``origin``-Repository gepushed werden.
 
 
 .. rubric:: Links

@@ -1,5 +1,6 @@
-Grundwissen Linux
-=================
+
+Grundkurs Linux
+===============
 
 In dieser Dokumentation aus der `Grund-Wissen <http://www.grund-wissen.de>`_
 -Reihe geht es um Linux, Open Source, Shell-Anweisungen, Shell-Scripting, den
@@ -26,27 +27,30 @@ folgendermaßen installiert werden:
     aptitude install python3-setuptools
 	easy_install3 -U Sphinx
 	
-Anschließend kann das Repository mittels `git clone
-https://github.com//grund-wissen/grundwissen-linux.git` heruntergeladen werden.
-Im Projektverzeichnis können aus den Quelldateien dann folgendermaßen wahlweise
-HTML-Seiten oder ein PDF-Dokument erstellt werden:
+Anschließend kann das Repository heruntergeladen werden: 
 
 .. code-block:: bash
 
+    git clone https://github.com//grund-wissen/grundwissen-linux.git 
+
+Im Projektverzeichnis können dann aus den Quelldateien wahlweise HTML-Seiten
+oder ein PDF-Dokument erstellt werden:
+
+.. code-block:: bash
+
+    # HTML-Seiten erzeugen:
     make html
 
-    # oder:
-
+    # PDF-Dokument erzeugen:
 	make latexpdf
 
-Die fertigen Dokumente befinden sich dann im Verzeichnis ``_build/html``
+Die fertigen Dokumente befinden sich anschließend im Verzeichnis ``_build/html``
 beziehungsweise ``_build/latex``.
 
-Sollen lokale Änderungen in das Projekt übernommen werden, so bittet der
-Maintainer um einen Pull-Request. 
+Sollen eigene, lokale Änderungen an der Dokumentation in dieses Repository
+übernommen werden, so wird um einen entsprechenden Pull-Request gebeten. 
 
 
 Herzlichen Dank an alle Mitwirkenden!
-
 
 

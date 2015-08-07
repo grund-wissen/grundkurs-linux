@@ -5,15 +5,7 @@ Plugins
 
 Vim kann durch so genannte "Plugins" erweitert werden. Diese können von der
 `Projektseite <http://www.vim.org>`_ oder von `Github <https://github.com>`_
-heruntergeladen werden. 
-
-..  Beispiele:
-
-..  * Dynamische Inhaltsverzeichnisse (:ref:`Voom`), 
-..  * Projektverwaltung (:ref:`Project`), 
-..  * Auto-Vervollständigung (:ref:`Supertab`), 
-..  * Code-Schnipsel (:ref:`Snipmate`), 
-
+heruntergeladen werden.
 
 Unterschieden wird zwischen allgemeinen Plugins, die nach ihrer Installation
 automatisch geladen werden, und "Filetype"-Plugins, die nur geladen werden, wenn
@@ -33,11 +25,11 @@ Vundle: Plugins installieren und verwalten
 Das `Vundle-Plugin <http://www.vim.org/scripts/script.php?script_id=3458>`_
 bietet eine sehr empfehlenswerte Methode, eine individuelle Auswahl an Plugins
 zu installieren und zu verwalten. Um dieses Plugin zu verwenden, wird zunächst
-im Ordner ``~/.vim`` ein neues Unterverzeichnis namens ``bundle`` angelegt: 
+im Ordner ``~/.vim`` ein neues Unterverzeichnis namens ``bundle`` angelegt:
 
 .. code-block:: bash
 
-    mkdir ~/.vim/bundle/  
+    mkdir ~/.vim/bundle/
 
 Anschließend gibt man folgende Zeile ein:
 
@@ -85,7 +77,7 @@ Mit Vundle ist auch eine weitere Verwaltung der Plugins möglich:
 * Um ein Plugin zu deaktivieren, genügt es die entsprechende ``Plugin``-Zeile in
   der ``~/.vimrc`` auszukommentieren und Vim neu zu starten; es werden nämlich
   bei Verwendung von Vundle nur diejenigen Plugins von Vim geladen, die in der
-  Plugin-Liste enthalten sind. 
+  Plugin-Liste enthalten sind.
 
 * Soll ein Plugin entfernt werden, so wird es ebenfalls zunächst auskommentiert,
   Vim anschließend neu gestartet und ``:PluginClean`` eingegeben.
@@ -101,9 +93,9 @@ Mit Vundle ist auch eine weitere Verwaltung der Plugins möglich:
   angegeben werden, beispielsweise:
 
   .. code-block:: vim
-  
+
       Plugin 'honza/vim-snippets', {'pinned': 1}
-      
+
   Wird ein Plugin auf diese Weise eingebunden, so werden beispielsweise eigene
   Änderungen durch einen Update nicht überschrieben.
 
@@ -112,31 +104,16 @@ innerhalb des ``vim-scripts``-Repository auf GitHub gelistet. Bei den folgenden
 Beschreibungen der einzelnen Plugins sind daher neben den Beschreibungen auf der
 Vim-Projektseite stets auch die entsprechenden GitHub-Repositories verlinkt.
 
-.. "pinned" option: Plugin 'localplugin', {"pinned", 1}: Keine GitHub-Upgrades!
 
-.. Um Vim mit Zusatzpaketen zu erweitern, wird, so er nicht schon existiert, ein
-.. Ordner ``.vim`` im Home-Verzeichnis angelegt. Pakete, wie sie z.B. von der
-.. `Projektseite <http://www.vim.org>`_  bekommen werden können, werden dorthin
-.. gespeichert. Meistens genügt es schon, die jeweilige ``.tar.gz``-Datei dorthin
-.. zu kopieren und zu entpacken - benötigte Ordner werden (falls nicht vorhanden)
-.. automatisch angelegt. 
-
-.. Besteht ein Plugin nur aus einer ``.vim``-Datei, so wird diese in den meisten
-.. Fällen in den ``~/.vim/plugin``-Ordner kopiert. Auf Sonderfälle wird
-.. auf der Vim-Homepage ausdrücklich hingewiesen.
-
-.. Zunehmende Verbreitung findet das Vimball-Format ``.vba``: Ist das
-.. `Vimball`_-Plugin einmal installiert, können (entzippte) ``.vba``-Dateien wie
-.. folgt aufgerufen bzw. installiert werden::
-
-.. vim Pluginname.vba
-.. :so %
-
+.. _Hilfreiche Erweiterungen:
 
 Hilfreiche Erweiterungen
 ------------------------
 
-.. ag 
+.. TODO a.vim
+.. TODO abolish
+.. TODO ag
+
 .. https://github.com/rking/ag.vim
 .. https://github.com/ggreer/the_silver_searcher
 
@@ -148,7 +125,7 @@ Align
 
 Das `Align-Plugin <http://www.vim.org/scripts/script.php?script_id=294>`_ stellt
 eine gleichnamige Funktion bereit, mittels derer man visuell markierte Bereiche
-zu einer übersichtlichen Tabelle ausrichten kann. 
+zu einer übersichtlichen Tabelle ausrichten kann.
 
 .. only:: html
 
@@ -158,23 +135,23 @@ zu einer übersichtlichen Tabelle ausrichten kann.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes
-      Repository installiert werden:  
+      Repository installiert werden:
     | https://github.com/jezcope/vim-align
 
 Als Anwendungsbeispiel sei in einer Textdatei folgende Tabelle enthalten::
 
     # Vorher:
     a ; b ; c ; d ; e;
-    ab; bc; cd; de; ef; 
+    ab; bc; cd; de; ef;
     abcd ; bcde ; cdef ; defg ; efgh;
 
 Nach einer visuellen Markierung des Textes und Eingabe von ``:Align ;`` sieht
 die Datei so aus::
 
     # Nachher:
-    a    ; b    ; c    ; d    ; e    ; 
-    ab   ; bc   ; cd   ; de   ; ef   ; 
-    abcd ; bcde ; cdef ; defg ; efgh ; 
+    a    ; b    ; c    ; d    ; e    ;
+    ab   ; bc   ; cd   ; de   ; ef   ;
+    abcd ; bcde ; cdef ; defg ; efgh ;
 
 Die ``:Align``-Funktion akzeptiert jedes beliebige Trennzeichen und kann
 entweder global oder mittels ``:'<,'>Align`` auf den aktuell markierten Bereich
@@ -206,7 +183,7 @@ bewegen und ``Enter`` zu drücken.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/jlanzarotta/bufexplorer
 
 Um schnell auf den Buffer Explorer zugreifen zu können, empfiehlt sich ein
@@ -221,6 +198,8 @@ Auf diese Weise kann der Buffer-Explorer aus dem Normalmodus heraus schnell mit
 Explorers über der aktuellen Datei, so dass es bei einem versehentlichen Öffnen
 genügt ``Enter`` zu drücken, um zurück zur Ausgangsposition zu gelangen.)
 
+.. TODO Calendar
+
 .. index:: CtrlP (Vim-Plugin)
 .. _CtrlP:
 
@@ -230,7 +209,7 @@ CtrlP
 Das `CtrlP-Plugin <http://www.vim.org/scripts/script.php?script_id=3736>`_
 ermöglicht ein sehr effizientes Auswählen von Dateien, ausgehend vom
 Verzeichnis, in dem Vim aufgerufen wurde; ebenso können mit ``CtrlP`` zuletzt
-verwendete Dateien wieder schnell geöffnet werden. 
+verwendete Dateien wieder schnell geöffnet werden.
 
 .. only:: html
 
@@ -240,7 +219,7 @@ verwendete Dateien wieder schnell geöffnet werden.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/kien/ctrlp.vim
 
 Das CtrlP-Plugin wird vom Normalmodus aus mittels ``Control p`` gestartet. Es
@@ -256,12 +235,14 @@ ausgewählte Datei geöffnet.
 
 Nach Drücken von ``Control p`` kann bei Bedarf mittels ``Control f`` (oder
 ``Control b``) zwischen den möglichen Suchoptionen gewechselt werden (Dateien,
-Buffer, zuletzt verwendete Dateien, oder alle zusammen). 
+Buffer, zuletzt verwendete Dateien, oder alle zusammen).
+
+.. _Eregex:
 
 Eregex
 ^^^^^^
 
-Das `Eregex-Plugin <http://www.vim.org/scripts/script.php?script_id=3282>`
+Das `Eregex-Plugin <http://www.vim.org/scripts/script.php?script_id=3282>`_
 ermöglicht es, in Vim für das Suchen und Ersetzen Perl-kompatible reguläre
 Ausdrücke zu verwenden.
 
@@ -273,12 +254,50 @@ Ausdrücke zu verwenden.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/othree/eregex.vim
+
+Zusätzlich sollte die Konfigurationsdatei ``~/.vimrc`` um folgende Einträge
+ergänzt werden:
+
+.. code-block:: vim
+
+	let g:eregex_default_enable = 1
+	let g:eregex_forward_delim = '/'
+	let g:eregex_backward_delim = '?'
+	nmap <leader>/ :call eregex#toggle()<CR>
+
+Gibt man anschließend in einer neuen Vim-Sitzung ``/`` oder ``?`` ein, so
+erscheint in der Kommandozeile automatisch ``:1M/`` oder ``:1M?``. Die
+unmittelbar dahinter eingegebenen Zeichen werden als Perl-compatible reguläre
+Ausdrücke (PCRE) interpretiert. Durch Eingabe von ``\/`` im Normalmodus kann
+dieses Verhalten aus- beziehungsweise wieder angeschaltet werden.
 
 Eine gute Übersicht über reguläre Ausdrücke in Perl-Syntax findet sich
 beispielsweise `hier
 <http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`_.
+
+.. index:: Minibuf-Explorer (Vim-Plugin)
+.. _Minibuf-Explorer:
+
+Minibuf-Explorer
+^^^^^^^^^^^^^^^^
+
+Das `Minibuf-Explorer-Plugin
+<http://www.vim.org/scripts/script.php?script_id=159>`_ bietet in einem eigenen
+kleinen Subfenster am unteren Fensterrand eine Übersicht über die aktuell
+geöffneten Buffer. Angezeigt werden standardmäßig die Nummern und eine
+abgekürzte Bezeichnung der Buffer. Um einen bestimmten Buffer auszuwählen, kann
+man in diesem Fenster mit ``h j k l`` den gewünschten Buffer anwählen und
+``Enter`` drücken. Alternativ dazu kann beispielsweise ``:b5`` zur Auswahl des
+fünften Buffers oder ``:bp`` bzw. ``:bn`` zur Auswahl des vorherigen bzw.
+nächsten Buffers eingegeben werden, da die Buffer-Nummern ja stets angezeigt
+werden.
+
+Das Plugin ist auch in Verbindung mit der Option ``swapfile`` sinnvoll, die
+verhindert, dass eine Datei mehrfach geöffnet wird: Bei Verwendung des
+Minibuf-Explorers sieht man an jedem Vim-Fenster sofort, welche Dateien dort
+geöffnet sind.
 
 .. index:: Nerd-Commenter (Vim-Plugin)
 .. _Nerd-Commenter:
@@ -289,7 +308,7 @@ Nerd-Commenter
 Das `NerdCommenter-Plugin <http://www.vim.org/scripts/script.php?script_id=1218>`_
 ermöglicht es einzelne Zeilen oder (in Verbindung mit visuellen Markierungen)
 ganze Code-Abschnitte auszukommentieren. Dabei wird automatisch für jeden
-Filetype das passende Kommentarzeichen gewählt. 
+Filetype das passende Kommentarzeichen gewählt.
 
 .. only:: html
 
@@ -299,56 +318,42 @@ Filetype das passende Kommentarzeichen gewählt.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/scrooloose/nerdcommenter
 
-Für die Benutzung des NerdCommenter-Plugins gibt es folgende
-Tastenkombinationen: 
+Für die Benutzung des NerdCommenter-Plugins gibt es unter anderem folgende
+Tastenkombinationen:
 
-.. list-table:: 
+.. list-table::
     :widths: 10 40 15
     :header-rows: 0
 
-    * - ``\cc``          
-      - Kommentiere (visuell) markierte Zeilen aus                         
-      - (*comment*)      
-    * - ``\cu``          
-      - Kommentiere (visuell) markierte Zeilen ein                         
-      - (*undo-comment*) 
-    * - ``\c Leertaste`` 
+    * - ``\cc``
+      - Kommentiere (visuell) markierte Zeilen aus
+      - (*comment*)
+    * - ``\cu``
+      - Kommentiere (visuell) markierte Zeilen ein
+      - (*undo-comment*)
+    * - ``\c Leertaste``
       - Kommentiere wechselhaft ein oder aus (kann häufig ``\cc`` und ``\cu``
-        ersetzen) 
-      -  
+        ersetzen)
+      -
+    * - ``\cs``
+      - "schickes" Auskommentieren von langen Abschnitten (z.B. in C)
+      -
 
-..  Weitere Funktionen:
-
-..  .. list-table:: 
-    ..  :widths: 15 60
-    ..  :header-rows: 0
-
-    ..  * - ``\c$`` 
-      ..  - Kommentar von der Cursor-Position bis an das Zeilenende                            
-    ..  * - ``\cA`` 
-      ..  - fügt an dem Ende der Zeile Kommentarzeichen an, wechselt dort in den Einfügemodus  
-    ..  * - ``\cI`` 
-      ..  - fügt an dem Anfang der Zeile Kommentarzeichen an, wechselt dort in den Einfügemodus
-    ..  * - ``\ca`` 
-      ..  - wechselt zwischen verschiedenen möglichen Kommentarzeichen (z.B. in C)             
-    ..  * - ``\cs`` 
-      ..  - "schickes" Auskommentieren von langen Abschnitten (z.B. in C)                      
-    ..  * - ``\cy`` 
-      ..  - Zeilen werden vor dem Auskommentieren zu einer einzigen verbunden                  
-    ..  * - ``\cn`` 
-      ..  - kommentiert visuell markierte Zeilen mittels 'nesting' aus                         
-
-.. Bei der Original-Variante des NERD-Commenter ist das Komma-Zeichen als
-.. einleitendes Symbol vorgesehen. Es empfiehlt sich allerdings, dieses in der Datei
-.. ``NERD_comments.vim`` im :ref:`Plugin-Ordner <Vim-Plugins installieren>` in
-.. einen Backslash umzuwandeln. Dazu sucht man in obiger Datei nach
-.. ``NERDMapleader`` und ersetzt ``,c`` durch ``\c``. 
-
-.. (Ansonsten wird die :ref:`Standard-Funktion der Komma-Taste <Navigation
-.. innerhalb einer Zeile>` behindert.)
+..  * - ``\c$``
+..  - Kommentar von der Cursor-Position bis an das Zeilenende
+..  * - ``\cA``
+..  - fügt an dem Ende der Zeile Kommentarzeichen an, wechselt dort in den Einfügemodus
+..  * - ``\cI``
+..  - fügt an dem Anfang der Zeile Kommentarzeichen an, wechselt dort in den Einfügemodus
+..  * - ``\ca``
+..  - wechselt zwischen verschiedenen möglichen Kommentarzeichen (z.B. in C)
+..  * - ``\cy``
+..  - Zeilen werden vor dem Auskommentieren zu einer einzigen verbunden
+..  * - ``\cn``
+..  - kommentiert visuell markierte Zeilen mittels 'nesting' aus
 
 In der Datei ``~/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim`` können
 Kommentarzeichen für die verschiedenen Dateitypen einfach angepasst und/oder
@@ -357,75 +362,6 @@ beispielsweise ``tex``, und gibt wie bei den übrigen Einträgen das gewünschte
 Kommentarzeichen an.
 
 .. .. index:: Nerd-Tree (Vim-Plugin)
-
-.. .. _Project:
-
-.. Project
-.. ^^^^^^^
-
-.. Das `Project Plugin <http://www.vim.org/scripts/script.php?script_id=69>`_ bietet eine
-.. übersichtliche Projektverwaltung von zusammengehörigen Dateien, z.B. Quellcode,
-.. Notizen oder Forschungsarbeiten. 
-
-.. Auf Knopfdruck öffnet bzw. schließt sich dabei am linken Fensterrand eine
-.. Projekt-Leiste. Zwischen dieser und der aktuell geöffneten Datei kann
-.. wie zwischen gesplitteten Fenstern mittels ``Ctrl W h`` bzw. ``Ctrl W l``
-.. gewechselt werden.
-
-.. Nach der regulären Installation wird ein Mapping in der
-.. :ref:`Konfigurationsdatei` definiert, welches das Ein- und Ausschalten der
-.. Projektleiste festlegt, beispielsweise::
-
-    .. map gP	<Plug>ToggleProject
-
-.. Im Normalmodus stehen stehen im Projektfenster folgende Funktionen zur
-.. Verfügung:
-
-.. .. list-table:: 
-    .. :widths: 15 50 10
-    .. :header-rows: 0
-
-    .. * - ``\C``             
-      .. - Erstelle ein neues Projekt
-      .. - (*Create*)  
-    .. * - ``\R``             
-      .. - Lade den aktuellen Projekt-Ordner neu
-      .. - (*Refresh*)  
-    .. * - ``\G``             
-      .. - Suche nach einem regulären Ausdruck im momentanen Projekt 
-      .. - (*Grep*)     
-    .. * - ``\L``             
-      .. - Öffne alle Dateien im Projekt
-      .. - (*Load*)     
-    .. * - ``\I`` bzw. ``\i`` 
-      .. - Zeige Infos über Projekt-Parameter bzw. absolute Pfadnamen an
-      .. - (*Info*)     
-    .. * - ``\E``             
-      .. - Starte den Datei-Browser im aktuellen Verzeichnis 
-      .. - (*Explorer*) 
-
-.. Alle Befehle können auch in Kleinbuchstaben-Variante ausgeführt werden.
-.. Der Unterschied besteht darin, dass dann nur das aktuelle Projekt, und
-.. nicht rekursiv alle Unterprojekte berücksichtigt werden (bzw. beim
-.. Erstellen keine Unterordner mit eingebunden werden).
-
-.. Ein neues Projekt wird mittels ``\C`` erstellt:
-
-.. * Der Projektname dient nur als Notiz, um bei mehreren Projekten die
-  .. Übersicht zu bewahren (Faltungen funktionieren wie gewohnt).
-.. * Die ``CD=``-Option ermöglicht es, ein anderes Arbeitsverzeichnis als das
-  .. Projektverzeichnis (für spezielle Make-Files) zu benennen. In den meisten
-  .. Fällen kann hier ``.`` (Punkt) für den aktuellen Ordner gesetzt werden.
-.. * Durch Filterregeln lässt sich einschränken, welche Dateitypen in dem
-  .. Projekt eine Rolle spielen. 
-
-.. *Beispiel:* Der Filter ``"*.vim"`` berücksichtigt alle Vim-Dateien im
-.. Arbeitsverzeichnis (und ignoriert alle anderen Dateien), mit dem Filter
-.. ``*.c *.h`` werden ausschließlich C-Dateien mitsamt Headern angezeigt.
-
-.. Hat man beispielsweise für eine bestimmte Programmiersprache oder ein
-.. separates Themengebiet einen eigenen Ordner angelegt, so funktioniert das 
-.. Project-Plugin wie ein besseres Lesezeichen mit nützlicher Suchfunktion.
 
 
 .. index:: Renamer (Vim-Plugin)
@@ -446,13 +382,13 @@ mittels Vim.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/qpkorr/vim-renamer
 
 In einem neuen Vim-Buffer kann mittels ``:Ren`` der Inhalt des aktuellen
 Verzeichnisses eingelesen werden. In der so erstellten Liste ist das Suchen und
 Ersetzen von Text (inklusive regulärer Ausdrücke) wie üblich möglich; mit
-``Enter`` kann zudem in das Verzeichnis unter dem Cursor gewechselt werden. 
+``Enter`` kann zudem in das Verzeichnis unter dem Cursor gewechselt werden.
 
 Um die Dateien eines Verzeichnisses unmittelbar aus der Shell heraus mit Vim
 umzubenennen, kann ``vim -c Ren`` aufgerufen werden; hierfür kann wiederum in
@@ -461,72 +397,12 @@ der ``~/.bashrc`` ein alias definiert werden, beispielsweise ``alias vren='vim
 
 Beim Umbenennen ist lediglich zu beachten, dass die Reihenfolge der Dateien
 nicht geändert werden darf und die Liste nach dem Umbenennen genauso viel Zeilen
-beinhalten muss wie zu Beginn (da jede Zeile genau einen Dateinamen beinhaltet). 
+beinhalten muss wie zu Beginn (da jede Zeile genau einen Dateinamen beinhaltet).
 
 Ist man mit dem Umbenennen fertig, gibt man nochmals ``:Ren`` ein, und die
 Dateien im jeweiligen Verzeichnis werden entsprechend umbenannt. :-)
 
 .. TODO https://github.com/tpope/vim-repeat
-
-.. index:: Snipmate (Vim-Plugin)
-.. _Snipmate:
-
-Snipmate
-^^^^^^^^
-
-Das `Snipmate Plugin <http://www.vim.org/scripts/script.php?script_id=2540>`_
-erlaubt es auf einfache Weise für verschiedene Dateitypen Schlüsselwörter zu
-definieren, die, wenn sie im Insert-Modus eingegeben werden, mittels Drücken
-einer Auslöse-Taste ("Trigger", normalerweise ``Tab``) durch ein vorgegebenes
-Template ersetzt werden. 
-
-.. only:: html
-
-    Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-    installiert werden: https://github.com/garbas/vim-snipmate
-
-.. only:: latex
-
-    | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
-    | https://github.com/garbas/vim-snipmate
-
-Die einzelnen Snippets werden im Ordner ``~/.vim/snippets`` in verschiedenen,
-nach dem Filetype benannten Dateien definiert, beispielsweise ``rst.snippets``
-für RestructuredText-Snippets.
-
-Die Definition von Snippets erfolgt nach folgender Syntax:
-
-.. code-block:: vim
-
-    snippet kürzel
-        template
-        
-
-*Beispiel:* (Ausschnitt aus der Datei ``~/.vim/snippets/rst.snippets``)
-
-.. code-block:: vim
-
-    snippet toc
-
-        .. toctree::
-            :maxdepth: 2
-
-            ${1}
-
-Hat man ein Snippet wie im obigen Beispiel definiert und befindet sich in einer
-beliebigen ``rst``-Datei, so genügt im Insert-Modus die Eingabe von ``toc`` und
-das Drücken der Trigger-Taste, und es wird anstelle von ``toc`` das entsprechend
-definierte ``toctree``-Template an der aktuellen Stelle in die Datei eingefügt.
-Der Cursor befindet sich  anschließend an der mit ``${1}`` festgelegten
-Position. [#]_
-
-Das Snipmate-Plugin zeichnet sich durch einen einfachen Aufbau aus, der bereits
-eine große Arbeitserleichterung mit sich bringt. Möchte man allerdings einen
-Schritt weiter gehen und unter anderem in Snippets reguläre Ausdrücke verwenden
-oder selbst definierte Python-Funktionen auslösen können, so sollte man
-unbedingt das :ref:`UltiSnips <Ultisnips>`-Plugin als gelungene
-Weiterentwicklung von Snipmate verwenden. 
 
 
 .. index:: Sudo (Vim-Plugin)
@@ -538,7 +414,7 @@ Sudo
 Das `Sudo Plugin <http://www.vim.org/scripts/script.php?script_id=729>`_ ermöglicht
 es, sich auch nachträglich mit SuperUser-Rechten ausstatten. Nützlich ist das,
 wenn man Systemdateien verändert, und es einem erst beim Speichern
-auffällt, dass man eigentlich gar keine Schreibrechte besitzt. 
+auffällt, dass man eigentlich gar keine Schreibrechte besitzt.
 
 .. only:: html
 
@@ -548,23 +424,23 @@ auffällt, dass man eigentlich gar keine Schreibrechte besitzt.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/vim-scripts/sudo.vim
 
 Zur Verwendung des Sudo-Plugins gibt es folgende Funktionen für die
 Vim-Kommandozeile:
 
-.. list-table:: 
+.. list-table::
     :widths: 20 60
     :header-rows: 0
 
-    * - ``:SudoWrite Datei``    
+    * - ``:SudoWrite Datei``
       - Speichere ``Datei`` mit Root-Rechten (``:SudoWrite %`` speichert so die
         aktuelle Datei ab)
-    * - ``:SudoRead Datei``     
+    * - ``:SudoRead Datei``
       - Lese ``Datei`` mit Root-Rechten
-    * - ``:e sudo:/path/Datei`` 
-      - Öffne ``Datei`` mit Root-Rechten 
+    * - ``:e sudo:/path/Datei``
+      - Öffne ``Datei`` mit Root-Rechten
 
 Praktisch ist auch eine Abkürzung in der Konfigurationsdatei ``~/.vimrc``:
 
@@ -592,7 +468,7 @@ Cursor reichende Wort zu vervollständigen (ähnlich wie durch Verwendung von
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/ervandew/supertab
 
 SuperTab bietet eine Möglichkeit, die Vervollständigung auf den Kontext bezogen
@@ -617,7 +493,7 @@ Hinweis: Bei Verwendung von SuperTab bewirkt die Tab-Taste nur noch ein
 Einfügen eines Tabulator-Zeichens als Abstandmarker, wenn dieses am
 Zeilenanfang steht oder wenn ein vor dem Cursor (mindestens) ein Leerzeichen
 steht; andernfalls wird durch die SuperTab-Funktion das Wort vor der aktuellen
-Position ergänzt. 
+Position ergänzt.
 
 
 .. * `Super Tab <http://www.vim.org/scripts/script.php?script_id=1643>`_:
@@ -631,7 +507,7 @@ Position ergänzt.
   .. wahlweise per Tastenkürzel oder durch Eintrag in der
   .. :ref:`Konfigurationsdatei` automatisiert geladen werden. Beim Editieren von
   .. Tex-Dateien deaktiviert das Plugin bei mir allerdings die `````-Mappings
-  .. der Latex-Suite im Einfüge-Modus. 
+  .. der Latex-Suite im Einfüge-Modus.
 
 .. * `Autocomplete <http://www.vim.org/scripts/script.php?script_id=1879>`_:
   .. Während des Tippens wird automatisch ein Fenster mit
@@ -660,7 +536,7 @@ Faltungen und Suchbefehle funktionieren wie gewohnt.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/majutsushi/tagbar
 
 Mittels ``:TagbarToggle`` oder einem entsprechenden Mapping in der
@@ -696,8 +572,9 @@ Ultisnips
 ^^^^^^^^^
 
 Das `Ultisnips-Plugin <http://www.vim.org/scripts/script.php?script_id=2715>`_
-ist eine Weiterentwicklung des :ref:`Snipmate <Snipmate>`-Plugins mit erheblich
-größerem Funtkionsumfang. Das Plugin ermöglicht es, durch Eingabe kurzer, selbst
+ist eine Weiterentwicklung des `Snipmate-Plugins
+<http://www.vim.org/scripts/script.php?script_id=2540>`_ mit erheblich größerem
+Funtkionsumfang. Das Plugin ermöglicht es durch Eingabe kurzer, selbst
 definierter Textstücke ("Snippets") und Drücken der Tab-Taste diese durch
 entsprechende Templates zu ersetzen.
 
@@ -709,73 +586,369 @@ entsprechende Templates zu ersetzen.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
-      installiert werden: 
+      installiert werden:
     | https://github.com/sirver/ultisnips
 
 Vordefinierte Beispielsnippets finden sich im Paket `vim-snippets
 <https://github.com/honza/vim-snippets>`_, das zusätzlich installiert werden
 sollte. Bei der Verwendung von Vundle empfielt sich dabei die :ref:`pinned
 <vundle-pinned>`-Option zu verwenden, damit eigene Änderungen in den
-Snippets-Dateien nicht durch Aktualisierungen überschrieben werden. Nach der
-Installation befinden sich die Filetype-spezifischen Snippets im Verzeichnis
-``~/.vim/bundle/vim-snippets/UltiSnips/``.
+Snippets-Dateien nicht durch Aktualisierungen überschrieben werden. Es sollten
+also folgende beiden Zeilen im Plugins-Abschnitt der Konfigurationsdatei
+``~/.vimrc`` stehen::
+
+    Plugin 'sirver/ultisnips'
+    Plugin 'honza/vim-snippets', {'pinned': 1}
+
+Nach der Installation der beiden Plugins befinden sich die zu den einzelnen
+Filetypes gehörenden Snippets im Verzeichnis
+``~/.vim/bundle/vim-snippets/UltiSnips/``; beispielsweise beinhaltet die Datei
+``python.snippets`` in diesem Verzeichnis alle Snippets, die für Python-Dateien
+relevant sind. Die Snippets in der Datei ``all.snippets`` gelten für alle
+Dateitypen gleichermaßen.
 
 Zur Verwendung des Ultisnips-Plugin habe ich zudem folgende Zeilen in die
-Konfigurationsdatei ``~/.vimrc`` aufgenommen::
+Konfigurationsdatei ``~/.vimrc`` aufgenommen:
 
+.. code-block:: vim
+
+    " Snippets mit Tab vervollständigen, mit S-Tab mögliche Snippets anzeigen:
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsListSnippets="<s-tab>"
 
+    " Mit C-h und C-l zur vorherigen bzw. nächsten Snippet-Position springen:
     let g:UltiSnipsJumpForwardTrigger="<c-l>"
     let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
+    " Weitere Einstellungen:
     let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
     let g:UltiSnipsEditSplit="horizontal"
     let g:UltiSnipsEnableSnipMate=0
 
-Die Definition der Snippets  im Verzeichnis
-``~/.vim/bundle/vim-snippets/UltiSnips/`` erfolgt nach folgender Syntax:
+Einzelne Snippets haben folgende Syntax:
 
 .. code-block:: vim
 
-    snippet kürzel "Beschreibung" optionen
+    snippet shortkey "Beschreibung" optionen
     ... template ...
     endsnippet
-        
+
 
 *Beispiel:* (Definiert in ``~/.vim/bundle/vim-snippets/UltiSnips/tex.snippets``)
 
 .. code-block:: vim
 
-    snippet / "Math Fraction" 
+    snippet / "Math Fraction" w
     \frac{$1}{$2}$0
     endsnippet
 
 Wird mit dieser Snippet-Definition in einer ``.tex``-Datei im Einfügemodus das
 Zeichen ``/`` eingegeben und ``Tab`` gedrückt, so wird dieses Zeichen durch
 ``\frac{}{}`` ersetzt und der Cursor an die mit ``$1`` bezeichnete Stelle
-bewegt. Durch ein Drücken der Jump-Forward-Taste, die ich mit ``<C-l>``
-definiert habe, gelangt man zur zweiten Sprungmarke ``$2``; durch Drücken der
-Jump-Backwards-Taste, die ich mit ``<C-h>`` definiert habe, kann man umgekehrt
-wieder zur vorherigen Sprungmarke zurückkehren. Erreicht man schließlich,
-gegebenenfalls durch mehrmaliges Drücken der Jump-Forward-Taste, die Position
-``$0``, so wird das Ergänzen des Snippets abgeschlossen; die vorherigen
-Sprungmarken können dann nicht mehr angesteuert werden.
+bewegt. Durch ein Drücken der Jump-Forward-Taste, die bei der obigen
+Konfiguration mit ``<C-l>`` definiert ist, gelangt man zur zweiten Sprungmarke
+``$2``; durch Drücken der Jump-Backwards-Taste, die mit ``<C-h>`` definiert ist,
+kann man umgekehrt wieder zur vorherigen Sprungmarke zurückkehren. Erreicht man
+schließlich, gegebenenfalls durch mehrmaliges Drücken der Jump-Forward-Taste,
+die Position ``$0``, so wird das Ergänzen des Snippets abgeschlossen; die
+vorherigen Sprungmarken können dann nicht mehr angesteuert werden.
 
-.. rubric:: Vorgabewerte und Optionen
+.. _Vorgabewerte und Snippets für visuell markierte Bereiche:
 
-Sprungmarken können bei der Definition von Snippets auch als ``${1}``, ``${2}``
-usw. angegeben werden. Dies nutzt man insbesondere dann, wenn man an den
-Sprungstellen mittels ``${1:Vorgabe}`` einen Standard-Text einfügen mag, der bei
-der Ergänzung des Snippets an dieser Stelle eingefügt wird. Gelangt der Cursor
-durch Drücken der Jump-Forward-Taste zu so einer Position mit Textvorgabe, so
-kann diese durch ein erneutes Drücken der Jump-Forward-Taste bestätigt werden;
-gibt man hingegen einen beliebigen anderen Text ein, so wird die Textvorgabe
-durch diesen ersetzt.
+.. rubric:: Vorgabewerte und Snippets für visuell markierte Bereiche
 
-... to be continued ...
+Bei der Definition von Snippets können die Sprungmarken auch als ``${1}``,
+``${2}`` usw. angegeben werden. Dies nutzt man insbesondere dann, wenn man an
+den Sprungstellen mittels ``${1:Vorgabe}`` einen Standard-Text einfügen mag, der
+bei der Ergänzung des Snippets an dieser Stelle eingefügt wird. Gelangt der
+Cursor durch Drücken der Jump-Forward-Taste zu so einer Position mit
+Textvorgabe, so kann diese durch ein erneutes Drücken der Jump-Forward-Taste
+bestätigt werden; gibt man hingegen einen beliebigen anderen Text ein, so wird
+die Textvorgabe durch diesen ersetzt. Beispielsweise wird mittels ``${2:$1}``
+der bei ``$1`` eingegebene Text automatisch als Vorgabewert an der Stelle ``$2``
+eingefügt.
 
-.. Mittels Optionen kann 
+Ein besonderer Vorgabewert ist ``${VISUAL}``: Diese Variable enthält den visuell
+markierten Textbereich, wenn (vom visuellen Modus ausgehend ``Tab`` gedrückt
+wird. Man kann sich damit Snippets definieren, die wahlweise auf visuell
+markierte Textbereiche angewendet werden können oder andernfalls ein leeres
+Template erzeugen:
+
+.. code-block:: vim
+
+    snippet cen "Centered Text" b
+    \begin{center}
+        ${1:${VISUAL:}}
+    \end{center}
+    $0
+    endsnippet
+
+Das obige Snippet kann auf zweierlei Arten verwendet werden:
+
+* Im Einfügemodus wird durch Eingabe von ``cen<Tab>`` eine ``center``-Umgebung
+  erzeugt und der Cursor an die Stelle ``${1}`` gesetzt; da ``${VISUAL}``
+  hierbei leer ist, wird an ``${1}`` kein Text eingefügt (es könnte auch
+  ``${VISUAL:Standard}`` angegeben werden, um einen Vorgabewert zu setzen, wenn
+  ``${VISUAL}`` leer ist).
+
+* Im visuellen Modus kann ein Textbereich markiert und ``<Tab>cen<Tab>``
+  eingegeben werden. Dabei verschwindet während der Eingabe von ``cen`` der
+  visuell markierte Bereich; drückt man wieder ``<Tab>``, so wird er als
+  Vorgabewert für ``${1}`` wieder eingeblendet. Drückt man die
+  Jump-Forward-Taste, so wird dieser Vorgabewert übernommen und man gelangt an
+  das Ende des Snippets (``$0``).
+
+Derartige Snippets können, ähnlich wie das Surround-Plugin, Textbereiche in
+gewünschte Umgebungen setzen.
+
+.. _Snippet-Optionen und reguläre Ausdrücke:
+
+.. rubric:: Snippet-Optionen und reguläre Ausdrücke
+
+Durch die Angabe von Optionen kann gezielter festgelegt werden, wann ein Snippet
+durch Drücken von ``<Tab>`` ausgelöst werden soll:
+
+* Die Option ``w`` ("word") besagt, dass das Snippet nur dann ausgelöst wird,
+  wenn das Kürzel ein eigenständiges Wort bildet, also unmittelbar vor dem
+  Kürzel ein Whitespace-Zeichen (Leerzeichen, Tab, usw.) steht. Wird keine
+  Option angegeben, wird automatisch ``w`` als Standard-Kriterium verwendet.
+
+  *Beispiel:*
+
+  Folgendes Snippet für ``.rst``-Dateien fügt durch Drücken von ``mi<Tab>`` eine
+  Math-Inline-Umgebung ein:
+
+  .. code-block:: vim
+
+      snippet mi "Math Inline" w
+      :math:\`$1\` $0
+
+  Die Bedeutung der Backticks (``````) als Begrenzungszeichen für :ref:`Scripte
+  innerhalb eines Snippets <Ausführen von Scripten>` muss
+  im obigen Beispiel mit je einem Backslash (``\``) aufgehoben werden, um eine
+  Interpretation des Inhalts zwischen den Backticks als Shell-Skript zu
+  verhindern.
+
+  Das Snippet soll nur ausgelöst werden, wenn ``mi`` nicht Teil eines Wortes
+  ist; beispielsweise soll eine Expansion vermieden werden, wenn ``vermi<Tab>``
+  eingegeben wird (um beispielsweise dieses Wort mittels des
+  :ref:`SuperTab-Plugins <SuperTab>` zu "vermieden" o.ä. zu ergänzen.)
+
+* Die Option ``b`` ("begin of line") bewirkt, dass das Snippet nur dann
+  ausgelöst wird, wenn das Kürzel am Anfang einer Zeile steht.
+  Whitespace-Zeichen (Leerzeichen, Tab, usw.) am Beginn der Zeile werden dabei
+  ignoriert.
+
+  *Beispiel:*
+
+  Folgendes Snippet für ``.rst``-Dateien fügt durch Drücken von ``ma<Tab>`` eine
+  Math-Paragraph-Umgebung ein:
+
+  .. code-block:: vim
+
+      snippet ma "Math Paragraph" b
+      .. math::
+
+          ${1}
+
+      $0
+      endsnippet
+
+  Das Snippet soll allerdings nicht ausgelöst werden, wenn ``ma`` Teil eines
+  Wortes ist oder mitten in der Zeile vorkommt.
+
+* Die Option ``i`` ("inner word") bewirkt, dass das Snippet auch dann ausgelöst
+  wird, wenn es innerhalb eines Wortes vorkommt.
+
+  Persönlich verwende ich derartige Snippets, um beispielsweise durch Eingabe
+  von ``a<Tab>`` oder ``ae<Tab>`` den deutschsprachigen Umlaut ``ä`` zu
+  erzeugen. Damit ist es ohne Mehraufwand möglich, auch bei Verwendung eines
+  englischen Tastaturlayouts deutschsprachigen Text zu schreiben.
+
+* Die Option ``r`` kann in Verbindung mit den Optionen ``i``, ``w``, und ``b``
+  angegeben werden, um zu bewirken, dass das Snippet-Kürzel als regulärer
+  Ausdruck mit Python-Syntax interpretiert wird; Das Kürzel muss dabei in
+  Anführungszeichen gesetzt werden.
+
+  *Beispiel*:
+
+  Die folgenden Snippets ermöglichen als Inner-Word-Snippets die Umwandlung von
+  ``a<Tab>``, ``ae<Tab>`` usw. in deutschsprachige Umlaute:
+
+  .. code-block:: vim
+
+      snippet "ae?" "ä" ri
+      ä$0
+      endsnippet
+      snippet "Ae?" "Ä" ri
+      Ä$0
+      endsnippet
+      snippet "oe?" "ö" ri
+      ö$0
+      endsnippet
+      snippet "Oe?" "Ö" ri
+      Ö$0
+      endsnippet
+      snippet "ue?" "ü" ri
+      ü$0
+      endsnippet
+      snippet "Ue?" "ü" ri
+      Ü$0
+      endsnippet
+      snippet "ss?" "ß" ri
+      ß$0
+      endsnippet
+
+  Das Zeichen ``?`` in der Snippet-Definition steht dabei für ``0`` oder ``1``
+  Vorkommen des vorherigen Zeichens.
+
+.. _Prioritäten:
+
+.. rubric:: Prioritäten
+
+Gibt es zu einem im Einfügemodus eingegebenen Textstück mehrere mögliche
+Snippets, so werden diese beim Drücken von ``Tab`` nummeriert und unter Angabe
+der jeweiligen Snippet-Datei aufgelistet und können durch Eingabe von ``1``,
+``2``, usw. ausgewählt werden. Üblicherweise wird allerdings eine eindeutige und
+somit schnelle Ergänzung der Snippets bevorzugt. Dies lässt sich in einer
+Snippets-Datei durch die Vergabe von Prioritäten mittels ``priority num``
+erreichen, wobei ``num`` einen Wert zwischen ``-50`` und ``+50`` bezeichnet.
+Alle Snippets, die unterhalb einer solchen Eingabezeile stehen, bekommen diese
+Priorität zugewiesen (bis zum Ende der Datei oder bis zur nächsten
+``priority``-Zeile).
+
+Die vordefinierten Snippets aus dem ``vim-snippets``-Plugin haben alle als
+Priorität ``-50``; sie werden also nur dann ausgeführt, wenn kein anderes (auch
+gleichnamiges) Plugin mit höherer Priorität existiert.
+
+Beispielsweise haben bei mir die Umlaut-Snippets die Priorität ``-10``, so dass
+sie nur dann ausgeführt werden, wenn kein anderes Snippet auf den eingegebenen
+Text zutrifft; beispielsweise soll gemäß des obigen Beispiels ``ma<Tab>`` am
+Anfang einer Zeile zu einer ``math``-Umgebung expandiert werden, innerhalb einer
+Zeile soll ``ma<Tab>`` hingegen zu ``mä`` expandiert werden, wenn beispielsweise
+"mäkeln" geschrieben werden soll.
+
+Ohne die explizite Angabe einer Priorität haben Snippets (beispielsweise in
+einer neuen Snippet-Datei) die Priorität Null. Man kann sich damit zusätzliche
+Snippets in eigenen Dateien definieren, beispielsweise ``textemplates.snippets``
+für eigene LaTeX-Dokumentvorlagen oder ``texmath.snippets`` für Mathe-Snippets.
+Man kann eine Snippets-Datei mittels des Schlüsselwortes ``extends`` um weitere
+"Dateitypen" erweitern::
+
+    # Innerhalb der Datei ``tex.snippets``:
+    # Zusätzlich die Snippets in folgenden Dateien (ohne Dateiendung) berücksichtigen:
+
+    extends textemplates, texmath
+
+Beispielsweise können so LaTeX-Mathe-Snippets zentral sowohl für ``.tex`` wie
+auch für ``.rst``-Dateien definiert werden. Das spart nochmals Schreibarbeit --
+don't repeat yourself!
+
+.. _Einfache Ersetzungen:
+
+.. rubric:: Einfache Ersetzungen
+
+Soll der an der Stelle ``$1`` eingegebene Text auch an einer Stelle erscheinen, so
+gibt man dort erneut ``$1`` oder beispielsweise ``${2:$1}`` ein, sofern ``$1``
+nur ein Vorgabewert sein soll. Man kann bei der erneuten Verwendung von ``$1``
+den dort gespeicherten Inhalt allerdings auch abändern, indem man
+``${1/search/replace/}`` eingibt.
+
+Beispielsweise werden in den Grund-Wissen-Tutorials oft ``.png``-Bilder
+eingefügt und dabei in der Fußzeile die zugehörigen ``.svg``-Vektorgraphiken mit
+als Download-Option verlinkt. Um dabei den Dateinamen nur einmal eingeben zu
+müssen, kann folgendes Snippet verwendet werden:
+
+.. code-block:: vim
+
+    snippet figs "Figure with SVG" b
+    .. figure:: ${1:path}
+        :name:  fig-${2}
+        :alt:   fig-${3:$2}
+        :align: center
+        :width: 50%
+
+        .. only:: html
+
+            :download:\`SVG: ${1/png/svg/}>\`
+
+    $0
+    endsnippet
+
+Bei der Expansion dieses Snippets gelangt man zunächst an die Stelle ``$1``, an
+der offensichtlich eine Pfadangabe erwartet wird. Gibt man hier einen Pfad ein,
+der mit ``.png`` endet, so erscheint in der Fußzeile automatisch der gleiche
+Pfad mit der Endung ``.svg``; möchte man diesen so automatisch generierten Pfad
+nur als Vorgabewert haben, kann man an dieser Stelle auch ``${4:${1/png/svg/}}``
+schreiben, um eine entsprechende zusätzliche Sprungmarke zu definieren.
+
+.. _Ausführen von Scripten:
+
+.. rubric:: Ausführen von Scripten
+
+Weitere Möglichkeiten für Snippets bieten sich dadurch, dass innerhalb von
+Snippets wahlweise Vim-, Shell- oder Python-Scripts ausgeführt werden können.
+Diese können mehrere Zeilen umfassen und werden innerhalb der Snippet-Templates
+folgendermaßen begrenzt:
+
+* ```   ... ```: Shell-Script
+* ```!v ... ```: Vim-Script
+* ```!p ... ```: Python-Script
+
+Verwendet man Python-Scripts, so werden automatisch die Module ``vim``, ``re``,
+``os``, ``string`` und ``random`` geladen; zudem sind automatisch folgende
+Variablen vordefiniert:
+
+.. list-table::
+    :name: tab-python-variablen
+    :widths: 20 50
+
+    * - ``snip``
+      - Ein zum aktuellen Snippet gehörendes Snippet-Objekt
+    * - ``fn``
+      - aktueller Dateiname
+    * - ``path``
+      - Absoluter Pfad der aktuellen Datei
+    * - ``t``
+      - | Liste mit den Inhalten von ``$1``, ``$2``, usw.
+        | (``t[1]`` entspricht dem Inhalt von ``$1`` usw.)
+
+Ein ``snip``-Objekt hat dabei unter anderem folgende Attribute:
+
+* In der Variable ``snip.rv`` wird der Rückgabewert des Snippets gespeichert.
+* Die Variable ``snip.basename`` enthält den Namen der aktuellen Datei ohne
+  Dateiendung.
+* Die Variable ``snip.ft`` enthält den Namen des aktuellen Filetypes.
+* Die Variable ``snip.v`` enthält Daten, die sich auf ``${VISUAL}`` beziehen:
+  ``snip.v.text`` gibt den Inhalt von ``${VISUAL}`` an, ``snip.v.mode`` hat als
+  Wert entweder ``v``, ``V`` oder ``^V`` je nach Art des visuellen Modus.
+
+Durch Scripte bieten sich in Snippets nahezu unbegrenzte Möglichkeiten; man kann
+sich so geradezu temporäre "Buttons" definieren, die bei der Expansion bestimmte
+Funktionen auslösen; beispielsweise können reguläre Ausdrücke in der Definition
+von Snippets gezielt ausgewertet werden:
+
+.. code-block:: vim
+
+    # Snippet zum Ergänzen von "bei<Tab>" zu "beispielsweise":
+
+    snippet "(B|b)ei" "beispielsweise" rw
+    `!p
+    if match.group(1).islower():
+        snip.rv = "beispielsweise"
+    else:
+        snip.rv = "Beispielsweise"
+    ` $0
+    endsnippet
+
+Hierbei steht ``match.group(1)`` für den konkreten Wert, der sich bei der
+Auswertung der ersten in der Snippet-Definition auftretenden Gruppierung
+``(b|B)`` ergibt.
+
+Weitere, auch umfangreichere Beispiele zum Einsatz von Scripten sind in den
+Snippet-Dateien von des ``vim-snippets``-Plugins enthalten.
+
+
 
 .. https://github.com/Valloric/YouCompleteMe
 
@@ -792,7 +965,7 @@ ermöglicht es, von Vim aus mittels ``Ctrl c Ctrl c`` die aktuelle Zeile oder im
 visuellen Modus ganze Codeblöcke an eine offene :ref:`Screen <screen>`- oder
 ``tmux``-Sitzung zu schicken. Egal ob Python, R, MySQL oder die Shell selbst als
 Interpreter verwendet wird: Skript-Teile lassen sich auf diese Weise bereits
-während des Erstellens "on-the-fly" testen. 
+während des Erstellens "on-the-fly" testen.
 
 .. only:: html
 
@@ -802,7 +975,7 @@ während des Erstellens "on-the-fly" testen.
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes
-      Github-Repository installiert werden: 
+      Github-Repository installiert werden:
     | https://github.com/vim-scripts/Vicle
 
 Um ein ``tmux``-Fenster als Ziel für den übergebenen Code zu verwenden, muss man
@@ -810,13 +983,13 @@ die ``~/.vimrc`` um folgenden Eintrag ergänzen:
 
 .. code-block:: vim
 
-    let g:vicle_use = 'tmux' 
+    let g:vicle_use = 'tmux'
 
 Drückt man in einer Vim-Sitzung erstmals ``Ctrl c Ctrl c``, so wird man
 aufgefordert, den Namen der ``tmux``-Session und des Zielfensters einzugeben. Im
 folgenden schickt Vicle alle weiteren Zeilen von dieser Vim-Sitzung aus immer an
 dieses Fenster; von mehreren verschiedenen Vim-Sitzungen aus kann allerdings
-Text auch an verschiedene Interpreter geschickt werden. 
+Text auch an verschiedene Interpreter geschickt werden.
 
 
 .. index:: Voom (Vim-Plugin)
@@ -838,7 +1011,7 @@ Inhaltsverzeichnis bietet. Voom unterstützt zahlreiche Wiki-Markups
 .. only:: latex
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes
-      Github-Repository installiert werden: 
+      Github-Repository installiert werden:
     | https://github.com/vim-voom/VOoM
 
 Um Voom zu nutzen, sind Mappings folgender Art in der :ref:`Konfigurationsdatei`
@@ -861,18 +1034,18 @@ Im Normalmodus kann man mittels ``Tab`` zwischen
 diesem Fenster und dem Hauptfenster hin und her wechseln, durch Drücken von
 ``Enter`` kann ein Eintrag des Inhaltsverzeichnisses direkt angewählt werden.
 
-.. https://github.com/maxbrunsfeld/vim-yankstack
 
-.. index:: Yankstack (Vim-Plugin)
-.. _Yankstack:
+.. index:: Yankring (Vim-Plugin)
+.. _Yankring:
 
-Yankstack
+Yankring
 ^^^^^^^^^
 
-Das `Yankstack Plugin <http://www.vim.org/scripts/script.php?script_id=3834>`_
-speichert automatisch der Reihenfolge nach die zuletzt in die Vim-interne
-Zwischenablage kopierten Inhalte, so dass diese an anderer Stelle in beliebiger
-Reihenfolge wieder eingefügt werden können. 
+Das `Yankring Plugin <http://www.vim.org/scripts/script.php?script_id=1234>`_
+speichert automatisch der Reihenfolge nach die zuletzt in die interne
+Zwischenablage kopierten Inhalte, so dass sie gezielt an einer anderen Stelle
+und/oder zu einem späteren Zeitpunkt wieder eingefügt werden können.
+
 
 .. only:: html
 
@@ -883,32 +1056,12 @@ Reihenfolge wieder eingefügt werden können.
 
     | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes
       Github-Repository installiert werden:
-    | https://github.com/maxbrunsfeld/vim-yankstack
+    | https://github.com/vim-scripts/YankRing.vim
 
-Zur Verwendung des Yankstack-Plugins verwende ich folgende Mappings in der
-``~/.vimrc``:
-
-.. code-block:: vim
-
-    au BufEnter,BufNewFile * nmap gp <Plug>yankstack_substitute_older_paste
-    au BufEnter,BufNewFile * nmap gn <Plug>yankstack_substitute_newer_paste
-
-Auf diese Weise kann nach einem Einfügen mittels ``p`` oder ``P`` der eingefügte
-Inhalt mittels ``gp`` bzw. ``gn`` durch einen früheren bzw. späteren Eintrag in
-der Kopier-Liste ersetzt werden.
-
-.. Das `Yankring Plugin <http://www.vim.org/scripts/script.php?script_id=1234>`_
-.. speichert automatisch der Reihenfolge nach die zuletzt in die interne
-.. Zwischenablage kopierten Inhalte, so dass sie gezielt an einer anderen Stelle
-.. und/oder zu einem späteren Zeitpunkt wieder eingefügt werden können. 
-
-.. Wird der Inhalt der Vim-internen Zwischenablage im Normalmodus mit ``p``
-.. oder ``P`` eingefügt, kann mit ``Ctrl p`` und ``Ctrl n`` anstelle dessen
-.. der rückwärts bzw. vorwärts in der Kopier-History nächstgelegene Inhalt
-.. ausgewählt und eingefügt werden. 
-
-
-
+Wird der Inhalt der Vim-internen Zwischenablage im Normalmodus mit ``p``
+oder ``P`` eingefügt, kann mit ``Ctrl p`` und ``Ctrl n`` anstelle dessen
+der rückwärts bzw. vorwärts in der Kopier-History nächstgelegene Inhalt
+ausgewählt und eingefügt werden.
 
 
 .. raw:: html
@@ -926,18 +1079,18 @@ der Kopier-Liste ersetzt werden.
     muss man in der ``~/.vimrc`` folgende Änderung vornehmen:
 
     .. only:: html
-    
+
         .. code-block:: vim
 
             :imap <S-Tab> <Plug>snipMateTrigger
             :smap <S-Tab> <Plug>snipMateTrigger
 
     .. only:: latex
-    
+
         ``:imap <S-Tab> <Plug>snipMateTrigger``
 
         ``:smap <S-Tab> <Plug>snipMateTrigger``
-        
+
     Bei Verwendung des Ultisnips-Plugin kann auch in Kombination mit SuperTab
     weiterhin die Tab-Taste als Trigger verwendet werden.
 
