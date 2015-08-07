@@ -37,6 +37,7 @@ Grundkurs Linux
     zusatzpakete-installieren.rst
     verzeichnisse.rst
     shell/index.rst
+    tmux.rst
     vim/index.rst
     sphinx/index.rst
     git.rst

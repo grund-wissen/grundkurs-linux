@@ -126,8 +126,11 @@ die Aufnahme der folgenden Funktion in der Konfigurationsdatei ``~/.vimrc``:
     nmap <F8> :call MySpellLang()<CR>
     imap <F8> <C-o>:call MySpellLang()<CR>"
 
-Mit dieser Funktion kann durch Drücken von ``<F8>`` die Rechtschreibprüfung
-an- und ausgeschaltet werden. 
+Mit dieser Funktion kann durch Drücken von ``<F8>`` die Rechtschreibprüfung an-
+und ausgeschaltet werden. Durch die Auswahl ``'de_20,en_us'`` an Sprachdateien
+sind sowohl die neue deutsche als auch die US-amerikanische Rechtschreibung
+aktiv; ein Wort wird somit nur dann als "falsch" durch ein Highlighting
+hervorgehoben, wenn es in keiner der beiden Sprachdateien vorkommt.
 
 Bei aktiver Rechtschreibprüfung können unter anderem die folgenden
 Tastenkombinationen verwendet werden:

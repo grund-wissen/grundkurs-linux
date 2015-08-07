@@ -3,9 +3,6 @@
 " Syntax-Highlight anschalten:
 syntax on
 
-" Spezielle Zeichen erlauben (beispielsweise deutsche Umlaute):
-set digraph
-
 " Text- und Datei-Encodierung auf UTF-8 setzen:
 set encoding=utf-8
 set fileencoding=utf-8
@@ -22,6 +19,10 @@ set mouse=a
 
 " Erweiterte Vi-Funktionen erlauben:
 set nocompatible
+
+" Keine "seltsamen" Zeichen nach Eingabe von Backspace:
+" (Siehe :h digraph)
+set nodigraph
 
 " Diesen Pfad beim Start von Vim nach Script-Dateien durchsuchen:
 set runtimepath+=/usr/share/vim/addons/
