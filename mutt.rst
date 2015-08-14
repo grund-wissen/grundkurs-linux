@@ -6,7 +6,7 @@ Email-Verwaltung mit Mutt
 =========================
 
 Mutt ist ein textbasierter Email-Client, der sich durch eine hohe
-Funktionalität und Konfigurierbarkeit auzeichnet. Er wird komplett 
+Funktionalität und Konfigurierbarkeit auzeichnet. Er wird komplett
 über die Tastatur gesteuert.
 
 .. index:: fetchmail, procmail, msmtp, lynx
@@ -26,7 +26,7 @@ Das Hilfsprogramm ``fetchmail`` holt Emails von einem Email-Provider ab, das
 Programm ``procmail`` leitet sie (gegebenenfalls mit selbst definierten
 Spam-Filtern) an eine oder mehrere Mailboxen weiter. Mit ``mutt`` werden die
 Emails und Mailboxen verwaltet, ``lynx`` dient zum Betrachten von HTML-Emails
-und ``msmtp`` als Hilfsprogramm zum Verschicken eigener Emails. 
+und ``msmtp`` als Hilfsprogramm zum Verschicken eigener Emails.
 
 Vor dem ersten Start sollte zunächst im Home-Verzeichnis ``~`` ein ``Mail``- und
 ein ``.tmp``-Ordner für Mailboxen und temporäre Dateien angelegt werden:
@@ -45,9 +45,9 @@ und mit grundlegenden Inhalten gefüllt werden:
   Informationen abgelegt:
 
   .. code-block:: bash
-  
+
       # Datei .fetchmailrc
-  
+
       poll EMAIL-HOST protocol pop3 user "EMAIL@ADRESSE.DE" password "GEHEIM" ssl
 
   Der Email-Host ist beispielsweise ``pop.gmx.net``. Als Protokoll kann anstelle
@@ -61,7 +61,7 @@ und mit grundlegenden Inhalten gefüllt werden:
   man folgendes ein:
 
   .. code-block:: bash
-  
+
       chown 600 ~/.fetchmailrc
 
   Ebenso ist es möglich, die Datei auf einer verschlüsselten Partition oder
@@ -72,9 +72,9 @@ und mit grundlegenden Inhalten gefüllt werden:
   Informationen angegeben:
 
   .. code-block:: bash
-  
+
       # Datei .msmtprc
-  
+
       defaults
       auth             on
       tls              on
@@ -95,24 +95,24 @@ und mit grundlegenden Inhalten gefüllt werden:
   unterschiedlich sein kann (Infos hierzu sollten von jedem Provider angegeben
   sein). Für verschiedene Email-Konten können wiederum verschiedene
   Benutzer-Accounts angelegt werden.
-  
+
   Auch in dieser Datei ist das Passwort im Klartext (allerdings ohne
   Anführungszeichen) enthalten. Auch diese Datei darf somit nur Lese- und
   Schreibrechte für den Eigentümer haben:
 
   .. code-block:: bash
-  
+
       chown 600 ~/.msmtprc
 
 * In der Datei ``~/.procmailrc`` sind die zum Verteilen ("processing") der
   Emails nötigen Informationen gespeichert:
 
   .. code-block:: bash
-  
+
       # Datei .procmailrc
-  
-      MAILDIR=$HOME/Mail/                
-      LOGFILE=$HOME/.procmaillog        
+
+      MAILDIR=$HOME/Mail/
+      LOGFILE=$HOME/.procmaillog
       LOGABSTRACT=no
       VERBOSE=off
       FORMAIL=/usr/bin/formail
@@ -154,72 +154,72 @@ und mit grundlegenden Inhalten gefüllt werden:
   kann beispielsweise so aussehen:
 
   .. only:: html
-  
+
       .. code-block:: bash
-      
+
           # Datei .muttrc
-          
+
           # ---------------------------------------------------------------------------------------
           # PFADEINSTELLUNGEN
           # ---------------------------------------------------------------------------------------
-          
+
           # Pfad für Adressbuch-Datei festlegen:
           set alias_file=     "~/.mutt/addressbook"
           source              "~/.mutt/addressbook"
-          
+
           # Standard-Mailbox für eingehende Emails:
-          set spoolfile='+default'	
-          
+          set spoolfile='+default'
+
           # Gelesene Emails nach "inbox-JAHR" im Mail-Ordner verschieben
           # (beispielsweise "inbox-2014" für Emails aus dem Jahr 2014)
-          set mbox="+inbox-`date +%Y`"	
-          
+          set mbox="+inbox-`date +%Y`"
+
           # Gesendete Emails nach "sent-JAHR" im Mail-Ordner verschieben
           set record="+sent-`date +%Y`"
-          
+
           # Email-Entwürfe in der Mailbox "Entwuerfe" speichern:
           set postponed="+Entwuerfe"
-          
+
           # Pfad für temporäre Dateien festlegen:
-          set tmpdir=~/.tmp	
-           
+          set tmpdir=~/.tmp
+
           # ---------------------------------------------------------------------------------------
-          # TASTENKOMBINATIONEN 
+          # TASTENKOMBINATIONEN
           # ---------------------------------------------------------------------------------------
-      
+
           # Mails durch Drücken von "A" vom Provider abholen und dort löschen:
           macro index,pager A "!fetchmail -m 'procmail -d %T'\r"
-      
+
           # Alternativ: Mails durch Drücken von "A" vom Provider abholen und dort belassen (keep and verbose):
-          # #macro index,pager A "!fetchmail -kv -m 'procmail -d %T'\r"	
-      
+          # #macro index,pager A "!fetchmail -kv -m 'procmail -d %T'\r"
+
           bind browser <Enter> view-file
-      
+
           # HTML-Mails durch Drücken von "l" mit lynx betrachten:
-          macro pager,attach l "<pipe-entry>lynx -stdin -force_html<enter>" 
-          
+          macro pager,attach l "<pipe-entry>lynx -stdin -force_html<enter>"
+
           # Emails durch Drücken von "f" weiterleiten
           bind index,pager f forward-message
-          
+
           # An alle Empfänger einer Email antworten
           bind index,pager R group-reply
-          
-          
+
+
           # ---------------------------------------------------------------------------------------
           # ALLGEMEINE EINSTELLUNGEN
           # ---------------------------------------------------------------------------------------
-      
+
           # Alle Header-Infos grundsätzlich ausblenden:
-          ignore *		                    
-      
+          ignore *
+
           # Folgende Header-Infos jedoch erlauben:
           unignore	from: subject to cc mail-followup-to \
-              date x-mailer x-url list-id     
-      
+              date x-mailer x-url list-id
+
           # Format für das Zitieren der Original-Mail in einer Antwort-Email
           # ("Am DATUM schrieb ABSENDER:")
           set attribution="* %n <%a> [%(%d.%m.%Y %H:%M)]:"
-      
+
           set nobeep                # Keine akustischen Signale bei neuen Nachrichten
           set copy=yes              # Gesendete Emails immer speichern
           set delete=yes            # Als gelöscht markierte Emails beim Beenden löschen (ohne Nachfrage)
@@ -228,58 +228,58 @@ und mit grundlegenden Inhalten gefüllt werden:
           set followup_to           # In Betreff und Email-Header "Follow up"-Markierungen setzen
           set help=no               # Hilfe-Zeilen ausblenden
           set include=ask-yes       # Nachfragen, ob Original-Mail in Antwort zitiert werden soll
-      
-          set move=yes              # Gelesene Nachrichten in die obige mbox verschieben 
+
+          set move=yes              # Gelesene Nachrichten in die obige mbox verschieben
           set nosave_empty          # Keine leeren Email-Entwürfe speichern
           set pager_index_lines=6   # Beim Lesen von Emails 6 Zeilen für Pager reservieren
           set pager_stop            # Beim Lesen von Emails nicht in die nächste Email scrollen
           set read_inc=25           # Fortschritts-Anzeige beim Lesen von Mailboxen einblenden
           set reply_to              # Antwort-Emails automatisch erkennen
-      
+
           set reply_regexp="^((re([\[^-][0-9]+\]?)*|Re|aw|antwort|antw|wg):[ \t]*)+"
-      
+
           set reverse_alias         # Namen von Email-Absendern anhand Adress-Liste anzeigen
-      
+
           set send_charset="us-ascii:iso-8859-1:iso-8859-15:iso-8859-2:utf-8"
-      
+
           set smart_wrap            # Besserer Zeilenumbruch
           set sort=threads          # Emails nach in Thread-Reihenfolge anzeigen
           set sort_aux=date-sent    # Emails innerhalb von Threads nach dem Datum sortieren
           set strict_threads        # Bei Threading auf In-Reply-To-Header achten, nicht auf Betreff
           set weed=yes              # Standard.. :)
           set wrap_search=yes       # Im Index-Modus Suche erneut von vorne zulassen
-      
+
           auto_view text/html
-      
-      
+
+
           # ---------------------------------------------------------------------------------------
           # PERSOENLICHE EINSTELLUNGEN
           # ---------------------------------------------------------------------------------------
-      
-          my_hdr From:        "VORNAME NACHNAME" <EMAIL@ADRESSE.de>  
+
+          my_hdr From:        "VORNAME NACHNAME" <EMAIL@ADRESSE.de>
           my_hdr Reply-To:    "VORNAME NACHNAME" <EMAIL@ADRESSE.de>
           set realname=       "VORNAME NACHNAME"
           set signature=      "+.signature"
-      
+
           # Einstellungen für den Standard-Ordner:
-          folder-hook . "set from='VORNAME NACHNAME  <EMAIL@ADRESSE.de>'" 
-          folder-hook . "set index_format='%4C %Z %{%b %d} %-15.15L (%4l) %s'" 
+          folder-hook . "set from='VORNAME NACHNAME  <EMAIL@ADRESSE.de>'"
+          folder-hook . "set index_format='%4C %Z %{%b %d} %-15.15L (%4l) %s'"
           folder-hook . "set sendmail='/usr/bin/msmtp --account=default'"
-      
-      
+
+
           # ---------------------------------------------------------------------------------------
           # FARBEN
           # ---------------------------------------------------------------------------------------
-      
+
           # Aussehen von Mutt:
-      
-          color     tree            brightmagenta     default	
+
+          color     tree            brightmagenta     default
           color     attachment      magenta           default
-          color     error           red               default 
+          color     error           red               default
           color     header          brightyellow      default   "^Subject: "
           color     header          white             default   "^To:"
           color     hdrdefault      yellow            default
-          color     indicator       black             white	
+          color     indicator       black             white
           color     markers         brightblue        default
           color     message         white             default
           color     normal          white             default
@@ -287,180 +287,180 @@ und mit grundlegenden Inhalten gefüllt werden:
           color     quoted1         green             default
           color     quoted2         cyan              default
           color     quoted3         red               default
-          color     signature       brightblack       default	
-          color     status          brightyellow      blue		
+          color     signature       brightblack       default
+          color     status          brightyellow      blue
           color     search          default           green
-      
+
           # Highlighting von Emails (abhängig von der "Punktezahl" einer Email):
-            
+
           # Mögliche Muster zur Punktevergabe:
           # ~f ABSENDER     : Betrifft alle Emails, die vom ABSENDER geschickt wurden ("from")
           # ~t EMPFAENGER   : Betrifft alle Emails, die an EMPFAENGER geschickt wurden ("to")
           # ~s BETREFF      : Betrifft alle Emails, die BETREFF in der Betreff-Zeile enthalten ("subject")
-      
+
           # Reguläre Ausdrücke als Suchmuster:
           # .       : Ein beliebiges Zeichen
           # *       : Der vorherige Ausdruck Null mal oder beliebig oft
           # [aA]    : Eines der in der Klammer enthaltenen Zeichen (a oder A)
-      
-      
+
+
           # Alle Emails bekommen zunächst 0 Punkte:
           unscore *
-      
-          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen" im Empfänger-Namen enthalten: 
+
+          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen" im Empfänger-Namen enthalten:
           score '~t .*@grund-wissen.*' +10
-      
-          # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx" in der Betreff-Zeile enthalten: 
+
+          # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx" in der Betreff-Zeile enthalten:
           score '~s .*sphinx.*'      +25
-      
-      
+
+
           # Zum Beispiel 1: Alle Emails mit einer Punktezahl von 10-20 hellrot hervorheben:
           color index brightred default '~n 10-20'
-      
+
           # Zum Beispiel 2: Alle Emails mit einer Punktezahl von 25-29 blau hervorheben:
           color index blue default      '~n 25-29'
 
   .. only:: latex
-  
+
       .. code-block:: bash
-      
+
           # Datei .muttrc
-          
+
           # --------------------------------------------------------------------
           # PFADEINSTELLUNGEN
           # --------------------------------------------------------------------
-          
+
           # Pfad für Adressbuch-Datei festlegen:
           set alias_file=     "~/.mutt/addressbook"
           source              "~/.mutt/addressbook"
-          
+
           # Standard-Mailbox für eingehende Emails:
-          set spoolfile='+default'	
-          
+          set spoolfile='+default'
+
           # Gelesene Emails nach "inbox-JAHR" im Mail-Ordner verschieben
           # (beispielsweise "inbox-2014" für Emails aus dem Jahr 2014)
-          set mbox="+inbox-`date +%Y`"	
-          
+          set mbox="+inbox-`date +%Y`"
+
           # Gesendete Emails nach "sent-JAHR" im Mail-Ordner verschieben
           set record="+sent-`date +%Y`"
-          
+
           # Email-Entwürfe in der Mailbox "Entwuerfe" speichern:
           set postponed="+Entwuerfe"
-          
+
           # Pfad für temporäre Dateien festlegen:
-          set tmpdir=~/.tmp	
-           
+          set tmpdir=~/.tmp
+
           # --------------------------------------------------------------------
-          # TASTENKOMBINATIONEN 
+          # TASTENKOMBINATIONEN
           # --------------------------------------------------------------------
-      
+
           # Mails durch Drücken von "A" vom Provider abholen und dort löschen:
           macro index,pager A "!fetchmail -m 'procmail -d %T'\r"
-      
-          # Alternativ: Mails durch Drücken von "A" vom Provider abholen und 
+
+          # Alternativ: Mails durch Drücken von "A" vom Provider abholen und
           # dort belassen (keep and verbose):
-          # #macro index,pager A "!fetchmail -kv -m 'procmail -d %T'\r"	
-      
+          # #macro index,pager A "!fetchmail -kv -m 'procmail -d %T'\r"
+
           bind browser <Enter> view-file
-      
+
           # HTML-Mails durch Drücken von "l" mit lynx betrachten:
-          macro pager,attach l "<pipe-entry>lynx -stdin -force_html<enter>" 
-          
+          macro pager,attach l "<pipe-entry>lynx -stdin -force_html<enter>"
+
           # Emails durch Drücken von "f" weiterleiten
           bind index,pager f forward-message
-          
+
           # An alle Empfänger einer Email antworten
           bind index,pager R group-reply
-          
-          
+
+
           # --------------------------------------------------------------------
           # ALLGEMEINE EINSTELLUNGEN
           # --------------------------------------------------------------------
-      
+
           # Alle Header-Infos grundsätzlich ausblenden:
-          ignore *		                    
-      
+          ignore *
+
           # Folgende Header-Infos jedoch erlauben:
           unignore	from: subject to cc mail-followup-to \
-              date x-mailer x-url list-id     
-      
+              date x-mailer x-url list-id
+
           # Format für das Zitieren der Original-Mail in einer Antwort-Email
           # ("Am DATUM schrieb ABSENDER:")
           set attribution="* %n <%a> [%(%d.%m.%Y %H:%M)]:"
-      
-          set nobeep                # Keine akustischen Signale bei neuen 
+
+          set nobeep                # Keine akustischen Signale bei neuen
                                     # Nachrichten
           set copy=yes              # Gesendete Emails immer speichern
-          set delete=yes            # Als gelöscht markierte Emails beim Beenden 
+          set delete=yes            # Als gelöscht markierte Emails beim Beenden
                                     # löschen (ohne Nachfrage)
           set editor='vim'          # Oder ein anderer Edigor, z.B. 'gedit'
-          set fast_reply            # Beim Antworten auf eine Email sofort den 
+          set fast_reply            # Beim Antworten auf eine Email sofort den
                                     # Editor öffnen
           set followup_to           # In Betreff und Email-Header "Follow up"-
                                     # Markierungen setzen
           set help=no               # Hilfe-Zeilen ausblenden
-          set include=ask-yes       # Nachfragen, ob Original-Mail in Antwort 
+          set include=ask-yes       # Nachfragen, ob Original-Mail in Antwort
                                     # zitiert werden soll
-      
-          set move=yes              # Gelesene Nachrichten in die obige mbox 
-                                    # verschieben 
+
+          set move=yes              # Gelesene Nachrichten in die obige mbox
+                                    # verschieben
           set nosave_empty          # Keine leeren Email-Entwürfe speichern
-          set pager_index_lines=6   # Beim Lesen von Emails 6 Zeilen für Pager 
+          set pager_index_lines=6   # Beim Lesen von Emails 6 Zeilen für Pager
                                     # reservieren
-          set pager_stop            # Beim Lesen von Emails nicht in die nächste 
+          set pager_stop            # Beim Lesen von Emails nicht in die nächste
                                     # Email scrollen
-          set read_inc=25           # Fortschritts-Anzeige beim Lesen von 
+          set read_inc=25           # Fortschritts-Anzeige beim Lesen von
                                     # Mailboxen einblenden
           set reply_to              # Antwort-Emails automatisch erkennen
-      
+
           set reply_regexp="^((re([\[^-][0-9]+\]?)*|Re|aw|antwort|antw|wg):[ \t]*)+"
-      
-          set reverse_alias         # Namen von Email-Absendern anhand 
+
+          set reverse_alias         # Namen von Email-Absendern anhand
                                     # Adress-Liste anzeigen
-      
+
           set send_charset="us-ascii:iso-8859-1:iso-8859-15:iso-8859-2:utf-8"
-      
+
           set smart_wrap            # Besserer Zeilenumbruch
           set sort=threads          # Emails nach in Thread-Reihenfolge anzeigen
-          set sort_aux=date-sent    # Emails innerhalb von Threads nach dem Datum 
+          set sort_aux=date-sent    # Emails innerhalb von Threads nach dem Datum
                                     # sortieren
-          set strict_threads        # Bei Threading auf In-Reply-To-Header achten, 
+          set strict_threads        # Bei Threading auf In-Reply-To-Header achten,
                                     # nicht auf Betreff
           set weed=yes              # Standard.. :)
-          set wrap_search=yes       # Im Index-Modus Suche erneut von vorne 
+          set wrap_search=yes       # Im Index-Modus Suche erneut von vorne
                                     # zulassen
-      
+
           auto_view text/html
-      
-      
+
+
           # --------------------------------------------------------------------
           # PERSOENLICHE EINSTELLUNGEN
           # --------------------------------------------------------------------
-      
-          my_hdr From:        "VORNAME NACHNAME" <EMAIL@ADRESSE.de>  
+
+          my_hdr From:        "VORNAME NACHNAME" <EMAIL@ADRESSE.de>
           my_hdr Reply-To:    "VORNAME NACHNAME" <EMAIL@ADRESSE.de>
           set realname=       "VORNAME NACHNAME"
           set signature=      "+.signature"
-      
+
           # Einstellungen für den Standard-Ordner:
-          folder-hook . "set from='VORNAME NACHNAME  <EMAIL@ADRESSE.de>'" 
-          folder-hook . "set index_format='%4C %Z %{%b %d} %-15.15L (%4l) %s'" 
+          folder-hook . "set from='VORNAME NACHNAME  <EMAIL@ADRESSE.de>'"
+          folder-hook . "set index_format='%4C %Z %{%b %d} %-15.15L (%4l) %s'"
           folder-hook . "set sendmail='/usr/bin/msmtp --account=default'"
-      
-      
+
+
           # --------------------------------------------------------------------
           # FARBEN
           # --------------------------------------------------------------------
-      
+
           # Aussehen von Mutt:
-      
-          color     tree            brightmagenta     default	
+
+          color     tree            brightmagenta     default
           color     attachment      magenta           default
-          color     error           red               default 
+          color     error           red               default
           color     header          brightyellow      default   "^Subject: "
           color     header          white             default   "^To:"
           color     hdrdefault      yellow            default
-          color     indicator       black             white	
+          color     indicator       black             white
           color     markers         brightblue        default
           color     message         white             default
           color     normal          white             default
@@ -468,49 +468,49 @@ und mit grundlegenden Inhalten gefüllt werden:
           color     quoted1         green             default
           color     quoted2         cyan              default
           color     quoted3         red               default
-          color     signature       brightblack       default	
-          color     status          brightyellow      blue		
+          color     signature       brightblack       default
+          color     status          brightyellow      blue
           color     search          default	        green
-      
+
           # Highlighting von Emails (abhängig von der "Punktezahl" einer Email):
-            
+
           # Mögliche Muster zur Punktevergabe:
-          # ~f ABSENDER     : Betrifft alle Emails, die vom ABSENDER 
+          # ~f ABSENDER     : Betrifft alle Emails, die vom ABSENDER
           #                   geschickt wurden ("from")
-          # ~t EMPFAENGER   : Betrifft alle Emails, die an EMPFAENGER 
+          # ~t EMPFAENGER   : Betrifft alle Emails, die an EMPFAENGER
           #                   geschickt wurden ("to")
-          # ~s BETREFF      : Betrifft alle Emails, die BETREFF 
-          #                   </EMAIL@ADRESSE>in der Betreff-Zeile enthalten 
+          # ~s BETREFF      : Betrifft alle Emails, die BETREFF
+          #                   </EMAIL@ADRESSE>in der Betreff-Zeile enthalten
           #                   ("subject")
-      
+
           # Reguläre Ausdrücke als Suchmuster:
           # .       : Ein beliebiges Zeichen
           # *       : Der vorherige Ausdruck Null mal oder beliebig oft
           # [aA]    : Eines der in der Klammer enthaltenen Zeichen (a oder A)
-      
-      
+
+
           # Alle Emails bekommen zunächst 0 Punkte:
           unscore *
-      
-          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen" 
-          # im Empfänger-Namen enthalten: 
+
+          # Beispiel 1: 10 Punkte an alle Emails vergeben, die "grund-wissen"
+          # im Empfänger-Namen enthalten:
           score '~t .*@grund-wissen.*' +10
-      
-          # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx" 
-          # in der Betreff-Zeile enthalten: 
+
+          # Beispiel 2: 25 Punkte an alle Emails vergeben, die "sphinx"
+          # in der Betreff-Zeile enthalten:
           score '~s .*sphinx.*'      +25
-      
-      
-          # Zum Beispiel 1: Alle Emails mit einer Punktezahl von 10-20 
+
+
+          # Zum Beispiel 1: Alle Emails mit einer Punktezahl von 10-20
           # hellrot hervorheben:
           color index brightred default '~n 10-20'
-      
-          # Zum Beispiel 2: Alle Emails mit einer Punktezahl von 25-29 
+
+          # Zum Beispiel 2: Alle Emails mit einer Punktezahl von 25-29
           # blau hervorheben:
           color index blue default      '~n 25-29'
 
 In der obigen Beispiel-Konfigurationsdatei sollten die in Großbuchstaben
-gesetzten Variablen durch eigene Angaben ersetzt werden; zudem sollte der 
+gesetzten Variablen durch eigene Angaben ersetzt werden; zudem sollte der
 zum Schreiben von Emails bevorzugte Editor festgelegt werden.
 
 Damit die Mailboxen im Verzeichnis ``~/Mail`` automatisch erkannt werden, sollte
@@ -520,7 +520,7 @@ zudem folgender Eintrag zu den Pfadeinstellungen hinzugefügt werden:
 
     # Mailboxen automatisch finden:
     mailboxes $(find ~/Mail/ -maxdepth 0 -type d -printf "%p)
-    
+
 Dieser Eintrag befindet sich bei mir genau so in meiner eigenen ``~/.muttrc``;
 leider wird jedoch in der Druckversion durch diese Zeile das Highlighting der
 gesamten Konfigurationsdatei deaktiviert.. anscheinend ein Fehler von Pygments,
@@ -532,7 +532,7 @@ Unternehmen oder Mailinglisten gezielt farblich hervorzuheben. Als Farben sind
 ``red``, ``green``, ``blue``, ``yellow``, ``cyan``, ``magenta`` möglich, wobei
 durch die Nachrichten bei einem davor gestellten ``bright`` zusätzlich fett
 gedruckt erscheinen (beispielsweise steht ``brightgreen`` für grün und
-fettgedruckt). 
+fettgedruckt).
 
 Das Prinzip der Punktevergabe ist eigentlich simpel, man sollte lediglich darauf
 achten, dass die einkommenden Emails nicht mehrfach Punkte erhalten,
@@ -564,10 +564,10 @@ aufgerufen werden:
 
 * Email abrufen und zwischen Emails navigieren:
 
-  .. list-table:: 
+  .. list-table::
       :name: tab-index-navigation
-      :widths: 50 50 
-  
+      :widths: 50 50
+
       * - ``A``
         - Emails vom Provider abrufen
       * - ``a``
@@ -586,17 +586,17 @@ aufgerufen werden:
         - Mutt beenden ("quit")
 
   Zudem kann man mit ``PageUP`` und ``PageDown`` die Emails seitenweise
-  durchblättern. 
+  durchblättern.
 
 * Emails schreiben, beantworten und weiterleiten:
 
-  .. list-table:: 
+  .. list-table::
       :name: tab-index-mail
-      :widths: 15 50 
-  
+      :widths: 15 50
+
       * - ``m``
         - Neue Email verfassen ("mail")
-      * - ``r`` 
+      * - ``r``
         - Auf Email unter dem Cursor antworten (nur dem Absender) ("reply")
       * - ``R``
         - Auf Email unter dem Cursor antworten (allen Empfängern) ("group reply")
@@ -610,55 +610,55 @@ aufgerufen werden:
 * Emails markieren, löschen, verschieben, kopieren:
 
   .. only:: html
-  
-      .. list-table:: 
+
+      .. list-table::
           :name: tab-index-move
-          :widths: 15 50 
-      
-          * - ``d``                            
+          :widths: 15 50
+
+          * - ``d``
             - Email unter dem Cursor löschen ("delete")
-          * - ``u``                            
+          * - ``u``
             - Löschmarkierung unterhalb des Cursor aufheben  ("undelete")
-          * - ``t``                            
+          * - ``t``
             - Email unter dem Cursor mit einer Markierung versehen ("tag")
-          * - ``D``                            
+          * - ``D``
             - Emails nach bestimmtem Muster löschen ("delete by pattern")
-          * - ``U``                            
+          * - ``U``
             - Löschmarkierungen nach bestimmtem Muster aufheben  ("undelete by pattern")
-          * - ``T``                            
+          * - ``T``
             - Emails nach bestimmtem Muster mit einer Markierung versehen ("tag by pattern")
-          * - ``w``                            
-            - | Status der Email-Adresse anpassen 
+          * - ``w``
+            - | Status der Email-Adresse anpassen
               | (``O``: Old, ``N``: New, ``D``: Delete, ``r``: Responded , ``*``: Tagged, ``!`` : Important)
-          * - ``C``                            
+          * - ``C``
             -  Email unter dem Cursor in eine andere Mailbox kopieren ("copy")
-          * - ``s``                            
+          * - ``s``
             -  Email unter dem Cursor in andere Mailbox abspeichern/verschieben ("save")
 
   .. only:: latex
-  
-      .. list-table:: 
+
+      .. list-table::
           :name: tab-index-move-latex
-          :widths: 15 50 
-      
-          * - ``d``                            
+          :widths: 15 50
+
+          * - ``d``
             - Email unter dem Cursor löschen ("delete")
-          * - ``u``                            
+          * - ``u``
             - Löschmarkierung unterhalb des Cursor aufheben  ("undelete")
-          * - ``t``                            
+          * - ``t``
             - Email unter dem Cursor mit einer Markierung versehen ("tag")
-          * - ``D``                            
+          * - ``D``
             - Emails nach bestimmtem Muster löschen ("delete by pattern")
-          * - ``U``                            
+          * - ``U``
             - Löschmarkierungen nach bestimmtem Muster aufheben  ("undelete by pattern")
-          * - ``T``                            
+          * - ``T``
             - Emails nach bestimmtem Muster mit einer Markierung versehen ("tag by pattern")
-          * - ``w``                            
-            - Status der Email-Adresse anpassen 
+          * - ``w``
+            - Status der Email-Adresse anpassen
               (``O``: Old, ``N``: New, ``D``: Delete, ``r``: Responded , ``*``: Tagged, ``!`` : Important)
-          * - ``C``                            
+          * - ``C``
             -  Email unter dem Cursor in eine andere Mailbox kopieren ("copy")
-          * - ``s``                            
+          * - ``s``
             -  Email unter dem Cursor in andere Mailbox abspeichern/verschieben ("save")
 
   Ist die Option ``set move=yes`` in der Konfigurationsdatei aktiviert, werden
@@ -678,22 +678,22 @@ aufgerufen werden:
 
 * Emails durchsuchen:
 
-  .. list-table:: 
+  .. list-table::
       :name: tab-index-search
-      :widths: 15 50 
-  
+      :widths: 15 50
+
       * - ``/``
         - Nach Emails suchen
       * - ``n``
         - Zur nächsten Email gehen, auf welche die Suche zutrifft
       * - ``N``
         - Rückwärts zur nächsten Email gehen, auf welche die Suche zutrifft
-  
+
   Bei der Suche mittels ``/`` werden die Email-Header, also insbesondere das
   Absenderfeld und die Betreffszeile durchsucht. Möchte man auch den Inhalt der
   Mails durchsuchen, kann man ``/ ~b Suchbegriff`` eingeben ("search bodies").
 
-* Mit ``c`` kann man zwischen verschiedenen Mailboxen wechseln. 
+* Mit ``c`` kann man zwischen verschiedenen Mailboxen wechseln.
 
 Bei mehreren der obigen Funktionen wird vom Benutzer eine weitere Eingabe von
 Text in der Eingabezeile (unten am Bildschirm) erwartet. Um diesen
@@ -715,7 +715,7 @@ man (etwas gewöhnungsbedürftig) ``Ctrl g`` drücken.
 
 .. rubric:: Pager-Modus
 
-Drückt man im Index-Modus ``Leertaste`` oder ``Enter``, so wird der Inhalt der Email 
+Drückt man im Index-Modus ``Leertaste`` oder ``Enter``, so wird der Inhalt der Email
 im so genannten Pager-Fenster angezeigt. In diesem kann man mit den Pfeiltasten
 oder ``PageUp`` und ``PageDown`` durch den Inhalt der Email scrollen. Durch
 Drücken von ``q`` gelangt man zurück in den Index-Modus. Mittels ``r`` kann
@@ -736,21 +736,21 @@ Hat man mit dem Editor eine Email verfasst und den Editor wieder beendet, so
 gelangt man in das so genannte "Compose"-Fenster. Hier können folgende
 Funktionen durch Drücken der jeweiligen Taste aufgerufen werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-mutt-compose
-    :widths: 50 50 
+    :widths: 50 50
 
-    * - ``s`` 
+    * - ``s``
       - Text in Betreffszeile ändern ("subject")
-    * - ``Esc f`` 
-      - Text im Absender-Feld ändern ("from") 
+    * - ``Esc f``
+      - Text im Absender-Feld ändern ("from")
     * - ``c``
-      - Weitere für alle sichtbare Empfänger hinzufügen ("copy") 
+      - Weitere für alle sichtbare Empfänger hinzufügen ("copy")
     * - ``b``
       - Versteckte Empfänger hinzufügen ("blind copy")
-    * - ``p`` 
+    * - ``p``
       - PGP-Verschlüsselungs-Einstellungen vornehmen
-    * - ``a`` 
+    * - ``a``
       - Anhänge an die Email hinzufügen ("append")
     * - :math:`\downarrow` oder ``j``
       - Zum nächsten Anhang gehen

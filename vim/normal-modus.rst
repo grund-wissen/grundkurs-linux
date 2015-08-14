@@ -387,7 +387,7 @@ eingefügt werden.
 Undo und Redo
 -------------
 
-Änderungen  können  mit  ``u``  rückgängig   gemacht   bzw.   mit   ``Ctrl   r``
+Änderungen können mit ``u`` rückgängig gemacht bzw. mit ``Ctrl r``
 wiederhergestellt werden:
 
 .. list-table::
@@ -466,8 +466,8 @@ Register
 --------
 
 Vim besitzt nicht nur *eine* Zwischenablage, sondern kann Textelemente und
-:ref:`Makros` jedem beliebigen Kleinbuchstaben zuweisen. Ein Register ist quasi eine
-benannte Zwischenablage.
+:ref:`Makros` jedem beliebigen Kleinbuchstaben zuweisen. Ein Register ist quasi
+eine benannte Zwischenablage.
 
 Im Normalmodus kann man mit ``"`` ``Buchstabe`` auf einen Register zugreifen:
 
@@ -480,10 +480,9 @@ Im Normalmodus kann man mit ``"`` ``Buchstabe`` auf einen Register zugreifen:
     * - ``"`` ``Großbuchstabe`` ``Bearbeitungsanweisung``
       - Füge Text oder Code hinten an das Register ``Buchstabe`` an
 
-*Beispiel:* Mittels ``"hyy`` kann die aktuelle Zeile in die Ablage ``h``
-kopiert werden. Deren Inhalt kann mit ``"hp`` wieder an anderer Stelle
-eingefügt werden. So abgelegte Inhalte gehen beim Schließen von Vim nicht
-verloren!
+*Beispiel:* Mittels ``"hyy`` kann die aktuelle Zeile in die Ablage ``h`` kopiert
+werden. Deren Inhalt kann mit ``"hp`` wieder an anderer Stelle eingefügt werden.
+So abgelegte Inhalte bleiben auch beim Schließen von Vim erhalten!
 
 Mit ``:reg`` erhält man eine Übersicht, welcher Inhalt in welchem Register
 abgelegt ist:
@@ -495,8 +494,10 @@ abgelegt ist:
     * - ``:reg``
       - Zeige den Inhalt aller Register an
 
-Ein spezielles Register ist die (systemweite) Zwischenablage ''*'', mittels
-der ein Kopieren von bzw. in andere(n) Programme(n) möglich ist:
+Die normale, Vim-interne (namenlose) Zwischenablage kann explizit über das
+Register ``"`` angewählt werden. Ein anderes, spezielles Register ist die
+systemweite Zwischenablage ``*``, mittels der ein Kopieren von bzw. in andere(n)
+Programme(n) möglich ist:
 
 .. list-table::
     :widths: 35 65
@@ -507,10 +508,33 @@ der ein Kopieren von bzw. in andere(n) Programme(n) möglich ist:
     * - ``"*p`` ``Bewegung``
       - Füge aus der Zwischenabage ein
 
+Eine weitere systemweite Zwischenablage ist ``~``, in welcher der zuletzt mit
+der Maus ausgewählte Text abgespeichert ist.
+
 Unter Linux werden Bereiche bereits durch ein einfaches Markieren
-(:ref:`Visueller Modus`) in die systemweite Zwischenablage kopiert. An
-anderer Stelle können sie dann mit ``Shift Ins`` (Einfüge-Taste) oder durch
-einen Klick auf die mittlere Maustaste wieder eingefügt werden.
+(:ref:`Visueller Modus`) in die systemweiten Zwischenablagen kopiert. An anderer
+Stelle können sie dann mit ``Shift Ins`` (Einfüge-Taste) oder durch einen Klick
+auf die mittlere Maustaste wieder eingefügt werden.
+
+Auch im Einfüge- und im Kommandozeilenmodus kann auf die Inhalte der einzelnen
+Register zugegriffen werden: Durch eine aufeinander folgende Eingabe von
+``<c-r>`` und einem Registerbuchstaben bzw. -Symbol wird der Inhalt des
+entsprechenden Registers an der Cursorposition eingefügt:
+
+.. list-table::
+    :widths: 20 70
+    :header-rows: 0
+
+    * - ``<c-r>"``
+      - Füge den Inhalt des namenlosen Registers an der Cursorpostition ein
+    * - ``<c-r>%``
+      - Füge den aktuellen Dateinamen (Register ``%``) an der Cursorposition ein
+    * - ``<c-r>a``, ``<c-r>b`` usw.
+      - Füge den Inhalt des Registers ``a``, ``b``, usw. an der Cursorposition
+        ein
+
+Weitere Informationen über die verschiedenen Register aus den Vim-Hilfeseiten
+können mittels ``:h <c-r>`` aufgerufen werden.
 
 
 .. _Makros:
@@ -556,7 +580,9 @@ Werden Text-Dateien infolge ihrer Länge zu unübersichtlich, können bestimmte
 Bereiche ausgeblendet werden. Das kann entweder über Schlüsselworte,
 Einrückungen oder über Symbole erfolgen.
 
-Beispielsweise wird Python-Code standardmäßig anhand von Einrückungen gefaltet.
+Beispielsweise wird Python-Code häufig anhand von Einrückungen gefaltet, in
+Datei-Vergleichen mittels :ref:`diff <vimdiff>` werden gleiche Textbereiche
+weggefaltet, so dass nur die Unterschiede in den Dateien sichtbar bleiben.
 Wird kein spezieller Faltungsmechanismus von einem Plugin geladen, so wird das
 in der :ref:`Konfigurationsdatei` festgelegt Faltungsschema verwendet. Oft
 werden dabei als Faltungsmarkierungen ``{{{`` und ``}}}`` genutzt, so dass alle

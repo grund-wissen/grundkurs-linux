@@ -13,6 +13,15 @@ Meine persönliche Konfigurationsdatei sieht etwa so aus:
 
 :download:`Beispieldatei ~/.vimrc <vimrc.txt>`
 
+
+.. .. _Einstellungen:
+.. .. _Settings:
+
+.. Einstellungen (Settings)
+.. ------------------------
+
+.. TODO set optionsname, set nooptionsname
+
 .. Da mir persönlich die ``Esc``-Taste zu weit entfernt liegt, habe ich mir in
 .. der :ref:`Konfigurationsdatei` die in normalem Text selten
 .. vorkommende Tastenkombination ``jk`` mit der gleichen Funktion belegt.. :-]
@@ -27,7 +36,7 @@ Meine persönliche Konfigurationsdatei sieht etwa so aus:
 Mappings
 --------
 
-Mappings ermöglichen es, für beliebige Befehlskombinationen selbstgewählte
+Mappings ermöglichen es, für beliebige Befehlskombinationen selbst gewählte
 Tastenkombinationen zu vergeben.
 
 Je nach Modus, in welchem die Mappings gelten sollen, wird zwischen ``map,
@@ -46,10 +55,10 @@ imap,`` und ``vmap`` unterschieden:
     * - ``vmap Kürzel Befehl``
       - Kürzel für den Visuell-Modus
 
-Mappings können auch über den Kommandozeilen-Modus gesetzt werden,
-bleiben so allerdings nur bis zum Beenden von Vim gespeichert. Für
-häufig genutzte Tastenkombinationen empfielt es sich daher, diese in der
-`Konfigurationsdatei`_ festzuhalten.
+Mappings können auch über den Kommandozeilen-Modus gesetzt werden, bleiben so
+allerdings nur bis zum Beenden von Vim gespeichert. Für häufig genutzte
+Tastenkombinationen empfiehlt es sich daher, diese in der Konfigurationsdatei
+festzuhalten.
 
 **Tipp**: Eine Übersicht darüber, welche Mappings vergeben sind, kann man mit
 ``:map`` bekommen. Um die Auswahl einzuschränken, kann dahinter der Beginn eines
@@ -92,12 +101,12 @@ Vim-Kommandozeile aktiviert:
 
 	:set spell spelllang=en_us
 
-Bei aktiver Rechtsreichprüfung werden Wörter als "falsch" angesehen, wenn es
+Bei aktiver Rechtschreibprüfung werden Wörter als "falsch" angesehen, wenn es
 dazu keinen Eintrag in der entsprechenden Spell-File gibt. Als Name der
 Sprache wird allgemein die Form ``language_region`` verwendet, da sich
 beispielsweise die in Großbritannien übliche Rechtschreibung ``en_en`` von der
 amerikanischen Rechtschreibung ``en_us`` unterscheidet. Für die deutschsprachige
-Rechtschreibung gibt es neben ``de_de``, ``de_at`` (Österrich) und ``de_ch``
+Rechtschreibung gibt es neben ``de_de``, ``de_at`` (Österreich) und ``de_ch``
 (Schweiz) auch ``de_19`` und ``de_20`` für die alte beziehungsweise neue
 deutsche Rechtschreibung.
 
@@ -109,11 +118,13 @@ nach Farbschema) durch eine rote Hintergrundfarbe gekennzeichnet.
 
 Mit ``:set nospell`` kann die Rechtschreibprüfung wieder abgeschaltet werden.
 Noch einfacher wird das Aktivieren und Deaktivieren der Rechtschreibung durch
-die Aufnahme der folgenden Funktion in der Konfigurationsdatei ``~/.vimrc``:
+die Aufnahme der folgenden Funktion (nach einer Vorlage aus dem `Vim-Wiki
+<http://vim.wikia.com/wiki/Toggle_spellcheck_with_function_keys>`_) in der
+Konfigurationsdatei ``~/.vimrc``:
 
 .. code-block:: vim
 
-    " Rechtschreibprüfung mit <F8> an- und aussschalten:
+    " Rechtschreibprüfung mit <F8> an- und ausschalten:
     let g:myLang = 1
     let g:myLangList = ['nospell', 'de_20,en_us']
     function! MySpellLang()

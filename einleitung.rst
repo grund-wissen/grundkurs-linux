@@ -9,7 +9,7 @@ Einleitung
     Linux ist ein freies Betriebsystem und entspricht dem Open-Source-Grundgedanken:
 
     * Das System und alle verfügbaren Programme sind zum einen ohne Einschränkung
-      kostenlos nutzbar. 
+      kostenlos nutzbar.
     * Auch der Quellcode des Systems bzw. der Programme kann frei heruntergeladen
       und nach Belieben abgeändert werden.
 
@@ -19,8 +19,8 @@ Einleitung
     <http://www.linuxmint.org>`_ sind auch "normale" Aufgaben wie das Benutzen
     von Office-Programmen, das Verwalten von Emails, das Abspielen von Musik-
     und Videodateien, usw. auch unter Linux komfortabel und ohne
-    Programmierkenntnisse leicht umsetzbar. 
-    
+    Programmierkenntnisse leicht umsetzbar.
+
     Linux bietet allerdings -- im Gegensatz zu kommerziellen Systemen -- stets
     die Möglichkeit, die Funktionsweise des Betriebsystems und seiner Programme
     auch genauer zu verstehen. Auch können mittels einfacher Shell-Skripte
@@ -82,12 +82,12 @@ Seiten der Kunden und kritisierten den mangelnden Informationsfluss seitens der
 Software-Hersteller. Darüber hinaus wurde -- in Kombination mit der Patentierung
 von "geistigem Eigentum" -- die Gleichberechtigung der Programmierer als
 gefährdet angesehen. Das Know-How, so fürchtete man, würde sich schnell nur auf
-wenige Firmen konzentrieren. 
+wenige Firmen konzentrieren.
 
 Um nun derartigen Patentierungen von Informationen und den daraus resultierenden
 technischen und rechtlichen Problemen entgegenzuwirken, wurden unter anderem die
 "Open-Source"-Bewegung und die "Free Software Foundation" ins Leben gerufen und
-mit der Entwicklung gemeinschaftlicher, frei verfügbarer Software begonnen. 
+mit der Entwicklung gemeinschaftlicher, frei verfügbarer Software begonnen.
 
 .. only:: html
 
@@ -97,8 +97,8 @@ mit der Entwicklung gemeinschaftlicher, frei verfügbarer Software begonnen.
         :align: center
         :width: 40%
 
-        Das `Open-Source-Logo <http://de.wikipedia.org/wiki/Open_source>`_. 
-      
+        Das `Open-Source-Logo <http://de.wikipedia.org/wiki/Open_source>`_.
+
         :download:`SVG: Open-Source-Logo <pics/open-source.svg>`
 
 .. index:: GNU
@@ -116,39 +116,39 @@ den 1990er Jahren die Basis für das neue Betriebsystem "Linux" dar. [#AQ]_
     :align: center
     :width: 40%
 
-    Das `Linux-Maskottchen Tux <http://de.wikipedia.org/wiki/Tux_(Maskottchen)>`_. 
-    
+    Das `Linux-Maskottchen Tux <http://de.wikipedia.org/wiki/Tux_(Maskottchen)>`_.
+
     .. only:: html
-    
+
         :download:`SVG: Tux <pics/tux.svg>`
 
 
 
 .. _Nutzen, Verstehen, Mitmachen:
 
-.. rubric:: Nutzen, Verstehen, Mitmachen! 
+.. rubric:: Nutzen, Verstehen, Mitmachen!
 
 Die Linux- und Open-Source-Gemeinschaft lädt nicht nur dazu ein, eine Vielzahl
 an frei verfügbaren Programmen kostenlos herunterzuladen und zu nutzen -- sie
 ist gleichzeitig darum bemüht, den Nutzern die Vorteile von
 Open-Source-Projekten sowie die Funktionsweise von Software verständlich zu
 machen. In einem Team, in dem ein jeder von der Arbeit aller anderen profitiert,
-sind weitere "Kollegen" schließlich jederzeit willkommen.. :-) 
+sind weitere "Kollegen" schließlich jederzeit willkommen.. :-)
 
 Mit Linux als Betriebsystem hat jeder Nutzer die Möglichkeit, sich den Quellcode
 von anderen Programmierern anzuschauen und -- durch Lesen und eigenes
-Code-Schreiben -- auch selbst ein Software-Entwickler zu werden. 
+Code-Schreiben -- auch selbst ein Software-Entwickler zu werden.
 
 Doch nicht nur Quellcode ist von Bedeutung: Alle Informationen, die unter einer
 gemeinnützigen Lizenz wie der `Creative-Commons-License (CCL)
 <http://de.wikipedia.org/wiki/Creative_Commons>`_ oder der `General Public
 License (GPL) <http://de.wikipedia.org/wiki/Gpl>`_ veröffentlicht werden, tragen
-zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei! 
+zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
 
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -186,8 +186,8 @@ zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
         Betriebssystem GNU/Linux zu benutzen, und niemandem kann es weggenommen
         werden. Jeder, der GNU/Linux aus dem Internet herunter lädt, auf seinen
         Rechner installiert, Kopien davon verschenkt oder verkauft, dem gehört es
-        auch. 
-      
+        auch.
+
         In diesem Sinne ist die GPL eher eine Anti-Lizenz, weshalb `Richard Stallman
         <http://de.wikipedia.org/wiki/Richard_Stallman>`_ von ihr auch lieber als
         `Copyleft <http://de.wikipedia.org/wiki/Copyleft>`_ spricht anstatt von
@@ -198,7 +198,7 @@ zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
     Quellcode sollte nach dieser Ethik geteilt, d.h. ohne Hindernisse
     ausgetauscht und für jeden frei zugänglich gemacht werden. So wurden
     ähnliche Lizenzen auch für Bücher und Musik geschaffen. Das berühmteste
-    Beispiel ist `Wikipedia <http://de.wikipedia.org>`_. 
+    Beispiel ist `Wikipedia <http://de.wikipedia.org>`_.
 
 
 

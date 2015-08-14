@@ -15,7 +15,7 @@ Anpassungen vorgenommen. Im Wesentlichen gibt es dafür zwei Gründe:
 * Andererseits werden je nach Linux-Distribution nur Software-Pakete
   mitgeliefert, die bestimmten Kriterien genügen (beispielsweise gewisse
   Lizenzbedingungen aufweisen). Manche wichtigen Pakete müssen daher, selbst
-  wenn sie frei verfügbar sind, manuell installiert werden. 
+  wenn sie frei verfügbar sind, manuell installiert werden.
 
 
 .. index:: Paketverwaltung
@@ -33,28 +33,28 @@ Verwaltungsprogramme (beispielsweise `Synaptic
 sind. Von einer Shell aus kann :ref:`apt <apt>` auch direkt auf einfache Weise
 genutzt werden.  Man kann
 
-* mit ``apt-get update`` die Liste an verfügbaren Paketen aktualisieren, 
+* mit ``apt-get update`` die Liste an verfügbaren Paketen aktualisieren,
 * mit ``apt-cache search suchbegriff`` ein in Frage kommenden Paket suchen,
-* mit ``apt-get install paketname`` ein verfügbares Paket installieren. 
+* mit ``apt-get install paketname`` ein verfügbares Paket installieren.
 
 Zur Vereinfachung ist das Programm ``aptitude`` empfehlenswert. [#apt1]_  So
 lassen sich die beiden Aufruf-Varianten ``apt-get`` und ``"apt-cache"`` durch
 den entsprechenden ``aptitude``-Befehl ersetzen:
 
-* ``aptitude search suchbegriff`` entspricht ``apt-cache search suchbegriff`` 
+* ``aptitude search suchbegriff`` entspricht ``apt-cache search suchbegriff``
 * ``aptitude install paketname`` entspricht ``apt-get install paketname``
 
 .. _Wichtige Zusatzpakete:
 
 .. rubric:: Wichtige Zusatzpakete
-  
+
 Folgende Programm-Pakete, die als Superuser mittels ``apt`` hinzugefügt werden
 können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützlich:
 [#Ding1]_ [#Red]_ [#VLC1]_ [#XPDF1]_
 
 .. list-table:: Programme mit graphischer Bedienoberfläche (GUI)
     :name: tab-zusatzprogramme-graphisch
-    :widths: 30 70 
+    :widths: 30 70
 
     * - Programmname
       - Beschreibung
@@ -65,7 +65,7 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
     * - `blender <http://wiki.ubuntuusers.de/Blender_3D>`_
       - ein Programm zur Modellierung und Animation von 3D-Modellen
     * - `ding <http://wiki.ubuntuusers.de/Wörterbücher#Ding>`_
-      - ein Deutsch-Englisches Wörterbuch 
+      - ein Deutsch-Englisches Wörterbuch
         (zusätzlich muss auch das Paket ``trans-de-en`` installiert werden)
     * - `easytag <http://wiki.ubuntuusers.de/Easytag>`_
       - ein Programm zur schnellen und einfachen Bearbeitung von Audio-Metadaten
@@ -81,7 +81,7 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
         Festplatten oder USB-Sticks erstellt und verwaltet werden können.
     * - `gtk-redshift <http://wiki.ubuntuusers.de/Redshift>`_
       - ein Programm, das den Bildschirm je nach Tageszeit und geographischer
-        Lage rötlich einfärbt (wirkt entspannend auf das menschliche Auge). 
+        Lage rötlich einfärbt (wirkt entspannend auf das menschliche Auge).
     * - `guake <http://wiki.ubuntuusers.de/Guake>`_
       - eine Shell, die auf Tastendruck am oberen Bildschirmrand ein- und
         ausgeblendet werden kann
@@ -95,14 +95,14 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
       - ein Chat-Programm, das mehrere Protokolle unterstützt (u.a. Jabber und
         IRC)
     * - `transmission <http://wiki.ubuntuusers.de/Transmission>`_
-      - ein einfach bedienbares BitTorrent-Programm 
+      - ein einfach bedienbares BitTorrent-Programm
     * - `xpdf <http://www.foolabs.com/xpdf/>`_
       - ein schlanker, schneller PDF-Betrachter
     * - `unetbootin <https://wiki.ubuntuusers.de/UNetbootin>`_
       - ein Programm zum erstellen von bootfähigen Live-USB-Sticks
     * - `vlc <http://wiki.ubuntuusers.de/VLC>`_
       - ein Audio- und Videoplayer, der alle gängigen Formate unterstützt (MPG,
-        AVI, FLV, MP3, OGG, u.a.) 
+        AVI, FLV, MP3, OGG, u.a.)
 
 Je nach Distribution und Desktop-Umgebung können einige der genannten Programme
 bereits installiert sein. In diesem Fall bleibt ein Aufruf von ``sudo aptitude
@@ -116,13 +116,13 @@ und der Nutzen einiger Pakete näher beschrieben.
 .. _Emulieren von Windows-Programmen:
 
 .. rubric:: Emulieren von Windows-Programmen
-  
+
 Auch wenn es unter Linux für die meisten Zwecke eigene, auf dem
 Open-Source-Prinzip basierende Programme gibt, lassen sich bei Bedarf --
 allerdings ohne Garantie -- kommerzielle Windows-Programme auch mittels des
 Windows-Emulators `Wine <http://wiki.ubuntuusers.de/Wine>`_ installieren bzw.
 bedienen. [#W1]_ Um Wine unter Ubuntu 12.04 oder neuer beziehungsweise Linux
-Mint 13 (oder neuer) zu installieren, sollte man folgendermaßen vorgehen: 
+Mint 13 (oder neuer) zu installieren, sollte man folgendermaßen vorgehen:
 
 ..  [#W2]_
 
@@ -130,7 +130,7 @@ Mint 13 (oder neuer) zu installieren, sollte man folgendermaßen vorgehen:
 
     sudo add-apt-repository ppa:ubuntu-wine/ppa
     sudo apt-get update
-    sudo apt-get install wine1.7 
+    sudo apt-get install wine1.7
 
 Nach der Installation können Windows-Programme (auch Installations-Programme)
 mittels ``wine programm.exe`` gestartet werden. Mittels ``winecfg`` bzw. des
@@ -147,7 +147,7 @@ Linux-Programm existiert.
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -159,7 +159,7 @@ Linux-Programm existiert.
 .. [#Ding1] Unter Linux Mint 17 bzw. Ubuntu 14.04 startet ``ding`` nach der
     Installation nicht, sondern gibt stattdessen die Fehlermeldung ``wish not
     found`` aus. Um dieses Problem zu beheben, öffnet man die Datei
-    ``/usr/bin/ding`` mit Superuser-Rechten und ersetzt in der dritten Zeile 
+    ``/usr/bin/ding`` mit Superuser-Rechten und ersetzt in der dritten Zeile
     ``exec wish "$0" "$@"`` durch ``exec wish8.4 "$0" "$@"``; danach startet
     ``ding`` wie gewohnt.
 
@@ -172,7 +172,7 @@ Linux-Programm existiert.
     unter neueren Versionen von Linux Mint und Ubuntu bereits alle dafür nötigen
     Codecs vorinstalliert sind, müssen auf Debian-Systemen folgende Pakete
     manuell nachinstalliert werden:
-    
+
     ``sudo aptitude install libc6 w32codecs libdvdcss2``
 
 .. [#XPDF1] Damit ``xpdf`` beim Öffnen einer PDF-Datei keine Fehlermeldung der
@@ -201,7 +201,7 @@ Linux-Programm existiert.
 
     Nachteilig ist bei dieser Methode, dass virtuelle Betriebsysteme oft mit
     erheblichen Geschwindigkeits-Einbußen verbunden sind und viel
-    Arbeitsspeicher erfordern. 
+    Arbeitsspeicher erfordern.
 
 ..  .. [#W2] Siehe `Original-Anleitung
     ..  <http://www.upubuntu.com/2012/06/how-to-install-wine-157-on-ubuntu.html>`_

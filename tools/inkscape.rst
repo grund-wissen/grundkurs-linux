@@ -14,7 +14,7 @@ Unter Linux lässt sich Inkscape mittels des gleichnamigen Paketes installieren:
     sudo aptitude install inkscape
 
 Inkscape bietet bereits in der Grundversion den Import und Export der
-gängigsten Graphik-Formate, darunter auch PNG und PDF. 
+gängigsten Graphik-Formate, darunter auch PNG und PDF.
 
 
 .. _LaTeX-Formeln:
@@ -64,7 +64,7 @@ Multipage-PDF-Datei ist dank des Skripts `svglayers2pdfpages.sh
 <http://www.grund-wissen.de/_downloads/svglayers2pdfpages.sh>`_ von `Christoph
 Haag <http://www.lafkon.net>`_  möglich: Gibt man im Verzeichnis der zu
 exportierenden SVG-Datei ``svglayers2pdfpages.sh svgfile.svg`` ein, so wird im
-gleichen Verzeichnis eine gleichnamige PDF-Datei erzeugt. 
+gleichen Verzeichnis eine gleichnamige PDF-Datei erzeugt.
 
 .. _Inkscape-Links:
 

@@ -1,4 +1,4 @@
-.. index:: Superuser, Root, 
+.. index:: Superuser, Root,
 .. _Administrator-Programme:
 
 Administrator-Programme
@@ -21,7 +21,7 @@ entsprechende Ordner im ``/home``-Verzeichnis angelegt. Mit ``deluser
 benutzername`` kann entsprechend ein bestehendes Benutzer-Konto gelöscht
 werden. Standardmäßig bleibt dabei das Home-Verzeichnis des Benutzers
 erhalten; möchte man dieses gleich mit entfernen, kann ``deluser`` mit der
-Option ``--remove-home benutzername`` aufgerufen werden. 
+Option ``--remove-home benutzername`` aufgerufen werden.
 
 
 .. index:: apt, aptitude, Paketverwaltung
@@ -42,7 +42,7 @@ Als Super-User kann man zusätzlich weitere Funktionen von ``apt`` bzw.
   Pakete-Liste aktualisiert; damit verbunden wird auch die Liste der Server, von
   denen die Pakete heruntergeladen werden können, auf den aktuellen Stand
   gebracht. Ein solcher Update sollte in regelmäßigen Abständen bzw. vor
-  Paket-Installationen und System-Upgrades vorgenommen werden. 
+  Paket-Installationen und System-Upgrades vorgenommen werden.
 
 * Mit ``apt-get install paketname`` (oder einfacher: ``aptitude install
   paketname``) lässt sich ein Programm oder eine Bibliothek aus der Paketliste
@@ -62,7 +62,7 @@ Als Super-User kann man zusätzlich weitere Funktionen von ``apt`` bzw.
 * Mit ``apt-get remove paket`` (oder einfacher: ``aptitude remove paket`` kann
   ein installiertes Paket wieder deinstalliert werden. Die Konfigurationsdateien
   bleiben dabei erhalten; um auch diese zu entfernen, kann der Aufruf ``apt-get
-  purge paket`` bzw. ``aptitude purge paket`` genutzt werden. 
+  purge paket`` bzw. ``aptitude purge paket`` genutzt werden.
 
 * Mit ``apt-get source paket`` kann der Quellcode eines Pakets (Programm oder
   Bibliothek) herunter geladen werden. Somit kann man das Programm selbst
@@ -92,7 +92,7 @@ Als Super-User kann man zusätzlich weitere Funktionen von ``apt`` bzw.
   (z.B. ein Wechsel von Ubuntu Version 12.04 auf Version 12.10). Da ein solcher
   System-Upgrade zahlreiche Veränderungen mit sich bringen kann, sollte man sich
   den Einsatz dieser Aktualisierungs-Variante vorher gut überlegen. [#]_
-  
+
 ``aptitude`` kann auch ohne zusätzliche Kommandozeilen-Argumente aufgerufen
 werden. In diesem Fall erscheint eine text-basierte Benutzeroberfläche. In der
 oberen Hälfte werden Paketnamen (nach verschienenen Rubriken sortiert)
@@ -146,8 +146,8 @@ Routine: [#]_
 
 .. code-block:: bash
 
-    # Vorab: Die System-Partition eingebinden: 
-    # -- falls unbekannt: fdisk -l eingeben! -- 
+    # Vorab: Die System-Partition eingebinden:
+    # -- falls unbekannt: fdisk -l eingeben! --
     # mount /dev/[systempartition] pfad
 
     cd pfad mount --bind /sys ./sys mount --bind /dev ./dev mount --bind /proc
@@ -174,7 +174,7 @@ es von einer entsprechenden Webseite (z.B. von `Sourceforge
 <http://www.sourceforge.net>`_) heruntergeladen und Download-Ordner mit ``sudo
 dpkg -i paket.deb`` installiert werden. Entsprechend kann es mit ``sudo dpkg -r
 paketname`` wieder (unter Beibehaltung der Konfigurationsdateien) deinstalliert
-oder mit ``dpkg -P paketname`` restlos entfernt werden. 
+oder mit ``dpkg -P paketname`` restlos entfernt werden.
 
 Mit ``dpkt -l suchbegriff`` lassen sich alle Pakete auflisten, die auf einen
 Suchbegriff zutreffen -- reguläre Ausdrücke können ebenfalls eingesetzt werden.
@@ -224,7 +224,7 @@ Mit ``lshw`` werden die Hardware-Informationen des Computers aufgelistet; mit
 ``lshw -short`` wird eine Kurzform dieser Informationen ausgegeben.
 
 
-.. index:: mount, umount 
+.. index:: mount, umount
 
 ``mount``, ``umount``
 ---------------------
@@ -232,7 +232,7 @@ Mit ``lshw`` werden die Hardware-Informationen des Computers aufgelistet; mit
 Mit ``mount device pfad`` kann ein Datenträger (Speichermedium, Partition oder
 Ordner) in den angegebenen Pfad einbinden ("mounten"); entsprechend wird mit
 ``umount pfad`` die Einbindung gelöst, falls kein Programm aktuell auf das im
-angegebenen Pfad eingebundene Medium zugreift. 
+angegebenen Pfad eingebundene Medium zugreift.
 
 
 .. index:: nast
@@ -266,13 +266,13 @@ existieren:
 
     # User privilege specification
     benutzername	ALL=(ALL:ALL) ALL
-    
+
 Der Benutzerwechsel kann mit ``exit`` wieder beendet werden.
 
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -286,7 +286,7 @@ Der Benutzerwechsel kann mit ``exit`` wieder beendet werden.
     aktualisiert. Zusätzlich zu jeder Quelle, die durch einen ``deb``-Eintrag
     festgelegt wird, kann ein ``deb-src``-Eintrag stehen, wenn von dort auch
     Quellcode heruntergeladen werden soll (interessant für Entwickler bzw. um
-    Programme selbst zu kompilieren). 
+    Programme selbst zu kompilieren).
 
 .. [#] Tip für private Desktop-PCs: Zwei lauffähige Linux-Varianten parallel
     installieren! So kann das weniger genutzte System als

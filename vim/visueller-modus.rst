@@ -32,6 +32,14 @@ Textabschnitte kopiert, verschoben oder anderweitig bearbeitet werden. Der
 blockweise-visuelle Modus bietet speziell mit dem Vim-Plugin Align eine elegante
 Möglichkeit zur Bearbeitung von Spalten einer Tabelle.
 
+**Tipp:** Um Zeilen mit verschieden langen Inhalten am Ende mit Leerzeichen
+aufzufüllen, um beispielsweise dahinter weiteren Text als eine neue Spalte
+einfügen zu können, können jeweils die ersten Zeichen der Zeilen im visuellen
+Blockmodus markiert werden und anschließend ``$`` gedrückt werden. Es wird
+dadurch der gesamte Text markiert. Gibt man dann ``A <Leertaste>`` ein, so wird
+am Ende der längsten Zeile ein Leerzeichen angefügt und alle kürzeren Zeilen bis
+zur gleichen Breite mit Leerzeichen aufgefüllt.
+
 Weiterhin gibt es im visuellen Modus Mappings für folgende Auswahl-Kriterien,
 die wahlweise mit ``i`` ("inner") ohne umgebende Whitespaces oder mit ``a``
 ("outer") mitsamt umgebenden Whitespaces eingeleitet werden können:
@@ -58,9 +66,8 @@ Absatz (ohne vorangehende und darauf folgende Leerzeile) ausgewählt; ebenso kan
 Text innerhalb zwei runder Klammern mit ``a(`` inklusive der Klammern ausgewählt
 werden, wenn sich der Cursor innerhalb der Klammern befindet.
 
-
-**Tip**: Jede Bearbeitungsanweisung, die für gewöhnlich ein darauffolgendes
-Bewegungs- oder Auswahlkommando erwartet, kann auch direkt einen markierten
+**Tip**: Jede Bearbeitungsanweisung, die für gewöhnlich eine darauffolgende
+Bewegungs- oder Auswahlanweisung erwartet, kann auch direkt einen markierten
 Bereich angewandt werden.
 
 

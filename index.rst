@@ -23,11 +23,12 @@ Grundkurs Linux
 
     .. sidebar:: Hinweis
 
-        Eine Druckversion dieser Seite ist als :download:`PDF-Dokument
-        <grundkurs-linux.pdf>` verfügbar.
+        Dieses Projekt kann als Quellcode von `GitHub
+        <https://www.github.com/grund-wissen/grundkurs-linux>`_ heruntergeladen
+        werden.
 
-        Der Quellcode zu diesem Projekt kann von `GitHub
-        <https://www.github.com/grund-wissen/grundkurs-linux>`_ heruntergeladen werden.
+        Druckversion: :download:`(PDF)Dokument <grundkurs-linux.pdf>`
+
 
 .. toctree::
     :maxdepth: 2

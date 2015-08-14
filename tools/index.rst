@@ -15,7 +15,7 @@ Tipps zu weiteren Open-Source-Programmen
     ebenfalls auf dem Linux-Kernel basierende `Android
     <https://de.wikipedia.org/wiki/Android_(Betriebssystem)>`_-System -- auch als
     Betriebsystem für Desktop-PCs und Notebooks unter privaten Anwendern immer
-    beliebter. 
+    beliebter.
 
 .. toctree::
     :maxdepth: 1

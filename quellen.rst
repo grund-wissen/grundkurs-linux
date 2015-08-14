@@ -12,14 +12,14 @@ zusätzlich wurden die Manpages der einzelnen Programme genutzt.
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Quellen-Liste:
 
 .. [Blum2011] Blum: Linux Command Line and Shell Scripting Bible. Wiley, 2011.
 .. [Ploetner2011] Johannes Ploetner, Steffen Wendzel: `Linux - Das umfassende
-    Handbuch <http://openbook.rheinwerk-verlag.de/linux/>`_. Rheinwerk-Verlag 
+    Handbuch <http://openbook.rheinwerk-verlag.de/linux/>`_. Rheinwerk-Verlag
     Openbook, Bonn, 2011.
 .. [Schaten2005] Ronald Schaten: `Shell-Programmierung
     <http://www.schatenseite.de/>`_. Online-Skript (Creative Commons License), 2005.

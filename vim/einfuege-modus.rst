@@ -40,7 +40,7 @@ Auch mit ``s, S, c, C, r, R`` gelangt man in den Einfügemodus. Hierbei wird
 jedoch bestehender Text ersetzt.
 
 Gibt man beispielsweise ``10i`` gefolgt von etwas Text ein, so wird nach Beenden
-der Eingabe mit ``Esc`` das 10-fache des eigegebenen Textes eingefügt.
+der Eingabe mit ``Esc`` das 10-fache des eingegebenen Textes eingefügt.
 
 Der Einfügemodus bietet folgende hilfreiche Tastenkombinationen:
 

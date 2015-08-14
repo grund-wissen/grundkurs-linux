@@ -5,7 +5,7 @@ Zusätzliche Shell-Programme
 
 Die folgenden, meiner Meinung nach durchaus nützlichen Programme sind auf frisch
 installierten Systemen zwar (meist) nicht von Grund auf enthalten, lassen sich
-jedoch einfach mittels der Paketverwaltung nachinstallieren. 
+jedoch einfach mittels der Paketverwaltung nachinstallieren.
 
 .. index:: abcde
 .. _abcde:
@@ -15,7 +15,7 @@ jedoch einfach mittels der Paketverwaltung nachinstallieren.
 
 ``abcde`` steht für "A better CD encoder" und bietet in der Tat eine elegante
 Möglichkeit, eine Audio-CD automatisch als ``ogg`` oder ``mp3``-Dateien
-einzulesen. 
+einzulesen.
 
 ``abcde`` ist über die Paketverwaltung mittels des gleichnamigen Pakets
 installierbar:
@@ -40,7 +40,7 @@ Mehr Infos zu ``abcde`` gibt es unter `Abcde im Ubuntu-Wiki
 ------------
 
 Mit ``antiword`` lassen sich MS-Word-Dokumente (``.doc``) bequem in einem
-Shell-Fenster als Textform anzeigen. 
+Shell-Fenster als Textform anzeigen.
 
 ``antiword`` kann mittels der Paketverwaltung ``aptitude`` einfach installiert
 werden:
@@ -86,30 +86,30 @@ Anschließend kann der Player durch den Aufruf von ``cmus`` gestartet werden.
 Mittels der Tasten ``1`` bis ``7`` kann zwischen verschiedenen Ansichten
 gewechselt werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-cmus-ansichten
     :widths: 10 30 120
 
-    * - ``1``   
-      - Bibliothek 
+    * - ``1``
+      - Bibliothek
       - Zweispaltige Ansicht: Links werden Künstler und Album aufgelistet, rechts die jeweiligen Lieder
     * - ``2``
-      - Sortierte Bibliothek 
+      - Sortierte Bibliothek
       - (Flache Listenansicht aller Lieder, mit der Möglichkeit, die Sortierreihenfolge selbst festzulegen)
     * - ``3``
-      - Wiedergabeliste 	
+      - Wiedergabeliste
       - Anzeige der (editier- und speicherbaren) Wiedergabeliste
     * - ``4``
-      - Warteliste (Queue) 	
+      - Warteliste (Queue)
       - Anzeige der unmittelbar abzuspielenden Lieder
     * - ``5``
-      - Datei-Browser 	
+      - Datei-Browser
       - Dateisystemansicht mit der Möglichkeit zum Hinzufügen von Liedern zur Sammlung, der Wiedergabeliste oder Warteliste
     * - ``6``
-      - Datei-Filter 	
+      - Datei-Filter
       - Anzeige benutzerdefinierter Filter
     * - ``7``
-      - Einstellungen 	
+      - Einstellungen
       - Mit ``d`` kann man Einstellungen löschen, mit ``Enter`` modifizieren sowie
         mit ``Leertaste`` konkrete Variablen ändern.
 
@@ -119,7 +119,7 @@ Audio-Dateien in die Bibliothek geladen werden. Hierfür wechselt man mittels
 
 .. code-block:: bash
 
-    :add ~/Musik 
+    :add ~/Musik
 
 Nachdem die Sammlung eingelesen wurde, werden die Lieder in den
 Bibliotheks-Ansichten ``1`` und ``2`` den Namen der Interpreten sortiert
@@ -128,7 +128,7 @@ angezeigt.
 In den einzelnen Ansichten (``1`` bis ``5``) können mittels der jeweiligen
 Tasten folgende Funktionen aufgerufen werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-cmus-tasten
     :widths: 10 50
 
@@ -137,7 +137,7 @@ Tasten folgende Funktionen aufgerufen werden:
     * - ``c``
       - Pause-Modus an- und ausschalten ("continue")
     * - ``b``
-      - Nächsten Titel abspielen 
+      - Nächsten Titel abspielen
     * - ``/``
       - nach Suchmuster in Dateinamen oder ID-Tags suchen
     * - ``n``
@@ -156,9 +156,9 @@ Tasten folgende Funktionen aufgerufen werden:
       - Lautstärke um 10% herabsetzen
     * - ``+``
       - Lautstärke um 10% erhöhen
-    * - ``,``      
+    * - ``,``
       - Aktuell abgespielte Datei 1 Minute zurückspulen
-    * - ``.``      
+    * - ``.``
       - Aktuell abgespielte Datei 1 Minute vorspulen
     * - :math:`\leftarrow`
       - Aktuell abgespielte Datei 5 Sekunden zurückspulen
@@ -170,7 +170,7 @@ Seite Infos über die aktuellen Wiedergabeoptionen (Zufallswiedergabe,
 Wiederholung usw.) eingeblendet. Diese können folgendermaßen verändert
 werden: [#]_
 
-.. list-table:: 
+.. list-table::
     :name: tab-cmus-wiedergabe
     :widths: 10 50
 
@@ -186,16 +186,16 @@ werden: [#]_
 Um Dateien innerhalb der Wiedergabeliste oder Warteliste nach oben oder unten zu
 verschieben, können die Tasten ``p`` und ``P``  ("push") genutzt werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-cmus-p-tasten
     :widths: 10 50
 
     * - ``p``
       - Datei unter Cursor in der Ansicht ``3`` oder ``4`` nach unten
-        verschieben 
+        verschieben
     * - ``P``
       - Datei unter Cursor in der Ansicht ``3`` oder ``4`` nach oben
-        verschieben 
+        verschieben
 
 Markiert man hierbei zunächst mehrere Dateien mittels der ``Space``-Taste, so
 können diese anschließend mittels ``p`` oder ``P`` hinter beziehungsweise vor
@@ -205,7 +205,7 @@ Dateien wieder aus der Wiedergabe- oder Warteliste entfernt werden.
 .. Titel von vorne abpsielen: ``v c``.
 
 ..  Um die in der Bibliotheks-Ansicht ``1`` jeweiligen Alben angezeigt zu
-..  bekommen, muss man ``Leertaste`` drücken. 
+..  bekommen, muss man ``Leertaste`` drücken.
 
 Mehr Infos gibt es unter `CMUS im Ubuntuuser-Wiki
 <http://manpages.ubuntu.com/manpages/natty/man1/cmus.1.html>`_.
@@ -218,7 +218,7 @@ Mehr Infos gibt es unter `CMUS im Ubuntuuser-Wiki
 ----------
 
 Mit ``fdupes`` kann man ein Verzeichnis nach doppelten Dateien durchsuchen und
-diese gegebenenfalls auflisten. 
+diese gegebenenfalls auflisten.
 
 Das Programm kann mittels ``apt`` über das gleichnamige Paket installiert
 werden:
@@ -275,11 +275,11 @@ Um alle Bilder des aktuellen Verzeichnisses anzusehen, genügt folgender Aufruf:
 
 * Mittels der Pfeiltasten :math:`\leftarrow` und :math:`\rightarrow` kann,
   sofern mehrere Bilder geöffnet werden, zum vorherigen bzw. nächsten Bild
-  gewechselt werden. 
+  gewechselt werden.
 * Mittels der Pfeiltasten :math:`\uparrow` und :math:`\downarrow` wird in das
   Bild hinein- bzw. herausgezoomt.
 * Mittels ``v`` kann zwischen einer Vollbild- und einer normalen Anzeige
-  gewechselt werden. 
+  gewechselt werden.
 * Mittels ``<`` und ``>`` kann ein Bild gegen bzw. mit dem Uhrzeigersinn um 90°
   gedreht werden.
 * Mittels ``q`` ("quit") wird ``feh`` beendet.
@@ -318,7 +318,7 @@ Bei erstmaliger Verwendung von GPG werden zwei Schlüssel erzeugt: Ein
 ein privater Schlüssel ("Private Key"), den nur der Besitzer kennt. Das
 Verschlüsseln einer Nachricht oder Datei erfolgt dann mittels des öffentlichen
 Schlüssels des Empfängers; entschlüsselt werden kann die Nachricht wiederum nur
-mit dem privaten Schlüssel des Empfängers. 
+mit dem privaten Schlüssel des Empfängers.
 
 Umfangreiche Infos zu ``gpg`` gibt es im `GPG-Tutorial
 <http://www.online-tutorials.net/security/gnupg-gpg-tutorial/tutorials-t-69-124.html>`_
@@ -346,14 +346,14 @@ mittels ``aptitute`` nachinstallieren:
 
 .. index:: convert
 
-Die Imagemagick-Suite umfasst folgende Bildbearbeitungs-Programme: 
+Die Imagemagick-Suite umfasst folgende Bildbearbeitungs-Programme:
 
 .. hlist::
     :columns: 2
 
-    * ``import`` 
+    * ``import``
     * ``convert``
-    * ``montage`` 
+    * ``montage``
     * ``display``
 
 Diese kleinen Hilfsprogramme sind nützlich, um automatisiert bestimmte
@@ -364,7 +364,7 @@ Bildbearbeitungen als Skript auszuführen.
 * Umwandeln eines transparenten in einen weißen Hintergrund:
 
   .. code-block:: bash
-  
+
       convert image-old.png -background white -flatten -alpha off image-new.png
 
   ..  http://stackoverflow.com/questions/5280118/convert-png-to-jpg-and-set-transparent-background-to-white-with-imagemagick-and
@@ -372,7 +372,7 @@ Bildbearbeitungen als Skript auszuführen.
 * Zusammenfügen mehrere Bilder vertikal zu einem "Filmstreifen":
 
   .. code-block:: bash
-  
+
       montage -mode concatenate -tile 1x in-*.jpg out.jpg
 
   ..  http://superuser.com/questions/290656/combine-multiple-images-using-imagemagick
@@ -382,18 +382,18 @@ Bildbearbeitungen als Skript auszuführen.
   <http://www.grund-wissen.de/veganes-leben/rezepte/index.html>`_:
 
   .. only:: html
-  
+
       .. code-block:: bash
-  
-        for i in *.jpg ; do convert $i -resize '1200x800' -quality 80 $(basename $i .jpg).png ; done 
+
+        for i in *.jpg ; do convert $i -resize '1200x800' -quality 80 $(basename $i .jpg).png ; done
 
   .. only:: latex
-  
+
       .. code-block:: bash
-  
+
         for i in *.jpg ; \
         do convert $i -resize 600 -quality 80 $(basename $i .jpg).png ; \
-        done 
+        done
 
 ..  **
 
@@ -413,7 +413,7 @@ Mehr Infos zu ``imagemagick`` gibt es unter `Imagemagick im Ubuntu-Wiki
 ..  Vegan-Rezept-Bilder komprimieren:
 
 
-..  
+..
 ..  convert -flatten -background white file.png file.jpg
 
 ..  To quantize and compress an image, for example image.png, with the compressed output as smallimage.png, I do this:
@@ -463,9 +463,9 @@ auswählen:
   aktuelle Auswahl ebenfalls aufgehoben.
 
 Viele häufig auftretende Aktionen lassen sich mittels der folgenden
-Funktionstasten bewerkstelligen: 
+Funktionstasten bewerkstelligen:
 
-.. list-table:: 
+.. list-table::
     :name: tab-mc-funktionstasten
     :widths: 20 50
 
@@ -503,7 +503,7 @@ Anpassungen für sinnvoll:
 
 Weitere nützliche Tastenkombinationen für die Bedienung des ``mc`` sind:
 
-.. list-table:: 
+.. list-table::
     :name: tab-mc-tastenkombinationen
     :widths: 25 50
 
@@ -586,30 +586,30 @@ Mehr Infos gibt es unter `Mencoder im Ubuntuusers-Wiki
 ..  Convert wma to ogg: ffmpeg -i sample.wma -acodec vorbis -aq 100 sample.ogg
 
 
-..    
+..
     .. index:: moc
     .. _moc:
-    
+
     ``moc``
     -------
-    
+
     Der "Music on Console Player" ``moc`` bietet eine schlichte und übersichtliche
     Bedienoberfläche, um alle gängigen Audio-Formate (``ogg``, ``mp3``, ``wave``,
     ``flac``, ``aac``) sowie Playlisten (``m3u`` und ``pls``) innerhalb eines
     Shell-Fensters abzuspielen.
-    
+
     ``moc`` ist über die Paketverwaltung mittels des Pakets ``moc`` installierbar:
-    
+
     .. code-block:: bash
-    
+
     sudo aptitude install moc
-    
+
     Anschließend kann der Player durch den Aufruf von ``mocp`` (mit ``p``) gestartet
     werden. Mehr Infos gibt es unter `MOC im Ubuntuuser-Wiki
     <http://wiki.ubuntuusers.de/MOC_-_music_on_console>`_.
-    
+
     Inzwischen verwende ich zum Abspielen von Musik bevorzugt ``cmus``.
-    
+
     `MOC-Kurzbeschreibung <http://ikhaya.ubuntuusers.de/2009/06/01/projektvorstellung-moc-music-on-console/>`_
 
 .. index:: ncdu
@@ -659,7 +659,7 @@ Die Bilder werden dann als ``dateiname-001.ppm`` usw. gespeichert; mit
 ``pdfimages -f n`` bzw. ``pdfimages -l n`` können jeweils die erste und/oder die
 letzte zu scannende Seitennummer (``n``) festgelegt werden. Die extrahierten
 Bilder lassen sich mittels folgendem Skript beispielsweise in PNG-Dateien
-umwandeln: 
+umwandeln:
 
 .. code-block:: bash
 
@@ -675,7 +675,7 @@ umwandeln:
 Das ``pdftk``-Toolkit ermöglicht eine vielseitige Nachbearbeitung von
 ``pdf``-Dateien. In den ``man pdftk``-Hilfeseiten finden sich zahlreiche
 Beispiele, wie man mittels ``pdftk`` mehrere ``pdf``-Dokumente zusammenfügen,
-einzelne Seiten entfernen, rotieren, oder vertauschen kann. 
+einzelne Seiten entfernen, rotieren, oder vertauschen kann.
 
 ``pdftk`` lässt sich wie üblich aus den Paketquellen installieren:
 
@@ -728,7 +728,7 @@ können. Dazu nutze ich hintereinander folgende zwei Mini-Skripte:
 
     .. code-block:: bash
 
-        for f in $(find ./ -name '*.png' | grep -v nq8);  do pngnq -n 256 $f && rm $f ; done 
+        for f in $(find ./ -name '*.png' | grep -v nq8);  do pngnq -n 256 $f && rm $f ; done
 
         for f in $(find ./ -name '*.png');  do mv $f $(dirname $f)/$(basename $f | sed 's/-nq8//') ; done
 
@@ -736,13 +736,13 @@ können. Dazu nutze ich hintereinander folgende zwei Mini-Skripte:
 
     .. code-block:: bash
 
-        for f in $(find ./ -name '*.png' | grep -v nq8); \ 
-            do pngnq -n 256 $f && rm $f ; done 
+        for f in $(find ./ -name '*.png' | grep -v nq8); \
+            do pngnq -n 256 $f && rm $f ; done
 
-        for f in $(find ./ -name '*.png'); \ 
+        for f in $(find ./ -name '*.png'); \
             do mv $f $(dirname $f)/$(basename $f | sed 's/-nq8//') ; done
 
-..  for f in $(find ./ -name '*.png' | grep -v nq8); do pngnq -n 256 $f && rm $f ; done 
+..  for f in $(find ./ -name '*.png' | grep -v nq8); do pngnq -n 256 $f && rm $f ; done
 ..  for f in $(find ./ -name '*.png'); do mv $f $(dirname $f)/$(basename $f | sed 's/-nq8//') ; done
 
 Mit der ersten Zeile wird ``pngnq`` auf alle ``png``-Dateien angewendet; die
@@ -761,7 +761,7 @@ Das Programm ``screen`` ermöglicht es, parallel auf mehreren virtuellen
 Terminals zu arbeiten, obwohl man in Wirklichkeit nur eines verwendet. Dies kann
 hilfreich sein, um sich beispielsweise über ssh auf einem externen Rechner
 einzuloggen und innerhalb des gleichen Fensters mehrere Prozesse ablaufen zu
-lassen. 
+lassen.
 
 ``screen`` lässt sich wie üblich aus den Paketquellen installieren:
 
@@ -801,7 +801,7 @@ wiederverwertbar.
 
 ``tesseract`` ist über die Paketverwaltung mittels der Pakete ``tesseract-ocr``
 bzw. ``tesseract-ocr-deu`` und ``tesseract-ocr-eng`` für deutsche und englische
-Sprachunterstützung installierbar. 
+Sprachunterstützung installierbar.
 
 .. code-block:: bash
 
@@ -843,7 +843,7 @@ des ``import``-Befehls aus dem Imagemagick-Paket. Die Angabe ``-depth 8`` legt
 die Anzahl der Graustufen des Screenshots auf acht fest. Die Namen der einzelnen
 Screenshots sollen dann einem einheitlichen Namensmuster und schließlich
 chronologisch sortiert vorliegen; dies wird durch die Nutzung des
-``date``-Befehls erreicht. 
+``date``-Befehls erreicht.
 
 Wird die obige Code-Zeile in die Konfigurationsdatei ``~/.bashrc`` kopiert (und
 diese im gleichen Shell-Fenster gegebenenfalls mit ``source ~/.bashrc`` neu
@@ -862,7 +862,7 @@ dies mit folgendem Einzeiler-Skript erreicht werden:
     for i in *.tif; do tesseract $i $i -l deu; done;
 
 Die Ausgabedateien werden in diesem Fall nach den Eingabe-Dateien benannt,
-gefolgt von der automatischen Endung ``.txt``. 
+gefolgt von der automatischen Endung ``.txt``.
 
 Um auf diese Weise zusammengehörige Screenshots eines Buchs der Texterkennung
 zuzuführen und die erzeugten Dateien wieder zu vereinen, sollten die Screenshots
@@ -889,7 +889,7 @@ Der letztliche "Workflow" sieht möglicherweise so aus: Farbig gescannte
 PDF-Datei mit ``evince`` oder einem anderen Dokumentenbetrachter öffnen; in
 einem Shell-Fenster (z.B. ``guake``) zu einem gewünschten Zielordner wechseln;
 mittels Eingabe von ``it`` und Textauswahl mit der Maus wiederholt Screenshots
-(beliebig viele) erzeugen; die obigen beiden Einzeiler ausführen und fertig! 
+(beliebig viele) erzeugen; die obigen beiden Einzeiler ausführen und fertig!
 
 Bei einigermaßen guten Scans und einer brauchbaren Auflösung des Bildschirms
 beim Erzeugen der Screenshots -- hierbei genügt eine Vollbild-Darstellung des
@@ -930,7 +930,7 @@ letztere kann zuvor mittels ``host`` ermittelt werden:
 
 .. code-block:: bash
 
-   host grund-wissen.de 
+   host grund-wissen.de
    # grund-wissen.de has address 188.40.57.88
    # grund-wissen.de mail is handled by 10 mail.grund-wissen.de.
 
@@ -956,7 +956,7 @@ Email-Adresse des Server-Administrators.
     (wie beispielsweise ``EasyTAG``) verändert wurden. Damit die Änderungen in
     ``cmus`` angezeigt werden, muss zunächst die Bibliothek mit ``:clear -l``
     gelöscht und die Cache-Datei mit ``u`` aktualisiert werden. Anschließend
-    kann man die Bibliothek neu einlesen. 
+    kann man die Bibliothek neu einlesen.
 
 .. [#] Zudem kann mit ``M`` festgelegt werden, ob nach dem Abspielen aller Titel
     der Warteliste weitere Titel der Bibliothek wiedergegeben werden sollen.
@@ -970,7 +970,7 @@ Email-Adresse des Server-Administrators.
     werden:
 
     ``for file in *.png ; do optipng -o9 $file ; done``
- 
+
     Der Kompressionsgrad von ``optipng`` ist allerdings erheblich geringer als
     von ``pngnq``. Speziell für Webseiten sollte daher vergleichsweise auch
     ``pngnq`` getestet werden, wobei es ratsam ist, von den Originaldateien

@@ -60,14 +60,14 @@ Jedes ``.git``-Verzeichnis enthält unter anderem eine Konfigurationsdatei namen
         repositoryformatversion = 0
         filemode = true
         bare = false
-        logallrefupdates = true 
+        logallrefupdates = true
 
 Die Datei sollte bei einer erstmaligen Verwendung von Git um folgenden Eintrag
 ergänzt werden::
 
     [user]
         name="Vorname Nachname"
-        email="email@adresse.de" 
+        email="email@adresse.de"
 
 Möchte man Git für eigene Projekte häufiger verwenden, ist eine "globale"
 Konfiguration sinnvoll, die nicht nur für das aktuelle Projekt, sondern für alle
@@ -92,11 +92,11 @@ Nimmt man innerhalb des Projektverzeichnisses eine Änderung vor, erstellt
 beispielsweise mittels ``touch README`` eine leere Datei, so kann man
 anschließend mittels ``git add README`` die neue Datei, oder einfacher ``git add
 .`` alle neuen Dateien im Verzeichnis in den Index der zu berücksichtigenden
-Dateien hinzufügen: 
+Dateien hinzufügen:
 
 .. code-block:: bash
 
-    git add . 
+    git add .
 
 Bei Benutzung von ``git add`` kann ein beliebiges Dateimuster angegeben werden,
 beispielsweise würden durch ``git add *.txt`` alle Dateien mit der Endung
@@ -114,12 +114,12 @@ Die beiden angegebenen Optionen ``-a`` und ``-m`` haben folgende Bedeutung:
 
 * Die Option ``-a`` steht für ein automatisches Speichern aller veränderten
   Daten; mittels dieser Option kann ein Aufruf von ``git add *`` unmittelbar vor
-  dem Commit ersetzt werden. 
+  dem Commit ersetzt werden.
 * Die Option ``-m "Beschreibung"`` fügt eine obligatorische Nachricht dem hinzu,
   die kurz den Grund des Commits beschreibt; Lässt man diese Option weg, so wird
   durch die ``commit``-Anweisung automatisch der durch die Shell-Variable
   ``$EDITOR`` festgelegte Standard-Texteditor zur Eingabe einer Commit-Nachricht
-  geöffnet. 
+  geöffnet.
 
 Statt ``git commit -a -m`` kann auch kürzer ``git commit -am`` geschrieben
 werden.
@@ -192,6 +192,8 @@ Um die Änderungen in die Versionierung zu übernehmen, kann man wiederum ``git
 commit -am "Beschreibung"`` aufrufen.
 
 .. index:: gitignore
+.. _gitignore:
+.. _kDateien ignorieren:
 
 .. rubric:: Dateien ignorieren
 
@@ -241,7 +243,7 @@ Arbeitsverzeichnis, Index und Objektspeicher
 
 In Git wird ein Projektverzeichnis mitsamt allen Versionen der verwalteten
 Dateien als Repository bezeichnet. In jedem solchen Repository gibt es drei
-verschiedene Speicher-Ebenen: 
+verschiedene Speicher-Ebenen:
 
 * Als Arbeitsverzeichnis ("working directory") wird das Projektverzeichnis in
   der aktuellen Version bezeichnet; Dateien früherer Versionen sind darin nicht
@@ -257,7 +259,7 @@ verschiedene Speicher-Ebenen:
   vergangenen Versionen des Repositorys gespeichert sind. Durch ``git commit``
   werden die Änderungen aus dem Index in den Objektspeicher übernommen.
 
-.. todo:: 
+.. todo::
 
     Mittels git checkout oder git reset können Dateien wieder aus dem
     Objektspeicher ins Arbeitsverzeichnis geladen werden.
@@ -274,7 +276,7 @@ wurden.
 Werden bestehende, von Git berücksichtigte Dateien verändert, so ändert sich ihr
 Status in "modified". Mittels ``git add`` können sie zum Index hinzugefügt
 werden. Nach einem Commit sind all diese Dateien (in der neu gespeicherten
-Version) wiederum "unmodified". 
+Version) wiederum "unmodified".
 
 Sollen die Änderungen einer Datei beim Commiten unberücksichtigt bleiben, so
 kann die Datei mittels ``git rm --cached dateiname`` wieder aus dem Index
@@ -321,7 +323,7 @@ einem ``*``-Zeichen markiert ist.
 .. index:: git; checkout
 
 Ein Wechsel zwischen den einzelnen  Entwicklungszweigen ist mittels ``git
-checkout`` möglich: 
+checkout`` möglich:
 
 .. code-block:: bash
 
@@ -405,7 +407,7 @@ automatisch angepasst.
 
 Konflikte können auftreten, wenn nach dem Erstellen eines neuen Branches
 Veränderungen sowohl im ``master``- wie auch im Entwicklungsbranch vorgenommen
-werden: 
+werden:
 
 .. code-block:: bash
 
@@ -424,7 +426,7 @@ werden:
 Versucht man nun im ``master``-Branch mittels ``git merge`` die Änderungen aus
 dem Entwicklungsbranch zu übernehmen, so bekommt man eine Fehlermeldung
 angezeigt, da Git nicht weiß, in welche Richtung die Änderungen übernommen
-werden sollen: 
+werden sollen:
 
 .. code-block:: bash
 
@@ -454,7 +456,7 @@ Die zu ändernden Stellen werden von Git folgendermaßen gekennzeichnet::
 Um das Merging abzuschließen, muss manuell eine der konkurrierenden Stellen
 ausgewählt oder eine andere Änderung vorgenommen werden; die Marker müssen dabei
 ebenfalls entfernt werden, da erst dann die Konflikte von Git als bereinigt
-angesehen werden. 
+angesehen werden.
 
 Anschließend können die Änderungen mit  ``git commit -am "Beschreibung"`` dem
 Index hinzugefügt und gespeichert werden.
@@ -480,7 +482,7 @@ Projekt einfließen lassen.
 Um ein existierendes Repository von einem externen Server, beispielsweise von
 `GitHub <http://www.github.com>`_  oder `Bitbucket <https://bitbucket.org/>`_
 herunterzuladen, gibt man in der Shell folgende Anweisung an:
-  
+
 .. code-block:: bash
 
     # Allgemein: git clone https://github.com/UserName/RepositoryName.git
@@ -559,7 +561,7 @@ wenn möglicherweise mehrere Entwickler am gleichen Branch arbeiten.
 
 Um neue Commits von einem externen Reposotory in ein zugehöriges lokales
 Repository zu übernehmen, können die Anweisungen ``git pull`` oder ``git fetch``
-verwendet werden: 
+verwendet werden:
 
 * ``git pull`` holt die Änderungen aus dem externen Repository und fügt diese
   dem Index der beim nächsten Commit zu berücksichtigenden Dateien hinzu.
@@ -628,7 +630,7 @@ wiederum in das ``origin``-Repository gepushed werden.
 
 .. [#] Die Log-Nachrichten können in einer übersichtlicheren Version ausgegeben
     werden (einzeilig, mit abgekürzten Commit-Hashes und Syntax-Highlighting),
-    indem man sich folgende Abkürzung ("Alias") definiert: 
+    indem man sich folgende Abkürzung ("Alias") definiert:
 
     ``git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset
     -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'

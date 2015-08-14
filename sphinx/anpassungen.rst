@@ -74,7 +74,7 @@ Seite ein Versionshinweis. Um dies zu deaktivieren, muss die Datei
 die ``\fancyhead``-Zeile, die den Versions-Eintrag erzeugt, mit einem
 ``%``-Zeichen auskommentiert werden. Zum anderen kann der Strich zwischen
 Kopfzeile und erster Textzeile entfernt werden, indem ihr Wert auf ``0.0``
-gesetzt wird: 
+gesetzt wird:
 
 .. code-block:: tex
 
@@ -104,7 +104,7 @@ Persönlich sind mir zentrierte Tabellen lieber. Daher habe ich die
 ``depart_table(self, node)``, etwas abgeändert:
 
 .. code-block:: python
-    
+
     VORHER:
 
     if not self.table.longtable and self.table.caption is not None:
@@ -152,26 +152,26 @@ Persönlich sind mir zentrierte Tabellen lieber. Daher habe ich die
         self.body.append('\\end{table}\n\n')
 
 
-..  
+..
     *   Zusätzlich nach folgendem suchen:
-    
+
     .. code-block:: python
-    
+
         if not self.table.longtable and self.table.caption is not None:
         self.body.append(u'\n\n\\begin{threeparttable}\\centering\n'
-    
+
     und durch folgendes ersetzen:
-    
+
     .. code-block:: python
-    
+
         if not self.table.longtable and self.table.caption is not None:
             self.body.append(u'\n\n\\begin{table}\\centering\n'
                  u'\\caption{%s}\n' % self.table.caption)
-    
+
     und entsprechend (einfach nach threeparttable suchen)
-    
+
     .. code-block:: python
-    
+
         if not self.table.longtable and self.table.caption is not None:
             self.body.append('\\end{table}\n\n')
 
@@ -179,7 +179,7 @@ Persönlich sind mir zentrierte Tabellen lieber. Daher habe ich die
 Auch in der HTML-Ausgabe möchte ich Tabellen gerne zentriert haben;
 gleichzeitig sollen die Fußnoten, die von Sphinx ebenfalls in Tabellen-Form
 dargestellt werden, linksbündig bleiben. Um dies zu erreichen, habe ich in
-der Datei ``themes/basis/static/basic.css_t`` den Eintrag ``table.docutils`` 
+der Datei ``themes/basis/static/basic.css_t`` den Eintrag ``table.docutils``
 folgendermaßen ergänzt:
 
 .. code-block:: css
@@ -202,7 +202,7 @@ folgendermaßen ergänzt:
     }
 
 
-.. layout.html: 
+.. layout.html:
 
 ..  {% trans last_updated=last_updated|e %}Zuletzt aktualisiert am {{ last_updated }}.
 ..  <a href='http://grund-wissen.de/impressum.html'>Kontakt/Impressum</a>
@@ -221,7 +221,7 @@ verschoben. Um dies zu vermeiden, muss folgender Eintrag in der Datei
 .. code-block:: css
 
     VORHER:
-    
+
     div.related ul {
         margin: 0;
         padding: 0 0 0 10px;
@@ -230,7 +230,7 @@ verschoben. Um dies zu vermeiden, muss folgender Eintrag in der Datei
 
 
     NACHHER:
-    
+
     div.related ul {
         margin: 0;
         padding: 0 0 0 10px;
@@ -277,7 +277,7 @@ geschaffen habe:
         self.compact_list += 1
         self.body.append('\\begin{itemize}\\setlength{\\itemsep}{0pt}'
                          '\\setlength{\\parskip}{0pt}\n')
-    
+
     [...]
 
     def depart_hlist(self, node):
@@ -302,7 +302,7 @@ geschaffen habe:
         self.compact_list -= 1
         self.body.append('\\end{itemize}\n')
         self.body.append('\\end{multicols}')
-    
+
 Damit werden alle ``hlists`` in der Druckversion als zweispaltige Aufzählungen
 dargestellt. [#Muc]_
 
@@ -316,7 +316,7 @@ diese -- wie andere Überschriften auch -- in Latex ebenfalls in blauer
 Schriftfarbe gedruckt werden, ist die Datei ``texinputs/sphinx.sty`` hinter um
 folgenden Eintrag zu ergänzen:
 
-  
+
 .. code-block:: tex
 
     VORHER:
@@ -392,7 +392,7 @@ Hierbei habe ich die Datei ``texinputs/sphinxmanual.cls`` etwas angepasst:
         {\large
             \@date \par
             \vfill
-            \py@authoraddress 
+            \py@authoraddress
             \par
         }
     \end{flushright}
@@ -431,10 +431,10 @@ Bezeichnung "Release" durch "Version" ersetzt.
 .. only:: html
 
     .. rubric:: Anmerkungen:
-    
+
 .. .. [#]  Der Graphik-Pfad muss gegebenenfalls noch so angepasst werden, dass das
         .. .. Hauptverzeichnis der Bilder als ``pics``-Ordner im Hauptpfad der
-        .. .. Dokumentation abgelegt ist. 
+        .. .. Dokumentation abgelegt ist.
 
 .. [#Muc] Hierbei muss das LaTeX-Paket ``multicol`` installiert sein. Sollte dies
         nicht der Fall sein, kann es von der `CTAN-Projektseite

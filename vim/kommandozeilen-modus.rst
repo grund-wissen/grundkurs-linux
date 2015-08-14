@@ -290,8 +290,8 @@ Ausdrücke oft wesentlich erleichtern bzw. beschleunigen. Hierzu können
 spezielle Zeichen verwendet werden, die jeweils einem bestimmten Suchmuster
 entsprechen.
 
-Werden die folgenden Zeichen in einem Such- oder Ersetzungsbefehl verwendet, so
-werden sie als reguläre Ausdrücke interpretiert. Möchte man das jeweilige
+Werden die folgenden Zeichen in einer Such- oder Ersetzungsanweisung verwendet,
+so werden sie als reguläre Ausdrücke interpretiert. Möchte man das jeweilige
 Zeichen in seiner Grundbedeutung interpretiert haben, so muss ein ``\``
 (Backslash) davor platziert werden:
 

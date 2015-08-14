@@ -7,7 +7,7 @@ Exkurs: Verschlüsselung mit LUKS
 .. index:: cryptsetup, LUKS
 .. _Die Partitions-Verschlüsselung:
 
-Die Partitions-Verschlüsselung 
+Die Partitions-Verschlüsselung
 ------------------------------
 
 Die Verschlüsselung einer Partition -- auf internen wie auf externen
@@ -19,7 +19,7 @@ immer nach dem gleichen Schema:
    zugeordnet ist:
 
    .. code-block:: bash
-  
+
        sudo fdisk -l
 
    Angenommen, in einem Rechner ist eine Festplatte enthalten, auf der sich drei
@@ -37,7 +37,7 @@ immer nach dem gleichen Schema:
    soll: Erstellen einer neuen Partition mit einem Partitions-Programm
    (Empfehlung: `GParted <http://wiki.ubuntuusers.de/GParted>`_).
 
-#. Einrichten einer LUKS-Partition mit ``cryptsetup``: 
+#. Einrichten einer LUKS-Partition mit ``cryptsetup``:
 
    .. code-block:: bash
 
@@ -75,11 +75,11 @@ laufendes System einbinden ("mounten"):
     sudo mount /dev/mapper/crypt_name /media/crypt
 
 Sowohl der beim Öffnen der Partition vergebene Crypt-Name als auch der beim
-Mounten festgelegte Einhänge-Punkt sind frei wählbar. 
+Mounten festgelegte Einhänge-Punkt sind frei wählbar.
 
 Das Aushängen einer -- von keinem Programm benutzten -- LUKS-Partition erfolgt
 durch ein Anklicken des Datenträger-Icons auf dem Desktop mit der rechten
-Maustaste oder in einem Shell-Fenster nach folgendem Schema:  
+Maustaste oder in einem Shell-Fenster nach folgendem Schema:
 
 .. code-block:: bash
 
@@ -92,13 +92,13 @@ Verschließen aller eingehängten Partitionen.
 Wird eine Partition ausschließlich von einem Nutzer verwendet, so empfiehlt sich
 als Mount-Pfad anstelle ``/media/crypt`` am besten ein Ordner im
 Home-Verzeichnis, beispielsweise ``/home/tux/crypt``. Der Benutzer hat dann auch
-ohne Root-Rechte vollen Lese- und Schreibzugriff auf alle Daten der Partition. 
+ohne Root-Rechte vollen Lese- und Schreibzugriff auf alle Daten der Partition.
 
-..  
+..
     Um die obigen Befehle nicht bei jedem Einbinden erneut eingeben zu müssen,
     können sie in eine Textdatei kopiert und diese unter
     ``/home/benutzername/bin/kurzer-befehlsname`` abgelegt werden..
-    
+
     * `Encrypt an partition with cryptsetup
       <http://www.2030.tk/wiki/Encrypt_an_partition_with_cryptsetup>`_
 
@@ -121,20 +121,20 @@ Linux- bzw. Kommandozeilen-Kenntnisse sollten dabei allerdings vorhanden sein.
 Vor der Installation werden zwei primäre Partitionen angelegt. Sie lassen sich
 beispielsweise bei einer `Linux Mint <http://linuxmint.com/>`_-Installation
 mittels des graphischen, leicht bedienbaren und bereits auf der Live-CD
-enthaltenen Programms ``gparted`` erstellen: 
+enthaltenen Programms ``gparted`` erstellen:
 
-.. list-table:: 
+.. list-table::
     :widths: 20 20 20
 
     * - Partition
       - Name
       - Größe
-    * - eine Boot-Partition      
-      - ``/dev/sda1`` 
-      - 300 bis 500 MB 
-    * - eine restliche Partition 
-      - ``/dev/sda2`` 
-      - min. 15 GB 
+    * - eine Boot-Partition
+      - ``/dev/sda1``
+      - 300 bis 500 MB
+    * - eine restliche Partition
+      - ``/dev/sda2``
+      - min. 15 GB
 
 Die obigen Partitionsnamen können auch vertauscht sein, entscheidend ist zu
 wissen, welche jeweils gemeint ist. Als Formatierung verwende ich am liebsten
@@ -142,12 +142,12 @@ das schnelle, sichere und wartungsarme Dateisystem ``ReiserFS``. In Anlehnung an
 die erprobte `Original-Anleitung (en.)
 <http://aptosid.com/index.php?module=wikula&tag=FullDiskEncryptionTheDebianWay>`_
 werden nun in einem Terminal als Superuser (``su`` eingeben!) nacheinander
-folgende Schritte durchlaufen: 
+folgende Schritte durchlaufen:
 
 #. Formatierung der Boot-Partition:
 
    .. code-block:: bash
-      
+
      mkfs.reiserfs -l boot /dev/sda1
 
 #. Anlegen eines verschlüsselten System-Devices:
@@ -187,14 +187,14 @@ Benutzername, Passwörter, Zeitzone, Tastaturlayout, etc.) aus. Im
 Partitions-Auswahlmenü ist darauf zu achten, dass die Bereiche richtig
 eingebunden werden:
 
-    .. list-table:: 
+    .. list-table::
         :widths: 25 25
 
-        * - Partition                    
-          - Einhängepunkt 
-        * - ``/dev/mapper/cryptVG-root`` 
-          - ``/``  
-        * - ``/dev/sda1``                
+        * - Partition
+          - Einhängepunkt
+        * - ``/dev/mapper/cryptVG-root``
+          - ``/``
+        * - ``/dev/sda1``
           - ``/boot``
 
 Nach dieser Basis-Installation, die Abhängig von der Hardware-Geschwindigkeit
@@ -210,7 +210,7 @@ werden:
        mount /dev/sda1 /media/sidux/boot
 
 #. Drei Dateien müssen nun mit einem Texteditor erstellt bzw. angepasst werden:
-    
+
    - Die Datei ``/media/sidux/etc/crypttab`` muss folgendes Schema aufweisen::
 
        # target    source_device                           key_file  options
@@ -286,7 +286,7 @@ Nun kann man den Root-Pfad des laufendes Systems auf die gemountete
 Festplatten-Partition umstellen:
 
 .. code-block:: bash
-    
+
     chroot /media/root                  # ins Filesystem der Festplatte wechseln..
 
 Liegt der Fehler an einer fehlerhaften Einstellung des Bootloaders ``grub``, so
@@ -326,5 +326,5 @@ angewendet werden.
     Programm ``keepassx`` zur geschützten Verwaltung von Passwörtern sehr zu
     empfehlen. Die obige Methode zeigt allerdings einmal mehr, was für "Tricks"
     auf Linux-Systemen grundsätzlich möglich sind..
-    
+
 

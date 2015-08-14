@@ -6,7 +6,7 @@ Links
 Eine umfangreiche Dokumentation zu Sphinx mitsamt einem Schnell-Einstieg in
 Restructured Text und die Python-Matplotlib findet sich hier:
 
-* `Sphinx-Projektseite <http://sphinx-doc.org/>`_ 
+* `Sphinx-Projektseite <http://sphinx-doc.org/>`_
 * `Sphinx Tutorial (en.) <http://sphinx-doc.org/tutorial.html>`_
 * `Sphinx Memo <http://rest-sphinx-memo.readthedocs.org/en/latest/ReST.html>`_
 * `Matplotlib Documentation <http://matplotlib.org/contents.html>`_

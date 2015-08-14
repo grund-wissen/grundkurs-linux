@@ -38,7 +38,7 @@ Die einzelnen ``sed``-Anweisungen sollten in einfach Anführungszeichen gesetzt
 werden, um automatische Ersetzungen durch den Shell-Interpreter zu vermeiden.
 Sollen mehrere Anweisungen ausgeführt werden, so müssen diese mittels einem
 Strichpunkt (``;``) getrennt werden und ``sed`` mit der Option ``-e`` aufgerufen
-werden. 
+werden.
 
 Wird bei einem ``sed``-Aufruf kein Dateiname angegeben, so wird automatisch Text
 von der Standard-Eingabe eingelesen. Auf diese Weise kann ``sed`` in Kombination
@@ -53,7 +53,7 @@ Programms zu bearbeiten:
 Üblicherweise gibt ``sed`` seine Ergebnisse wiederum auf der Standard-Ausgabe
 aus. Mit der Angabe von ``> dateiname`` als letztes übergebenes Argument oder
 auch mittels einer weiteren Pipe und dem Programm :ref:`tee <tee>` kann die
-Ausgabe jedoch auch in Textdateien umgelenkt werden: 
+Ausgabe jedoch auch in Textdateien umgelenkt werden:
 
 .. code-block:: bash
 
@@ -71,9 +71,9 @@ Datei angehängt werden.
 
 In der folgenden Tabelle sind die wichtigsten Optionen von ``sed`` aufgelistet:
 
-.. list-table:: 
+.. list-table::
     :name: tab-sed-optionen
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Option
       - Bedeutung
@@ -178,21 +178,21 @@ Ausdrücke für Sed>` eingesetzt werden.
 Weitere gebräuchliche Anweisungen von ``sed`` sind in der folgenden Tabelle
 aufgelistet:
 
-.. list-table:: 
+.. list-table::
     :name: tab-sed-anweisungen
-    :widths: 10 70 
+    :widths: 10 70
 
     * - Anweisung
       - Bedeutung
     * - ``a``
       - An die angegebene(n) Stelle(n) den folgenden Text als neue Zeile anfügen
-        ("append"). 
-        
+        ("append").
+
         Beispiel: ``/adresse/a text``
-    * - ``c`` 
+    * - ``c``
       - Die angegebene(n) Stelle(n) durch den folgenden Text als neue Zeile
-        ersetzen ("change"). 
-        
+        ersetzen ("change").
+
         Beispiel: ``/adresse/c text``
     * - ``i``
       - Vor den angegebene(n) Stelle(n) den folgenden Text als neue Zeile
@@ -203,23 +203,23 @@ aufgelistet:
       - Die angegebene(n) Stelle(n) löschen ("delete")
 
         Beispiel: ``/adresse/d``
-    * - ``p`` 
+    * - ``p``
       - Gibt die angegebene(n) Stelle(n) aus ("print"); wird üblicherweise in
         Kombination mit der Option ``-n`` verwendet.
     * - ``q``
       - Sed innerhalb einer Skriptdatei beenden ("quit").
-    * - ``r`` 
+    * - ``r``
       - Vor den angegebene(n) Stelle(n) den Inhalt der folgenden Datei einfügen
         ("read").
 
         Beispiel: ``/adresse/r dateiname``
-    * - ``y`` 
+    * - ``y``
       - An den angegebene(n) Stelle(n) Zeichen aus einer Liste durch andere
         Zeichen ersetzen ("yank").
 
         Beispiel: ``/adresse/y/abc/ABC/``
-    * - ``w`` 
-      - Schreibt die angegebene(n) Stelle(n) in die folgende Datei ("write"). 
+    * - ``w``
+      - Schreibt die angegebene(n) Stelle(n) in die folgende Datei ("write").
 
         Beispiel: ``/adresse/w dateiname``
 
@@ -237,33 +237,33 @@ Die wichtigsten Sonderzeichen sind in der folgenden Tabelle aufgelistet.
 
 .. only:: html
 
-    .. list-table:: 
+    .. list-table::
         :name: tab-sed-sonderzeichen
-        :widths: 10 50 
+        :widths: 10 50
 
         * - Sonderzeichen
           - Bedeutung
-        * - ``^`` 
+        * - ``^``
           - Zeilenanfang
-        * - ``$`` 
-          - Zeilenende 
+        * - ``$``
+          - Zeilenende
         * - ``.``
           - ein beliebiges Zeichen (außer dem Newline-Zeichen ``\n``)
-        * - ``[A-Z]`` 
-          - ein Großbuchstabe 
-        * - ``[a-z]`` 
+        * - ``[A-Z]``
+          - ein Großbuchstabe
+        * - ``[a-z]``
           - ein Kleinbuchstabe
-        * - ``[0-9]`` 
+        * - ``[0-9]``
           - eine Ziffer
-        * - ``[abc123]`` 
+        * - ``[abc123]``
           - ein Zeichen aus der angegebenen Menge an Buchstaben oder Ziffern
-        * - ``[^abc123]`` 
+        * - ``[^abc123]``
           - ein beliebiges Zeichen außer der angegebenen Menge an Buchstaben oder
             Ziffern
         * - ``\( \)``
           - Gruppierung der zwischen den Klammern angegebenen Zeichen zu einem
             einzigen Ausdruck.
-            
+
             Die Textstellen, auf welche die einzelnen Gruppierungen zutreffen,
             können bei Ersetzungen mittels ``\1``, ``\2``,
             ``\3`` usw. wieder eingesetzt werden.
@@ -276,7 +276,7 @@ Die wichtigsten Sonderzeichen sind in der folgenden Tabelle aufgelistet.
         * - ``*``
           - keine, eine oder beliebig viele Wiederholungen des vorhergehenden
             Zeichens oder der vorangehenden Gruppierung
-        * - ``\< \>`` 
+        * - ``\< \>``
           - Wortanfang und Wortende
         * - ``&``
           - Bei Ersetzungen entspricht ``&`` der gesamten Textstelle, auf welche das
@@ -286,7 +286,7 @@ Die wichtigsten Sonderzeichen sind in der folgenden Tabelle aufgelistet.
 
     \label{tab-sed-sonderzeichen}
     \vspace*{1cm}
-    {\centering 
+    {\centering
     \begin{tabulary}{\linewidth}{|p{5cm}|p{10cm}|} \hline
     Sonderzeichen & Bedeutung \\ \hline
     \code{\textasciicircum{}} & Zeilenanfang \\ \hline
@@ -307,8 +307,8 @@ Die wichtigsten Sonderzeichen sind in der folgenden Tabelle aufgelistet.
     \code{\textbackslash{}\textless{} \textbackslash{}\textgreater{}} & Wortanfang und Wortende \\ \hline
     \code{\&} & Bei Ersetzungen entspricht \code{\&} der gesamten Textstelle, auf welche das angegebene Suchmuster zugetrifft. \\
     \hline
-    \end{tabulary} 
-    } 
+    \end{tabulary}
+    }
 
 In eckigen Klammern kann zur Definition einer Charakter-Klasse auch auch ein
 anderer Bereich angegeben werden; beispielsweise bezeichnet ``[a-m]`` einen
@@ -320,7 +320,7 @@ des Zeichens aufzuheben.
 ..  \code{\$} & Zeilenende  \\
 ..  \code{.} & ein beliebiges Zeichen (außer dem Newline-Zeichen \code{\textbackslash{}n}) \\
 ..  \code{{[}abc123{]}} &  ein Zeichen aus der angegebenen Menge an Buchstaben oder Zahlen \\
-..  * - ``[^abc123]`` 
+..  * - ``[^abc123]``
 ..  - ein beliebiges Zeichen außer der angegebenen Menge an Buchstaben oder
 ..  Zahlen
 ..  * - ``\( \)``
@@ -339,7 +339,7 @@ des Zeichens aufzuheben.
 ..  * - ``*``
 ..  - keine, eine oder beliebig viele Wiederholungen des vorhergehenden
 ..  Zeichens oder der vorangehenden Gruppierung
-..  * - ``\< \>`` 
+..  * - ``\< \>``
 ..  - Wortanfang und Wortende
 ..  * - ``&``
 ..  - Bei Ersetzungen entspricht ``&`` der gesamten Textstelle, auf welche das
@@ -397,7 +397,7 @@ so kann das Muster auch weggelassen werden:
 
     # Awk-Print-Anweisung auf alle Zeilen einer Datei anwenden:
     awk '{print $1 $2 $3}' dateiname
-    
+
 Ebenso kann Awk mittels einer :ref:`Pipe <Pipelines>` Ausgabedaten eines anderen
 Programms als Eingabe verwenden. In diesem Fall kann der Dateiname weggelassen
 werden:
@@ -405,7 +405,7 @@ werden:
 .. code-block:: bash
 
    # Daten vom Bildschirm anstelle von einer Datei einlesen:
-   other_programm | awk '/muster/ {anweisungen}' 
+   other_programm | awk '/muster/ {anweisungen}'
 
 Üblicherweise werden von ``awk`` so genannte "Whitespace"-Zeichen, also
 Leerzeichen und Tabulator-Zeichen (``\t``), als Trennzeichen zwischen den
@@ -433,8 +433,8 @@ Lesbarkeit auch untereinander geschrieben werden:
 .. code-block:: bash
 
     # Mehrere Muster-Anweisungspaare, andere Form:
-    awk [optionen] '/muster1/ {anweisung1} 
-                    /muster2/ {anweisung2} 
+    awk [optionen] '/muster1/ {anweisung1}
+                    /muster2/ {anweisung2}
                     ... ' dateiname
 
 In diesem Fall wird bei jeder eingelesenen Zeile zunächst das erste Muster
@@ -475,7 +475,7 @@ Kombination der Ausdrücke zu erreichen (siehe :ref:`Aussagenlogik
 In Awk kann man je einen Anweisungsblock einmalig zu Beginn beziehungsweise
 einmalig am Ende eines Skripts ausführen. ``BEGIN``-Anweisungen können
 beispielsweise dazu genutzt werden, um Header-Zeilen in eine Ausgabe-Datei zu
-schreiben, bevor die eigentlichen Daten verarbeitet werden. 
+schreiben, bevor die eigentlichen Daten verarbeitet werden.
 
 .. code-block:: bash
 
@@ -526,10 +526,10 @@ Zahlenwerte aufaddiert werden. Das Ergebnis kann dann mittels eines
 
     # Dateigrößen des aktuellen Verzeichnisses ausgeben:
     # (Die 5. Spalte von `ls -l` gibt die Dateigröße an)
-    ls -l | awk '{print $5}' 
+    ls -l | awk '{print $5}'
 
     # Alle Werte zur Gesamtgröße aufsummieren:
-    ls -l | awk '{sum += $5} END {print "Gesamt:\t" sum}' 
+    ls -l | awk '{sum += $5} END {print "Gesamt:\t" sum}'
 
 .. _Reguläre Ausdrücke für Awk:
 
@@ -540,27 +540,27 @@ werden; damit sind Kombinationen von normalen Buchstaben und Sonderzeichen
 gemeint, wobei letztere die eine besondere Bedeutung besitzen. Die wichtigsten
 Sonderzeichen sind in der folgenden Tabelle aufgelistet.
 
-.. list-table:: 
+.. list-table::
     :name: tab-awk-sonderzeichen
-    :widths: 10 50 
+    :widths: 10 50
 
     * - Sonderzeichen
       - Bedeutung
-    * - ``^`` 
+    * - ``^``
       - Zeilenanfang
-    * - ``$`` 
-      - Zeilenende 
+    * - ``$``
+      - Zeilenende
     * - ``.``
       - ein beliebiges Zeichen
-    * - ``[A-Z]`` 
+    * - ``[A-Z]``
       - ein Großbuchstabe
-    * - ``[a-z]`` 
+    * - ``[a-z]``
       - ein Kleinbuchstabe
-    * - ``[0-9]`` 
+    * - ``[0-9]``
       - eine Ziffer
-    * - ``[abc123]`` 
-      - ein Zeichen aus der angegebenen Menge an Buchstaben oder Ziffern. 
-    * - ``[^abc123]`` 
+    * - ``[abc123]``
+      - ein Zeichen aus der angegebenen Menge an Buchstaben oder Ziffern.
+    * - ``[^abc123]``
       - ein beliebiges Zeichen außer der angegebenen Menge an Buchstaben oder
         Ziffern
     * - ``( )``
@@ -604,14 +604,14 @@ Zeilen einer Tabelle ausgegeben werden, deren Wert in der dritten Spalte
 
 Für Werte-Vergleiche können folgende Operatoren genutzt werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-vergleichssoperatoren
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Operator
       - Beschreibung
     * - ``==``
-      - Test auf Wertgleichheit 
+      - Test auf Wertgleichheit
     * - ``!=``
       - Test auf Ungleichheit
     * - ``<``
@@ -628,7 +628,7 @@ Auch bei Werte-Vergleichen können mehrere Bedingungen mittels ``&&`` als
 Gesamt-Bedingung kombiniert werden; ebenso sind Kombinationen von
 Werte-Vergleichen und normalen Suchmustern oder regulären Ausdrücken möglich.
 Zur Gruppierung einzelner Teilbedingungen können wiederum runde Klammern gesetzt
-werden. 
+werden.
 
 Der Istgleich-Operator ``==`` kann zudem verwendet werden, um eine Spalte mit
 einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
@@ -639,7 +639,7 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
 .. xpdf:
 .. Warning: Cannot convert string
 .. "-*-courier-medium-r-normal--12-*-*-*-*-*-iso8859-1" to type FontStruct
-.. 
+..
 
 .. ls -l | awk '/4,0K/ || /Mai/ {printf("%-20s\t %10i\n", $9, $5)}'
 
@@ -682,7 +682,7 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
 ..  Üblicherweise gibt ``awk`` seine Ergebnisse wiederum auf der Standard-Ausgabe
 ..  aus. Mit der Angabe von ``> dateiname`` als letztes übergebenes Argument oder
 ..  auch mittels einer weiteren Pipe und dem Programm :ref:`tee <tee>` kann die
-..  Ausgabe jedoch auch in Textdateien umgelenkt werden: 
+..  Ausgabe jedoch auch in Textdateien umgelenkt werden:
 
 ..  .. code-block:: bash
 
@@ -696,9 +696,9 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
 
 ..  In der folgenden Tabelle sind die wichtigsten Optionen von ``awk`` aufgelistet:
 
-..  .. list-table:: 
+..  .. list-table::
     ..  :name: tab-sed-optionen
-    ..  :widths: 20 50 
+    ..  :widths: 20 50
 
     ..  * - Option
       ..  - Bedeutung
@@ -706,7 +706,7 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
       ..  - Anweisungen aus der angegebenen Skriptdatei anstelle von der
         ..  Standard-Eingabe lesen
     ..  * - ``-F symbol``
-      ..  - Das angegebene Symbol als Feldtrenn-Zeichen verwenden 
+      ..  - Das angegebene Symbol als Feldtrenn-Zeichen verwenden
         ..  (Standard: Leerzeichen)
     ..  * - ``-v varname=wert``
       ..  - Eine Variable mit einem bestimmten Wert definieren
@@ -727,49 +727,49 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
 ..  Awk verfügt als Skriptsprache über einige automatisch definierte Variablen; die
 ..  wichtigsten sind in der folgenden Tabelle aufgelistet.
 
-..  .. list-table:: 
+..  .. list-table::
     ..  :name: tab-awk-variablen
-    ..  :widths: 20 50 
+    ..  :widths: 20 50
 
     ..  * - Variablenname
       ..  - Beschreibung
     ..  * - ``ARGC``
-      ..  - Anzahl der Befehlszeilenparameter 
+      ..  - Anzahl der Befehlszeilenparameter
     ..  * - ``ARGV``
       ..  - Array der Befehlszeilenparameter. Die Indizes laufen von 0 bis ARGC-1.
-        ..  Durch ändern von ARGV kann man vom Script aus weitere Dateien öffnen. 
+        ..  Durch ändern von ARGV kann man vom Script aus weitere Dateien öffnen.
     ..  * - ``CONVFMT``
-      ..  - Das voreingestellte Format für Zahlen. Standardwert ist "%.6g". 
+      ..  - Das voreingestellte Format für Zahlen. Standardwert ist "%.6g".
     ..  * - ``ENVIRON``
       ..  - Stellt die Umgebungsvariablen als assoziatives Array zur Verfügung. Z.B.
-        ..  liefert ENVIRON["HOME"] unser Homerverzeichnis. 
+        ..  liefert ENVIRON["HOME"] unser Homerverzeichnis.
     ..  * - ``ERRNO``
-      ..  - Text zum letzten aufgetretenen Fehler bei einer Dateioperation 
+      ..  - Text zum letzten aufgetretenen Fehler bei einer Dateioperation
     ..  * - ``FIELDWIDTHS``
       ..  - Wenn man diese Variable mit einer durch Leerzeichen getrennten Liste von
         ..  Zahlen füllt, so werden die Felder nicht durch die in FS angegebenen
         ..  Trennzeichen, sondern an den entsprechenden festen Positionen getrennt.
         ..  Ich verwende das oft, um vom Host per FTP übertragene Dateien in Felder
-        ..  zu zerlegen und weiterzuverarbeiten. 
+        ..  zu zerlegen und weiterzuverarbeiten.
     ..  * - ``FNR``
       ..  - Die Nummer des aktuellen Eingabesatzes. Ein awk '{print FNR, $0}'
-        ..  liefert ein Listing mit Zeilennummern. 
+        ..  liefert ein Listing mit Zeilennummern.
     ..  * - ``IGNORECASE``
       ..  - Hat diese Variable einen von Null verschiedenen Wert, so werden alle
         ..  Stringvergleiche, das Trennen der Eingabe mit FS bzw. RS und die
         ..  Auswertung regulärer Ausdrücke unabhängig von Groß- bzw. Kleinschreibung
-        ..  vorgenommen. 
+        ..  vorgenommen.
     ..  * - ``NF``
-      ..  - Liefert die Anzahl Felder im aktuellen Eingabesatz. 
+      ..  - Liefert die Anzahl Felder im aktuellen Eingabesatz.
     ..  * - ``OFMT``
-      ..  - Das Standard-Ausgabeformat für Zahlen. Voreingestellt ist "%.6g" 
+      ..  - Das Standard-Ausgabeformat für Zahlen. Voreingestellt ist "%.6g"
     ..  * - ``OFS``
       ..  - Das Feldtrennzeichen für die Ausgabe. Voreingestellt ist ein
-        ..  Leerzeichen. 
+        ..  Leerzeichen.
     ..  * - ``ORS``
       ..  - Das Satztrennzeichen für die Ausgabe. Voreingestellt ist LF. Braucht man
         ..  Zeilenenden im DOS-Format (CR+LF), kann man das (unter anderem) mit dem
-        ..  awk erledigen: awk -v 'ORS=\r\n' '{print $0}' 
+        ..  awk erledigen: awk -v 'ORS=\r\n' '{print $0}'
 
 ..  * - Sonderzeichen
 ..    - Bedeutung
@@ -813,7 +813,7 @@ einer Zeichenkette zu vergleichen, beispielsweise ``$1 == "Hallo"``.
     .. rubric:: Anmerkungen:
 
 .. [#] Anstelle von ``g`` kann auch eine beliebige Zahl ``n`` angegeben werden,
-    um nur das :math:`n`-te Vorkommen des angegebenen Begriffs zu ersetzen. 
+    um nur das :math:`n`-te Vorkommen des angegebenen Begriffs zu ersetzen.
 
     Neben dem Schlüsselzeichen ``g`` gibt es nur noch ein weiteres
     Schlüsselzeichen für die Substitutions-Anweisung, und zwar ``p``. Dieses

@@ -33,15 +33,15 @@ RestructuredText-Dateien in PDF- oder Html-Dateien mittels :ref:`Sphinx
 <Sphinx-Tool>`.
 
 *Beispiel:*
-    
+
 * Eine Makefile zum Übersetzen eines C-Programms namens ``hallo-welt.c`` in ein
   ausführbares Programm ``hallo-welt`` sieht im einfachsten Fall folgendermaßen
   aus:
 
   .. code-block:: sh
-  
+
       # Makefile-Beispiel 1:
-  
+
       hallo: hallo-welt.c
           gcc -o hallo hallo-welt.c
 
@@ -55,7 +55,7 @@ Kommentaren versehen werden, die jeweils bis zum Zeilenende reichen.
 Makefiles werden vor allem dann eingesetzt, wenn mehrere Abhängigkeiten
 existieren oder wenn mehrere Anweisungen zum Übersetzen notwendig sind: Diese
 müssen bei Verwendung einer Makefile nur einmal eingegeben werden, was den
-Schreibaufwand meist erheblich reduziert. 
+Schreibaufwand meist erheblich reduziert.
 
 Ein weiterer Vorteil von ``make`` liegt darin, dass nur die Dateien übersetzt
 werden, die seit dem letzten Übersetzen verändert wurden. Dabei liest ``make``
@@ -83,7 +83,7 @@ auch folgendermaßen schreiben:
 .. code-block:: bash
 
     # Makefile-Beispiel 2:
-  
+
     DEST = hallo
     SOURCE = hallo-welt.c
     CC = gcc
@@ -91,11 +91,11 @@ auch folgendermaßen schreiben:
 
     $(DEST): $(SOURCE)
         $(CC) $(CFLAGS) $(DEST) $(SOURCE)
-        
+
 Die Verwendung von Makros kann einerseits die Lesbarkeit eines Makefiles
 erhöhen, andererseits auch die Portierbarkeit auf andere Systeme erleichtern,
 indem beispielsweise nur der Name des Compilers bei der Makro-Definition
-ausgetauscht werden muss, aber nicht bei jedem einzelnen Ziel-Anweisungs-Block. 
+ausgetauscht werden muss, aber nicht bei jedem einzelnen Ziel-Anweisungs-Block.
 
 
 .. _Standard-Makros:
@@ -105,9 +105,9 @@ ausgetauscht werden muss, aber nicht bei jedem einzelnen Ziel-Anweisungs-Block.
 Neben eigenen Makros können in Makefiles die vier folgenden vordefinierten Makros verwendet
 werden:
 
-.. list-table:: 
+.. list-table::
     :name: tab-make-standard-makros
-    :widths: 15 50 
+    :widths: 15 50
 
     * - Makro
       - Bedeutung
@@ -124,7 +124,7 @@ werden:
   wie in den obigen beiden Beispielen ein Ziel explizit angegeben wird.
 
 * Die beiden Makros ``$<`` und ``$*`` hingegen werden ausschließlich für so
-  genannte Suffix- oder Muster-Regeln verwendet. 
+  genannte Suffix- oder Muster-Regeln verwendet.
 
 Eine Suffix-Regel kann wiederum immer dann definiert werden, wenn ein bestimmter
 Dateityp von einem anderen Dateityp abhängt; beispielsweise hängen
@@ -136,7 +136,7 @@ aus ``.c``-Dateien mittels des ``gcc``-Compilers folgendermaßen aussehen:
 
 .. code-block:: bash
 
-    .c.o: 
+    .c.o:
         gcc $<
 
 Möchte man beispielsweise eine Datei ``hallo-welt.c`` compilieren, so ist dies
@@ -160,23 +160,23 @@ Muster-Regel lautet damit:
 Mittels solcher Regeln lässt sich das Übersetzen von Dateien erheblich
 vereinfachen, wenn beispielsweise alle Dateien in einem Ordner mit den gleichen
 Optionen compiliert werden sollen; so muss nicht für jedes Ziel eine extra
-Regel definiert werden. 
+Regel definiert werden.
 
 
 .. _Standard-Ziele:
 
-.. rubric:: Standard-Ziele 
+.. rubric:: Standard-Ziele
 
 In einer Makefile muss nicht jedes Ziel einer Datei entsprechen. Es gibt auch so
 genannte Standard-Ziele, bei denen bestimmte Aktionen ausgeführt werden sollen,
 die sich aus dem Namen des Ziels ergeben. Einige solcher Ziele, die häufig in
 Makefiles auftreten, sind folgende:
 
-.. list-table:: 
+.. list-table::
     :name: tab-make-standard-ziele
-    :widths: 20 50 
+    :widths: 20 50
 
-    * - Ziel 
+    * - Ziel
       - Bedeutung
     * - ``all``
       - Ziel zum Erzeugen aller anderen Regeln

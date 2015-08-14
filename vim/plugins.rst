@@ -172,7 +172,7 @@ Das `BufferExplorer Plugin
 <http://www.vim.org/scripts/script.php?script_id=42>`_ bietet -- ähnlich wie
 ``:ls`` -- eine Übersicht über die aktuell geöffneten Buffer. Um einen
 bestimmten Buffer in dieser Ansicht auszuwählen, muss man nur mit ``j``, ``k``
-oder ähnlichen Bewegungsbefehlen den Cursor über den gewünschten Dateinamen zu
+oder ähnlichen Bewegungsanweisungen den Cursor über den gewünschten Dateinamen zu
 bewegen und ``Enter`` zu drücken.
 
 .. only:: html
@@ -208,7 +208,7 @@ CtrlP
 
 Das `CtrlP-Plugin <http://www.vim.org/scripts/script.php?script_id=3736>`_
 ermöglicht ein sehr effizientes Auswählen von Dateien, ausgehend vom
-Verzeichnis, in dem Vim aufgerufen wurde; ebenso können mit ``CtrlP`` zuletzt
+Verzeichnis, in dem Vim aufgerufen wurde; ebenso können mit CtrlP zuletzt
 verwendete Dateien wieder schnell geöffnet werden.
 
 .. only:: html
@@ -222,10 +222,19 @@ verwendete Dateien wieder schnell geöffnet werden.
       installiert werden:
     | https://github.com/kien/ctrlp.vim
 
-Das CtrlP-Plugin wird vom Normalmodus aus mittels ``Control p`` gestartet. Es
-erscheint ein Eingabe-Prompt, der mit ``Esc`` wieder beendet werden kann.
-Möchte man mit CtrlP eine Datei im Projektverzeichnis oder einem
-Unterverzeichnis öffnen, so genügt es nach Drücken von ``Control p`` eine
+Das CtrlP-Plugin wird im Normalmodus nach der Standard-Einstellung mittels
+``Control p`` gestartet; es kann hierfür jedoch auch eine andere Tastenkombination,
+beispielsweise ``Ctrl g``, gewählt werden (empfehlenswert bei Verwendung des
+:ref:`Yankring <Yankring>`-Plugins). Hierzu muss folgende Zeile in der
+Konfigurationsdatei ``~/.vimrc`` ergänzt werden:
+
+.. code-block:: vim
+
+	let g:ctrlp_map = '<c-g>'
+
+Beim Start von CtrlP erscheint ein Eingabe-Prompt, der mit ``Esc`` wieder
+beendet werden kann. Möchte man mit CtrlP eine Datei im Projektverzeichnis oder
+einem Unterverzeichnis öffnen, so genügt es nach Drücken von ``Control p`` eine
 beliebige Anzahl von Zeichen einzugeben, die im Dateinamen der gesuchten Datei
 vorkommen; es muss also nicht ein realer Dateiname eingegeben werden, sondern es
 wird vielmehr eine "Fuzzy"-Suche gestartet. CtrlP listet automatisch alle
@@ -233,9 +242,41 @@ zutreffenden Dateien in einem temporären Fenster auf, in dem mittels ``Ctrl j``
 und ``Ctrl k`` navigiert werden kann. Drückt man ``Enter``, so wird die
 ausgewählte Datei geöffnet.
 
-Nach Drücken von ``Control p`` kann bei Bedarf mittels ``Control f`` (oder
-``Control b``) zwischen den möglichen Suchoptionen gewechselt werden (Dateien,
-Buffer, zuletzt verwendete Dateien, oder alle zusammen).
+Die Fuzzy-Find-Funktion kann durch folgende Einstellungen noch weiter optimiert
+werden, wenn man mittels ``sudo aptitude install ag`` auch noch die :ref:`grep
+<grep>`-Alternative ``ag`` installiert und folgende Zeilen in die
+Konfigurationsdatei ``~/.vimrc`` aufnimmt:
+
+.. code-block:: vim
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_custom_ignore = '**/_build/'
+    let g:ctrlp_clear_cache_on_exit=0
+
+Durch die Verwendung von ``ag`` können in der Datei ``~/.agignore`` mit der
+gleichen Syntax wie bei :ref:`gitignore <gitignore>` Dateimuster angegeben
+werden, die von der Suche ausgeschlossen werden sollen; zusätzliche Dateimuster
+können in der Variablen ``ctrlp_custom_ignore`` abgelegt werden (ein doppelter
+Stern bedeutet dabei, dass der folgende Ausdruck auch in einem Unterverzeichnis
+vorkommen kann). Durch das Setzen der Variable ``ctrlp_clear_cache_on_exit=0``
+wird verhindert, dass das Plugin bei jedem Start von Vim die zu durchsuchenden
+Projektverzeichnisse neu einlesen muss.
+
+Arbeitet man mit mehreren verschiedenen Projektverzeichnissen, kann es nützlich
+sein, auch folgendes Featur von CtrlP zu aktivieren:
+
+.. code-block:: vim
+
+	let g:ctrlp_extensions = ['bookmarkdir']
+
+Damit könnnen mit ``:CtrlPBookmarkDirAdd pfad`` bestimmte Pfade für die
+Fuzzy-Suche hinzugefügt werden.
+
+Nach dem Start von CtrlP kann bei Bedarf mittels ``Control f`` (oder ``Control
+b``) zwischen den möglichen Suchoptionen gewechselt werden (Dateien, Buffer,
+Bookmarks, zuletzt verwendete Dateien, oder alle zusammen).
+
+.. index:: Eregex (Vim-Plugin)
 
 .. _Eregex:
 
@@ -262,10 +303,10 @@ ergänzt werden:
 
 .. code-block:: vim
 
-	let g:eregex_default_enable = 1
-	let g:eregex_forward_delim = '/'
-	let g:eregex_backward_delim = '?'
-	nmap <leader>/ :call eregex#toggle()<CR>
+    let g:eregex_default_enable = 1
+    let g:eregex_forward_delim = '/'
+    let g:eregex_backward_delim = '?'
+    nmap <leader>/ :call eregex#toggle()<CR>
 
 Gibt man anschließend in einer neuen Vim-Sitzung ``/`` oder ``?`` ein, so
 erscheint in der Kommandozeile automatisch ``:1M/`` oder ``:1M?``. Die
@@ -273,9 +314,41 @@ unmittelbar dahinter eingegebenen Zeichen werden als Perl-compatible reguläre
 Ausdrücke (PCRE) interpretiert. Durch Eingabe von ``\/`` im Normalmodus kann
 dieses Verhalten aus- beziehungsweise wieder angeschaltet werden.
 
+Um Ersetzungen mit PCRE-Syntax vorzunehmen, kann man im Kommandozeilen-Modus
+``S`` statt ``s`` verwenden:
+
+.. code-block:: vim
+
+    :[Bereich]S/PCRE-Syntax/Ersetzung/[Optionen]
+
+Ebenso kann in ``global``-Anweisungen die PCRE-Syntax verwendet werden, wenn
+diese mit statt ``G`` statt mit ``g`` eingeleitet werden:
+
+.. code-block:: vim
+
+    :[Bereich]G/PCRE-Syntax/[Anweisung]
+
+Für das Schreiben von Vim-Scripts bietet das Plugin auch eine Hilfe: Schreibt
+man in der aktuellen Datei einen regulären Ausdruck in Perl-Syntax und markiert
+ihn visuell, so kann dieser mittels ``:E2v`` in einen regulären Ausdruck mit
+Vim-Syntax übersetzt werden.
+
+*Beispiel:*
+
+.. code-block:: vim
+
+    # Entfernen von Tabs und Leerzeichen am Zeilenende:
+    # Perl-Syntax:
+    :%s/\s+$//g
+
+    # Visuell markieren, :E2v eingeben (wird ergänzt zu :'<,'>E2v)
+    # Ergebnis:
+    :%s/\s\+$//g
+
 Eine gute Übersicht über reguläre Ausdrücke in Perl-Syntax findet sich
 beispielsweise `hier
 <http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`_.
+
 
 .. index:: Minibuf-Explorer (Vim-Plugin)
 .. _Minibuf-Explorer:
@@ -293,6 +366,20 @@ man in diesem Fenster mit ``h j k l`` den gewünschten Buffer anwählen und
 fünften Buffers oder ``:bp`` bzw. ``:bn`` zur Auswahl des vorherigen bzw.
 nächsten Buffers eingegeben werden, da die Buffer-Nummern ja stets angezeigt
 werden.
+
+Durch folgende Zeilen in der ``~/.vimrc`` kann das Plugin so konfiguriert
+werden, dass die Bufferleiste stets unten am Bildschirm angezeigt wird und mit
+``F4`` an- und ausgeschaltet werden kann:
+
+.. code-block:: vim
+
+	let g:miniBufExplSplitBelow=1
+	map <F4> :MBEToggle<CR>
+	hi MBEVisibleActiveNormal guifg=magenta ctermfg=magenta
+	hi MBEVisibleActiveChanged guifg=magenta ctermfg=magenta
+
+Durch die ``hi``-Angaben wird der aktive Buffer in der Liste durch die Farbe
+``magenta`` hervorgehoben.
 
 Das Plugin ist auch in Verbindung mit der Option ``swapfile`` sinnvoll, die
 verhindert, dass eine Datei mehrfach geöffnet wird: Bei Verwendung des
@@ -526,7 +613,7 @@ bietet eine Art Inhaltsverzeichnis für Quellcode. Es nutzt das externe Programm
 ``exuberant ctags``, um aus den aktuell geöffneten Dateien eine Übersicht an
 Funktionsnamen, Makros, Variablen, Klassen, usw. zu erstellen. In
 Latex-Dokumenten wird eine Kapitel-, Tabellen- und Labelübersicht angezeigt.
-Faltungen und Suchbefehle funktionieren wie gewohnt.
+Faltungen und Suchanweisungen funktionieren wie gewohnt.
 
 .. only:: html
 
@@ -591,7 +678,7 @@ entsprechende Templates zu ersetzen.
 
 Vordefinierte Beispielsnippets finden sich im Paket `vim-snippets
 <https://github.com/honza/vim-snippets>`_, das zusätzlich installiert werden
-sollte. Bei der Verwendung von Vundle empfielt sich dabei die :ref:`pinned
+sollte. Bei der Verwendung von Vundle empfiehlt sich dabei die :ref:`pinned
 <vundle-pinned>`-Option zu verwenden, damit eigene Änderungen in den
 Snippets-Dateien nicht durch Aktualisierungen überschrieben werden. Es sollten
 also folgende beiden Zeilen im Plugins-Abschnitt der Konfigurationsdatei
@@ -1023,7 +1110,7 @@ empfehlenswert:
     au BufEnter,BufNewFile *.rst	noremap <F2> :VoomToggle rest<CR>
     au BufEnter,BufNewFile *.rst	noremap <F3> :VoomQuitAll <CR>
 
-Damit wird innerhalb einer Python- oder RestructuredText-Datei durch Drücken von
+Damit wird innerhalb einer Python- oder ReStructuredText-Datei durch Drücken von
 :math:``F2`` auf der linken Fensterseite ein Inhaltsverzeichnis der aktuellen
 Datei eingeblendet. Da Voom in der aktuellen Version das Inhaltsverzeichnis von
 Restructured-Text-Dateien (noch) nicht automatisch aktualisiert, wenn man

@@ -54,7 +54,7 @@ dabei folgende Unterteilungen.
     <div class="section" id="name-eines-paragraphen">
     <h4>Name eines Paragraphen<a class="headerlink" href="#name-eines-paragraphen" title="Permalink zu dieser Überschrift">¶</a></h3>
     </pre></div>
-    
+
 
 Zur Hervorhebung einer Überschrift muss somit nur die jeweilige Zeile durch
 eine zweite, ebenso lange Zeile mit entsprechenden Zeichen markiert werden;
@@ -83,7 +83,7 @@ namens ``.. rubric::`` verwendet. [#DIR]_
     .. rubric:: Bezeichnung
 
     Mehr Text..
-    
+
 
 Eine weitere Aufgliederung eines Kapitels ist durch ein Aufspalten in mehrere
 Dateien möglich.
@@ -97,7 +97,7 @@ Dateien angelegt, deren Namen in etwa den jeweiligen Kapitelüberschriften
 entsprechen sollten (auf Umlaute im Dateinamen sollte dabei verzichtet werden,
 Leerzeichen durch Binde- oder Unterstriche ersetzt werden). Jede dieser Dateien
 muss unmittelbar mit einer Kapitelüberschrift beginnen und kann weitere
-Überschriften beinhalten. 
+Überschriften beinhalten.
 
 In der Hauptdatei ``index.rst`` der Dokumentation, die im Hauptverzeichnis zu
 finden ist, wird auf die einzelnen Kapitel über ein Inhaltsverzeichnus
@@ -107,14 +107,14 @@ folgende:
 
 .. code-block:: rst
 
-    
+
     .. toctree::
         :maxdepth: 2
-    
+
         kapitelname-1.rst
         kapitelname-2.rst
         kapitelname-3.rst
-    
+
 Durch die Option ``:maxdepth:`` wird festgelegt, bis zu welcher Hierarchie-Stufe
 das Inhaltsverzeichnis aufgegliedert werden soll. Mit ``:maxdepth: 2`` werden
 beispielsweise alle Kapitel- und Abschnittsnamen eingeblendet, die in den
@@ -125,16 +125,16 @@ angegeben Dateien der Reihe nach eingebunden, als ob sich ihre Inhalte
 hintereinander in einer einzigen Datei befänden.
 
 Ein besonderer Vorteil dieser Methode liegt darin, dass umfangreichere Kapitel
-beliebig in weitere Unterkapitel aufgeteilt werden können: 
+beliebig in weitere Unterkapitel aufgeteilt werden können:
 
 * Als erstes wird ein neuer Ordner angelegt, der den gleichen Namen wie die
   zugehörige RestructuredText-Datei erhält, beispielsweise ``kapitelname-2``.
 * Anschließend wird die Kapitel-Datei in den neuen Ordner verschoben und dort
-  in ``index.rst`` umbenannt. 
+  in ``index.rst`` umbenannt.
 * Für jedes Unterkapitel wird in dem neuen Ordner eine neue Textdatei angelegt,
   deren Namen wiederum in etwa den Überschriften der einzelnen Abschnitte
   entsprechen sollten. Jeder Abschnitt wird dann aus der ``index.rst``
-  ausgeschnitten und in die entsprechende Datei eingefügt. 
+  ausgeschnitten und in die entsprechende Datei eingefügt.
 * In die ``index.rst`` wird schließlich ein ``toctree`` angelegt, der die Namen
   aller Dateien, aus denen das Kapitel besteht, beinhaltet.
 
@@ -152,7 +152,7 @@ Kommentare
 
 RestructuredText-Dateien können um Kommentare ergänzt werden, die bei der
 Übersetzung in PDF- bzw. HTML-Dateien ignoriert werden und somit lediglich als
-"private" Notizen für den Autor dienen. 
+"private" Notizen für den Autor dienen.
 
 Jede Zeile einer RST-Datei kann, indem zu Beginn zwei Punkte und (mindestens)
 ein Leerzeichen eingefügt werden, zu einem Kommentar gemacht werden.
@@ -161,7 +161,7 @@ ein Leerzeichen eingefügt werden, zu einem Kommentar gemacht werden.
 
 .. code-block:: rst
 
-    ..  Dies hier ist ein Kommentar. 
+    ..  Dies hier ist ein Kommentar.
 
 Um einen längeren, aus mehreren Zeilen bestehenden Kommentar zu erzeugen, kann
 einerseits jede Zeile einzeln durch zwei Punkte und ein Leerzeichen am Anfang
@@ -173,8 +173,8 @@ Leerzeichen besteht:
 
 .. code-block:: rst
 
-    ..   
-        Dies hier ist ein langer Kommentar. 
+    ..
+        Dies hier ist ein langer Kommentar.
         Er besteht aus mehreren Zeilen.
 
 Auf diese Weise können auch mehrere Absätze auskommentiert werden. Hierbei
@@ -201,7 +201,7 @@ auftretenden Roles sind:
         Eine Textstelle, die unmittelbar (ohne Leerzeichen) durch je zwei
         schräge Apostrophen ("Backticks") begrenzt ist, wird in
         ``Maschinenschrift`` dargestellt. Diese Art der Hervorhebung kann
-        insbesondere für kurze Codebeispiele genutzt werden. 
+        insbesondere für kurze Codebeispiele genutzt werden.
 * ``:sub:`Text```:
         Eine Textstelle, die unmittelbar (ohne Leerzeichen) durch je einen
         schrägen Apostrophen ("Backtick") begrenzt ist und durch das einleitende
@@ -217,11 +217,11 @@ auftretenden Roles sind:
 
 .. code-block:: rst
 
-    Etwas *kursiv dargestellter*, 
-    etwas **fettgedruckter** Text, 
+    Etwas *kursiv dargestellter*,
+    etwas **fettgedruckter** Text,
     und etwas Text in ``Maschinenschrift``;
 
-    Tief gestellter Text: :sub:`123` und 
+    Tief gestellter Text: :sub:`123` und
     hoch gestellter Text: :sup:`456`
 
 .. only:: html
@@ -233,7 +233,7 @@ auftretenden Roles sind:
     <div class="highlight-rst"><div class="highlight"><pre>
     <p>Etwas <em>kursiv dargestellter</em>, etwas <strong>fettgedruckter</strong> Text, und etwas Text in <tt class="docutils literal"><span class="pre">Maschinenschrift</span></tt>.</p>
     <p>Tief gestellter Text: <sub>123</sub> und hoch gestellter Text: <sup>456</sup></p>
-    </pre></div> 
+    </pre></div>
 
 Mittels der ``:math:``-Role können zusätzlich mathematische Formeln, geschrieben
 als LaTeX-Code, innerhalb einer Zeile eingefügt werden. Beispielsweise liefert
@@ -255,20 +255,20 @@ Direktiven genutzt werden:
   *Beispiel:*
 
   .. code-block:: rst
-    
-      .. epigraph:: 
 
-          "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt." 
+      .. epigraph::
 
-          -- Albert Einstein 
+          "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt."
+
+          -- Albert Einstein
 
   *Ergebnis:*
 
-  .. epigraph:: 
+  .. epigraph::
 
-      "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt." 
+      "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt."
 
-      -- Albert Einstein 
+      -- Albert Einstein
 
   Innerhalb einer ``epigraph``-Umgebung sind sowohl mehre Absätze als auch
   Inline-Markup (Roles) erlaubt. Die Ausgabe erfolgt eingerückt und mit reduzierter
@@ -276,7 +276,7 @@ Direktiven genutzt werden:
   Zeilenumbrüche erfolgen automatisch.
 
 .. ``pull-quote`` mit ``epigraph`` komplett identisch?
-    
+
 * ``.. line-block::``
 
   Die ``line-block``-Umgebung ist der ``epigraph``-Umgebung ähnlich, jedoch
@@ -286,7 +286,7 @@ Direktiven genutzt werden:
   von Gedichten und Versen nützlich:
 
   *Beispiel:*
-        
+
   .. code-block:: rst
 
       .. line-block::
@@ -299,7 +299,7 @@ Direktiven genutzt werden:
           -- Hermann Hesse (Ausschnitt aus dem Gedicht "Welkes Blatt")
 
   *Ergebnis:*
-        
+
       .. line-block::
 
           "Jede Blüte will zur Frucht
@@ -320,19 +320,19 @@ Direktiven genutzt werden:
 
   Mit den obigen Direktiven lassen sich Infoboxen erzeugen. Der Titel der
   Infobox leitet sich dabei aus dem Direktivennamen ab (Bemerkung, Hinweis, Tip,
-  Warnung, Fehler, Wichtig). 
+  Warnung, Fehler, Wichtig).
 
   *Beispiel:*
 
   .. code-block:: rst
-  
-      .. hint:: 
+
+      .. hint::
 
           Hier wird ein Hinweis ausgegeben.
 
   *Ergebnis:*
 
-      .. hint:: 
+      .. hint::
 
           Hier wird ein Hinweis ausgegeben.
 
@@ -349,15 +349,15 @@ Direktiven genutzt werden:
   *Beispiel:*
 
   .. code-block:: rst
-    
-      .. math:: 
-    
+
+      .. math::
+
           a^2 + b^2 = c^2
 
   *Ergebnis:*
 
-      .. math:: 
-      
+      .. math::
+
           a^2 + b^2 = c^2
 
   Die ``math``-Direktive bietet zusätzlich die Option, der angegebenen Formel
@@ -369,18 +369,18 @@ Direktiven genutzt werden:
   *Beispiel:*
 
     .. code-block:: rst
-    
-      .. math:: 
+
+      .. math::
           :label: einstein-und-pythagoras
-      
-          E = m \cdot c^2 \overset{?}{=} m \cdot (a^2 + b^2) 
+
+          E = m \cdot c^2 \overset{?}{=} m \cdot (a^2 + b^2)
 
   *Ergebnis:*
 
-      .. math:: 
+      .. math::
           :label: einstein-und-pythagoras
-      
-          E = m \cdot c^2 \, \overset{?}{=} \, m \cdot (a^2 + b^2) 
+
+          E = m \cdot c^2 \, \overset{?}{=} \, m \cdot (a^2 + b^2)
 
   Auf die Formel kann dann mittels der Referenz ``eqr:`Name-des-Labels``` an
   einer beliebigen anderen Stelle des Dokuments (derzeit jedoch nur innerhalb
@@ -397,24 +397,24 @@ Direktiven genutzt werden:
   *Beispiel:*
 
   .. code-block:: rst
-  
+
       .. code-block:: bash
           number-lines:
-    
+
           # Show the local network address
           # Result: Something like 192.168.1.105
-          hostname -I | cut -d' ' -f1 
+          hostname -I | cut -d' ' -f1
 
   *Ergebnis:*
 
   .. code-block:: bash
-  
+
       # Show the local network address
       # Result: Something like 192.168.1.105
-      hostname -I | cut -d' ' -f1 
+      hostname -I | cut -d' ' -f1
 
 .. :emphasize-lines: 3,5
-.. :emphasize-lines: 12,15-18  
+.. :emphasize-lines: 12,15-18
 .. :linenos:
 .. http://sphinx-doc.org/markup/code.html
 
@@ -422,10 +422,10 @@ Direktiven genutzt werden:
 ..  Pfad`` auch der Name einer separaten Quellcode-Datei angegeben werden, deren
 ..  Inhalt in das Dokument eingebunden werden soll.
 
-..   
+..
     .. literalinclude:: example.py
        .. :pyobject: Timer.start
-    
+
     .. literalinclude:: example.py
        :diff: example.py.orig
 
@@ -470,7 +470,7 @@ verweisen zu können. RestructuredText bietet dazu folgende Möglichkeiten:
   um einen oder mehrere Einträge mit folgender Form ergänzt werden:
 
   .. code-block:: python
-  
+
         intersphinx_mapping = {
             'sphinx': ('http://sphinx-doc.org', None),
             'gw': ('http://grund-wissen.de', None)
@@ -504,7 +504,7 @@ beziehungsweise ``.. [#Name] Inhalt`` angegeben, wobei ``[#Name]`` der Marke im
 Haupttext entsprechen muss.
 
 *Beispiel:*
-    
+
 .. code-block:: rst
 
     Etwas Text. [#FN1]_
@@ -536,7 +536,7 @@ Erstreckt sich der Inhalt einer Fußnote über mehrere Zeilen, so muss jede Zeil
 nach der ersten um mindestens ein Leerzeichen eingerückt werden (üblicherweise
 werden Folgezeilen eine Tabulatorbreite weit eingerückt, um eine bessere
 Lesbarkeit zu erzielen).
-    
+
 .. rubric:: Zitierungen und Literaturverzeichnis
 
 Innerhalb einer Dokumentation sind auch Verweise auf literarische Werke anderer
@@ -545,7 +545,7 @@ häufig in der Form ``AutorJahr``. Im Haupttext (oder in einer Fußzeile) kann
 auf diese Weise mittels ``[Kurzname]_`` auf eine genauere Umschreibung der
 Literaturquelle verwiesen werden, die einmalig an einer beliebigen Stelle der
 Dokumentation mittels eines Eintrags der Form ``.. [Kurzname] Informationen``
-erfolgt. [#]_ 
+erfolgt. [#]_
 
 In der HTML-Version werden alle Literatur-Einträge an genau der Stelle
 eingefügt, an der sie gesetzt werden. Insofern empfiehlt sich eine eigene Datei
@@ -565,7 +565,7 @@ Angabe der jeweiligen Seitennummer) erfolgt automatisch.
 
 * Um mehrere Index-Einträge zur gleichen Textstelle zu erreichen, können die
   Bezeichnungen der gewünschten Einträge, durch Kommas voneinander getrennt, in
-  einer einzigen Zeile aufgelistet werden. 
+  einer einzigen Zeile aufgelistet werden.
 * Werden zwei Einträge durch einen Strichpunkt getrennt, so wird der zweite
   Eintrag als "Unterkategorie" des ersten im Stichwortverzeichnis angezeigt.
 
@@ -601,7 +601,7 @@ Aufzählungen, Beschreibungen, Tabellen und Bilder
     Beginn einer Zeile eingeleitet, gefolgt vom Namen der Direktive, zwei
     Doppelpunkten und einem Leerzeichen: ``.. name::`` . Vor und nach einer
     Direktive muss (mindestens) eine Leerzeile eingefügt werden.
-    
+
     Je nach Art der Direktive kann hinter ihrem Namen eine weitere Bezeichnung
     und/oder eine beliebige Anzahl von Absätzen folgen. Um den Wirkungsbereich
     der Direktive kenntlich zu machen, werden die Absätze dabei eine
@@ -612,14 +612,14 @@ Aufzählungen, Beschreibungen, Tabellen und Bilder
 
 .. [#ROL] Eine "Role" ist ein Syntax-Element, das Auswirkung auf eine Textstelle
     innerhalb eines Absatzes hat, d.h. auf einen Bereich, der durch zwei Leerzeichen
-    begrenzt wird ("Inline-Markup"). 
+    begrenzt wird ("Inline-Markup").
 
     Eine Role hat im allgemeinen folgende Struktur: ``:name:`Inhalt```. Die
     einzigen Ausnahmen bilden die drei oben genannten (wohl am häufigsten
     auftretenden) Roles für kursiven und fettgedruckten Text sowie Text in
     Maschinenschrift. Sie stellen praktisch nutzbare Abkürzungen für
     ``:emphasis:`Text```, ``:strong:`Text``` sowie ``:literal:`Text``` dar, um
-    Tippbarbeit zu sparen und den Quelltext lesbarer zu gestalten.  
+    Tippbarbeit zu sparen und den Quelltext lesbarer zu gestalten.
 
     Siehe auch `Liste aller RST-Roles (en.)
     <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_.

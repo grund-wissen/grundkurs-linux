@@ -20,6 +20,6 @@ mit jeder Googlegroup.)
 
 .. rubric:: Links
 
-* `Tinkerer Projektseite <http://tinkerer.me/>`_ 
+* `Tinkerer Projektseite <http://tinkerer.me/>`_
 
 

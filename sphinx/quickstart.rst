@@ -17,7 +17,7 @@ bzw. angepasst werden kann:
     accept a default value, if one is given in brackets).
 
     Enter the root path for documentation.
-    > Root path for the documentation [.]: 
+    > Root path for the documentation [.]:
 
 Gewöhnlich mag man die Sphinx-Dokumentation in genau dem Ordner erstellen, von
 dem aus man ``sphinx-quickstart`` aufgerufen hat. Es genügt somit die
@@ -36,7 +36,7 @@ separaten Unterverzeichnissen ``_build/html`` bzw. ``_build/latex`` abgelegt.
     You have two options for placing the build directory for Sphinx output.
     Either, you use a directory "_build" within the root path, or you separate
     "source" and "build" directories within the root path.
-    > Separate source and build directories (y/N) [n]: 
+    > Separate source and build directories (y/N) [n]:
 
 Die nächste Abfrage kann ebenfalls kurzerhand mit ``Enter``-Taste bestätigt
 werden. Gemäß der Vorgabe werden dann Sphinx-Unterordner, die Erweiterungen oder
@@ -47,26 +47,26 @@ Templates beinhalten, mit einem beginnenden Underline-Zeichen gekennzeichnet.
     Inside the root directory, two more directories will be created; "_templates"
     for custom HTML templates and "_static" for custom stylesheets and other static
     files. You can enter another prefix (such as ".") to replace the underscore.
-    > Name prefix for templates and static dir [_]: 
+    > Name prefix for templates and static dir [_]:
 
 Bei der nächsten Abfrage werden der Projekt- und der Autorname der Dokumentation
 sowie eine (beliebig wählbare) Versions- und Releasenummer angegeben. Die
 Release-Nummer kann üblicherweise gleich der Versionsnummer gewählt
-werden. [#]_ 
+werden. [#]_
 
 ::
 
     The project name will occur in several places in the built documentation.
-    > Project name: 
-    > Author name(s): 
+    > Project name:
+    > Author name(s):
 
     Sphinx has the notion of a "version" and a "release" for the
     software. Each version can have multiple releases. For example, for
     Python the version is something like 2.5 or 3.0, while the release is
     something like 2.5.1 or 3.0a1.  If you don't need this dual structure,
     just set both to the same value.
-    > Project version: 
-    > Project release: 
+    > Project version:
+    > Project release:
 
 Bei der nächsten Abfrage kann der Benutzer eine beliebige Datei-Endung für den
 RestructuredText-Quellcode festlegen. Auch hier ist es empfehlenswert die
@@ -93,7 +93,7 @@ Quelltext-Dateien verlinkt.
     "contents tree", that is, it is the root of the hierarchical structure
     of the documents. Normally, this is "index", but if your "index"
     document is a custom template, you can also set this to another filename.
-    > Name of your master document (without suffix) [index]: 
+    > Name of your master document (without suffix) [index]:
 
 Bei der nächsten Abfrage wird festgelegt, ob ein Epub-Builder gewünscht ist
 oder nicht. Gewöhnlich kann hier die Vorgabe ``[n]`` mit der ``Enter``-Taste
@@ -112,23 +112,23 @@ Konfigurationsdatei ``conf.py`` angepasst werden):
 ::
 
     Please indicate if you want to use one of the following Sphinx extensions:
-    > autodoc: 
+    > autodoc:
         automatically insert docstrings from modules (y/N) [n]: y
-    > doctest: 
+    > doctest:
         automatically test code snippets in doctest blocks (y/N) [n]: n
-    > intersphinx: 
+    > intersphinx:
         link between Sphinx documentation of different projects (y/N) [n]: y
-    > todo: 
+    > todo:
         write "todo" entries that can be shown or hidden on build (y/N) [n]: y
-    > coverage: 
+    > coverage:
         checks for documentation coverage (y/N) [n]: n
-    > pngmath: 
+    > pngmath:
         include math, rendered as PNG images (y/N) [n]: y
-    > mathjax: 
+    > mathjax:
         include math, rendered in the browser by MathJax (y/N) [n]: n
-    > ifconfig: 
+    > ifconfig:
         conditional inclusion of content based on config values (y/N) [n]: n
-    > viewcode: 
+    > viewcode:
         include links to the source code of documented Python objects (y/N) [n]: y
 
 Zu guter Letzt wird abgefragt, ob eine :ref:`Makefile <Makefiles>` (für
@@ -164,7 +164,7 @@ dann im ``_build``-Verzeichnis).
 
 .. [#] Die Angaben können zu jedem späteren Zeitpunkt in der
     Konfigurationsdatei ``conf.py`` geändert werden.
-    
+
     Durch die Vergabe von Versionsnummern kann beispielsweise bei der
     Dokumentation von Software-Quellcode sichergestellt werden, dass eine
     Anleitung auch zur jeweiligen Software-Version passt. Auch bei allgemeinen

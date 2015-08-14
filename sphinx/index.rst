@@ -12,7 +12,7 @@ Da die Syntax von RestructuredText leicht erlernbar ist, erspart man sich dank
 Sphinx (mindestens) die Hälfte an Arbeit, die gewöhnlich nötig ist, wenn man
 Dokumente sowohl als Textform (beispielsweise zum einfachen Versenden via Email)
 vorliegen haben als auch im Internet und/oder in druckbarer Form publizieren
-möchte. 
+möchte.
 
 Da es sich bei den Quelldateien um reine Textdateien mit der Endung ``.rst``
 handelt, können diese auch sehr leicht nach Inhalten durchsucht werden.
@@ -40,13 +40,13 @@ die üblichen Optionen von :ref:`grep <grep>` genutzt werden.
     sudo easy_install3 Sphinx
 
 Mit ``sudo easy_install3 -U Sphinx`` (Update) kann Sphinx jederzeit auf den
-aktuellsten Stand gebracht werden. 
+aktuellsten Stand gebracht werden.
 
 Zur Erzeugung von PDF-Druckversionen genügt bereits ein minimales LaTeX-System,
 wie es nach Installation der oben genannten Pakete automatisch vorhanden ist. Um
 beispielsweise in naturwissenschaftlichen Publikationen einen umfangreichen
 mathematischen Formelsatz nutzen zu können, sollte bei Bedarf ein :ref:`volles
-LaTeX-System <gwil:LaTeX>` installiert werden. 
+LaTeX-System <gwil:LaTeX>` installiert werden.
 
 
 .. toctree::
@@ -61,7 +61,7 @@ LaTeX-System <gwil:LaTeX>` installiert werden.
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkung:

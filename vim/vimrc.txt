@@ -414,6 +414,8 @@ filetype plugin on
 " Minibuf-Explorer
 	let g:miniBufExplSplitBelow=1
 	map <F4> :MBEToggle<CR>
+	hi MBEVisibleActiveNormal guifg=magenta ctermfg=magenta
+	hi MBEVisibleActiveChanged guifg=magenta ctermfg=magenta
 
 " NerdTree
 	map <C-t> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
@@ -498,8 +500,8 @@ noremap <c-y> 5<C-y>
 nmap <space> za
 
 " Schnelles Wechseln zwischen Buffern
-nmap <c-h> <ESC>:bn<CR>
-nmap <c-l> <ESC>:bp<CR>
+nmap <c-h> <ESC>:bp<CR>
+nmap <c-l> <ESC>:bn<CR>
 
 " Highlightings von Suchergebnissen mit K entfernen:
 nmap <silent> K :silent nohl<CR>

@@ -75,7 +75,7 @@ Unterverzeichnis im Home-Verzeichnis anzulegen und in die Konfigurationsdatei
         PATH="$HOME/bin:$PATH"
         export PATH;
     fi
-    
+
 Durch die Zeile ``PATH="$HOME/bin:$PATH"`` wird das eigene ``bin``-Verzeichnis
 an den Anfang des Systempfades gesetzt. Wird in einer Shell eine beliebige
 Anweisung eingegeben, so wird zunächst der eigene ``bin``-Ordner und erst
@@ -108,15 +108,15 @@ wenn sie zuvor erfolgreich kopiert worden sind.
 .. rubric:: Die Operatoren ``&&`` und ``||``
 
 Mittels der Operatoren ``&&`` und ``||`` kann man die Ausführung einer zweiten
-Anweisung vom Rückgabewert der ersten Anweisung abhängig machen: 
+Anweisung vom Rückgabewert der ersten Anweisung abhängig machen:
 
 * Ein Ausdruck der Form ``anweisung1 && anweisung2`` bedeutet, dass
   ``anweisung2`` nur dann ausgeführt wird, wenn ``anweisung1`` fehlerfrei
-  ausgeführt bzw. mit Exit-Status ``0`` beendet wurde. 
+  ausgeführt bzw. mit Exit-Status ``0`` beendet wurde.
 
 * Ein Ausdruck der Form ``anweisung1 || anweisung2`` bedeutet, dass
   ``anweisung2`` genau dann ausgeführt wird, wenn ``anweisung1`` mit einem
-  Fehler bzw. mit einem Exit-Status zwischen ``1`` und ``255`` beendet wurde. 
+  Fehler bzw. mit einem Exit-Status zwischen ``1`` und ``255`` beendet wurde.
 
 Bedingte Anweisungen können auch mittels ``if`` und ``case`` implementiert
 werden.
@@ -143,7 +143,7 @@ möglich, die Ausgabe in Text-Dateien umzuleiten:
 
   Existiert die Datei noch nicht, so wird sie neu angelegt; als Eigentümer der
   Datei wird dabei der Benutzer eingetragen, der den Shell-Prozess ausführt.
-  
+
   Existiert die Datei schon, so wird sie zunächst geleert und anschließend neu
   beschrieben. Der Eigentümer und die Zugriffsrechte bleiben dabei erhalten. Damit
   das Überschreiben funktioniert, muss das Schreiben der Datei erlaubt sein.
@@ -194,7 +194,7 @@ Programme weitergeleitet werden. Hierzu wird in Shell-Skripts der Operator ``|``
 
 .. code-block:: bash
 
-    # Alle Dateien des aktuellen Verzeichnisses und aller 
+    # Alle Dateien des aktuellen Verzeichnisses und aller
     # Unterverzeichnisse anzeigen, die "txt" enthalten:
     ls -R | grep txt
 
@@ -205,7 +205,7 @@ Pipelines stellen ein vielseitiges Werkzeug dar, insbesondere in Kombination mit
 folgenden Programmen:
 
 * Mit :ref:`grep <grep>` kann die Ausgabe eines Programms hinsichtlich
-  bestimmter Suchmuster gefiltert werden. 
+  bestimmter Suchmuster gefiltert werden.
 
 * Mit :ref:`tee <tee>` kann die Standard-Ausgabe oder Standard-Fehlerausgabe sowohl auf
   dem Bildschirm ausgegeben als auch in eine Datei geschrieben werden. Die
@@ -230,9 +230,9 @@ zu. Mit Hilfe solcher Zeichen (so genannten "Wildcards") können Muster für
 Dateinamen einfach formuliert werden. Die Shell ersetzt dann bei der Ausführung
 die Muster dann durch die entsprechenden Dateinamen.
 
-.. list-table:: 
+.. list-table::
     :name: tab-wildcards
-    :widths: 10 50 
+    :widths: 10 50
 
     * - Zeichen
       - Bedeutung
@@ -294,7 +294,7 @@ durchsucht werden.
 
 Ähnlich wie in Programmiersprachen, so lassen sich auch in der Shell Werte in
 Variablen speichern. Allerdings sind nur Zeichenketten ("Strings") als Werte
-erlaubt. 
+erlaubt.
 
 Um einer Variablen einen Wert zuzuweisen, muss folgende Syntax verwendet werden:
 
@@ -377,93 +377,93 @@ definiert sind und häufig in Shell-Skripten vorkommen:
 
 .. only:: html
 
-    .. list-table:: 
-        :name: standard-variablen 
-        :widths: 10 60 
+    .. list-table::
+        :name: standard-variablen
+        :widths: 10 60
 
-        * - ``$0`` 
+        * - ``$0``
           - | Diese Variable enthält den Namen des aktuellen Prozesses, beispielsweise
-              ``/bin/bash``. 
+              ``/bin/bash``.
             | Im Fall eines laufenden Shellskripts entspricht ``$0`` dem Namen der
               Skriptdatei.
 
-        * - ``$1`` bis ``$9`` 
+        * - ``$1`` bis ``$9``
           - Diese Variablen enthalten die beim Aufruf des Skripts übergebenen
-            Argumente ``1`` bis ``9``. 
-          
-        * - ``$*`` 
+            Argumente ``1`` bis ``9``.
+
+        * - ``$*``
           - | Diese Variable enthält alle beim Aufruf des Skripts übergebenen
-              Argumente als eine einzelne Zeichenkette. 
+              Argumente als eine einzelne Zeichenkette.
             | Die einzelnen Argumente sind
-              dabei durch Leerzeicheen getrennt. 
+              dabei durch Leerzeicheen getrennt.
 
-        * - ``$@`` 
+        * - ``$@``
           - Diese Variable enthält alle beim Aufruf des Skripts übergebenen
-            Argumente als Liste. 
+            Argumente als Liste.
 
-        * - ``$#`` 
+        * - ``$#``
           - Die Variable gibt die Anzahl der beim Aufruf des Skripts übergebenen
             Argumente an.
 
-        * - ``$-`` 
+        * - ``$-``
           - Diese Variable enthält alle im aktuellen Prozess eingeschalteten
-            Optionsbuchstaben. 
-            
-        * - ``$?`` 
+            Optionsbuchstaben.
+
+        * - ``$?``
           - Diese Variable enthält den :ref:`Exit-Status <Rückgabewerte und
             Verkettung von Programmen>` der zuletzt ausgeführten Anweisung.
 
-        * - ``$$`` 
+        * - ``$$``
           - Diese Variable enthält die Prozess-Nummer der Shell, in der das Skript
-            ausgeführt wird. 
-          
+            ausgeführt wird.
 
-        * - ``$!`` 
+
+        * - ``$!``
           - Diese Variable enthält die Prozess-Nummer des zuletzt erzeugten
             Hintergrundprozesses.
 
 .. only:: latex
 
-    .. list-table:: 
+    .. list-table::
         :name: standard-variablen-tex
-        :widths: 10 60 
+        :widths: 10 60
 
-        * - ``$0`` 
+        * - ``$0``
           - Diese Variable enthält den Namen des aktuellen Prozesses,
             beispielsweise ``/bin/bash``. Im Fall eines laufenden Shellskripts
             entspricht ``$0`` dem Namen der Skriptdatei.
 
-        * - ``$1`` bis ``$9`` 
+        * - ``$1`` bis ``$9``
           - Diese Variablen enthalten die beim Aufruf des Skripts übergebenen
-            Argumente ``1`` bis ``9``. 
-          
-        * - ``$*`` 
+            Argumente ``1`` bis ``9``.
+
+        * - ``$*``
           - Diese Variable enthält alle beim Aufruf des Skripts übergebenen
             Argumente als eine einzelne Zeichenkette. Die einzelnen Argumente
-            sind dabei durch Leerzeicheen getrennt. 
+            sind dabei durch Leerzeicheen getrennt.
 
-        * - ``$@`` 
+        * - ``$@``
           - Diese Variable enthält alle beim Aufruf des Skripts übergebenen
-            Argumente als Liste. 
+            Argumente als Liste.
 
-        * - ``$#`` 
+        * - ``$#``
           - Diese Variable gibt die Anzahl der beim Aufruf des Skripts übergebenen
             Argumente an.
 
-        * - ``$-`` 
+        * - ``$-``
           - Diese Variable enthält alle im aktuellen Prozess eingeschalteten
-            Optionsbuchstaben. 
-            
-        * - ``$?`` 
+            Optionsbuchstaben.
+
+        * - ``$?``
           - Diese Variable enthält den :ref:`Exit-Status <Rückgabewerte und
             Verkettung von Programmen>` der zuletzt ausgeführten Anweisung.
 
-        * - ``$$`` 
+        * - ``$$``
           - Diese Variable enthält die Prozess-Nummer der Shell, in der das Skript
-            ausgeführt wird. 
-          
+            ausgeführt wird.
 
-        * - ``$!`` 
+
+        * - ``$!``
           - Diese Variable enthält die Prozess-Nummer des zuletzt erzeugten
             Hintergrundprozesses.
 
@@ -481,13 +481,13 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
 
 .. only:: html
 
-    .. list-table:: 
+    .. list-table::
         :name: standard-variablen-2
-        :widths: 10 60 
+        :widths: 10 60
 
-        * - ``$EDITOR`` 
+        * - ``$EDITOR``
           - Diese Variable gibt an, welches Programm bevorzugt als Texteditor
-            geöffnet werden soll. 
+            geöffnet werden soll.
         * - ``$HOME``
           - Diese Variable enthält den Namen des Home-Verzeichnisses des aktuellen
             Benutzers.
@@ -499,11 +499,11 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
             Shell-Anweisung nach einem entsprechenden Programm gesucht wird. Die
             Namen der einzelnen Verzeichnisse sind durch Doppelpunkte getrennt und
             werden in der angegebenen Reihenfolge durchsucht.
-        * - ``$PS1`` 
+        * - ``$PS1``
           - In dieser Variablen ("Prompt String 1") wird das Aussehen des
             Eingabe-Prompts definiert. Üblicherweise steht ``$`` für normale Benutzer
-            und ``#`` für den Systemverwalter. 
-        * - ``$PS2`` 
+            und ``#`` für den Systemverwalter.
+        * - ``$PS2``
           - In dieser Variablen ("Prompt String 2") wird definiert, wie der
             Eingabe-Prompt im Fall eines Zeilenumbruchs aussehen soll.
             Üblicherweise wird hierfür das Zeichen ``>`` verwendet.
@@ -514,13 +514,13 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
 
 .. only:: latex
 
-    .. list-table:: 
+    .. list-table::
         :name: standard-variablen-2-tex
-        :widths: 50 50 
+        :widths: 50 50
 
-        * - ``$EDITOR`` 
+        * - ``$EDITOR``
           - Diese Variable gibt an, welches Programm bevorzugt als Texteditor
-            geöffnet werden soll. 
+            geöffnet werden soll.
         * - ``$HOME``
           - Diese Variable enthält den Namen des Home-Verzeichnisses des aktuellen
             Benutzers.
@@ -532,11 +532,11 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
             Shell-Anweisung nach einem entsprechenden Programm gesucht wird. Die
             Namen der einzelnen Verzeichnisse sind durch Doppelpunkte getrennt und
             werden in der angegebenen Reihenfolge durchsucht.
-        * - ``$PS1`` 
+        * - ``$PS1``
           - In dieser Variablen ("Prompt String 1") wird das Aussehen des
             Eingabe-Prompts definiert. Üblicherweise steht ``$`` für normale Benutzer
-            und ``#`` für den Systemverwalter. 
-        * - ``$PS2`` 
+            und ``#`` für den Systemverwalter.
+        * - ``$PS2``
           - In dieser Variablen ("Prompt String 2") wird definiert, wie der
             Eingabe-Prompt im Fall eines Zeilenumbruchs aussehen soll.
             Üblicherweise wird hierfür das Zeichen ``>`` verwendet.
@@ -545,9 +545,14 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
         * - ``$USER``
           - Diese Variable enthält den Namen des aktuellen Benutzers.
 
+.. index:: printenv
 
-Üblicherweise werden die ``$EDITOR`` und ``$PAGER``-Variablen in der Konfigurationsdatei
-``.bashrc`` festgelegt:
+Die aktuellen Werte aller Variablen können mittels der Anweisung ``printenv``
+angezeigt werden; eine einzelne Variable wie ``$EDITOR`` kann mittels ``printenv
+EDITOR`` ausgegeben werden.
+
+Üblicherweise werden die ``$EDITOR`` und ``$PAGER``-Variablen in der
+Konfigurationsdatei ``.bashrc`` festgelegt:
 
 .. code-block:: bash
 
@@ -558,9 +563,9 @@ Variablen, die häufig in Shell-Skripten eingesetzt werden:
     export PAGER=less
 
 Werden die Variablen nicht vom Benutzer gesetzt, so wird üblicherweise ``vi``
-als Standard-Editor und ``cat`` als Pager verwendet. 
+als Standard-Editor und ``cat`` als Pager verwendet.
 
-Wer keine Erfahrung mit :ref:`Vim <Vim-Tool>` hat, kann an dieser Stelle
+Wer keine Erfahrung mit :ref:`Vim <Texteditor Vim>` hat, kann an dieser Stelle
 beispielsweise ``pico``, ``nano``, ``joe`` oder ``emacs`` verwenden, wobei die
 letzten beiden gegebenenfalls mittels der gleichnamigen Pakete via :ref:`apt
 <apt>` installiert werden müssen.
@@ -604,7 +609,7 @@ Verhalten des Interpreters kann auf mehrere Arten beeinflusst werden:
   dem angegebenen Standardwert neu definiert.
 * Schreibt man ``${variablenname?fehlermeldung}``, so wird geprüft,
   ob der angegebene Variablenname definiert ist. Ist er es nicht, so wird das
-  Shellskript abgebrochen und die hinter dem ``?`` angegebene Fehlermeldung 
+  Shellskript abgebrochen und die hinter dem ``?`` angegebene Fehlermeldung
   angezeigt. Wird keine Fehlermeldung angegeben, so wird als Standard die
   Meldung "parameter null or not set" ausgegeben.
 
@@ -633,12 +638,12 @@ genannte "Backticks" (`````) eine jeweils eigene Bedeutung:
   Dateinamen-Erweiterungen, beispielsweise mittels des Stern-Zeichens ``*``,
   sind hingegen innerhalb der Anführungszeichen nicht möglich.
 
-* Innerhalb von einfachen Anführungszeichen kann ebenfalls ein beliebig langer 
+* Innerhalb von einfachen Anführungszeichen kann ebenfalls ein beliebig langer
   Text als eine einzelne Zeichenkette eingegeben werden. Auch in diesem Fall
   kann sich der Text über mehrere Bildschirmzeilen erstrecken. Die Besonderheit
   bei der Benutzung von einfachen Anführungszeichen liegt darin, dass in diesem
   Fall sämtliche Sonderzeichen ihre Bedeutung verlieren, also auch keine
-  Auswertung von Variablen mittels des Dollar-Zeichens ``$`` erfolgt. 
+  Auswertung von Variablen mittels des Dollar-Zeichens ``$`` erfolgt.
 
 .. index:: Backticks
 
@@ -677,7 +682,7 @@ abschließt.
 
 Die grundsätzliche Syntax lautet also:
 
-.. code-block:: bash 
+.. code-block:: bash
 
     if bedingung
     then
@@ -714,7 +719,7 @@ Insgesamt kann eine Fallunterscheidung beispielsweise folgenden Aufbau haben:
 
 Um die Bedingungen zu formulieren, wird häufig die Shell-Anweisung ``test``
 verwendet. Mit dieser lassen sich zum einen Datei-Tests durchführen, zum
-anderen auch Zahlenwerte und Zeichenketten miteinander vergleichen. 
+anderen auch Zahlenwerte und Zeichenketten miteinander vergleichen.
 
 * Um die zu einem Dateinamen gehörende Datei auf eine bestimmte Eigenschaft hin
   zu überprüfen, lautet die ``test``-Syntax wie folgt:
@@ -727,9 +732,9 @@ anderen auch Zahlenwerte und Zeichenketten miteinander vergleichen.
   :ref:`Datei-Test-Tabelle <tab-file-tests>` aufgelistet; eine vollständige
   Liste aller Optionen findet in den ``test``-Manpages (``man test``).
 
-.. list-table:: 
+.. list-table::
     :name: tab-file-tests
-    :widths: 20 50 
+    :widths: 20 50
 
     * - ``-d``
       - wahr, wenn Datei existiert und ein Verzeichnis ist
@@ -761,11 +766,11 @@ geschrieben werden. In dieser Form kommen Test-Anweisungen sehr häufig bei
       test zahl1 operator zahl2
 
   Die möglichen Vergleichsoperatoren für Zahlen sind in der
-  :ref:`Integer-Test-Tabelle <tab-integer-tests>` aufgelistet. 
+  :ref:`Integer-Test-Tabelle <tab-integer-tests>` aufgelistet.
 
-.. list-table:: 
+.. list-table::
     :name: tab-integer-tests
-    :widths: 10 50 
+    :widths: 10 50
 
     * - ``-eq``
       - wahr, wenn beide Zahlen gleich sind ("equal")
@@ -786,7 +791,7 @@ geschrieben werden. In dieser Form kommen Test-Anweisungen sehr häufig bei
   ("zero") oder ``-n`` ("non-zero") verwendet werden. Mit ``test -z $mystring``
   wird beispielsweise getestet, ob die in der Variablen ``mystring`` gespeicherte
   Zeichenkette die Länge Null hat.
-  
+
   Um zwei Zeichenketten miteinander zu vergleichen, können die Operatoren
   ``==`` zum Test auf Gleichheit und ``!=`` zum Test auf Ungleichheit verwendet
   werden. Beispielsweise kann mit ``if [ $mystring1 == $mystring2 ]`` eine
@@ -862,21 +867,21 @@ In einer Shell stehen folgende Schleifentypen zur Verfügung:
   Die Anweisungen, die innerhalb der Schleife abgearbeitet werden sollen, werden
   durch die Schlüsselwörter ``do`` und ``done`` begrenzt. Eine ``for``-Schleife
   hat damit insgesamt folgende Form:
-  
+
   .. code-block:: bash
-  
-      for varname in var_list 
+
+      for varname in var_list
       do
-          echo "Doing something with $varname ..." 
+          echo "Doing something with $varname ..."
       done
-  
+
   In Kurzform, insbesondere bei einer einzelnen Schleifenanweisung, kann eine
-  ``for``-Schleife auch in eine Zeile geschrieben werden: 
-  
+  ``for``-Schleife auch in eine Zeile geschrieben werden:
+
   .. code-block:: bash
-  
+
       for varname in var_list ; do echo "Doing something with $varname ..." ; done
-  
+
   Üblicherweise werden ``for``-Schleifen zum Durchlaufen einer vorgegebenen
   Anzahl an Listenelementen verwendet.
 
@@ -886,18 +891,18 @@ In einer Shell stehen folgende Schleifentypen zur Verfügung:
   solange eine bestimmte Bedingung erfüllt ist, beliebig oft wiederholt werden:
 
   .. code-block:: bash
-  
+
       while [ $count -le 10 ]
       do
-          echo "Hallo" 
+          echo "Hallo"
           count=$( expr $count + 1 )
       done
-  
+
   Die Bedingung wird vor jedem Schleifendurchlauf geprüft, und sofern diese nicht
   erfüllt ist, wird die Schleife beendet. Stellt sich die Bedingung schon vor dem
   ersten Schleifendurchlauf als Falsch heraus, wird die Schleife somit komplett
   übersprungen.
-  
+
   Die ``expr``-Anweisung wertet dabei den gegebenen arithmetischen Ausdruck aus
   und gibt das Ergebnis als Rückgabewert zurück. Anstelle ``$(expr $count +1)``
   kann auch kürzer ``$(($count + 1))`` geschrieben werden. Für komplexere
@@ -907,24 +912,24 @@ In einer Shell stehen folgende Schleifentypen zur Verfügung:
 
   Eine ``while``-Schleife kann beispielsweise verwendet werden, um alle dem Skript
   beim Aufruf übergebenen Parameter auszulesen:
-  
+
   .. code-block:: bash
-  
+
       while [ -n $1 ]
-      do 
+      do
           echo $1
           shift
       done
-  
+
   Hierbei bewirkt die Funktion ``shift``, dass die Nummerierung der Parameter
   ``$1`` bis ``$9`` nach links verschoben wird, aus ``$3`` wird beispielsweise
   ``$2`` und aus ``$2`` wird ``$1``. Auf diese Weise können auch mehr als
   :math:`9` übergebene Parameter der Reihe nach abgearbeitet werden.
-    
-..  getopt Das Kommando getopt kann eingesetzt werden, um in einem Shellscript die
-..  Kommandzeilenparameter auszuwerten. 
 
-    
+..  getopt Das Kommando getopt kann eingesetzt werden, um in einem Shellscript die
+..  Kommandzeilenparameter auszuwerten.
+
+
 
 .. index:: until
 
@@ -934,13 +939,13 @@ In einer Shell stehen folgende Schleifentypen zur Verfügung:
   ``while``-Schleife -- vor jedem Schleifendurchgang geprüft wird.
 
   .. code-block:: bash
-  
+
       until [ $count -eq 10 ]
       do
-          echo "Hallo" 
+          echo "Hallo"
           count=$(expr $count + 1)
       done
-  
+
 Mit ``while`` und ``until`` werden üblicherweise Endlos-Schleifen definiert,
 die dann zu einem bestimmten Zeitpunkt mittels ``break`` abgebrochen werden.
 
@@ -953,13 +958,13 @@ die dann zu einem bestimmten Zeitpunkt mittels ``break`` abgebrochen werden.
 Um den gewöhnlichen Schleifenverlauf zu verändern, akzeptiert der
 Shell-Interpreter zwei Schlüsselwörter: ``break`` und ``continue``:
 
-* Mittels ``break`` wird die Schleife komplett abgebrochen. 
+* Mittels ``break`` wird die Schleife komplett abgebrochen.
 
   Beispielsweise kann somit eine Endlos-Schleife unterbrochen werden, wenn eine
   bestimmte Bedingung eintritt:
 
   .. code-block:: bash
-  
+
       while true
       do
         echo "Doing something.."
@@ -995,13 +1000,13 @@ Die grundlegende Syntax zur Definition eigener Funktionen ist folgende:
 
 .. code-block:: bash
 
-    funktionsname () 
+    funktionsname ()
         {
-        anweisungen 
+        anweisungen
         }
 
 Funktionsdefinitionen können, ebenso wie Variablen, mit ``unset funktionsname``
-gelöscht, jedoch nicht an Unterprozesse exportiert werden. 
+gelöscht, jedoch nicht an Unterprozesse exportiert werden.
 
 Mit ``return num`` kann eine Funktion an jeder beliebigen Stelle beendet werden;
 dabei wird ``num`` als :ref:`Exit-Status <Rückgabewerte und Verkettung von
@@ -1012,7 +1017,7 @@ Rückgabewert der Funktion.
 ..  # put a function in the background
 ..  name &
 
-..  Another way to add a progress bar to your script using dialog --gauge. 
+..  Another way to add a progress bar to your script using dialog --gauge.
 
 ..  Damit das Script nicht im Hintergrund unnötig Ressourcen verbraucht,
 ..  wurde es mit kill $! beendet. Die Zeichenfolge ``$!`` ist eine Shell-Variable

@@ -11,7 +11,7 @@ Links
 
 .. rubric:: Linux (allgemein)
 
-* `Das Ubuntuusers-Wiki <http://wiki.ubuntuusers.de/Startseite>`_ 
+* `Das Ubuntuusers-Wiki <http://wiki.ubuntuusers.de/Startseite>`_
 
 * `Das Linux-Kompendium (Wikibook) <https://de.wikibooks.org/wiki/Linux-Kompendium>`_
 
@@ -34,7 +34,7 @@ Deutschsprachig:
 
 * `Shell-Programmierung (Openbook) <http://openbook.rheinwerk-verlag.de/shell_programmierung/>`
 
-* `Shell-Programmierung <http://linuxint.com/DOCS/Linux_Docs/openbook_shell/index.htm>`_ 
+* `Shell-Programmierung <http://linuxint.com/DOCS/Linux_Docs/openbook_shell/index.htm>`_
 
 * `Tips und Tricks zur Shell (von Thomas Güttler) <http://www.thomas-guettler.de/vortraege/tipps/tipps-und-tricks.html>`_
 

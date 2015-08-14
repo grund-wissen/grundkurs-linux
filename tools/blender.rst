@@ -19,7 +19,7 @@ Einarbeitungszeit. Hilfreich sind dabei meiner Meinung vor allem
 Video-Tutorials, wie sie z.B. unter Youtube -- auch in deutscher Sprache --
 zahlreich zu finden sind.
 
-.. rubric:: Links 
+.. rubric:: Links
 
 
 

@@ -13,20 +13,20 @@ einrichten.
 .. index:: Distribution
 .. _Auswahl einer Linux-Distribution :
 
-.. rubric:: Auswahl einer Linux-Distribution 
+.. rubric:: Auswahl einer Linux-Distribution
 
 Als Distribution wird im Software-Bereich eine Zusammenstellung von Software zu
 einem gut nutzbaren Gesamtpaket bezeichnet. Die Vielzahl an Linux-Distributionen
 [#LD]_ unterscheidet sich im Wesentlichen dadurch, welche Programme
 grundsätzlich installiert sind, wie häufig Updates erfolgen und wie viel
-Konfigurationen der Benutzer gewöhnlich manuell vornehmen möchte. 
+Konfigurationen der Benutzer gewöhnlich manuell vornehmen möchte.
 
 In Deutschland laufen die meisten Server mit der Distribution `Debian
 <http://de.wikipedia.org/wiki/Debian>`_; bei den Privat-PCs zählen die auf
 Debian basierenden Distributionen `Ubuntu
 <http://de.wikipedia.org/wiki/Ubuntu>`_ und `Linux Mint <http://linuxmint.com>`_
 zu den beliebtesten Systemen. Alle Tips dieser Notizen-Sammlung beziehen sich
-auf diese einander weitgehend ähnlichen Systeme. 
+auf diese einander weitgehend ähnlichen Systeme.
 
 Wie Linux letztendlich "aussieht", hängt nur bedingt von der Distribution ab.
 Die graphische Bedienoberfläche und das eigentliche Betriebsystem sind -- anders
@@ -45,12 +45,12 @@ Die Basis-Installation
 
 Ein Linux-System zu installieren ist heute dank moderner Hardware-Erkennung und
 graphischer Installations-Assistenten denkbar einfach. Das Installations-Schema
-ist bei fast allen Distributionen gleich: 
+ist bei fast allen Distributionen gleich:
 
 #.  Man lädt sich von der jeweiligen Homepage eine ISO-Image-Datei herunter.
     Persönlich bevorzuge ich derzeit `Linux Mint Ubuntu Edition
     <http://www.linuxmint.com/download.php>`_ mit Mate-Desktop. Je nach Hardware
-    muss die 32- oder 64-Bit-Variante gewählt werden. [#MC32]_ 
+    muss die 32- oder 64-Bit-Variante gewählt werden. [#MC32]_
 #.  Man erstellt aus diesem Image mit einem beliebigen Brennprogramm eine
     bootbare CD bzw. mit `UNetBootin <http://wiki.ubuntuusers.de/UNetbootin>`_
     einen bootbaren USB-Stick. Eine gute Anleitung zur Erstellung eines
@@ -65,7 +65,7 @@ Einstellungen werden im BIOS-Menü vorgenommen, das sich bei einem Neustart des
 Rechners meist mit ``F2`` (manchmal auch mit ``F8``) öffnen lässt. Je nach
 ausgewählter Distribution erscheint automatisch ein Installations-Assistent
 (Debian), oder es wird ein Live-System gebootet (Ubuntu bzw. Linux Mint), in dem
-der Installations-Assistent als Icon auf dem Desktop zu finden ist. 
+der Installations-Assistent als Icon auf dem Desktop zu finden ist.
 
 Zu Beginn der Installationsroutine legt man den Benutzernamen mit dazugehörigem
 Passwort und bevorzugte Einstellungen (Tastaturlayout, Zeitzone, etc.) fest.
@@ -74,7 +74,7 @@ möglich.
 
 Der wichtigste Schritt der Installation besteht anschließend in der Festlegung
 der zu nutzenden Festplattenpartitionen. Diese lassen sich wahlweise automatisch
-oder von Hand mittels eines integrierten Partitionsprogramms einrichten. 
+oder von Hand mittels eines integrierten Partitionsprogramms einrichten.
 Der Installations-Assistent führt die Grundinstallation daraufhin
 vollautomatisch durch.
 
@@ -93,7 +93,7 @@ genügend Festplattenspeicher vorhanden ist, folgende Partitionsgrößen:
 * Optional: Eine kleine Partition (2 bis 5 GB) als ``swap``, d.h. als
   Erweiterung des Arbeitsspeichers
 * Optional: Eine beliebig große Partition (ohne festen Einhängepunkt) für
-  gemeinsam genutzte und/oder verschlüsselte Dateien. 
+  gemeinsam genutzte und/oder verschlüsselte Dateien.
 * Optional: Nicht verwendeter Speicherplatz für ein weiteres, parallel
   installierbares oder bereits installiertes Betriebsystem. [#WI]_
 
@@ -107,7 +107,7 @@ Daten-Partitionen empfiehlt sich ebenfalls ``EXT-4`` als Dateisystem, solange
 man nur mit Linux darauf zugreifen möchte. Falls man die Daten auch unter
 Windows oder MacOS nutzen mag, muss ``FAT32`` als Dateisystem verwendet werden.
 ``FAT32`` verfügt allerdings über keine Unterstützung von nützlichen Symlinks
-und bietet keine Unterscheidung von Groß- und Kleinschreibung.  
+und bietet keine Unterscheidung von Groß- und Kleinschreibung.
 
 
 .. _Passwortgeschützte Partitionen nutzen:
@@ -124,7 +124,7 @@ Onlinebanking-Daten, Emails, etc.) frei abrufbar...
 
 Wer private Daten in einem passwortgeschützten ("verschlüsselten") Bereich
 ablegen möchte, kann sich unter Linux für eine der folgende Möglichkeiten
-entscheiden: 
+entscheiden:
 
 * :ref:`Partition-Verschlüsselung <Die Partitions-Verschlüsselung>`: Die
   Partition kann bereits während der Installation -- ohne Festlegung eines
@@ -145,7 +145,7 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -157,7 +157,7 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
 
       Einige Linux-Varianten sind darauf ausgelegt von einem externen
       Datenträger (CD, USB-Stick) geladen und ohne Installation von diesem aus
-      genutzt zu werden. 
+      genutzt zu werden.
 
     * Extrem konfigurierbare Distributionen (z.B. `Gentoo
       <http://de.wikipedia.org/wiki/Gentoo_Linux>`_, `Arch
@@ -183,8 +183,8 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
 
 .. [#MC32] Ältere Rechner mit einem einzelnen Prozessor (z.B. Intel Celeron,
     Intel Atom) benötigen ein 32-Bit-System, neuere Multi-Core-Prozessoren
-    hingegen ein 64-Bit-System. 
-    
+    hingegen ein 64-Bit-System.
+
     Ist man sich nicht sicher, welcher Systemtyp der passende ist
     (beispielsweise weil man nicht weiß, was für ein Prozessor eingebaut ist),
     so kann eine entsprechende Suchmaschinen-Anfrage weiterhelfen. Darüber
@@ -217,7 +217,7 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
 .. [#E1] Der Vorteil dieser Methode liegt darin, dass sie verhältnismäßig einfach
     einzurichten und die verschlüsselte Partition unabhängig vom System ist.
     Somit kann der geschützte Bereich auch auf einem laufenden Rechner
-    verschlossen bleiben. 
+    verschlossen bleiben.
 
     Nachteilig bei dieser Methode ist, dass jeder Unbefugte mit Hardware-Zugriff
     das Betriebsystem ohne Hindernis verändern kann, beispielsweise um Trojaner
@@ -225,7 +225,7 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
 
 .. [#E2] Der Vorteil dieser Methode liegt darin, dass kein Unbefugter Zugriff
     auf Teile des Systems oder der persönlichen Dateien hat -- sofern er den
-    Rechner ausgeschaltet vorfindet. 
+    Rechner ausgeschaltet vorfindet.
 
     Nachteilig bei dieser Methode ist, dass sie einem Rechner im laufenden
     Betrieb -- die Systempartition ist wohl immer geöffnet -- keinerlei Schutz
@@ -237,5 +237,5 @@ eingerichtet werden und sind auch auf anderen Betriebsystemen nutzbar. [#E3]_
     passwortgeschützten Bereich zugreifen können.
 
     Als Nachteil ist zu nennen, dass das Erstellen eines Containers -- je nach
-    Größe und Rechnerleistung -- mehrere Stunden dauern kann. 
+    Größe und Rechnerleistung -- mehrere Stunden dauern kann.
 

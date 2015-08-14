@@ -7,7 +7,7 @@ Die folgenden Programme sind auf den meisten Debian-Systemen (und vielen anderen
 Linux-Distributionen) standardmäßig installiert. Die Liste beinhaltet eine
 Auswahl von Programmen, die einem mit großer Wahrscheinlichkeit früher oder
 später in Shell-Scripten begegnen und die ohne Superuser-Rechte genutzt werden
-können: 
+können:
 
 .. index:: alias
 .. _alias:
@@ -62,7 +62,7 @@ Mit ``bc`` steht ein simpler Taschenrechner auf der Kommandozeile zur Verfügung
 Zahlen und Rechenzeichen können nach dem Aufruf direkt eingegeben werden; bei
 Bedarf können auch Klammern gesetzt werden. Nach Bestätigung mit der
 ``Enter``-Taste wird das Ergebnis berechnet und angezeigt. Frühere Berechnungen
-können mit der :math:`\uparrow`-Taste wieder angezeigt bzw. bearbeitet werden. 
+können mit der :math:`\uparrow`-Taste wieder angezeigt bzw. bearbeitet werden.
 
 Ruft man ``bc`` mit der Option ``-l`` auf, so wird automatisch eine
 Standard-Bibliothek mit einigen wichtigen mathematischen Funktionen geladen.
@@ -83,7 +83,7 @@ wird der auszuwertende Ausdruck mittels ``echo`` und einem :ref:`Pipe-Zeichen
 
 .. code-block:: bash
 
-    echo '8/3' | bc 
+    echo '8/3' | bc
     # Ergebnis: 2.66666666666666666666
 
     pi=$( echo 'a(1)*4' | bc -l )
@@ -104,12 +104,12 @@ Ergebnis.
 
 Mit ``bzip2 dateiname`` kann eine Datei zu einer gleichnamigen Datei im
 ``bz2``-Format im komprimiert werden. Mit ``bunzip2 dateiname.bz2`` kann die
-Datei wieder dekomprimiert werden. 
+Datei wieder dekomprimiert werden.
 
 Gibt man mehrere Dateinamen an, so wird jede Datei in ein eigenes Archiv
 komprimiert. Um eine einzelne ``bz2``-komprimierte Datei zu erhalten, die
 mehrere Dateien enthält, so werden diese zunächst mittels ``tar`` zu einem
-Archiv gepackt. [#TARBZ]_ 
+Archiv gepackt. [#TARBZ]_
 
 .. cal: Kalender
 
@@ -133,7 +133,7 @@ Der Anfang oder das Ende einer Datei kann mit ``head file`` bzw. ``tail file``
 angezeigt werden.
 
 
-.. index:: cd 
+.. index:: cd
 .. _cd:
 
 ``cd``
@@ -141,16 +141,16 @@ angezeigt werden.
 
 Mit ``cd pfad`` wechselt man zu einem bestimmten Verzeichnis. Die
 ``pfad``-Angabe kann dabei absolut (ausgehende vom Basis-Verzeichnis ``/``) oder
-relativ (ausgehend vom aktuellen Verzeichnis) sein. 
+relativ (ausgehend vom aktuellen Verzeichnis) sein.
 
 * Mit ``cd ..`` gelangt man ins übergeordnete Verzeichnis, mit ``cd ../..`` in
-  das nächst höhere usw. 
+  das nächst höhere usw.
 * Mit ``cd`` gelangt man ebenso wie mit ``cd ~`` ins Home-Verzeichnis. Mit ``cd
   ~benutzername`` gelangt man (als Superuser) in das Home-Verzeichnis des
   angegebenen Benutzers.
 
 
-.. index:: chmod 
+.. index:: chmod
 
 ``chmod``
 ---------
@@ -202,7 +202,7 @@ bzw. :math:`\downarrow` abrufbar) bleibt unverändert.
 Mit ``cp datei neuer-pfad`` wird eine Datei (oder ein Verzeichnis) an eine
 andere Stelle kopiert. Es können mehrere Dateien auf einmal angeben werden; der
 zuletzt angegebene Pfad stellt dann den Zielpfad dar, in den alle zuvor
-angegebenen Dateien kopiert werden.  
+angegebenen Dateien kopiert werden.
 
 * Mit ``cp -r`` werden auch Unterverzeichnisse rekursiv kopiert (andernfalls
   werden sie weggelassen). * Mit ``cp -s`` wird anstelle des Kopierens ein
@@ -222,12 +222,12 @@ angepasst werden. Dies kann u.a. in Skripten hilfreich sein, um "Zeitstempel" in
 Dateinamen aufzunehmen. Der Aufruf von ``date +%Y%m%d_%H%M%S`` gibt
 beispielsweise eine Zeitangabe im Format ``YYYYMMDD_hhmmss`` aus. Beispielsweise
 entspricht dem Datum "30.08.2012, 9:21:03 Uhr" damit die Zeichenfolge
-"20120830_092103". 
+"20120830_092103".
 
 ..  dd [option=wert]
 ..  Vewendung: Kopieren von Dateien (auch Geräte)
 ..  dd if=/dev/cdrom of=/tmp/cd.iso
-..  Es wird immer die ganze CD-ROM kopiert, egal wie voll die CD-ROM ist 
+..  Es wird immer die ganze CD-ROM kopiert, egal wie voll die CD-ROM ist
 
 .. index:: df
 .. _df:
@@ -259,7 +259,7 @@ eigentlichen Dateinamen) angezeigt.
 ------
 
 Mit ``du`` wird angezeigt, wie viel Festplattenspeicher durch das aktuelle
-Verzeichnis und seiner Unterverzeichnisse belegt wird. 
+Verzeichnis und seiner Unterverzeichnisse belegt wird.
 
 * Mit ``du -h`` wird die Ausgabe "human readable" gestaltet, d.h. die Größen
   werden in KB, MB oder GB anstelle von Bytes angegeben. * Mit ``du -c`` wird
@@ -274,7 +274,7 @@ Verzeichnis und seiner Unterverzeichnisse belegt wird.
 .. index:: echo
 .. _echo:
 
-``echo`` 
+``echo``
 ---------
 
 Mit ``echo variable`` kann der Inhalt einer Variablen angezeigt werden.
@@ -385,7 +385,7 @@ stehenden Optionen aufgerufen werden.
 ..  auf dem Bildschirm erscheinen.
 
 ..  Damit uns im Beispiel hier nicht die Standardausgabe (Kanal 1) auf dem
-..  Bildschirm stört, leiten wir diese auch beim Start des Scripts nach /dev/null um 
+..  Bildschirm stört, leiten wir diese auch beim Start des Scripts nach /dev/null um
 ..  (``1>/dev/null``). Und damit uns die Shell für weitere Eingaben zur Verfügung
 ..  steht, stellen wir die Ausführung des Scripts in den Hintergrund (``&``).
 
@@ -425,11 +425,11 @@ mit der Option ``-e`` angegeben werden.
 Als :ref:`Exit-Status <Rückgabewerte und Verkettung von Programmen>` liefert
 ``grep`` den Wert ``0``, wenn die Suche erfolgreich war, ``1``, wenn das
 Suchmuster nicht gefunden wurde, und ``2``, wenn bei der Suche ein Fehler
-aufgetreten ist (beispielsweise eine Datei nicht lesbar war). 
+aufgetreten ist (beispielsweise eine Datei nicht lesbar war).
 
-..   
+..
     Todo: Links auf reguläre Ausdrücke
-    
+
 
 .. index:: gzip
 .. _gzip:
@@ -512,8 +512,8 @@ von Verknüpfungen erzeugen:
   Grunde um eine zusätzliche Bezeichnung für die selbe Speicherstelle auf der
   Festplatte. Um beispielsweise eine mit Hardlinks versehene Datei zu löschen,
   müssen ebenfalls sämtliche Hardlink entfernt werden, um die Speicherstelle
-  freizugeben. 
-  
+  freizugeben.
+
   Da sich Hardlinks stets auf der gleichen Partition befinden müssen wie die
   Original-Dateien und sich nur auf "normale" Dateien, jedoch nicht auf
   Verzeichnisse anwenden lassen, werden sie unter Linux nur selten verwendet.
@@ -533,19 +533,19 @@ von Verknüpfungen erzeugen:
   so bleibt der Symlink als Datei bestehen, zeigt aber ins Leere ("gebrochener
   Link"). Der Symlink muss in diesem Fall entfernt und neu erzeugt werden.
   [#MCS]_
-  
+
   Wird ein Symlink zu einer ausführbaren Datei erzeugt, so kann diese auch über
   den Symlink aufgerufen werden. Wird ein Symlink zu einem Ordner erstellt, so
   lassen sich dessen Inhalte auch über den Symlink anzeigen und verändern. Da
   Symlinks auch anders benannt sein können als die Originaldateien, können sie
   beispielsweise dazu genutzt werden, um aus einer vorhandenen Musiksammlung
-  individuelle Playlisten in separaten Ordnern anzulegen. 
-  
+  individuelle Playlisten in separaten Ordnern anzulegen.
+
   Mit Symlinks verknüpfte Ordner bzw. Dateien müssen nicht zwingend auf dem
   gleichen Datenträger bzw. der gleichen Partition liegen. So ist es
   beispielsweise möglich auf einen (automatisch ins ``/media``-Verzeichnis
   eingebundene) USB-Stick oder eine verschlüsselte Festplattenpartition über
-  einen entsprechenden Symlink im Home-Verzeichnis zuzugreifen. 
+  einen entsprechenden Symlink im Home-Verzeichnis zuzugreifen.
 
 
 .. index:: locate
@@ -616,7 +616,7 @@ Um alle Hilfeseiten nach einem bestimmten Begriff zu durchsuchen, kann ``man``
 mit der Option ``-k`` ("keyword") aufgerufen werden:
 
 *Beispiel:* Mit ``man -k find`` werden alle Programmnamen und Funktionen
-aufgelistet, die den Suchbegriff "find" in ihrer Hilfeseite enthalten. 
+aufgelistet, die den Suchbegriff "find" in ihrer Hilfeseite enthalten.
 
 
 .. index:: mkdir
@@ -639,7 +639,7 @@ an entsprechender Stelle angelegt.
 Mit ``mv datei neuer-pfad`` wird eine Datei (oder ein Verzeichnis) an eine
 andere Stelle verschoben. Es können mehrere Dateien auf einmal angeben werden;
 der zuletzt angegebene Pfad stellt dann den Zielpfad dar, in den alle zuvor
-angegebenen Dateien verschoben werden.  
+angegebenen Dateien verschoben werden.
 
 Mit ``mv alter-dateiname neuer-dateiname`` lässt sich eine Datei umbenennen.
 
@@ -655,9 +655,11 @@ paar Vim-Tricks und Einfügen von Restructured-Text-Syntax via Sphinx in ein
 druckbares Latex-Dokument oder eine leicht durchsuchbare HTML-Seite umwandeln.
 Sehr nützlich!
 
-.. ps
+.. TODO ps
 
-.. ps -f Aktuelle Prozessliste. PID: Prozess-ID, PPID: Parent Prozess ID
+.. ps -f Prozessliste der aktuellen Shellsitzung. PID: Prozess-ID, PPID: Parent Prozess ID
+.. Dabei werden "uninteressante" Prozesse ausgeblendet.
+.. erste Nummer kann fuer kill verwendet werden.
 
 .. index:: pwd
 .. _pwd:
@@ -679,7 +681,7 @@ Mit ``rm datei(en)`` lässt sich eine oder mehrere Datei(en) unwiderruflich
 löschen.
 
 * Mit ``rm -r verzeichnis/*`` werden rekursiv alle Inhalte, ausgehend von
-  ``verzeichnis`` gelöscht. 
+  ``verzeichnis`` gelöscht.
 
 *Achtung:* Die Shell kennt keinen "Papierkorb", Löschvorgänge sind somit
 endgültig. Vor dem Löschen sollte man sich daher stets vergewissern, ob man die
@@ -700,7 +702,7 @@ sämtliche Inhalte des Home-Verzeichnisses unwiderruflich löschen!
 Mit ``rmdir verzeichnisname`` wird ein Verzeichnis gelöscht, sofern es leer ist.
 Möchte man ein nicht-leeres Verzeichnis löschen, so empfiehlt sich das einfach
 zu tippende ``rm -r  verzeichnisname*`` (es werden rekursiv alle Dateien, deren
-Pfadname mit ``verzeichnisname`` beginnt, gelöscht). 
+Pfadname mit ``verzeichnisname`` beginnt, gelöscht).
 
 
 .. index:: rsync
@@ -718,7 +720,7 @@ Falls ja, werden diese Änderungen übernommen.
 
 Möchte man einen Backup von einem ganzen Verzeichnispfad mitsamt allen
 Unterverzeichnissen anlegen oder aktuell halten, so empfiehlt sich folgender
-Aufruf von ``rsync``: 
+Aufruf von ``rsync``:
 
 .. code-block:: bash
 
@@ -756,7 +758,7 @@ Veränderung graphisch an. Mit einem Klick auf "Go" (Hotkey ``g``) werden die
 ``rsync`` und ``unison`` eignen sich sehr gut zur Verwaltung von
 Sicherheitskopien oder zum "Mitnehmen" eines Projektes von einem stationären PC
 auf einen USB-Stick. Veränderungen sind dabei erlaubt, denn sie können wiederum
-in umgekehrter Richtung synchronisiert werden. 
+in umgekehrter Richtung synchronisiert werden.
 
 Persönlich verwende ich zur Synchronisierung von Dateien zwischen meinem Rechner
 und einem (mit LUKS verschlüsselten) USB-Stick folgende Methode: In einem
@@ -792,7 +794,7 @@ folgendermaßen aus::
     # Angabe der zu synchronisierenden Dateien:
     follow = Name *.sync
 
-    # Folgende Dateien dennoch ignorieren: 
+    # Folgende Dateien dennoch ignorieren:
     ignore = Regex .*/.backupdir/*
     ignore = Regex .*/.git/*
     ignore = Regex .*/.hg/*
@@ -812,7 +814,7 @@ Empfehlung übernommen. Wurden sowohl im Quell- wie auch im Zielverzeichnis
 diesem Fall die Unterschiede zwischen den Dateiversionen gegebenenfalls selbst
 überprüfen (beispielsweise mittels :ref:`vimdiff <vimdiff>`) und kann
 anschließend entweder mittels ``>`` oder ``<`` eine Synchronisationsrichtung
-manuell angeben. 
+manuell angeben.
 
 .. Dies kann auch, beispielsweise mit dem Skript `watcher.py
 .. <https://github.com/gregghz/Watcher>`_, automatisiert erfolgen.
@@ -879,7 +881,7 @@ entpackt werden:
 
 .. code-block:: bash
 
-    tar -xvf archiv.tar          # für  "normale"   Archive 
+    tar -xvf archiv.tar          # für  "normale"   Archive
     tar -xvzf archiv.tar.gz      # für komprimierte Archive
 
 Anstelle der Option ``-z`` kann auch ``-j`` eingegeben werden, um anstelle der
@@ -916,7 +918,7 @@ entsprechende Prozess abgebrochen werden.
   abgebrochen. Die Nachfrage, mit welchem Signal der Prozess unterbrochen werden
   soll (Vorgabewert: ``15``), kann meist mit ``Enter`` bestätigt werden. Bei
   hartnäckigen Prozessen kann ``9`` angegeben werden, um den Prozess unabhängig
-  von dessen Signalwert abzubrechen. 
+  von dessen Signalwert abzubrechen.
 * Mit ``q`` wird ``top`` wieder beendet.
 
 .. index:: touch
@@ -939,13 +941,13 @@ neue Log-Datei) anlegen.
 ------
 
 Mit ``wc dateiname`` wird die Anzahl der Zeilen, Worte und Zeichen ausgegeben,
-die in der angegebenen Datei vorkommen ("word count"). 
+die in der angegebenen Datei vorkommen ("word count").
 
 Oftmals wird ``wc`` in Kombination mit ``find`` oder ``grep`` verwendet, um
-die Anzahl von Treffern bei einer bestimmten Suche anzuzeigen; 
+die Anzahl von Treffern bei einer bestimmten Suche anzuzeigen;
 um beispielsweise die Anzahl aller regulären Dateien des aktuellen
 Verzeichnisses mitsamt aller Unterverzeichnisse (ohne die Verzeichnisnamen
-selbst) anzuzeigen, kann man ``find ./ -type f | wc`` eingeben. 
+selbst) anzuzeigen, kann man ``find ./ -type f | wc`` eingeben.
 
 
 .. index:: wget
@@ -988,7 +990,7 @@ Ein gutes Tutorial (en.) findet sich `hier
 ---------
 
 Mit ``which programm`` wird angezeigt, unter welchem Systempfad die
-auszuführende Datei des angegebenen Programms zu finden ist. 
+auszuführende Datei des angegebenen Programms zu finden ist.
 
 
 .. index:: xargs
@@ -1033,7 +1035,7 @@ Mit ``zip`` können mehrere Dateien zu einem Datei-Archiv gebündelt, mit
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -1045,8 +1047,8 @@ Mit ``zip`` können mehrere Dateien zu einem Datei-Archiv gebündelt, mit
     die Tastenkombination ``Ctrl x Ctrl s`` zur schnellen Erzeugung von Symlinks
     an. Mit dem Midnight Commander oder mittels ``cp -L`` kann man darüber
     hinaus beim Kopieren von Symlinks optional wieder auf die Originaldateien
-    zurückgreifen und deren Inhalte kopieren. 
-      
+    zurückgreifen und deren Inhalte kopieren.
+
     Wird ein Symlink kopiert, so zeigt auch die Kopie auf den gleichen
     (absoluten) Pfad wie der ursprüngliche Symlink.
 

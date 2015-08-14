@@ -10,20 +10,20 @@ auf allen Linux-Systemen (nahezu) identisch:
 
 .. _/:
 
-* ``/`` 	
+* ``/``
   Das Verzeichnis ``/`` (auch "Wurzelverzeichnis" genannt) stellt den Basispfad
   des Systems dar.
 
 .. _/bin:
 
-* ``/bin`` 	
+* ``/bin``
     In diesem Verzeichnis befinden sich wichtige Programme für Anwender, die
     immer verfügbar sein müssen, beispielsweise die Shell ``bash`` oder das
     Programm ``ls`` zur Anzeige von Ordnerinhalten.
 
 .. _/boot:
 
-* ``/boot`` 	
+* ``/boot``
     In diesem Verzeichnis befinden sich die zum Hochfahren des Systems unbedingt
     erforderlichen Dateien. Am wichtigsten ist dabei der Kernel, üblicherweise
     eine Datei mit dem Namen ``vmlinuz-versionsname`` (andere Namen sind
@@ -45,21 +45,21 @@ auf allen Linux-Systemen (nahezu) identisch:
 
 .. _/etc:
 
-* ``/etc`` 	
+* ``/etc``
     In diesem Verzeichnis befinden sich zahlreiche Konfigurationsdateien, die
     Einstellungen zu den installierten Programmen sowie grundlegende
     Systeminformationen enthalten. Viele dieser Dateien haben eigene
-    Manpage. 
-    
+    Manpage.
+
 .. _/home:
 
-* ``/home`` 	
+* ``/home``
     In diesem Verzeichnis befinden sich die persönlichen Verzeichnisse der
     einzelnen Benutzer.
 
 .. _/lib:
 
-* ``/lib`` 	
+* ``/lib``
     In diesem Verzeichnis befinden sich die wichtigsten Funktionsbibliotheken
     des Systems; diese Dateien sollten nicht manuell verändert werden.
 
@@ -74,27 +74,27 @@ auf allen Linux-Systemen (nahezu) identisch:
 
 .. _/proc:
 
-* ``/proc`` 	
+* ``/proc``
     Dies ist kein normales Verzeichnis, sondern stellt eine Schnittstelle zum
     Kernel dar. Jedes laufende Programm wird hier in einem Unterverzeichnis
     geführt, dessen Dateien viele Informationen beispielsweise über den
-    aktuellen Programmstatus enthalten. 
-    
+    aktuellen Programmstatus enthalten.
+
 ..  Zudem gibt es eine umfangreiche Verzeichnisstruktur mit Daten über den
 ..  Kernel und die Hardware des Systems.
 
 .. _/root:
 
-* ``/root`` 	
+* ``/root``
     In diesem Verzeichnis befinden sich die (persönlichen) Dateien des
     Systemverwalters ("Root" bzw. "Superuser"). Das Verzeichnis liegt im
     Wurzelverzeichnis, damit der Systemverwalter auch dann auf seine
     (Konfigurations-)Dateien zugreifen kann, wenn durch einen Fehler der Zugriff
-    auf andere Partitionen nicht mehr möglich ist. [#]_ 
+    auf andere Partitionen nicht mehr möglich ist. [#]_
 
 .. _/sbin:
 
-*   ``/sbin`` 	
+*   ``/sbin``
     In diesem Verzeichnis befinden sich ebenfalls -- ähnlich wie im
     ``/bin``-Verzeichnis -- wichtige Programme, die allerdings für den
     Systemverwalter gedacht sind. Sie erfüllen Funktionen, auf die ein normaler
@@ -102,22 +102,22 @@ auf allen Linux-Systemen (nahezu) identisch:
 
 .. _/tmp:
 
-* ``/tmp`` 	
+* ``/tmp``
     Dieses Verzeichnis kann von jedem Benutzer und jedem Programm als temporäre
-    Ablage für Dateien verwendet werden. 
-    
+    Ablage für Dateien verwendet werden.
+
 ..  Damit sich Benutzer nicht gegenseitig ihre Dateien löschen, ist das
 ..  sogenannte Sticky-Bit dieses Verzeichnisses gesetzt.
 
 .. _/usr:
 
-* ``/usr`` 	
+* ``/usr``
     In diesem Verzeichnis ("Unix System Ressources") befinden sich der größte
     Teil der installierten Software. Auf vielen Systemen befinden sich innerhalb
     von ``/usr`` mehr Daten als in allen anderen Dateien zusammen. Die
     ausführbaren Programmdateien sind meist in ``/usr/bin``,
-    Programmbibliotheken in ``/usr/lib`` abgelegt. 
-    
+    Programmbibliotheken in ``/usr/lib`` abgelegt.
+
     In Netzwerken, an die viele gleichartige Systeme angeschlossen sind, wird
     dieses Verzeichnis häufig auf einem zentralen Server gespeichert, und alle
     anderen Computer greifen über das Netzwerk darauf zu.
@@ -126,19 +126,19 @@ auf allen Linux-Systemen (nahezu) identisch:
 
 .. _/var:
 
-* ``/var`` 	
+* ``/var``
     In diesem Verzeichnis ("Variable Dateien") befinden sich hauptsächlich
     Dateien, die sich ständig verändern. Beispielsweise werden hier Log-Dateien
     gespeichert.
 
 .. _/opt:
 
-* ``/opt`` 	
+* ``/opt``
     In diesem Verzeichnis ("Optionale Software") werden bei Bedarf sehr große
     Programme gespeichert, die nicht unmittelbar zum System gehören. Bei knappem
     Festplattenspeicher kann dieses Verzeichnis -- wie das ``/home``-Verzeichnis
     -- auf einer externen Festplatte oder einer anderen Partition abgelegt
-    werden. 
+    werden.
 
 .. _~:
 
@@ -167,6 +167,6 @@ Verzeichnisses, und ``..`` den Namen des übergeordneten Verzeichnisses.
 .. [#] Häufig wird bei der Installation eines Linux-Systems für das
     ``/home``-Verzeichnis eine eigene Festplatte verwendet oder eine eigene
     Partition angelegt, um bei einer möglichen Neuinstallation des Systems die
-    persönlichen Daten unverändert übernehmen zu können. 
+    persönlichen Daten unverändert übernehmen zu können.
 
 
