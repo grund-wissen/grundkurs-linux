@@ -2,6 +2,8 @@
 Links
 =====
 
+* `Die Vim-Projektseite <http://www.vim.org>`_
+
 Auf folgenden Seiten finden sich weitere Infos rund um Vim:
 
 * `Selflinux Vim Tutorial <http://www.selflinux.org/selflinux/html/vim.html>`_

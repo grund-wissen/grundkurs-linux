@@ -564,6 +564,7 @@ Weitere nützliche Tastenkombinationen für die Bedienung des ``mc`` sind:
       - Liste der letzten Eingabezeilen-Befehle anzeigen. Auswahl mit Pfeiltasten,
         Bestätigen mit ``Enter``
 
+
 .. index:: mencoder
 .. _mencoder:
 
@@ -582,35 +583,31 @@ einer einzigen Datei zusammenfügen:
 Mehr Infos gibt es unter `Mencoder im Ubuntuusers-Wiki
 <http://wiki.ubuntuusers.de/MEncoder>`_.
 
-..  ffmpeg
-..  Convert wma to ogg: ffmpeg -i sample.wma -acodec vorbis -aq 100 sample.ogg
 
+.. .. index:: moc
+.. .. _moc:
 
-..
-    .. index:: moc
-    .. _moc:
+.. ``moc``
+.. -------
 
-    ``moc``
-    -------
+.. Der "Music on Console Player" ``moc`` bietet eine schlichte und übersichtliche
+.. Bedienoberfläche, um alle gängigen Audio-Formate (``ogg``, ``mp3``, ``wave``,
+.. ``flac``, ``aac``) sowie Playlisten (``m3u`` und ``pls``) innerhalb eines
+.. Shell-Fensters abzuspielen.
 
-    Der "Music on Console Player" ``moc`` bietet eine schlichte und übersichtliche
-    Bedienoberfläche, um alle gängigen Audio-Formate (``ogg``, ``mp3``, ``wave``,
-    ``flac``, ``aac``) sowie Playlisten (``m3u`` und ``pls``) innerhalb eines
-    Shell-Fensters abzuspielen.
+.. ``moc`` ist über die Paketverwaltung mittels des Pakets ``moc`` installierbar:
 
-    ``moc`` ist über die Paketverwaltung mittels des Pakets ``moc`` installierbar:
+.. .. code-block:: bash
 
-    .. code-block:: bash
+.. sudo aptitude install moc
 
-    sudo aptitude install moc
+.. Anschließend kann der Player durch den Aufruf von ``mocp`` (mit ``p``) gestartet
+.. werden. Mehr Infos gibt es unter `MOC im Ubuntuuser-Wiki
+.. <http://wiki.ubuntuusers.de/MOC_-_music_on_console>`_.
 
-    Anschließend kann der Player durch den Aufruf von ``mocp`` (mit ``p``) gestartet
-    werden. Mehr Infos gibt es unter `MOC im Ubuntuuser-Wiki
-    <http://wiki.ubuntuusers.de/MOC_-_music_on_console>`_.
+.. Inzwischen verwende ich zum Abspielen von Musik bevorzugt ``cmus``.
 
-    Inzwischen verwende ich zum Abspielen von Musik bevorzugt ``cmus``.
-
-    `MOC-Kurzbeschreibung <http://ikhaya.ubuntuusers.de/2009/06/01/projektvorstellung-moc-music-on-console/>`_
+.. `MOC-Kurzbeschreibung <http://ikhaya.ubuntuusers.de/2009/06/01/projektvorstellung-moc-music-on-console/>`_
 
 .. index:: ncdu
 .. _ncdu:
@@ -632,7 +629,7 @@ installierbar:
 
 .. todo Ergänzen!
 
-
+.. index:: pdfimages
 .. _pdfimages:
 
 ``pdfimages``

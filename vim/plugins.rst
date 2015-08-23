@@ -428,6 +428,9 @@ Tastenkombinationen:
     * - ``\cs``
       - "schickes" Auskommentieren von langen Abschnitten (z.B. in C)
       -
+    * - ``\cl``
+      - Auskommentieren mit linksbündigen Kommentarzeichen (z.B. in RST oder Python)
+      -
 
 ..  * - ``\c$``
 ..  - Kommentar von der Cursor-Position bis an das Zeilenende
@@ -1073,10 +1076,17 @@ die ``~/.vimrc`` um folgenden Eintrag ergänzen:
     let g:vicle_use = 'tmux'
 
 Drückt man in einer Vim-Sitzung erstmals ``Ctrl c Ctrl c``, so wird man
-aufgefordert, den Namen der ``tmux``-Session und des Zielfensters einzugeben. Im
-folgenden schickt Vicle alle weiteren Zeilen von dieser Vim-Sitzung aus immer an
-dieses Fenster; von mehreren verschiedenen Vim-Sitzungen aus kann allerdings
-Text auch an verschiedene Interpreter geschickt werden.
+aufgefordert, wahlweise den Namen oder die Nummer der ``tmux``-Session und des
+Zielfensters einzugeben; hat das Zielfenster mehrere Teilfenster ("panes"), so
+kann beispielsweise ``2.3`` das dritte Pane im zweiten Fenster bezeichnet
+werden. In ``tmux`` werden die Panes allgemein in der gleichen Reihenfolge
+nummeriert, wie sie geöffnet wurden; mittels ``<tmux-hotkey>:list-panes`` können
+die Pane-Nummern eines Fensters explizit angezeigt werden.
+
+Im folgenden schickt Vicle bei einer Eingabe von ``Ctrl c Ctrl c`` von dieser
+Vim-Sitzung aus stets die aktuelle oder die visuell markierten Zeilen an das
+angegebene Zielfenster. Von mehreren verschiedenen Vim-Sitzungen aus kann Text
+somit an verschiedene (oder auch an den gleichen) Interpreter geschickt werden.
 
 
 .. index:: Voom (Vim-Plugin)

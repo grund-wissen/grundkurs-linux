@@ -1,4 +1,3 @@
-
 .. _Grundkurs Linux:
 
 Grundkurs Linux
@@ -42,6 +41,7 @@ Grundkurs Linux
     vim/index.rst
     sphinx/index.rst
     git.rst
+    ssh-und-gpg.rst
     mutt.rst
     tools/index.rst
     links.rst

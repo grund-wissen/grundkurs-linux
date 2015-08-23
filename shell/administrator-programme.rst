@@ -106,14 +106,14 @@ dem Cursor zur (Neu-)Installation, mit ``-`` zum Entfernen und mit ``_`` zum
 vollständigen Löschen vorgemerkt werden; mit ``g`` werden die vorgemerkten
 Änderungswünsche ausgeführt.
 
-.. _chmod:
-
 ``chmod``
 ---------
 
 Mit ``chmod`` kann festgelegt werden, welche Dateirechte (Lesen, Schreiben,
 Ausführen) für den Eigentümer, für die Benutzer-Gruppe und für alle Anderen
 gelten.
+
+.. TODO Link auf Standard-Programme
 
 .. index:: chown, chgrp
 .. _chown und chgrp:
@@ -163,6 +163,7 @@ Shell-Fensters Programme direkt auf dem zu wartenden System ausführen. Mit
 
 
 .. index:: dpkg
+.. _dpkg:
 
 ``dpkg``
 --------
@@ -183,6 +184,7 @@ entsprechende Paket installiert wurden.
 
 
 .. index:: eject
+.. _eject:
 
 ``eject``
 ---------
@@ -192,6 +194,7 @@ geöffnet werden.
 
 
 .. index:: fdisk
+.. _fdisk:
 
 ``fdisk``
 ---------
@@ -205,6 +208,8 @@ Speichermedien anzuzeigen.
 
 
 .. index:: halt, reboot
+.. _halt:
+.. _reboot:
 
 ``halt``, ``reboot``
 --------------------
@@ -216,6 +221,7 @@ Speichermedien anzuzeigen.
 
 
 .. index:: lshw
+.. _lshw:
 
 ``lshw``
 --------
@@ -225,6 +231,8 @@ Mit ``lshw`` werden die Hardware-Informationen des Computers aufgelistet; mit
 
 
 .. index:: mount, umount
+.. _mount:
+.. _umount:
 
 ``mount``, ``umount``
 ---------------------
@@ -236,6 +244,7 @@ angegebenen Pfad eingebundene Medium zugreift.
 
 
 .. index:: nast
+.. _nast:
 
 ``nast``
 --------
@@ -252,12 +261,13 @@ im lokelen Netzwerk befinden, aufgelistet werden.
 
 
 .. index:: su
+.. _su:
 
 ``su``
 ------
 
 Mit ``su benutzername`` kann sich ein Superuser als beliebiger anderer Benutzer
-anmelden. Mit ``sudo su -`` kann sich ein beliebiger Benutzer, der dazu
+anmelden. Mit ``sudo su root`` kann sich ein beliebiger Benutzer, der dazu
 berechtigt ist, sich in einer Shell dauerhaft Superuser-Rechte verschaffen; dazu
 muss ein entsprechender Eintrag folgender Form in der Datei ``/etc/sudoers``
 existieren:

@@ -3,8 +3,10 @@
 # that name.
 _build/
 .hg/
+calendar.vim/*
 
 # Ignore this specific file
 grundkurs-linux.pdf
 .hgignore
 *.log
+

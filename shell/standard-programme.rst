@@ -151,6 +151,7 @@ relativ (ausgehend vom aktuellen Verzeichnis) sein.
 
 
 .. index:: chmod
+.. _chmod:
 
 ``chmod``
 ---------
@@ -427,8 +428,8 @@ Als :ref:`Exit-Status <Rückgabewerte und Verkettung von Programmen>` liefert
 Suchmuster nicht gefunden wurde, und ``2``, wenn bei der Suche ein Fehler
 aufgetreten ist (beispielsweise eine Datei nicht lesbar war).
 
-..
-    Todo: Links auf reguläre Ausdrücke
+.. Todo: Links auf reguläre Ausdrücke
+.. TODO: AG und Ack
 
 
 .. index:: gzip
@@ -519,6 +520,7 @@ von Verknüpfungen erzeugen:
   Verzeichnisse anwenden lassen, werden sie unter Linux nur selten verwendet.
 
 .. index:: Symlink
+.. _Symlink:
 
 * Mit ``ln -s datei1 datei2`` wird zu einer existierenden Datei ``datei1`` die
   Datei ``datai2`` als so genannter "Symbolischer Link" erzeugt (auch "Symlink"
@@ -826,7 +828,7 @@ konkurrierenden Entwicklungen kommen kann (wenn beispielsweise die gleiche Datei
 in zwei Verzeichnissen auf unterschiedliche Weise verändert wird), sollte eine
 Versionskontroll-Programm wie ``git`` oder ``mercurial`` genutzt werden.
 
-.. sort
+.. TODO: sort
 
 .. index:: ssh
 .. _ssh:

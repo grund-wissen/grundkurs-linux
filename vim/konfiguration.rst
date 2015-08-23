@@ -30,6 +30,9 @@ Meine persönliche Konfigurationsdatei sieht etwa so aus:
 
 .. gute vorlage: http://dougblack.io/words/a-good-vimrc.html
 
+.. Anzeigen, wo Option gesetzt wurde:
+
+.. :verbose set iskeyword?
 
 .. _Mappings:
 

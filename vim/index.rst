@@ -1,14 +1,14 @@
 .. index:: Texteditor, Vim
 .. _Der Texteditor Vim:
 .. _Texteditor Vim:
+.. _Vim:
 
 Der Texteditor Vim
 ==================
 
-`Vim <http://www.vim.org>`_ ist einer der vielseitigsten Text-Editoren aller
-Zeiten. Man kann damit auf sehr effiziente Weise nicht nur Programme schreiben,
-sondern auch Webseiten, Bücher, Briefe, Emails, kurz: Textdateien aller Art
-bearbeiten.
+Vim ist einer der vielseitigsten Text-Editoren aller Zeiten. Man kann damit auf
+sehr effiziente Weise nicht nur Programme schreiben, sondern auch Webseiten,
+Bücher, Briefe, Emails, kurz: Textdateien aller Art bearbeiten.
 
 Durch Tastenkombinationen (insbesondere durch :ref:`Snippets <Snippets>`) kann
 die die zum Schreiben von Texten nötige Tipparbeit ist erheblich reduziert
