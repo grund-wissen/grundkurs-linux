@@ -185,8 +185,9 @@ umgelenkt werden, verworfen. So kann man beispielsweise mittels der Anweisung
 
 .. index:: Pipeline, |
 .. _Pipelines:
+.. _Pipe:
 
-.. rubric:: Pipelines
+.. rubric:: Pipelines ("Pipes")
 
 Die Ausgaben eines Programms können nicht nur Dateien, sondern auch an andere
 Programme weitergeleitet werden. Hierzu wird in Shell-Skripts der Operator ``|``
@@ -198,10 +199,11 @@ Programme weitergeleitet werden. Hierzu wird in Shell-Skripts der Operator ``|``
     # Unterverzeichnisse anzeigen, die "txt" enthalten:
     ls -R | grep txt
 
-Bei einer solchen Verkettung von Programmen werden die Daten nicht in eine
-Zwischendatei angelegt, sondern direkt an das nächste Programm übergeben.
+Bei einer solchen Verkettung von Programmen werden die Daten vom Interpreter in
+eine temporäre Datei (ebenfalls "Pipe" genannt) abgelegt und so an das nächste
+Programm übergeben.
 
-Pipelines stellen ein vielseitiges Werkzeug dar, insbesondere in Kombination mit
+Pipes stellen ein vielseitiges Werkzeug dar, insbesondere in Kombination mit
 folgenden Programmen:
 
 * Mit :ref:`grep <grep>` kann die Ausgabe eines Programms hinsichtlich
@@ -303,7 +305,8 @@ Um einer Variablen einen Wert zuzuweisen, muss folgende Syntax verwendet werden:
     variablenname=wert
 
 Zwischen dem Variablennamen, dem Zuweisungsoperator ``=`` und dem zu
-speichernden Wert darf dabei kein Leerzeichen stehen.
+speichernden Wert darf dabei kein Leerzeichen stehen; auf den Inhalt der
+Variable kann wiederum mittels ``$variablenname`` zugegriffen werden.
 
 .. index:: set
 
@@ -368,6 +371,58 @@ mit dem Beenden der Shell wird die Konstante wieder gelöscht.
 
 Mittels ``readonly`` (ohne Variablennamen) kann eine Liste mit allen aktuell
 definierten Konstanten ausgegeben werden.
+
+
+.. _Definition von Variablen-Listen:
+
+.. rubric:: Definition von Variablen-Listen
+
+In einer Shell-Variable kann eine Liste mit mehreren Elementen mittels folgender
+Syntax abgespeichert werden:
+
+.. code-block:: sh
+
+    var_liste=( 
+        element_1 
+        element_2 
+        element_3 
+    )
+
+Wichtig ist hierbei wiederum, dass zwischen dem Namen der Variablenliste, dem
+Zuweisungsoperator ``=`` und der öffnenden Klammer *kein* Leerzeichen stehen
+darf. Es können auch mehrere Elemente in eine Zeile geschrieben werden; die
+Elemente werden durch Leerzeichen getrennt.
+
+Auf die einzelnen Elemente der Variablenliste kann mittels ``${var_liste[0]}``,
+``${var_liste[1]}`` usw. zugegriffen werden, wobei der Index ``0`` für das erste
+Listenelement und der Index ``1`` für das zweite Listenelement steht. Schreibt
+man nur ``$var_liste``, so ist dies mit einem Zugriff auf das erste Element der
+Liste identisch. Um alle Listenelemente auszugeben, muss hingegen
+``${var_liste[*]}`` geschrieben werden.
+
+Die Anzahl an Elementen einer Liste kann mittels ``${#var_liste[*]}`` ausgegeben
+werden; mit ``${#var_liste[num]}`` wird ausgegeben, aus wie vielen (Text-)Zeichen das
+Listenelement mit der Indexnummer ``num`` besteht.
+
+Ein neues Element kann folgendermaßen an eine bestehende Liste angefügt werden:
+
+.. code-block:: sh
+
+    var_liste+=( element_4 )
+
+Soll ein neues Element nicht am Ende der Liste, sondern vor einer bestimmten
+Indexposition ``num`` eingefügt werden, so kann man folgendes schreiben:
+
+.. code-block:: sh
+
+    var_liste[num]+=( element_neu )
+
+
+Mittels ``unset var_liste`` kann die Variablenliste, mit ``unset
+var_liste[num]`` das Listenelement mit der Indexnummer ``num`` wieder gelöscht
+werden.
+
+.. _Besondere Shell-Variablen:
 
 Besondere Shell-Variablen
 -------------------------

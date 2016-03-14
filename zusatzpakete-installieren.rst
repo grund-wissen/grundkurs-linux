@@ -21,7 +21,8 @@ Anpassungen vorgenommen. Im Wesentlichen gibt es dafür zwei Gründe:
 .. index:: Paketverwaltung
 .. _Paketverwaltung:
 
-.. rubric:: Paketverwaltung
+Paketverwaltung
+---------------
 
 Die Systeme Linux Mint, Ubuntu und Debian nutzen `apt ("Advanced Packaging
 Tool") <http://wiki.ubuntuusers.de/Paketverwaltung>`_  zur Verwaltung und
@@ -44,9 +45,11 @@ den entsprechenden ``aptitude``-Befehl ersetzen:
 * ``aptitude search suchbegriff`` entspricht ``apt-cache search suchbegriff``
 * ``aptitude install paketname`` entspricht ``apt-get install paketname``
 
-.. _Wichtige Zusatzpakete:
 
-.. rubric:: Wichtige Zusatzpakete
+.. _Hilfreiche Zusatzprogramme:
+
+Hilfreiche Zusatzprogramme
+--------------------------
 
 Folgende Programm-Pakete, die als Superuser mittels ``apt`` hinzugefügt werden
 können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützlich:
@@ -103,6 +106,10 @@ können, halte ich persönlich als Ergänzungen zum Basissystem für sehr nützl
     * - `vlc <http://wiki.ubuntuusers.de/VLC>`_
       - ein Audio- und Videoplayer, der alle gängigen Formate unterstützt (MPG,
         AVI, FLV, MP3, OGG, u.a.)
+    * - `zathura <https://wiki.ubuntuusers.de/zathura>`_
+      - ein Vim-artiger Bildbetrachter, wahlweise mit einem `dunklen Farbschema
+        <https://github.com/esn89/base16-zathura/blob/master/zathurarc-dark>`_, 
+        das in der Datei ``~/.config/zathura/zathurarc`` festgelegt wird.
 
 Je nach Distribution und Desktop-Umgebung können einige der genannten Programme
 bereits installiert sein. In diesem Fall bleibt ein Aufruf von ``sudo aptitude
@@ -115,7 +122,8 @@ und der Nutzen einiger Pakete näher beschrieben.
 
 .. _Emulieren von Windows-Programmen:
 
-.. rubric:: Emulieren von Windows-Programmen
+Emulieren von Windows-Programmen
+--------------------------------
 
 Auch wenn es unter Linux für die meisten Zwecke eigene, auf dem
 Open-Source-Prinzip basierende Programme gibt, lassen sich bei Bedarf --

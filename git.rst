@@ -8,7 +8,7 @@ Das Versionssystem Git ist bei den meisten Distributionen bereits
 vorinstalliert. Möchte man Git mit einer graphischen Oberfläche benutzen, so
 können wahlweise `giggle <https://wiki.gnome.org/Apps/giggle>`_, `gitk
 <http://gitk.sourceforge.net/>`_, `qgit
-<http://sourceforge.net/projects/qgit/#screenshots>`_, `git-gui
+<http://sourceforge.net/projects/qgit>`_, `git-gui
 <https://www.kernel.org/pub/software/scm/git/docs/git-gui.html>`_ oder `git-cola
 <https://git-cola.github.io/>`_ als Pakete nachinstalliert werden; zudem
 existiert mit `tig <http://jonas.nitro.dk/tig/>`_ eine sehr konfigurierbare
@@ -236,7 +236,7 @@ dazwischen) ein ``!`` geschrieben werden.
 
 Ausführliche Beschreibungen zu ``.gitignore``-Dateien und Shell-Dateimustern
 kann man in den Manualseiten mittels ``man gitignore`` beziehungsweise ``man
-glob`` nachlesen.
+glob`` oder unter https://git-scm.com/docs/gitignore nachlesen.
 
 Arbeitsverzeichnis, Index und Objektspeicher
 --------------------------------------------
@@ -356,6 +356,10 @@ Branches kann man sich allgemein als Zeiger auf einzelne Commits vorstellen. Sie
 helfen dabei, ein Projekt in logische Teile zu untergliedern. Man sollte
 allgemein *früh* und *oft* neue Branches bei der Entwicklung eines Projekts
 anlegen.
+
+.. todo: Release-Branches
+.. todo: git flow!!
+.. http://nvie.com/posts/a-successful-git-branching-model/
 
 .. index:: git; merge
 .. _Zusammenführen von Entwicklungszweigen:
@@ -480,7 +484,7 @@ Projekt einfließen lassen.
 .. rubric:: Externe Repositories herunterladen
 
 Um ein existierendes Repository von einem externen Server, beispielsweise von
-`GitHub <http://www.github.com>`_  oder `Bitbucket <https://bitbucket.org/>`_
+`GitHub <https://www.github.com>`_  oder `Bitbucket <https://bitbucket.org/>`_
 herunterzuladen, gibt man in der Shell folgende Anweisung an:
 
 .. code-block:: bash
@@ -502,7 +506,7 @@ lokal wie in jedem anderen Repository gearbeitet werden.
 
 Die am meisten verwendete Methode, um Repositories anderen Entwicklern auf einem
 zentralen Server zugänglich zu machen, ist die Nutzung von `GitHub
-<http://www.github.com>`_  oder `Bitbucket <https://bitbucket.org/>`_. Auf
+<https://www.github.com>`_  oder `Bitbucket <https://bitbucket.org/>`_. Auf
 beiden Webseiten wird kostenloser Speicherplatz für öffentliche Repositories
 angeboten (private Repositories sind oftmals kostenpflichtig). Auf beiden
 Webseiten muss entsprechend der Angaben auf der jeweiligen Webseite ein
@@ -640,7 +644,7 @@ wiederum in das ``origin``-Repository gepushed werden.
     als neue Abkürzung erkannt und dabei.
 
     (Dieser Hinweis stammt ursprünglich von `Filipe Kiss
-    <https://coderwall.com/p/euwpig/a-better-git-log?p=1>`_).
+    <https://coderwall.com/p/euwpig/a-better-git-log>`_).
 
 .. [#] Es kann anstelle von ``~/.git/info/exclude`` auch eine andere Datei als
     "globale" Ignore-File festgelegt werden. Die Syntax hierfür lautet

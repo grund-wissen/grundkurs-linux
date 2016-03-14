@@ -4,7 +4,7 @@ Plugins
 =======
 
 Vim kann durch so genannte "Plugins" erweitert werden. Diese können von der
-`Projektseite <http://www.vim.org>`_ oder von `Github <https://github.com>`_
+`Projektseite <http://www.vim.org>`__ oder von `Github <https://github.com>`__
 heruntergeladen werden.
 
 Unterschieden wird zwischen allgemeinen Plugins, die nach ihrer Installation
@@ -22,7 +22,7 @@ entsprechenden Filetype-Plugins nachgeladen werden.
 Vundle: Plugins installieren und verwalten
 ------------------------------------------
 
-Das `Vundle-Plugin <http://www.vim.org/scripts/script.php?script_id=3458>`_
+Das `Vundle-Plugin <http://www.vim.org/scripts/script.php?script_id=3458>`__
 bietet eine sehr empfehlenswerte Methode, eine individuelle Auswahl an Plugins
 zu installieren und zu verwalten. Um dieses Plugin zu verwenden, wird zunächst
 im Ordner ``~/.vim`` ein neues Unterverzeichnis namens ``bundle`` angelegt:
@@ -123,7 +123,7 @@ Hilfreiche Erweiterungen
 Align
 ^^^^^
 
-Das `Align-Plugin <http://www.vim.org/scripts/script.php?script_id=294>`_ stellt
+Das `Align-Plugin <http://www.vim.org/scripts/script.php?script_id=294>`__ stellt
 eine gleichnamige Funktion bereit, mittels derer man visuell markierte Bereiche
 zu einer übersichtlichen Tabelle ausrichten kann.
 
@@ -169,7 +169,7 @@ Buffer-Explorer
 ^^^^^^^^^^^^^^^
 
 Das `BufferExplorer Plugin
-<http://www.vim.org/scripts/script.php?script_id=42>`_ bietet -- ähnlich wie
+<http://www.vim.org/scripts/script.php?script_id=42>`__ bietet -- ähnlich wie
 ``:ls`` -- eine Übersicht über die aktuell geöffneten Buffer. Um einen
 bestimmten Buffer in dieser Ansicht auszuwählen, muss man nur mit ``j``, ``k``
 oder ähnlichen Bewegungsanweisungen den Cursor über den gewünschten Dateinamen zu
@@ -206,7 +206,7 @@ genügt ``Enter`` zu drücken, um zurück zur Ausgangsposition zu gelangen.)
 CtrlP
 ^^^^^
 
-Das `CtrlP-Plugin <http://www.vim.org/scripts/script.php?script_id=3736>`_
+Das `CtrlP-Plugin <http://www.vim.org/scripts/script.php?script_id=3736>`__
 ermöglicht ein sehr effizientes Auswählen von Dateien, ausgehend vom
 Verzeichnis, in dem Vim aufgerufen wurde; ebenso können mit CtrlP zuletzt
 verwendete Dateien wieder schnell geöffnet werden.
@@ -283,7 +283,7 @@ Bookmarks, zuletzt verwendete Dateien, oder alle zusammen).
 Eregex
 ^^^^^^
 
-Das `Eregex-Plugin <http://www.vim.org/scripts/script.php?script_id=3282>`_
+Das `Eregex-Plugin <http://www.vim.org/scripts/script.php?script_id=3282>`__
 ermöglicht es, in Vim für das Suchen und Ersetzen Perl-kompatible reguläre
 Ausdrücke zu verwenden.
 
@@ -347,7 +347,7 @@ Vim-Syntax übersetzt werden.
 
 Eine gute Übersicht über reguläre Ausdrücke in Perl-Syntax findet sich
 beispielsweise `hier
-<http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`_.
+<http://www.troubleshooters.com/codecorn/littperl/perlreg.htm>`__.
 
 
 .. index:: Minibuf-Explorer (Vim-Plugin)
@@ -357,7 +357,7 @@ Minibuf-Explorer
 ^^^^^^^^^^^^^^^^
 
 Das `Minibuf-Explorer-Plugin
-<http://www.vim.org/scripts/script.php?script_id=159>`_ bietet in einem eigenen
+<http://www.vim.org/scripts/script.php?script_id=159>`__ bietet in einem eigenen
 kleinen Subfenster am unteren Fensterrand eine Übersicht über die aktuell
 geöffneten Buffer. Angezeigt werden standardmäßig die Nummern und eine
 abgekürzte Bezeichnung der Buffer. Um einen bestimmten Buffer auszuwählen, kann
@@ -392,7 +392,7 @@ geöffnet sind.
 Nerd-Commenter
 ^^^^^^^^^^^^^^
 
-Das `NerdCommenter-Plugin <http://www.vim.org/scripts/script.php?script_id=1218>`_
+Das `NerdCommenter-Plugin <http://www.vim.org/scripts/script.php?script_id=1218>`__
 ermöglicht es einzelne Zeilen oder (in Verbindung mit visuellen Markierungen)
 ganze Code-Abschnitte auszukommentieren. Dabei wird automatisch für jeden
 Filetype das passende Kommentarzeichen gewählt.
@@ -460,7 +460,7 @@ Kommentarzeichen an.
 Renamer
 ^^^^^^^
 
-Das `Renamer Plugin <http://www.vim.org/scripts/script.php?script_id=1721>`_
+Das `Renamer Plugin <http://www.vim.org/scripts/script.php?script_id=1721>`__
 ermöglicht ein gleichzeitiges, fein steuerbares Umbenennen mehrerer Dateien
 mittels Vim.
 
@@ -501,7 +501,7 @@ Dateien im jeweiligen Verzeichnis werden entsprechend umbenannt. :-)
 Sudo
 ^^^^
 
-Das `Sudo Plugin <http://www.vim.org/scripts/script.php?script_id=729>`_ ermöglicht
+Das `Sudo Plugin <http://www.vim.org/scripts/script.php?script_id=729>`__ ermöglicht
 es, sich auch nachträglich mit SuperUser-Rechten ausstatten. Nützlich ist das,
 wenn man Systemdateien verändert, und es einem erst beim Speichern
 auffällt, dass man eigentlich gar keine Schreibrechte besitzt.
@@ -545,7 +545,7 @@ Praktisch ist auch eine Abkürzung in der Konfigurationsdatei ``~/.vimrc``:
 SuperTab
 ^^^^^^^^
 
-Das `SuperTab-Plugin <http://www.vim.org/scripts/script.php?script_id=1643>`_
+Das `SuperTab-Plugin <http://www.vim.org/scripts/script.php?script_id=1643>`__
 bietet eine einfach Möglichkeit, im Einfüge-Modus mittels ``Tab`` das bis zum
 Cursor reichende Wort zu vervollständigen (ähnlich wie durch Verwendung von
 ``Control x``).
@@ -611,7 +611,7 @@ Position ergänzt.
 Tagbar
 ^^^^^^
 
-Das `Tagbar-Plugin <http://www.vim.org/scripts/script.php?script_id=3465>`_
+Das `Tagbar-Plugin <http://www.vim.org/scripts/script.php?script_id=3465>`__
 bietet eine Art Inhaltsverzeichnis für Quellcode. Es nutzt das externe Programm
 ``exuberant ctags``, um aus den aktuell geöffneten Dateien eine Übersicht an
 Funktionsnamen, Makros, Variablen, Klassen, usw. zu erstellen. In
@@ -654,6 +654,65 @@ platziert haben, so kann man die ``~/.vimrc`` um folgende Zeile ergänzen:
 .. braucht dann lange zum Laden!
 
 
+.. _Table-Mode:
+
+Table-Mode
+^^^^^^^^^^
+
+Das `Table-Mode-Plugin <https://github.com/dhruvasagar/vim-table-mode>`__
+ermöglicht es, mit dem Vim auf einfache Weise RestructuredText-Tabellen zu
+schreiben.
+
+.. only:: html
+
+    Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
+    installiert werden: https://github.com/dhruvasagar/vim-table-mode
+
+.. only:: latex
+
+    | Mittels :ref:`Vundle <Vundle>` kann dieses Plugin über folgendes Repository
+      installiert werden:
+    | https://github.com/dhruvasagar/vim-table-mode
+
+Nach der Installation kann das Plugin in einer RestructuredText-Datei (Endung
+``.rst``) mittels ``\tm`` ("table-mode-toggle") aktiviert beziehungsweise wieder
+deaktiviert werden. Ist das Plugin aktiv, so werden eingegebene Textzeilen, die
+mit ``|``-Zeichen beginnen, als Tabellen gewertet. Beispielsweise kann dann
+folgende Zeile als "Kopfzeile" einer Tabelle eingegeben werden:
+
+.. code-block:: rst
+
+    | Einträge | Eigenschaft 1 | Eigenschaft 2 |
+
+Gibt man in der folgenden Zeile ``||`` (ein doppeltes Pipe-Zeichen) ein, so wird
+dieses automatisch wie folgt ergänzt:
+
+.. code-block:: rst
+
+    | Einträge | Eigenschaft 1 | Eigenschaft 2 |
+    +----------+---------------+---------------+
+
+
+Der entstandene "Querstrick" kann entweder im Normalmodus mittels ``yy`` kopiert
+und über der Überschrift wieder eingefügt werden; alternativ dazu kann auch
+oberhalb der Überschrift ``||`` eingegeben werden, um eine Vervollständigung
+durch das Table-Mode-Plugin zu erreichen.
+
+.. code-block:: rst
+
+    +----------+---------------+---------------+
+    | Einträge | Eigenschaft 1 | Eigenschaft 2 |
+    +----------+---------------+---------------+
+
+Wird in weiteren, mit ``|`` beginnenden Zeilen Text einzugeben, so erfolgt bei
+Bedarf automatisch eine Verbreiterung/Anpassung der Spalten; durch jedes Drücken
+von ``|`` wird das aktuell eingegebene Feld automatisch auf die jeweilige
+Spaltenbreite angepasst und zur nächsten Spalte gewechselt.
+
+Wird zu einem späteren Zeitpunkt ein Eintrag geändert, so kann mittels ``\tre``
+("table-mode-refresh") eine Aktualisierung der gesamten Tabelle erreicht werden.
+
+
 .. index:: Ultisnips (Vim-Plugin)
 .. _Ultisnips:
 .. _Snippets:
@@ -661,7 +720,7 @@ platziert haben, so kann man die ``~/.vimrc`` um folgende Zeile ergänzen:
 Ultisnips
 ^^^^^^^^^
 
-Das `Ultisnips-Plugin <http://www.vim.org/scripts/script.php?script_id=2715>`_
+Das `Ultisnips-Plugin <http://www.vim.org/scripts/script.php?script_id=2715>`__
 ist eine Weiterentwicklung des `Snipmate-Plugins
 <http://www.vim.org/scripts/script.php?script_id=2540>`_ mit erheblich größerem
 Funtkionsumfang. Das Plugin ermöglicht es durch Eingabe kurzer, selbst
@@ -1053,7 +1112,7 @@ Vicle
 Das `Vicle Plugin <http://www.vim.org/scripts/script.php?script_id=255>`_
 ermöglicht es, von Vim aus mittels ``Ctrl c Ctrl c`` die aktuelle Zeile oder im
 visuellen Modus ganze Codeblöcke an eine offene :ref:`Screen <screen>`- oder
-``tmux``-Sitzung zu schicken. Egal ob Python, R, MySQL oder die Shell selbst als
+:ref:`tmux <tmux>`-Sitzung zu schicken. Egal ob Python, R, MySQL oder die Shell selbst als
 Interpreter verwendet wird: Skript-Teile lassen sich auf diese Weise bereits
 während des Erstellens "on-the-fly" testen.
 
@@ -1169,27 +1228,6 @@ ausgewählt und eingefügt werden.
 
     .. rubric:: Anmerkungen:
 
-.. [#] Persönlich habe ich, bevor ich zum :ref:`Ultisnips <Ultisnips>`-Plugin
-    gewechselt bin, ``Shift Tab`` als Trigger für Snipmate verwendet, da in
-    meinen Einstellungen die ``Tab``-Taste bereits für das :ref:`SuperTab
-    <SuperTab>`-Plugin reserviert ist. Hierzu
-    muss man in der ``~/.vimrc`` folgende Änderung vornehmen:
-
-    .. only:: html
-
-        .. code-block:: vim
-
-            :imap <S-Tab> <Plug>snipMateTrigger
-            :smap <S-Tab> <Plug>snipMateTrigger
-
-    .. only:: latex
-
-        ``:imap <S-Tab> <Plug>snipMateTrigger``
-
-        ``:smap <S-Tab> <Plug>snipMateTrigger``
-
-    Bei Verwendung des Ultisnips-Plugin kann auch in Kombination mit SuperTab
-    weiterhin die Tab-Taste als Trigger verwendet werden.
 
 .. [#] Hierzu muss neben dem unter Linux bereits vorhandenen Python-System das
     Python-Modul ``vim_bridge`` installiert werden. Die Installation dieses

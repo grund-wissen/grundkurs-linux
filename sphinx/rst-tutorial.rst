@@ -17,6 +17,9 @@ Um eine Datei mit RestructuredText-Inhalten zu erstellen, genügt es eine neue
 Textdatei mit einem Editor zu öffnen. Üblicherweise werden
 RestructuredText-Dateien mit der Endung ``.rst`` versehen.
 
+
+.. _Überschriften und Hervorhebungen:
+
 Überschriften und Hervorhebungen
 --------------------------------
 
@@ -89,6 +92,8 @@ Eine weitere Aufgliederung eines Kapitels ist durch ein Aufspalten in mehrere
 Dateien möglich.
 
 
+.. _Das Inhaltsverzeichnis:
+
 Das Inhaltsverzeichnis
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -147,6 +152,8 @@ Datei mit einer Kapitelüberschrift zu beginnen und bei Bedarf weitere
 Überschriften einzufügen.
 
 
+.. _Kommentare:
+
 Kommentare
 ^^^^^^^^^^
 
@@ -183,6 +190,7 @@ Tabulatoren eingefügt werden, da lange Kommentare stets durch eine einzelne,
 komplett leere Zeile abgeschlossen werden.
 
 
+.. _Hervorhebung von Textstellen:
 
 Hervorhebung von Textstellen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -236,9 +244,12 @@ auftretenden Roles sind:
     </pre></div>
 
 Mittels der ``:math:``-Role können zusätzlich mathematische Formeln, geschrieben
-als LaTeX-Code, innerhalb einer Zeile eingefügt werden. Beispielsweise liefert
-``:math:`a^2 + b^2 = c^2``` als Ergebnis die Formel :math:`a^2 + b^2 = c^2`.
+als :ref:`LaTeX-Code <gwil:Mathematischer Formelsatz>`, innerhalb einer Zeile
+eingefügt werden. Beispielsweise liefert ``:math:`a^2 + b^2 = c^2``` als
+Ergebnis die Formel :math:`a^2 + b^2 = c^2`.
 
+
+.. _Hervorhebung von Absätzen:
 
 Hervorhebung von Absätzen
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -343,8 +354,9 @@ Direktiven genutzt werden:
 
 * ``math``
 
-  Mit der ``math``-Direktive können mathematische Formeln (LaTeX-Code) als
-  eigenständige, zentrierte Zeilen in das Dokument eingebunden werden.
+  Mit der ``math``-Direktive können mathematische Formeln, geschrieben als
+  :ref:`LaTeX-Code <gwil:Mathematischer Formelsatz>`, als eigenständige
+  zentrierte Zeilen in das Dokument eingebunden werden.
 
   *Beispiel:*
 
@@ -373,14 +385,17 @@ Direktiven genutzt werden:
       .. math::
           :label: einstein-und-pythagoras
 
-          E = m \cdot c^2 \overset{?}{=} m \cdot (a^2 + b^2)
+          E \underset{Einstein}{=} m \cdot c^2
+          \underset{Pythagoras}{=} m \cdot (a^2 + b^2)
+
 
   *Ergebnis:*
 
       .. math::
           :label: einstein-und-pythagoras
 
-          E = m \cdot c^2 \, \overset{?}{=} \, m \cdot (a^2 + b^2)
+          E \underset{Einstein}{=} m \cdot c^2
+          \underset{Pythagoras}{=} m \cdot (a^2 + b^2)
 
   Auf die Formel kann dann mittels der Referenz ``eqr:`Name-des-Labels``` an
   einer beliebigen anderen Stelle des Dokuments (derzeit jedoch nur innerhalb
@@ -441,6 +456,100 @@ Weitere Gestaltungsmöglichkeiten von Absätzen sind in der `Liste aller
 RST-Direktiven (en.)
 <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_ aufgeführt.
 
+.. _Aufzählungen und Beschreibungen:
+
+Aufzählungen und Beschreibungen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In RestructuredText sind sowohl nummerierte wie auch nicht nummerierte
+Aufzählungen möglich. Die Syntax hierfür ist sehr simpel:
+
+.. code-block:: rst
+
+    *Beispiel einer nummerierten Liste:*
+
+    1. Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer diesen Text
+       liest, ist selbst schuld. Der Text gibt lediglich den Grauwert der
+       Schrift an.
+    2. | Dies hier ist ein Blindtext zum Testen von Textausgaben.
+       | Wer diesen Text liest, ist selbst schuld.
+       | Der Text gibt lediglich den Grauwert der Schrift an.
+
+    *Beispiel einer nicht nummerierten Liste:*
+
+    * Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer diesen Text
+      liest, ist selbst schuld. Der Text gibt lediglich den Grauwert der
+      Schrift an.
+    * | Dies hier ist ein Blindtext zum Testen von Textausgaben.
+      | Wer diesen Text liest, ist selbst schuld.
+      | Der Text gibt lediglich den Grauwert der Schrift an.
+
+*Ergebnis:*
+
+    *Beispiel einer nummerierten Liste:*
+
+    1. Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer diesen Text
+       liest, ist selbst schuld. Der Text gibt lediglich den Grauwert der
+       Schrift an.
+    2. | Dies hier ist ein Blindtext zum Testen von Textausgaben.
+       | Wer diesen Text liest, ist selbst schuld.
+       | Der Text gibt lediglich den Grauwert der Schrift an.
+
+    *Beispiel einer nicht nummerierten Liste:*
+
+    * Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer diesen Text
+      liest, ist selbst schuld. Der Text gibt lediglich den Grauwert der
+      Schrift an.
+    * | Dies hier ist ein Blindtext zum Testen von Textausgaben.
+      | Wer diesen Text liest, ist selbst schuld.
+      | Der Text gibt lediglich den Grauwert der Schrift an.
+
+Für nicht nummerierte Aufzählungen können anstelle des Zeichens ``*`` auch die
+Zeichen ``-`` oder ``+`` verwendet werden; in der Ausgabe werden die
+Aufzählungszeichen unabhängig davon anhand der Aufzählungstiefe ausgewählt
+(innerhalb einer Aufzählung sind auch weitere Aufzählungen möglich).
+
+Beim Erstellen von Aufzählungen muss lediglich darauf geachtet werden, dass vor
+und nach der Aufzählung im Quellcode eine leere Zeile steht und die einzelnen
+Einträge gleich weit eingerückt sind. Die einzelnen Einträge werden, sofern sie
+nicht in eine Zeile passen, automatisch am Seitenrand umgebrochen; manuelle
+Umbrücke können erzwungen werden, indem zu Beginn jeder neu zu erstellenden
+Zeile ein ``|``-Zeichen eingegeben wird. Auch hierbei muss auf eine gleiche
+Einrückungstiefe der Textzeilen geachtet werden.
+
+Automatisch nummerierte Aufzählungen können mittels ``#.`` als
+Aufzählungszeichen erstellt werden; in diesem Fall sind zwischen den einzelnen
+Einträgen allerdings keine RestructuredText-Elemente erlaubt, die ohne
+Einrückung zu Beginn der Zeile eingegeben werden müssen (beispielsweise
+Sprungmarken); in diesem Fall fängt die folgende Aufzählung nämlich wieder mit
+``1.`` an.
+
+Bei Beschreibungen verwendet man das zu beschreibende Wort als
+"Aufzählungszeichen". Die Syntax hierzu ist folgende:
+
+::
+
+    **Wort1:**
+        Beschreibung zu Wort1.
+
+    **Wort2:**
+        Beschreibung zu Wort2.
+
+*Ergebnis:*
+
+    **Wort1:**
+        Beschreibung zu Wort1.
+
+    **Wort2:**
+        Beschreibung zu Wort2.
+
+Auch bei den Beschreibungen muss nur auf die einheitliche Einrückung des
+Beschreibungs-Textes geachtet werden; der Text kann dann auch aus mehreren
+Absätzen bestehen.
+
+
+.. _Sprungmarken und Referenzen:
+
 Sprungmarken und Referenzen
 ---------------------------
 
@@ -451,7 +560,7 @@ verweisen zu können. RestructuredText bietet dazu folgende Möglichkeiten:
 * Mittels ```Link-Bezeichnung <Adresse>`_`` kann ein mit einer bestimmten
   Bezeichnung versehener Link auf eine externe Seite gesetzt werden. Soll eine
   Adresse ohne eigene Bezeichnung verlinkt werden, so genügt es die Adresse ohne
-  weitere Syntax anzugeben, beispielsweise http://www.grund-wissen.de . Ein Link
+  weitere Syntax anzugeben, beispielsweise ``http://www.grund-wissen.de`` für http://www.grund-wissen.de ; ein Link
   wird dabei automatisch erzeugt.
 
 * Mittels einer eigenen Zeile der Form ``.. _Name der Sprungmarke:`` und einer
@@ -537,6 +646,9 @@ nach der ersten um mindestens ein Leerzeichen eingerückt werden (üblicherweise
 werden Folgezeilen eine Tabulatorbreite weit eingerückt, um eine bessere
 Lesbarkeit zu erzielen).
 
+
+.. _Zitierungen und Literaturverzeichnis:
+
 .. rubric:: Zitierungen und Literaturverzeichnis
 
 Innerhalb einer Dokumentation sind auch Verweise auf literarische Werke anderer
@@ -553,23 +665,39 @@ namens ``quellen.rst`` (oder ähnlich), in der die Literaturhinweise und
 Quellenangaben gesammelt aufgelistet sind. In der LaTeX-Version wird am Ende des
 Dokuments automatisch ein Literaturverzeichnis angelegt.
 
+
+.. _Index-Einträge:
+
 .. rubric:: Index-Einträge
 
-An jeder beliebigen Stelle innerhalb der Dokumentation können mit ``.. index::
-Bezeichnung`` Einträge für ein Stichwortverzeichnis festgelegt werden. In der
-HTML-Version wird ein Link auf die Index-Seite üblicherweise auf der rechten
-Seite am oberen und unteren Seitenrand eingeblendet. In der LaTeX-Version wird
-das Stichwortverzeichnis auf den letzten Seiten der Dokumentation abgedruckt.
-Eine Verlinkung mit den entsprechenden Textstellen (in der Druckversion mitsamt
-Angabe der jeweiligen Seitennummer) erfolgt automatisch.
+Innerhalb der Dokumentation können an beliebiger Stelle mittels folgender
+Syntax Einträge für ein Stichwortverzeichnis festgelegt werden:
+
+.. code-block:: rst
+
+    .. index:: Bezeichnung
+
+In der HTML-Version wird ein Link auf die Index-Seite üblicherweise auf der
+rechten Seite am oberen und unteren Seitenrand eingeblendet. In der
+LaTeX-Version wird das Stichwortverzeichnis auf den letzten Seiten der
+Dokumentation abgedruckt. Eine Verlinkung mit den entsprechenden Textstellen (in
+der Druckversion mitsamt Angabe der jeweiligen Seitennummer) erfolgt
+automatisch.
 
 * Um mehrere Index-Einträge zur gleichen Textstelle zu erreichen, können die
   Bezeichnungen der gewünschten Einträge, durch Kommas voneinander getrennt, in
-  einer einzigen Zeile aufgelistet werden.
-* Werden zwei Einträge durch einen Strichpunkt getrennt, so wird der zweite
-  Eintrag als "Unterkategorie" des ersten im Stichwortverzeichnis angezeigt.
+  einer einzigen Zeile aufgelistet werden:
 
-..  single: Diode; Leuchtdiode (LED)
+  .. code-block:: rst
+
+      .. index:: Eintrag1, Eintrag2
+
+* Werden zwei Einträge durch einen Strichpunkt getrennt, so wird der zweite
+  Eintrag als "Unterkategorie" des ersten im Stichwortverzeichnis angezeigt:
+
+  .. code-block:: rst
+
+      .. index:: Eintrag; Unterkategorie
 
 Eine ausführliche Beschreibung findet sich in der `Sphinx-Dokumentaion
 <http://sphinx-doc.org/markup/misc.html#index-generating-markup>`_.
@@ -577,11 +705,189 @@ Eine ausführliche Beschreibung findet sich in der `Sphinx-Dokumentaion
 ..  This is a normal reST :index:`paragraph` that contains several
 ..  :index:`index entries <pair: index; entry>`.
 
-Aufzählungen, Beschreibungen, Tabellen und Bilder
--------------------------------------------------
+
+.. _Bilder und Tabellen:
+
+Bilder und Tabellen
+-------------------
+
+Bilder können in Restructured-Text entweder mittels einer ``image``- oder
+mittels einer ``figure``-Direktive eingebunden werden; letztere muss verwendet
+werden, wenn die Abbildung eine Bildunterschrift ("Caption") erhalten soll.
+
+Die Syntax für den Einbau eines Bildes sieht etwa folgendermaßen aus:
+
+.. code-block:: rst
+
+    .. figure:: ../pics/no-littering.png
+        :name: fig-beispiel-bild
+        :alt:  fig-beispiel-bild
+        :align: center
+        :width: 20%
+
+        Beispiel-Bild "No littering" ohne weitere Beschreibung.
+
+        .. only:: html
+
+            :download:`SVG: Beispiel-Bild ("No littering") <../pics/no-littering.svg>`
+
+*Ergebnis:*
+
+.. figure:: ../pics/no-littering.png
+    :name: fig-beispiel-bild
+    :alt:  fig-beispiel-bild
+    :align: center
+    :width: 20%
+
+    Beispiel-Bild "No littering" ohne weitere Beschreibung.
+
+    .. only:: html
+
+        :download:`SVG: Beispiel-Bild ("No littering") <../pics/no-littering.svg>`
+
+Bei Verwendung der ``figure``-Direktive wird zunächst der Pfad der
+einzubindenden Graphik angegeben. Die ``:name:``-Attribut angegebene Bezeichnung
+kann in Referenzen als Label aufgegriffen werden; die als ``:alt:``-Attribut
+angegebene Bezeichnung wird im Webbrowser während des Ladens der Graphik oder im
+Fall einer nicht auffindbaren Graphik-Datei angezeigt.
+
+Über das Attribut ``:align:`` wird die Ausrichtung der Graphik am Text als
+``left``, ``center`` oder ``right`` festgelegt. Die Angabe der Breite kann über
+das ``:width:``-Attribut entweder als feste Längeneinheit (beispielsweise ``4.2
+cm``) oder relativ zur Textbreite als Prozentangabe erfolgen. Als Alternative
+zur Angabe einer Breite kann die Größe einer Abbildung auch mittels einer
+``:height:``- oder ``scale``-Angabe (in Prozent der Original-Bildgröße)
+festgelegt werden. Bei der Angabe einer Bildunterschrift innerhalb einer
+``figure``-Umgebung muss wiederum auf die richtige Einrücktiefe geachtet werden.
+
+Bei der ``image``-Direktive können, abgesehen von der Bildunterschrift,
+ebenfalls die oben genannten Attribute angegeben werden; dafür kann (nur) bei
+der ``image``-Direktive als zusätzliches Argument mittels ``:target:`` eine
+Zieladresse angeegben werden, auf die beim Anklicken des Bildes verlinkt wird.
+
+Zur Eingabe von Tabellen gibt es in RestructuredText ebenfalls mehrere
+Möglichkeiten:
+
+* Bei einer "Gitter-Tabelle" wird die tabellarische Anordnung bereits im
+  Quellcode angedeutet:
+
+  .. code-block:: rst
+
+      +------------------+---------------+---------------+
+      | Art der Einträge | Eigenschaft 1 | Eigenschaft 2 |
+      +==================+===============+===============+
+      | Gegenstand 1     | eckig         | rot           |
+      +------------------+---------------+---------------+
+      | Gegenstand 2     | rund          | blau          |
+      +------------------+---------------+---------------+
+
+  *Ergebnis:*
+
+    +------------------+----------------+----------------+
+    | Art der Einträge | Eigenschaft 1  | Eigenschaft 2  |
+    +==================+================+================+
+    | Gegenstand 1     | eckig          | rot            |
+    +------------------+----------------+----------------+
+    | Gegenstand 2     | rund           | blau           |
+    +------------------+----------------+----------------+
+
+  Werden beim ersten "Querstrich" in der Tabelle anstelle der ``=``-Zeichen
+  ``-``-Zeichen gesetzt, so wird die erste Zeile in normaler Schrift (nicht
+  fettgedruckt) ausgegeben.
+
+  Tabellen gemäß dieser Syntax sind mühsam, sofern der Texteditor nicht ein
+  geeignetes Feature dafür mitbringt (für den Editor :ref:`Vim <Vim>` gibt es
+  hierfür beispielsweise das :ref:`Table-Mode <Table-Mode>`-Plugin). Der Vorteil
+  solcher Tabellen liegt vor allem in der angenehmen Lesbarkeit im Quellcode.
+
+  Nicht geeignet sind Grid-Tabellen, wenn auch Links oder mathematische Formeln
+  in der Tabelle vorkommen sollen. Diese machen im Quellcode mehr Buchstaben aus
+  als in der Ausgabe, so dass die Spalten dadurch breiter als nötig gedruckt
+  werden. Hierfür sollte eher "List-Tables" verwendet werden.
+
+* Bei "List Tables" werden die Einträge einer Tabelle in Form einer
+  verschachtelten Aufzählung angegeben. Die Syntax hierzu sieht etwa
+  folgendermaßen aus:
+
+  .. code-block:: rst
+
+      .. list-table::
+          :name: tab-beispieltabelle
+          :widths: 50 50 50
+          :header-rows: 0
+
+          * - Art der Einträge
+            - Eigenschaft 1
+            - Eigenschaft 2
+          * - Gegenstand 1
+            - eckig
+            - rot
+          * - Gegenstand 2
+            - rund
+            - blau
+
+  *Ergebnis:*
+
+    .. list-table::
+        :name: tab-beispieltabelle
+        :widths: 50 50 50
+        :header-rows: 0
+
+        * - Art der Einträge
+          - Eigenschaft 1
+          - Eigenschaft 2
+        * - Gegenstand 1
+          - eckig
+          - rot
+        * - Gegenstand 2
+          - rund
+          - blau
+
+  Soll die erste Zeile der Tabelle fett gedruckt ausgegeben werden, muss das
+  Attribut ``:header-rows`` auf ``1`` gesetzt werden.
+
+  Der Vorteil von List-Tables liegt darin, dass in den einzelnen Einträgen
+  beliebige Inline-Direktiven verwendet werden können (Links, Formeln, usw).
+  Ebenso kann die "Gewichtung" der einzelnen Spaltenbreiten durch die Angabe der
+  ``:widths:``-Werte manuell angepasst werden. Im obigen Beispiel werden die
+  drei Spalten der Tabelle in einem Breitenverhältnis von ``50:50:50``, also
+  mit gleicher Breite ausgegeben.
+
+  Wird in der gleichen Zeile direkt hinter ``.. list-table::`` ein Titel
+  angegeben, so wird dieser als Überschrift über die Tabelle gedruckt.
+
+* Mit einer "CSV-Table" kann der Inhalt der Tabelle durch "Comma Seperated
+  Values" erfolgen. Diese Einträgte können wahlweise im Block der
+  Listen-Direktive oder in einer separaten ``.csv``-Datei angegeben werden.
+  Das obige Beispiel kann damit etwa folgendermaßen aussehen:
+
+  .. code-block:: rst
+
+      .. csv-table::
+          :widths: 50 50 50
+
+          Art der Einträge , Eigenschaft 1 , Eigenschaft 2
+          Gegenstand 1 , eckig , rot
+          Gegenstand 2 , rund , blau
 
 
+  *Ergebnis:*
 
+      .. csv-table::
+          :widths: 50 50 50
+
+          Art der Einträge , Eigenschaft 1 , Eigenschaft 2
+          Gegenstand 1 , eckig , rot
+          Gegenstand 2 , rund , blau
+
+  Soll anstelle von ``,`` ein anderes Zeichen zur Trennung der einzelnen
+  Einträge verwendet werden, so kann dieses mittels des ``:delim:``-Attributs
+  angegeben werden.
+
+  Anstelle einer direkten Eingabe der Tabelle kann auch der Inhalt einer
+  externen ``.csv``-Datei verwendet werden; hierzu muss entweder ein Pfad als
+  ``:file:``-Attribut oder eine Web-Adresse als ``:url:``-Attribut angegeben
+  werden.
 
 .. raw:: html
 

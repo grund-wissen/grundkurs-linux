@@ -1,5 +1,6 @@
 
 .. index:: make, Makefile
+.. _Makefile:
 .. _Makefiles:
 
 Makefiles

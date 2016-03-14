@@ -2,25 +2,25 @@ import sys, os
 
 sys.path.append(os.path.abspath('_exts'))
 
-extensions = [ 
+extensions = [
     # 'matplotlib.sphinxext.mathmpl',
     # 'matplotlib.sphinxext.only_directives',
     # 'matplotlib.sphinxext.plot_directive',
     'sphinx.ext.autodoc',
-    'sphinx.ext.doctest', 
+    'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.todo', 
-    'sphinx.ext.coverage', 
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
     'sphinx.ext.pngmath',
-    'sphinx.ext.ifconfig', 
+    'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    # "sphinxcontrib.blockdiag", 
+    # "sphinxcontrib.blockdiag",
     # "sphinxcontrib.seqdiag",
-] 
+]
 
 
-# 'ipython_console_highlighting', 
-# 'inheritance_diagram', 
+# 'ipython_console_highlighting',
+# 'inheritance_diagram',
 # 'numpydoc', 'lily',
 
 templates_path = ['_templates']
@@ -29,9 +29,9 @@ master_doc = 'index'
 project = 'Linux und Open Source'
 html_short_title = 'Linux und Open Source'
 htmlhelp_basename = 'Linux und Open Source'
-copyright = '2011-2015, Bernhard Grotz'
-version = '0.2.3'
-release = '0.2.3'
+copyright = '2011-2016, Bernhard Grotz'
+version = '0.2.3c'
+release = '0.2.3c'
 language = 'de'
 spelling_lang = 'de_DE'
 exclude_patterns = ["notes.rst", "*/notes.rst",
@@ -41,7 +41,7 @@ html_theme = 'sphinxdoc'
 html_logo = "logo.png"
 html_favicon = "favicon.ico"
 html_static_path = ['_static']
-html_last_updated_fmt = '%d. %b %Y'
+html_last_updated_fmt = '%d.%b.%Y'
 html_use_smartypants = True
 html_additional_pages = {'home': 'home.html'}
 html_domain_indices = False
@@ -67,7 +67,7 @@ latex_preamble = r'''
 \usepackage[version=3]{mhchem}
 \usepackage{amsmath, units, cancel}
 \usepackage{amsfonts, amssymb}
-\usepackage{nicefrac,marvosym,mathtools,wasysym} 
+\usepackage{nicefrac,marvosym,mathtools,wasysym}
 \setcounter{secnumdepth}{-1}
 \setlength{\headheight}{15pt}
 \setcounter{tocdepth}{2}
@@ -79,12 +79,12 @@ latex_preamble = r'''
 pngmath_latex_preamble = latex_preamble
 latex_elements = {
     "preamble": latex_preamble,
-    "classoptions": 'oneside,openany',    
+    "babel":        "\\usepackage[ngerman]{babel}",
+    "classoptions": 'oneside,openany',
     "papersize": 'a4paper',
     "pointsize": '12pt',
     "fontpkg": '',
-    "babel":    "\\usepackage[ngerman]{babel}",
-    "fncychap": '\\usepackage[Conny]{fncychap}'
+    "fncychap": ''
 }
 
 latex_domain_indices = False

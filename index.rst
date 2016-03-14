@@ -1,3 +1,4 @@
+.. _Linux:
 .. _Grundkurs Linux:
 
 Grundkurs Linux
@@ -44,14 +45,12 @@ Grundkurs Linux
     ssh-und-gpg.rst
     mutt.rst
     tools/index.rst
-    links.rst
-    quellen.rst
+    links-und-quellen.rst
 
 .. toctree::
     :hidden:
 
     verschluesselung.rst
-    work.rst
 
 
 

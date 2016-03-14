@@ -1,5 +1,4 @@
 .. index:: mutt
-
 .. _Mutt:
 
 Email-Verwaltung mit Mutt
@@ -9,8 +8,8 @@ Mutt ist ein textbasierter Email-Client, der sich durch eine hohe
 Funktionalität und Konfigurierbarkeit auzeichnet. Er wird komplett
 über die Tastatur gesteuert.
 
-.. index:: fetchmail, procmail, msmtp, lynx
 
+.. index:: fetchmail, procmail, msmtp, lynx
 .. _Installation von Mutt und Hilfsprogrammen:
 
 Installation von Mutt und Hilfsprogrammen
@@ -713,6 +712,9 @@ man (etwas gewöhnungsbedürftig) ``Ctrl g`` drücken.
 
 ..  will search for that string in the message bodies
 
+
+.. _Pager-Modus:
+
 .. rubric:: Pager-Modus
 
 Drückt man im Index-Modus ``Leertaste`` oder ``Enter``, so wird der Inhalt der Email
@@ -722,13 +724,23 @@ Drücken von ``q`` gelangt man zurück in den Index-Modus. Mittels ``r`` kann
 man die aktuelle Email unmittelbar beantworten oder mittels ``d`` löschen; Mutt
 zeigt dann automatisch die nächste Email im Pager an.
 
+Anhänge von Emails können im Pager-Modus mittels ``v`` angezeigt werden. Mit den
+Cursor-Tasten kann dann ein Anhang ausgewählt und mittels ``s`` gespeichert
+werden. Mutt speichert den Anhang dabei in dem Verzeichnis, aus dem heraus Mutt
+aufgerufen wurde; es kann allerdings auch manuell ein anderer Pfad angegeben
+werden.
+
 Der in Mutt integrierte Pager unterstützt von sich aus keine HTML-Emails. Man
 kann sich jedoch leicht behelfen, indem man ``lynx`` als Pager für HTML-Emails
 nutzt. Bei den obigen Einstellungen kann die aktuelle Email vom Pager aus mit
 ``lynx`` durch Drücken von ``l`` betrachtet werden. Dabei kann ``PageUp`` und
 ``PageDown`` für ein seitenweises Durchblättern der Email, oder ``Ctrl p`` und
 ``Ctrl n`` für ein zeilenweises Scrollen verwendet werden. Mit ``Q`` oder ``q``
-wird ``lynx`` wieder beendet. [#]_
+wird ``lynx`` wieder beendet. [#]_ Als Alternative dazu kann eine HTML-Email
+auch wie ein Anhang gespeichert und mit Firefox oder einem anderen Webbrowser
+geöffnet werden.
+
+.. _Compose-Modus:
 
 .. rubric:: Compose-Modus
 

@@ -14,6 +14,8 @@ Dokumente sowohl als Textform (beispielsweise zum einfachen Versenden via Email)
 vorliegen haben als auch im Internet und/oder in druckbarer Form publizieren
 möchte.
 
+.. rubric:: Dursuchen von RST-Dateien
+
 Da es sich bei den Quelldateien um reine Textdateien mit der Endung ``.rst``
 handelt, können diese auch sehr leicht nach Inhalten durchsucht werden.
 Persönlich habe ich mir dazu folgende Abkürzung in der Konfigurationsdatei
@@ -28,14 +30,16 @@ oder einem regulären Ausdruck in allen ``rst``-Dateien eines Projekts (inklusiv
 aller Unterverzeichnisse) gesucht werden. Dabei können selbstverständlich auch
 die üblichen Optionen von :ref:`grep <grep>` genutzt werden.
 
-
 .. _Installation von Sphinx:
 
 .. rubric:: Installation von Sphinx
 
+Sphinx sowie einige nützliche Zusatz-Pakete können unter Linux folgendermaßen
+installiert werden:
+
 .. code-block:: bash
 
-    sudo aptitude install python3-setuptools python3-numpy python3-matplotlib dvipng
+    sudo aptitude install python3-setuptools python3-numpy python3-matplotlib python3-docutils dvipng
 
     sudo easy_install3 Sphinx
 
@@ -52,11 +56,13 @@ LaTeX-System <gwil:LaTeX>` installiert werden.
 .. toctree::
     :maxdepth: 2
 
-    quickstart.rst
+    quickstart-und-programmaufruf.rst
     rst-tutorial.rst
     anpassungen.rst
     tinkerer.rst
     links.rst
+
+
 
 .. raw:: html
 

@@ -28,7 +28,7 @@ empfehlenswert, eine umfangreichere Version des Vim zu installieren: [#]_
 
 .. code-block:: bash
 
-    sudo aptitude install vim-common vim-gnome vim-scripts ncurses-term
+    sudo aptitude install vim-common vim-gnome vim-scripts vimhelp-de ncurses-term
 
 Mit den obigen Paketen wird die Basis-Version von Vim installiert, die in einer
 Shell mittels ``vim`` gestartet werden kann. Zudem wird eine graphische

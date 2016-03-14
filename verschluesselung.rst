@@ -6,6 +6,7 @@ Exkurs: Verschlüsselung mit LUKS
 
 .. index:: cryptsetup, LUKS
 .. _Die Partitions-Verschlüsselung:
+.. _Partitions-Verschlüsselung:
 
 Die Partitions-Verschlüsselung
 ------------------------------

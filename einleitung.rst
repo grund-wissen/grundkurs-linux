@@ -42,15 +42,15 @@ Einleitung
 Open Source kann als ein gemeinschaftliches Prinzip der Zusammenarbeit
 verstanden werden -- es ist daher auch nicht an ein spezielles Betriebsystem
 gebunden. Zahlreiche Programme, beispielsweise `Firefox
-<http://de.wikipedia.org/wiki/Firefox>`_, `Thunderbird
-<http://de.wikipedia.org/wiki/Thunderbird>`_, `Open Office
+<https://de.wikipedia.org/wiki/Firefox>`_, `Thunderbird
+<https://de.wikipedia.org/wiki/Thunderbird>`_, `Open Office
 <https://de.wikipedia.org/wiki/OpenOffice>`_, `VLC
-<http://de.wikipedia.org/wiki/VLC_media_player>`_, `Gimp
-<http://de.wikipedia.org/wiki/Gimp>`_ , und `Inkscape
-<http://de.wikipedia.org/wiki/Inkscape>`_, sind inzwischen auf vielen
+<https://de.wikipedia.org/wiki/VLC_media_player>`_, `Gimp
+<https://de.wikipedia.org/wiki/Gimp>`_ , und `Inkscape
+<https://de.wikipedia.org/wiki/Inkscape>`_, sind inzwischen auf vielen
 Betriebsystemen weit verbreitet. [#H1]_ Am bekanntesten wurde die
 Open-Source-Mentalität allerdings durch `Linux
-<http://de.wikipedia.org/wiki/Linux>`_, welches vollständig auf freier Software
+<https://de.wikipedia.org/wiki/Linux>`_, welches vollständig auf freier Software
 aufbaut.
 
 Jeder darf sich freie Software und Betriebsysteme kostenlos herunterladen,
@@ -104,9 +104,9 @@ mit der Entwicklung gemeinschaftlicher, frei verfügbarer Software begonnen.
 .. index:: GNU
 
 In den 1970er und 1980er Jahren entstand so das zahlreiche freie Software
-umfassende `GNU-Projekt <http://de.wikipedia.org/wiki/GNU>`_, das sogar eine
+umfassende `GNU-Projekt <https://de.wikipedia.org/wiki/GNU>`_, das sogar eine
 eigene Lizenz-Regelung (`GNU General Public License (GPL)
-<http://de.wikipedia.org/wiki/Gpl>`_) mit sich brachte. Die Grundgedanken, die
+<https://de.wikipedia.org/wiki/Gpl>`_) mit sich brachte. Die Grundgedanken, die
 Quellcode-Bibliotheken sowie die rechtlichen Grundlagen stellten letztlich in
 den 1990er Jahren die Basis für das neue Betriebsystem "Linux" dar. [#AQ]_
 
@@ -116,7 +116,7 @@ den 1990er Jahren die Basis für das neue Betriebsystem "Linux" dar. [#AQ]_
     :align: center
     :width: 40%
 
-    Das `Linux-Maskottchen Tux <http://de.wikipedia.org/wiki/Tux_(Maskottchen)>`_.
+    Das `Linux-Maskottchen Tux <https://de.wikipedia.org/wiki/Tux_(Maskottchen)>`_.
 
     .. only:: html
 
@@ -141,8 +141,8 @@ Code-Schreiben -- auch selbst ein Software-Entwickler zu werden.
 
 Doch nicht nur Quellcode ist von Bedeutung: Alle Informationen, die unter einer
 gemeinnützigen Lizenz wie der `Creative-Commons-License (CCL)
-<http://de.wikipedia.org/wiki/Creative_Commons>`_ oder der `General Public
-License (GPL) <http://de.wikipedia.org/wiki/Gpl>`_ veröffentlicht werden, tragen
+<https://de.wikipedia.org/wiki/Creative_Commons>`_ oder der `General Public
+License (GPL) <https://de.wikipedia.org/wiki/Gpl>`_ veröffentlicht werden, tragen
 zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
 
 .. raw:: html
@@ -156,7 +156,7 @@ zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
 .. [#H1] Geschichtlich interessant zum Verständnis von Open Source und Linux ist
     auch der Essay `"Die Kathedrale und der Basar"
     <https://de.wikipedia.org/wiki/Die_Kathedrale_und_der_Basar>`_ von `Eric
-    Raymond <http://de.wikipedia.org/wiki/Eric_Raymond>`_, der letztlich zu
+    Raymond <https://de.wikipedia.org/wiki/Eric_Raymond>`_, der letztlich zu
     einer quellfreien Veröffentlichung des "Netscape Navigator" -- dem Vorläufer
     von Mozilla Firefox -- und zu einem Umdenken in der Industrie geführt hat.
 
@@ -189,8 +189,8 @@ zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
         auch.
 
         In diesem Sinne ist die GPL eher eine Anti-Lizenz, weshalb `Richard Stallman
-        <http://de.wikipedia.org/wiki/Richard_Stallman>`_ von ihr auch lieber als
-        `Copyleft <http://de.wikipedia.org/wiki/Copyleft>`_ spricht anstatt von
+        <https://de.wikipedia.org/wiki/Richard_Stallman>`_ von ihr auch lieber als
+        `Copyleft <https://de.wikipedia.org/wiki/Copyleft>`_ spricht anstatt von
         einem Copyright.
 
         -- Christian Imhorst
@@ -198,7 +198,8 @@ zum frei abrufbaren Wissensschatz und somit zum Gemeinwohl der Gesellschaft bei!
     Quellcode sollte nach dieser Ethik geteilt, d.h. ohne Hindernisse
     ausgetauscht und für jeden frei zugänglich gemacht werden. So wurden
     ähnliche Lizenzen auch für Bücher und Musik geschaffen. Das berühmteste
-    Beispiel ist `Wikipedia <http://de.wikipedia.org>`_.
+    Beispiel ist `Wikipedia
+    <https://de.wikipedia.org/wiki/Wikipedia:Hauptseite>`_.
 
 
 

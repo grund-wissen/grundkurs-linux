@@ -144,11 +144,176 @@ werden soll:
     > Create Windows command file? (Y/n) [y]: n
 
 Damit ist das Projekt fertig angelegt und kann beliebig angepasst und mit
-Inhalten gefüllt werden. Aus dem Quellcode der Dokumentation können jederzeit,
-sofern man sich in einem Shellfenster im Hauptverzeichnis des Projekts befindet,
-mit ``make html`` HTML-Dateien und mittels ``make latexpdf`` LaTeX-Code sowie
-eine gleichnamige PDF-Datei erzeugt werden (die fertigen Dateien befinden sich
-dann im ``_build``-Verzeichnis).
+Inhalten gefüllt werden.
+
+Aufruf von Sphinx
+=================
+
+Ein bestehendes Projekt (beispielsweies ein selbst erstelltes oder ein
+von `Github` geclontes) kann auf einfache Weise als Webseite oder PDF-Datei
+ausgegeben werden. Hierzu wechselt man in einer Shell in das Projekt-Verzeichnis
+und gibt folgendes ein:
+
+.. code-block:: sh
+
+    # HTML-Dateien erzeugen:
+    make html
+
+    # LaTeX-Code erzeugen:
+    make latex
+
+    # LaTeX-Code erzeugen und daraus eine PDF-Datei erstellen:
+    make latexpdf
+
+Treten aufgrund einer fehlerhaften RST-Syntax während des Übersetzens Fehler
+auf, so werden diese mit einer kurzen Erläuterung und der Angabe der den Fehler
+verursachenden Stelle auf dem Bildschirm ausgegeben.
+
+Die neu erstellten Dateien werden vons ``sphinx`` bei Verwendung der oben
+genannten Konfiguration im ``_build``-Verzeichnis innerhalb des Projektpfads
+abgelegt. Je nach Ausgabe-Variante können die erstellten folgendermaßen
+aufgerufen werden:
+
+.. code-block:: sh
+
+    # Erstellte HTML-Seiten mit Webbroswer "firefox" öffnen:
+    firefox _build/html/index.html
+
+    # Erstellte PDF-Datei mit PDF-Betrachter "evince" öffnen:
+    evince _build/latex/projekttitel.pdf
+
+Der Name des PDF-Dokuments wird in der Konfigurationsdatei ``conf.py``
+unter der Rubrik ``latex_documents`` festgelegt.
+
+Um den bestehenden Build eines Projekts zu entfernen, beispielsweise nach
+einem Umbenennen mehrerer Quelldateien oder einer neuen Ordnerstruktur, kann
+Folgendes eingegeben werden:
+
+.. code-block:: sh
+
+    make clean
+
+Anschließend können mittels ``make html``, ``make latex`` oder ``make latexpdf``
+neue Builds erstellt werden.
+
+
+.. _Projekt auf nicht funktionierende Links prüfen:
+
+.. rubric:: Projekt auf nicht funktionierende Links prüfen
+
+Auf folgende Weise kann ein bestehendes Projekt hinsichtlich nicht
+funktionierender Web-Links überprüft werden:
+
+.. code-block:: sh
+
+    make linkcheck
+
+Dieser Aufruf gibt auf dem Bildschirm alle Links zu nicht mehr existierenden
+oder permanent umgeleiteten Seiten aus. Dieses Feature sollte in regelmäßigen
+Abständen genutzt werden, um den Besuchern der Seite unnötige ``404: Seite nicht
+gefunden``-Fehlermeldungen zu ersparen; auch Suchmaschinen werten einen
+möglichst hohen Anteil an funktionierenden Links als Kriterium für die
+Aktualität einer Seite.
+
+.. _Intersphinx-Mappings aktualisieren:
+
+.. rubric:: Intersphinx-Mappings aktualisieren
+
+Bei der Verwendung von Sphinx ist es möglich, Links auf Begriffe aus anderen
+Sphinx-Dokumentationen zu setzen; dies wird als ``Intersphinx-Mapping``
+bezeichnet. Hierbei wird in der Konfigurationsdatei ``conf.py`` unter dem
+Begriff ``intersphinx_mapping`` festgelegt, welche externen Projekte mit
+welchem Kürzel genutzt werden sollen. Ein solcher Eintrag könnte beispielsweise
+wie folgt aussehen:
+
+.. code-block:: python
+
+    intersphinx_mapping = {
+        'sphinx': ('http://sphinx-doc.org', None),
+        'gwm': ('http://grund-wissen.de/mathematik', None),
+        'gwp': ('http://grund-wissen.de/physik', None),
+    }
+
+Innerhalb der Dokumentation kann dann beispielsweise mittels ``:ref:`Mechanik
+<gwp:Mechanik>``` auf den :ref:`Mechanik <gwp:Mechanik>`-Teil der
+Physik-Dokumentation im Grund-Wissen-Projekt verwiesen werden. [#]_
+
+Mit den normalen Einstellungen werden die Index-Kataloge der angegebenen
+Projekte nur beim erstmaligen Erstellen eines Projekts geladen. Kommen bei den
+externen Projekten weitere Begriffe hinzu, so kann also nur dann mittels eines
+Intersphinx-Mappings darauf verwiesen werden, wenn explizit geprüft wird, ob
+sich Änderungen in den angegebenen Projekten ergeben haben. Dies kann durch
+folgende Änderung in der ``Makefile`` des Projekts erreicht werden:
+
+.. code-block:: sh
+
+    # Original
+    # SPHINXOPTS =
+
+    # Intersphinx-Seiten auf Änderungen prüfen:
+    SPHINXOPTS = -E
+
+Durch die ergänzende Angabe der Option ``-E`` werden beim Aufruf von ``make
+html``, ``make latex`` oder ``make latexpdf`` alle externen Index-Kataloge neu
+eingelesen. Dies kann den Übersetzungs-Prozess erheblich verlangsamen und sollte
+daher nur bei Bedarf kurzzeitig geändert werden.
+
+
+.. index:: rst2pdf, docutils
+.. _Einzelne Dateien mit rst2pdf konvertieren:
+
+.. rubric:: Einzelne Dateien mit rst2pdf konvertieren
+
+Hat man unter Linux das Paket ``python3-docutils`` installiert, so stehen neben
+Sphinx auch die Konverter ``rst2html`` und ``rst2latex`` zur Verfügung, die
+jeweils eine einzelne Quelldatei in ein HTML- beziehungsweise LaTeX-Dokument
+übersetzen.
+
+Für die Verwendung von ``rst2latex`` habe ich mir eine :ref:`Makefile
+<Makefile>` mit folgendem Inhalt gebastelt:
+
+.. code-block:: sh
+
+    # Datei: rstmakefile
+
+    %: %.rst
+        rst2latex $< > $*.tex
+        pdflatex $*.tex
+        rm $*.aux $*.log $*.out
+
+In einer Shell kann man dann im Projektordner folgendermaßen aus einer
+``.rst``-Datei eine gleichnamige ``.tex``-Datei sowie das
+zugehörige``.pdf``-Dokument erzeugen:
+
+.. code-block:: sh
+
+    # RST-Datei dateiname.rst konvertieren:
+    # (Dateiendung dabei weglassen!)
+    make -f pfad-zur-rstmakefile dateiname
+
+    # Ergebnis: dateiname.tex, dateiname.pdf
+
+Diese Methode hat zwei sehr schöne Nebeneffekte: Erstens wird, anders als bei
+Verwendung von Sphinx, ein "klassischer" LaTeX-Code ohne Extra-Konfigurationen
+und besonderen Stil-Elementen generiert. Zweitens können über die
+Konfigurationsdatei ``~/.docutils`` optional zusätzliche Pakete in die
+:ref:`LaTeX-Präambel <gwil:Aufbau eines LaTeX-Dokuments>` geladen werden, um
+beispielsweise das Seitenlayout anzupassen. Meine Konfigurationsdatei hat
+beispielsweise folgenden Inhalt:
+
+.. code-block:: sh
+
+    [latex2e writer]
+    latex_preamble: \usepackage{units,amsmath,amsfonts,amssymb,textcomp,gensymb,marvosym,wasysym}
+                    \usepackage[left=2cm,right=2cm,top=1cm,bottom=1.5cm]{geometry}
+                    \pagestyle{empty}
+
+
+Durch diese Einstellungen werden einerseits Zusatz-Pakete für mathematischen
+Formalsatz eingebunden, zum anderen werden durch das ``geometry``-Paket die
+Seitenränder auf ein Minimum reduziert, so dass beim Drucken einzelner
+Notiz-Seiten kein Platz verschwendet wird.
+
 
 .. raw:: html
 
@@ -173,4 +338,6 @@ dann im ``_build``-Verzeichnis).
     eine Rundmail über einen Verteiler, ein neuer Commit eines
     Versionsverwaltungs-Programms, ein Weblog-Eintrag o.ä. verbunden werden.
 
+.. [#] Im Abschnitt :ref:`Sprungmarken und Referenzen <Sprungmarken und Referenzen>`.
+    ist dies näher beschrieben.
 

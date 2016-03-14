@@ -627,7 +627,45 @@ installierbar:
 
     sudo aptitude install ncdu
 
-.. todo Ergänzen!
+Gibt man nach der Installation ``ncdu`` ein, so wird vom aktuellen Verzeichnis
+aus die Größe aller sich darin befindenden Dateien bestimmt; die Größe von
+Unterverzeichnissen wird schrittweise anhand der darin enthaltenen Dateien bzw.
+Verzeichnisse bestimmt. Als Ergebnis wird der Inhalt des aktuellen
+Verzeichnisses nach absteigender Größe sortiert aufgelistet.
+
+Eine Navigation innerhalb dieser Übersicht ist mittels den Pfeiltasten oder, wie
+bei :ref:`Vim <Vim>`, mittels ``hjkl`` möglich. Drückt man ``?``, so wird eine
+Kurzübersicht der möglichen Eingabetasten eingeblendet, mit ``d`` kann die Datei
+unter dem Cursor (nach einer manuellen Bestätigung) gelöscht werden.
+Mit ``q`` wird ``ncdu`` wieder beendet.
+
+
+.. index:: nmap
+.. _nmap:
+
+``nmap``
+--------
+
+Mit ``nmap`` können unter anderem anderem die Rechner innerhalb des lokalen
+Netzwerks mitsamt lokaler Netzwerkadresse aufgelistet werden. Die Syntax hierzu
+lautet:
+
+.. code-block:: sh
+
+    nmap -sP 192.168.1.0/24
+
+In diesem Fall wird davon ausgegangen, dass die zu durchsuchenden
+Netzwerkadressen die Form ``192.168.1.xxx`` haben, wobei ``xxx`` eine laufende
+Nummer zwischen ``1`` und ``255`` sein kann. Ebenfalls möglich sind andere
+Namensräume, beispielsweise ``192.168.2.xxx``. Welcher bei den lokalen Rechnern
+vorliegt, hängt von den Einstellungen des Routers ab; man kann den lokalen
+Namensraum mittels Eingabe ``ip r`` abfragen.
+
+Noch schneller lassen sich die lokalen Rechner samt Netzwerkadressen mittels
+Eingabe von ``arp-scan -l`` auflisten; dazu muss lediglich das Programm
+``arp-scan`` mittels ``aptitude`` installiert werden.
+
+
 
 .. index:: pdfimages
 .. _pdfimages:

@@ -1,9 +1,10 @@
+.. _Inkscape:
 .. _Inkscape-Tool:
 
 Inkscape
 ========
 
-`Inkscape <http://inkscape.org/?lang=de>`_ ist ein umfangreicher
+`Inkscape <http://inkscape.org/?lang=de>`__ ist ein umfangreicher
 Vektorgraphik-Editor, der für Windows wie Linux gleichermaßen als
 Open-Source-Tool frei verfügbar ist.
 
@@ -11,7 +12,7 @@ Unter Linux lässt sich Inkscape mittels des gleichnamigen Paketes installieren:
 
 .. code-block:: bash
 
-    sudo aptitude install inkscape
+    sudo aptitude install inkscape fonts-mathjax fonts-mathjax-extras
 
 Inkscape bietet bereits in der Grundversion den Import und Export der
 gängigsten Graphik-Formate, darunter auch PNG und PDF.
@@ -30,7 +31,7 @@ muss lediglich das Archiv entpackt und der Inhalt in den Ordner
 .. code-block:: bash
 
     tar xvzf textext-0.4.4.tar.gz
-    cp textext.py textext.inx ~/.config/extensions
+    cp textext.py textext.inx ~/.config/inkscape/extensions
 
 Die Erweiterung benötigt mit ``pdf2svg`` und ``pstoedit`` zwei weitere Pakete,
 die -- falls sie nicht verfügbar sind -- über die Paketverwaltung
@@ -42,6 +43,34 @@ installierbar sind:
 
 Anschließend kann die Erweiterung in der Menüzeile über ``Erweiterungen -> Tex
 Text`` aufgerufen werden.
+
+Zusätzlich kann mittels den "Mathjax"-Schriftfen auch normaler Text in einem
+LaTeX-ähnlichen Stil gesetzt werden, um ein einheitliches Schriftbild im
+Dokument zu erreichen.
+
+.. Inkscape-Aufruf mit Option -l neuer-dateiname: Export als Plain SVG (kleiner!)
+
+.. rubric:: Einheiten des Lineals und des Gitters anpassen
+
+Die beiden Lineal-Leisten am linken und oberen Rand des Hauptfensters zeigen
+Längen standardmäßig in Pixeln an. Um dies zu ändern, muss man in den
+Dokumenteigenschaften (Tastenkürzel ``Ctrl D``) unter der Rubrik "Seite"
+als Standard-Einheiten ``cm`` (oder ``mm``) einstellen.
+
+Die Einstellungen des Gitters können im Menü über ``Datei ->
+Inkscape-Einstellungen`` unter der Rubrik "Gitter" geändert werden. Ich selbst
+verwende folgende Einstellungen:
+
+.. figure:: gitter-einstellungen.png
+    :name: fig-gitter-einstellungen
+    :alt:  fig-gitter-einstellungen
+    :align: center
+    :width: 50%
+
+Bei diesen Einstellungen werden die Gitterlinien (Tastenkürzel ``#``) bei
+Vollansicht des gesamten Dokuments (bei mir meist DinA4, Tastenkürzel ``5``)
+in ``cm``-Rasterung angezeigt; zoomt man näher in einen Bereich hinein, wechselt
+die Rasterung auf ``mm``.
 
 .. _Multilayer-SVG:
 .. rubric:: Multilayer-SVG-Dateien exportieren
@@ -70,14 +99,17 @@ gleichen Verzeichnis eine gleichnamige PDF-Datei erzeugt.
 
 .. rubric:: Links
 
+* `Inkscape-Projektseite <http://inkscape.org/?lang=de>`_
+
 Am besten lernt man Inkscape -- wie so oft -- mittels "Learning by doing".
 Begleitend sind dabei z.B. folgende Tutorials hilfreich:
 
 * `Inkscape-Wikibook <https://de.wikibooks.org/wiki/Inkscape>`_
 * `Inkscape-Einführung der Universität Göttingen <http://lp.uni-goettingen.de/get/text/6356>`_
 * `Offizielles Inkscape-Wiki <https://www.inkscape-forum.de/>`_
-* `Guide to a Vector Drawing Program <http://tavmjong.free.fr/INKSCAPE/MANUAL/html/index.html>`_
-* `Quick Guide to Inkscape <http://www.microugly.com/inkscape-quickguide/>`_
+* `Inkscape-Crashcourse <http://www.chrishilbig.com/a-crash-course-in-inkscape/>`_
+* `Guide to a Vector Drawing Program (en.) <http://tavmjong.free.fr/INKSCAPE/MANUAL/html/index.html>`_
+* `Quick Guide to Inkscape (en.) <http://www.microugly.com/inkscape-quickguide/>`_
 
 Einfache bis komplexere Beispiele finden sich als zusätzliche Anregungen auf
 folgenden Seiten:

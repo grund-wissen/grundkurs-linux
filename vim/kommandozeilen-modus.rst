@@ -345,10 +345,12 @@ eine Sonderbedeutung bekommen:
     * - ``\?``
       - Multiplexer: Das vorhergehende Zeichen null oder ein mal.
 
-
-.. Alle Leerzeilen am Ende von Zeilen löschen:
-.. :%s/\s\+$//
-
+Teile eines regulären Ausdrucks, die beim Suchen mittels ``\(`` und ``\)``
+gruppiert werden, können im neuen Ausdruck mittels ``\1``, ``\2``, ``\3`` usw.
+wieder aufgegriffen werden, wobei beispielsweise ``\1`` den ersten gruppierten
+Ausdruck bezeichnet. Die Textstelle, die beim Suchen auf den *gesamten*
+regulären Ausdruck zutrifft, kann beim Ersetzen mittels ``\0`` referenziert
+werden.
 
 .. definition greedy, beispiel
 
@@ -366,6 +368,13 @@ eine Sonderbedeutung bekommen:
 ..  \{-,m} 	0 to n occurrences of the preceding atom (as few as possible).
 ..  \{-} 	0 or more occurrences of the preceding atom (as few as possible).
 
-..  http://www.jeetworks.org/node/86
+.. Alle Leerzeilen am Ende von Zeilen löschen:
+.. :%s/\s\+$//
 
-..  http://www.softpanorama.org/Editors/Vimorama/vim_regular_expressions.shtml
+.. http://vimregex.com/
+.. http://vim.wikia.com/wiki/Search_patterns
+.. http://www.softpanorama.org/Editors/Vimorama/vim_regular_expressions.shtml
+.. http://www.jeetworks.org/node/86
+
+
+

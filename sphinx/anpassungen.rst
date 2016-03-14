@@ -5,14 +5,14 @@ Gestalterische Anpassungen
 
 Für die Grundwissen-Webseite nutze ich das Sphinx-Standard-Theme mit einigen
 Anpassungen. Diese habe ich als Super-User direkt am zentralen Installationspfad
-``/usr/local/lib/python2.7/dist-packages/Sphinx-1.2b1-py2.7.egg/sphinx/``
+(in meinem Fall
+``/usr/local/lib/python3.4/dist-packages/Sphinx-1.3.1-py3.4.egg/sphinx``)
 vorgenommen, so dass sie global für alle Dokumentations-Projekte gleichermaßen
-gelten.
-
-.. Mit der Basis-Installation und den folgenden Anpassungen kann die
-.. Grund-Wissen-Homepage aus dem `Quelltext-Archiv <../../grund-wissen.zip>`_ und
-.. dem `Graphik-Archiv <../grund-wissen-bilder.zip>`_ durch den Aufruf ``make
-.. html`` bzw. ``make latexpdf`` nachgebaut werden. [#]_
+gelten. Als (empfehlenswertere) Alternative hierzu kann Sphinx mittels einer
+:ref:`virtuellen Umgebung <Virtuelle Umgebungen>` lokal im Ordner des Benutzers
+installiert und dort auch ohne Super-User-Rechte angepasst werden. Die im
+folgenden Abschnitt aufgelisteten Datei-Änderungen beziehen sich dabei stets auf
+den jeweiligen Installationspfad.
 
 
 .. _Suchfeld-Kommentar löschen:
@@ -431,10 +431,6 @@ Bezeichnung "Release" durch "Version" ersetzt.
 .. only:: html
 
     .. rubric:: Anmerkungen:
-
-.. .. [#]  Der Graphik-Pfad muss gegebenenfalls noch so angepasst werden, dass das
-        .. .. Hauptverzeichnis der Bilder als ``pics``-Ordner im Hauptpfad der
-        .. .. Dokumentation abgelegt ist.
 
 .. [#Muc] Hierbei muss das LaTeX-Paket ``multicol`` installiert sein. Sollte dies
         nicht der Fall sein, kann es von der `CTAN-Projektseite

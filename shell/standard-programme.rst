@@ -939,6 +939,18 @@ neue Log-Datei) anlegen.
 .. index:: wc
 .. _wc:
 
+.. index:: uname
+.. _uname:
+
+``uname``
+---------
+
+Mit ``uname -a`` kann angezeigt werden, ob es sich bei dem laufenden System um
+ein 32- oder ein 64-bit System handelt. Dies muss bisweilen berücksichtigt
+werden, wenn Zusatzpakete nich via :ref:`aptitude <aptitude>` installiert
+werden, sondern beispielsweise als fertige Debian-Pakete von einer Webseite
+heruntergeladen werden sollen.
+
 ``wc``
 ------
 

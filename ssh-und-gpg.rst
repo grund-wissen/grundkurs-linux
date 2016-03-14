@@ -181,8 +181,48 @@ Schlüssel angezeigt werden.
 ``gpg`` -- Verschlüsselung von Dateien
 --------------------------------------
 
+GPG steht für "GNU Privacy Guard" und ist die wohl am weitesten verbreitete
+Implementierung von PGP ("Pretty Good Privacy"). Letzteres stellt einen Standard
+dar, mit dem Emails sicher verschlüsselt verschickt werden können, sofern die
+Software sowohl beim Sender wie auch beim Empfänger installiert ist.
+
+GPG gehört bei fast allen Linux-Distributionen zum Standard, muss also nicht
+extra installiert werden.
+
+GPG nutzt -- ebenso wie SSH -- zum Verschlüsseln der Daten ein Schlüsselpaar:
+Der private Schlüssel bleibt auf dem eigenen Rechner und kann zum Entschlüsseln
+von Nachrichten verwendet werden; der öffentliche Schlüssel hingegen wird
+üblicherweise frei verteilt. Mit ihm können Nachrichten an den Eigentümer des
+Schlüssels verschlüsselt, jedoch nicht entschlüsselt werden.
+
+Zum Erstellen eines Schlüsselpaars gibt man in einer Shell folgendes ein:
+
+.. code-block:: sh
+
+    gpg --gen-key
+
+Hierbei wird man zunächst nach dem gewünschten Verschlüsselungsverfahren
+gefragt, wobei die Vorgabe "RSA und RSA" mit ``1`` ausgewählt werden kann. Als
+Schlüssellänge sollte man einen möglichst großen Wert nehmen -- 2048 Bit sind
+ok, 4096 Bit sind sicherer und somit besser. Als letztes muss man angeben, wie
+lange der Schlüssel gültig bleiben soll. Hier sollte durchaus eine Zeitvorgabe,
+beispielsweise ``1y`` für "1 Jahr" eingegeben werden, da Schlüssel ohne
+Verfallsdatum auch dann im Umlauf bleiben, wenn beispielsweise die zugehörige
+Emailadresse nicht mehr existiert oder die Schlüssellänge durch immer schnellere
+Rechner zu klein geworden ist. Anschließend muss man als eindeutige
+Benutzerkennung noch den Namen und die Emailadresse angeben, zu dem der
+Schlüssel gehören soll.
+
+Das Passwort, das man für den Schlüssel vergibt, sollte zwar gut merkbar, aber
+zugleich ausreichend sicher sein; längere Passwörter, die beispielsweise aus
+ganzen Sätzen bestehen, sind in der Regel sicherer als kurze, aber kryptische
+und damit schwer zu merkende Passwörter. Ohne Passwortschutz des privaten
+Schlüssels kann jede Person, die Zugriff auf die Schlüsseldatei bekommt, alle
+mit dem zugehörigen öffentlichen Schlüssel gesicherten Dateien öffnen. [#]_
 
 ... to be continued ...
+
+
 
 .. raw:: html
 
@@ -215,3 +255,8 @@ Schlüssel angezeigt werden.
 
 .. [#] Die Freigabe gilt auch für andere Programme, sofern diese in der
     laufenden Sitzung vom gleichen Benutzer gestartet wurden.
+
+.. [#] Zusätzlich ist eine Kopie des privaten Schlüssels auf einem
+    :ref:`verschlüsselten <Partitions-Verschlüsselung>` USB-Stick oder einer
+    verschlüsselten externen Festplatte empfehlenswert!
+
